@@ -34,15 +34,18 @@ class Home extends Component {
         {
           !isAuthenticated() && (
             <div className="container column">
-              <h5>ReactiveSearch Auth0 Example</h5>
+              <h5
+              className='display-3 text-center'
+              >Allergenius</h5>
               <h5>
                 You are not logged in! Please{' '}
-                <a
+                <button
                   style={{ cursor: 'pointer' }}
                   onClick={this.login}
+                  className='btn btn-primary'
                 >
                   Log In
-                </a>
+                </button>
                 {' '}to continue.
               </h5>
               <h6>This is the default <b><code>Home</code></b> component. The <b><code>App</code></b> component will only be visible once you authenticate.</h6>
