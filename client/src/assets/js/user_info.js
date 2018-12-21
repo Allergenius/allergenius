@@ -27,5 +27,5 @@ $(document).ready(function () {
         }
       })
   }
-  // exists(localStorage.nickname)
+  exists(localStorage.nickname)
 })
