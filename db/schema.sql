@@ -72,7 +72,7 @@ CREATE TABLE reactions
 );
 
 
-CREATE TABLE profile
+CREATE TABLE userProfile
 (
 	id int NOT NULL AUTO_INCREMENT,
 	username varchar(45) NOT NULL,
