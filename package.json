@@ -1,0 +1,24 @@
+{
+  "name": "allergenius",
+  "version": "1.0.0",
+  "description": "Application for logging allergic reactions.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allergenius/allergenius.git"
+  },
+  "author": "Erin Clancy, Kayla Himmelberger, Sarah Lopriore, Nicholette Sams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Allergenius/allergenius/issues"
+  },
+  "homepage": "https://github.com/Allergenius/allergenius#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
