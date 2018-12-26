@@ -1,0 +1,76 @@
+[
+   {
+      "id": 0,
+      "question": "Log entry time:",
+      "answers": []
+   },
+   {
+     "id": 1,
+     "question": "What types of symptoms are you experiencing?",
+     "answers": [
+        "Itchy skin",
+         "Hives",
+         "Itchy eyes",
+         "Itchy throat",
+         "Runny nose",
+         "Stomach ache",
+         "Flushed skin or rash",
+         "Tingling or itchy sensation in the mouth",
+         "Face, tongue, or lip swelling",
+         "Vomiting and/or diarrhea",
+         "Abdominal cramps",
+         "Coughing or wheezing",
+         "Dizziness and/or lightheadedness",
+         "Swelling of the throat and vocal cords",
+         "Difficulty breathing",
+         "Loss of consciousness"
+      ]
+   },
+   {
+      "id": 2,
+      "question": "What is the severity of your reaction on a scale from 1-5 (with 1 being mild/no pain and 5 being awful/worst pain possible)?",
+      "answers": [
+         1,
+         2,
+         3,
+         4,
+         5
+      ]
+   },
+   {
+      "id": 3,
+      "question": "Are you currently sick with a cold or the flu?",
+      "answers": [
+         "No",
+         "Yes"
+      ]
+   },
+   {
+      "id": 4,
+      "question": "Have you eaten or drank any of these items today?",
+      "answers": [
+         "Dairy",
+         "Eggs",
+         "Fish/Shellfish",
+         "Tree nuts",
+         "Peanuts",
+         "Gluten",
+         "Soybeans",
+         "Corn",
+         "Berries",
+         "Celery",
+         "Onions/Garlic",
+         "Sesame"
+      ]
+   },
+   {
+      "id": 5,
+      "question": "How long have you felt this way?",
+      "answers": []
+   },
+   {
+      "id": 6,
+      "question": "Notes",
+      "answers": []
+   }
+]
