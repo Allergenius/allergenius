@@ -4,7 +4,9 @@ var router = express.Router();
 
 /* GET all reactions for the user logged in. */
 router.get('/api/reactions/:user', function(req, res, next) {
-    const query = `SELECT * FROM reactions WHERE username = ${req.params.user}`
+    console.log(req.params.user)
+    const query = `SELECT * FROM reactions WHERE username = '${req.params.user}'`
+    console.log(query)
  	connection.query(query, function (error, results, fields) {
 		if(error) throw error;
 		res.send(JSON.stringify(results));
@@ -13,7 +15,7 @@ router.get('/api/reactions/:user', function(req, res, next) {
 
 /* GET profile information for the user logged in. */
 router.get('/api/profile/:user', function(req, res, next) {
-    const query = `SELECT * FROM userProfile WHERE username = ${req.params.user}`
+    const query = `SELECT * FROM userProfile WHERE username = '${req.params.user}'`
  	connection.query(query, function (error, results, fields) {
 		if(error) throw error;
 		res.send(JSON.stringify(results));
@@ -22,7 +24,7 @@ router.get('/api/profile/:user', function(req, res, next) {
 
 /* GET user login information for the user logged in. */
 router.get('/api/users/:user', function(req, res, next) {
-    const query = `SELECT * FROM users WHERE username = ${req.params.user}`
+    const query = `SELECT * FROM users WHERE username = '${req.params.user}'`
  	connection.query(query, function (error, results, fields) {
 		if(error) throw error;
 		res.send(JSON.stringify(results));
