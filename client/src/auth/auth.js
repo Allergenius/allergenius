@@ -10,9 +10,9 @@ export default class Auth {
     redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://appbaseio-apps.github.io/auth0/callback',
     // audience: 'https://divyanshu.auth0.com/userinfo',
     responseType: 'token id_token',
-    scope: 'openid'
-    //     scope: 'openid profile', NOTE: how scope was written in cuiscene
-    // profile: will request the claims representing basic profile information. These are name, family_name, given_name, middle_name, nickname, picture and updated_at.
+    // scope: 'openid'
+    scope: 'openid profile'
+    // NOTE: how scope was written in cuiscene; profile: will request the claims representing basic profile information. These are name, family_name, given_name, middle_name, nickname, picture and updated_at.
   });
 
   login = () => {
