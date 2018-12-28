@@ -1,29 +1,24 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "^2.1.1",
-    "spectre.css": "^0.5.8"
-  },
+  "name": "allergenius",
+  "version": "1.0.0",
+  "description": "Application for logging allergic reactions.",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allergenius/allergenius.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "author": "Erin Clancy, Kayla Himmelberger, Sarah Lopriore, Nicholette Sams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Allergenius/allergenius/issues"
+  },
+  "homepage": "https://github.com/Allergenius/allergenius#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
 }
