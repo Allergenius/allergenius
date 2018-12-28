@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Checkbox = props => (
+const Checkbox = (props) => (
 	<div>
 		<label className="form-label">{props.title}</label>
 		<div className="checkbox-group">
-			{this.props.options.map(option => {
+			{props.options.map(option => {
 				return (
 					<label key={option} className="form-label capitalize">
 						<input
@@ -24,7 +24,7 @@ const Checkbox = props => (
 
 Checkbox.propTypes = {
 	title: PropTypes.string.isRequired,
-	type: PropTypes.string.isRequired,
+	type: PropTypes.oneOf(['checkbox', 'radio']).isRequired,
 	setName: PropTypes.string.isRequired,
 	options: PropTypes.array.isRequired,
 	selectedOptions: PropTypes.array,
