@@ -1,32 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Select = (props) => (
+const Select = ({ name, selectedOption, controlFunc, placeholder, options}) => (
 	<div className="form-group">
+		{console.log(selectedOption)}
 		<select
-			name={props.name}
-			value={props.selectedOption}
-			onChange={props.controlFunc}
+			name={name}
+			value={selectedOption}
+			onChange={controlFunc}
 			className="form-select">
-			<option value="">{props.placeholder}</option>
-			{props.options.map(opt => {
+			<option value="">{placeholder}</option>
+			{options.map(opt => {
 				return (
 					<option
 						key={opt}
-						value={opt}>{opt}
+						value={opt}>
+						{opt}
 					</option>
 				);
 			})}
 		</select>
 	</div>
 );
-
-Select.propTypes = {
-	name: PropTypes.string.isRequired,
-	options: PropTypes.array.isRequired,
-	selectedOption: PropTypes.string,
-	controlFunc: PropTypes.func.isRequired,
-	placeholder: PropTypes.string
-};
 
 export default Select;

@@ -22,13 +22,4 @@ const Checkbox = (props) => (
 	</div>
 );
 
-Checkbox.propTypes = {
-	title: PropTypes.string.isRequired,
-	type: PropTypes.oneOf(['checkbox', 'radio']).isRequired,
-	setName: PropTypes.string.isRequired,
-	options: PropTypes.array.isRequired,
-	selectedOptions: PropTypes.array,
-	controlFunc: PropTypes.func.isRequired
-};
-
 export default Checkbox;
