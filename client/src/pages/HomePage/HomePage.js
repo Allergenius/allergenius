@@ -5,7 +5,7 @@ import List from "../../components/List/List";
 import ListItem from "../../components/ListItem/ListItem";
 import AddButton from "../../components/AddButton/AddButton";
 
-class Home extends Component {
+class HomePage extends Component {
     state = {
         username: "",
         reactions: ""
@@ -41,4 +41,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default HomePage;

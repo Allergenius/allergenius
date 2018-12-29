@@ -5,6 +5,7 @@ import Callback from './Callback';
 import Auth from './auth';
 import history from './history';
 import App from '../App';
+import HomePage from '../pages/HomePage/HomePage';
 
 const auth = new Auth();
 
@@ -18,7 +19,7 @@ const Routes = () => (
   <Router history={history} component={Home}>
     <div>
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
-      <Route path="/home" render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/home" render={(props) => <HomePage auth={auth} {...props} />} />
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         return <Callback {...props} />
