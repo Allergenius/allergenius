@@ -6,6 +6,7 @@ import Auth from './auth';
 import history from './history';
 import App from '../App';
 import HomePage from '../pages/HomePage/HomePage';
+import FormContainer from '../pages/HomePage/HomePage';
 
 const auth = new Auth();
 
