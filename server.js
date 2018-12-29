@@ -1,23 +1,25 @@
-const express = require('express')
+const express = require("express");
+const routes = require("./routes/apiRoutes");
 const bodyParser = require('body-parser')
-// const proxy = require('express-http-proxy')
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-const PORT = process.env.PORT || 8080
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
 
-const app = express()
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`API Server now listening on PORT ${PORT}!`);
+});
 
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static('assets'))
-
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
-
-// parse application/json
-app.use(bodyParser.json())
-
-// Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
-    // Log (server-side) when our server has started
-    console.log('Server listening on: http://localhost:' + PORT)
-  })
-  
+  // Log (server-side) when our server has started
+  console.log('Server listening on: http://localhost:' + PORT)
+})

@@ -4,6 +4,8 @@
   "description": "Allergy Application",
   "main": "server.js",
   "scripts": {
+    // "test": "echo \"Error: no test specified\" && exit 1",
+    // "start": "node server.js"
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -16,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/Allergenius/allergenius.git"
   },
-  "author": "",
+  "author": "Erin Clancy, Kayla Himmelberger, Sarah Lopriore, Nicholette Sams",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
@@ -28,6 +30,7 @@
   "homepage": "https://github.com/Allergenius/allergenius#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "mysql": "^2.16.0"
   }
 }
