@@ -1,11 +1,16 @@
 {
   "name": "allergenius",
   "version": "1.0.0",
-  "description": "Application for logging allergic reactions.",
+  "description": "Allergy Application",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -13,12 +18,17 @@
   },
   "author": "Erin Clancy, Kayla Himmelberger, Sarah Lopriore, Nicholette Sams",
   "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
   "bugs": {
     "url": "https://github.com/Allergenius/allergenius/issues"
   },
   "homepage": "https://github.com/Allergenius/allergenius#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "if-env": "^1.0.4",
     "mysql": "^2.16.0"
   }
 }

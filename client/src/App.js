@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../node_modules/spectre.css/dist/spectre.min.css';
+// import '../node_modules/spectre.css/dist/spectre.min.css';
 import './styles.css';
-import FormContainer from './containers/FormContainer';
+import FormContainer from './pages/FormContainer';
+
 
 class App extends Component {
   render() {

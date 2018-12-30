@@ -120,11 +120,11 @@ class FormContainer extends Component {
 		return (
 			<div>
 				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
-				<form className="container" onSubmit={this.handleFormSubmit}>
-					<h5>Reaction Entry Form</h5>
+				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
+					<h4 className="text-center p-4">Reaction Entry Form</h4>
 					<Input
 						inputType={'text'}
-						title={'Current date and time'}
+						title={'Current date and time:  '}
 						name={'dateAndTime'}
 						controlFunc={this.handleSelect}
 						content={dateAndTime}
@@ -175,7 +175,7 @@ class FormContainer extends Component {
 						placeholder={'Please be thorough in your notes'} />
 					<input
 						type="submit"
-						className="btn btn-primary float-right"
+						className="btn btn-primary float-right mt-4"
 						value="Submit"/>
 				</form>
 			</div>
