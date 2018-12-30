@@ -35,7 +35,7 @@ export default class Auth {
   // Sets user details in localStorage
   setSession = (authResult) => {
     // Set the time that the access token will expire at
-    let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    let expiresAt = JSON.stringify((authResult.expiresIn * 100) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
@@ -60,4 +60,47 @@ export default class Auth {
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+
+  // app.js??
+
+  // userProfile;
+
+  // getProfile = () => {
+  //   if (!userProfile) {
+  //     let accessToken = localStorage.getItem('access_token');
+  //     if (!accessToken) {
+  //       console.log('Access Token must exist to fetch profile');
+  //     }
+  //     webAuth.client.userInfo((accessToken, (err, profile) => {
+  //       if (err) {
+  //         throw err
+  //       }
+  //       if (profile) {
+  //         userProfile = profile;
+  //         displayProfile();
+  //         getMyRecipes(userProfile);
+  //       }
+  //     })
+  //   } else {
+  //     displayProfile()
+  //     }
+  // }
+
+  // displayProfile = () => {
+  //   // display the profile
+  //   document.querySelector(
+  //     '#profile-view .nickname'
+  //   ).innerHTML = JSON.stringify(userProfile.nickname)
+
+  //   document.querySelector(
+  //     '#profile-view .full-profile'
+  //   ).innerHTML = JSON.stringify(userProfile, null, 2)
+
+  //   document.querySelector('#profile-view img').src = userProfile.picture
+  // }
+
+  // handleAuthentication()
+  // getProfile()
+
+  // getMyLog(userProfile)
 }
