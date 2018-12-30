@@ -61,7 +61,7 @@ export default class Auth {
     return new Date().getTime() < expiresAt;
   }
 
-  // app.js??
+  //POTENTIAL DISPLAY FUNCTIONS (app.js)
 
   // userProfile;
 
