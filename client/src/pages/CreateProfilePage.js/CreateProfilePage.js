@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Checkbox from '../components/Checkbox';
 import Input from '../components/Input';
 import TextArea from '../components/TextArea';
+import Select from '../components/Select';
 
 class FormContainer extends Component {
 	constructor(props) {
@@ -11,9 +12,9 @@ class FormContainer extends Component {
 			symptomOptions: [],
 			currentSymptoms: [],
 			severity: [],
-			currentSeverity: [],
+			currentSeverity: '',
 			sick: [],
-			currentSickStatus: [],
+			currentSickStatus: '',
 			foodOptions: [],
 			currentFoodsEaten: [],
 			symptomTime: '',
@@ -21,8 +22,6 @@ class FormContainer extends Component {
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleSymptomSelect = this.handleSymptomSelect.bind(this);
-		this.handleSeveritySelect = this.handleSeveritySelect.bind(this);
-		this.handleSickSelect = this.handleSickSelect.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
 		this.handleSymptomTimeChange = this.handleSymptomTimeChange.bind(this);
 		this.handleNoteChange = this.handleNoteChange.bind(this);
@@ -55,26 +54,6 @@ class FormContainer extends Component {
 			newSelectionArray = [...this.state.currentSymptoms, newSelection];
 		}
 		this.setState({ currentSymptoms: newSelectionArray }, () => console.log('symptom selection', this.state.currentSymptoms));
-	}
-	handleSeveritySelect(event) {
-		const newSelection = event.target.value;
-		let newSelectionArray;
-		if(this.state.currentSeverity.indexOf(newSelection) > -1) {
-			newSelectionArray = this.state.currentSeverity.filter(s => s !== newSelection)
-		} else {
-			newSelectionArray = [...this.state.currentSeverity, newSelection];
-		}
-		this.setState({ currentSeverity: newSelectionArray }, () => console.log('severity selection', this.state.currentSeverity));
-	}
-	handleSickSelect(event) {
-		const newSelection = event.target.value;
-		let newSelectionArray;
-		if(this.state.currentSickStatus.indexOf(newSelection) > -1) {
-			newSelectionArray = this.state.currentSickStatus.filter(s => s !== newSelection)
-		} else {
-			newSelectionArray = [...this.state.currentSickStatus, newSelection];
-		}
-		this.setState({ currentSickStatus: newSelectionArray }, () => console.log('sick selection', this.state.currentSickStatus));
 	}
 	handleFoodSelect(event) {
 		const newSelection = event.target.value;
@@ -124,7 +103,7 @@ class FormContainer extends Component {
 		console.log('Send this in a POST request:', formPayload);
 	}
 	render() {
-		// const componentOptions = { Input, Checkbox, TextArea };
+		const componentOptions = { Input, Checkbox, Select, TextArea };
 		const { dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
@@ -134,7 +113,7 @@ class FormContainer extends Component {
 			currentSickStatus, 
 			foodOptions, 
 			currentFoodsEaten,
-			symptomTime,
+			symptomTime, 
 			reactionNotes
 		} = this.state;
 		
@@ -143,64 +122,57 @@ class FormContainer extends Component {
 				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
 				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
 					<h4 className="text-center p-4">Reaction Entry Form</h4>
-					<h6>Current date and time:</h6>
 					<Input
 						inputType={'text'}
+						title={'Current date and time:  '}
 						name={'dateAndTime'}
 						controlFunc={this.handleSelect}
 						content={dateAndTime}
 						placeholder={'Type current date and time here'} />
-					
-					<h6>Are you currently experiencing any of these symptoms?</h6>
 					<Checkbox
+						title={'Are you currently experiencing any of these symptoms?'}
 						setName={'symptoms'}
 						type={'checkbox'}
 						controlFunc={this.handleSymptomSelect}
 						options={symptomOptions}
 						selectedOptions={currentSymptoms} />
-					
-					<h6>Reaction Severity on a scale of 1 to 5, where 1 is minor and 5 is extreme:</h6>
-					<Checkbox
-						setName={'severity'}
-						type={'radio'}
-						controlFunc={this.handleSeveritySelect}
+					<Select
+						name={'currentSeverity'}
+						title={'Reaction severity'}
+						placeholder={'Reaction Severity - on a scale of 1-5 (1 is minor and 5 is extreme)'}
+						controlFunc={this.handleSelect}
 						options={severity}
-						selectedOptions={currentSeverity} />
-					<h6>Are you currently sick with a cold or the flu?</h6>
-					<Checkbox
-						setName={'sick'}
-						type={'radio'}
-						controlFunc={this.handleSickSelect}
+						selectedOption={currentSeverity} />
+					<Select
+						name={'sick'}
+						title={'Are you currently sick with a cold or the flu?'}
+						placeholder={'Are you currently sick?'}
+						controlFunc={this.handleSelect}
 						options={sick}
-						selectedOptions={currentSickStatus} />	
-					
-					<h6>Have you ingested any of these foods today?</h6>
+						selectedOption={currentSickStatus} />
 					<Checkbox
+						title={'Have you ingested any of these foods today?'}
 						setName={'foods'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
 						options={foodOptions}
 						selectedOptions={currentFoodsEaten} />
-					
-					
-					<h6>How long have your current symptoms been going on?</h6>
 					<TextArea
+						title={'How long have your current symptoms been going on?'}
 						rows={1}
 						resize={false}
 						content={symptomTime}
 						name={'symptomTime'}
 						controlFunc={this.handleSymptomTimeChange}
 						placeholder={'Example: 2 hours'} />
-					
-					<h6>Additional notes:</h6>
 					<TextArea
+						title={'Additional Notes:'}
 						rows={5}
 						resize={false}
 						content={reactionNotes}
 						name={'reactionNotes'}
 						controlFunc={this.handleNoteChange}
-						placeholder={'Add any additional notes that may help your doctor later.'} />
-					
+						placeholder={'Please be thorough in your notes'} />
 					<input
 						type="submit"
 						className="btn btn-primary float-right mt-4"
