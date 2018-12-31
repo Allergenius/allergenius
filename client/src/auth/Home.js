@@ -35,20 +35,20 @@ class Home extends Component {
           !isAuthenticated() && (
             <div className="container column">
               <h5
-              className='display-3 text-center'
+              className='display-3 d-md-flex'
               >Allergenius</h5>
               <h5>
                 You are not logged in! Please{' '}
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={this.login}
-                  className='btn btn-primary'
+                  className='btn btn-primary mx-auto'
                 >
                   Log In
                 </button>
                 {' '}to continue.
               </h5>
-              <h6>This is the default <b><code>Home</code></b> component. The <b><code>App</code></b> component will only be visible once you authenticate.</h6>
+              {/* <h6>This is the default <b><code>Home</code></b> component. The <b><code>App</code></b> component will only be visible once you authenticate.</h6> */}
             </div>
           )
         }
