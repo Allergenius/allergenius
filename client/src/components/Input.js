@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleInput = (props) => (
+const Input = (props) => (
 	<div className="form-group">
 		<label className="form-label">{props.title}</label>
 		<input
@@ -13,4 +13,4 @@ const SingleInput = (props) => (
 	</div>
 );
 
-export default SingleInput;
+export default Input;
