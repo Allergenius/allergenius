@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const TextArea = (props) => (
 	<div className="form-group">
 		<label className="form-label">{props.title}</label>
 		<textarea
-			className="form-input"
+			className="form-input form-control"
 			style={props.resize ? null : {resize: 'none'}}
 			name={props.name}
 			rows={props.rows}
