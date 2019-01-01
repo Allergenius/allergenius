@@ -1,5 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
 
 const Checkbox = (props) => (
 	<div>
@@ -9,7 +8,7 @@ const Checkbox = (props) => (
 				return (
 					<label key={option} className="form-label capitalize">
 						<input
-							className="form-checkbox"
+							className="form-checkbox capitalize"
 							name={props.setName}
 							onChange={props.controlFunc}
 							value={option}
