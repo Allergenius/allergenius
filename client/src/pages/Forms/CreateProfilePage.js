@@ -101,6 +101,21 @@ class CreateProfileForm extends Component {
 		};
 
 		console.log('Send this in a POST request:', formPayload);
+
+		var username = ""; //placeholder.  Need to figure out how to see who is logged in.
+
+		fetch("/api/reactions/" + username, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(formPayload)
+        }).then(function(response) {
+            if (response.status >= 400) {
+              throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).catch(function(err) {
+            console.log(err)
+        });
 	}
 	render() {
 		const componentOptions = { Input, Checkbox, Select, TextArea };
