@@ -36,7 +36,7 @@ CREATE TABLE reactions
 	symp_DifficultBreathing  boolean NOT NULL DEFAULT False,
 	symp_LossOfConsciousness  boolean NOT NULL DEFAULT False,
 	severity integer NOT NULL DEFAULT 1,
-	-- sick boolean NOT NULL DEFAULT False,
+	sick boolean NOT NULL DEFAULT False,
 	-- indoors boolean NOT NULL DEFAULT False,
 	-- outdoors boolean NOT NULL DEFAULT False, 
 	-- animal_Cat boolean NOT NULL DEFAULT False,
