@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Checkbox from '../../components/Checkbox';
 import Input from '../../components/Input';
 import TextArea from '../../components/TextArea';
+import Range from '../../components/Range';
 
 class ReactionForm extends Component {
 	constructor(props) {
@@ -159,11 +160,11 @@ class ReactionForm extends Component {
 						controlFunc={this.handleSymptomSelect}
 						options={symptomOptions}
 						selectedOptions={currentSymptoms} />
-					
-					<h6>Reaction Severity on a scale of 1 to 5, where 1 is minor and 5 is extreme:</h6>
-					<Checkbox
+											
+					<h6>Reaction Severity on a scale of 1 to 5 *TEST RANGE SLIDER*:</h6>
+					<Range
 						setName={'severity'}
-						type={'radio'}
+						type={'range'}
 						controlFunc={this.handleSeveritySelect}
 						options={severity}
 						selectedOptions={currentSeverity} />
