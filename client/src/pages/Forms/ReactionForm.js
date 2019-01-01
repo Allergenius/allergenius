@@ -141,7 +141,7 @@ class ReactionForm extends Component {
 		return (
 			<div>
 				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
-				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
+				<form className="container-fluid m-4" onSubmit={this.handleFormSubmit}>
 					<h4 className="text-center p-4">Reaction Entry Form</h4>
 					
 					<h6>Type current date and time:</h6>
@@ -205,7 +205,7 @@ class ReactionForm extends Component {
 					
 					<input
 						type="submit"
-						className="btn btn-primary float-right"
+						className="btn btn-primary"
 						value="Submit"/>
 				</form>
 			</div>

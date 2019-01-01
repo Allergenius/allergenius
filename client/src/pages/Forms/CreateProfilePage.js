@@ -118,7 +118,7 @@ class CreateProfileForm extends Component {
 		} = this.state;
 		
 		return (
-			<div>
+			<div className='container'>
 				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
 				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
 					<h4 className="text-center p-4">Reaction Entry Form</h4>
