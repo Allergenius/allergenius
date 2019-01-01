@@ -20,6 +20,7 @@ const Routes = () => (
     <div>
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/App" render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/FormContainer" render={(props) => <FormContainer auth={auth} {...props} />} />
       <Route path="/home" render={(props) => <HomePage auth={auth} {...props} />} />
       <Route path="/callback" render={(props) => {
         handleAuthentication(props);

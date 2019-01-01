@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Checkbox from '../components/Checkbox';
-import Input from '../components/Input';
+// import Input from '../components/Input';
+import SingleInput from '../components/Input';
 import TextArea from '../components/TextArea';
 import Select from '../components/Select';
 
@@ -137,7 +138,7 @@ class FormContainer extends Component {
 				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
 				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
 					<h4 className="text-center p-4">Reaction Entry Form</h4>
-					<Input
+					<SingleInput
 						inputType={'text'}
 						title={'Current date and time:  '}
 						name={'dateAndTime'}
@@ -182,6 +183,7 @@ class FormContainer extends Component {
 						placeholder={'Example: 2 hours'} />
 					<TextArea
 						title={'Additional Notes:'}
+						className={'mt-5'}
 						rows={5}
 						resize={false}
 						content={reactionNotes}
@@ -190,7 +192,7 @@ class FormContainer extends Component {
 						placeholder={'Please be thorough in your notes'} />
 					<input
 						type="submit"
-						className="btn btn-primary float-right mt-4"
+						className="btn btn-primary float-right"
 						value="Submit"/>
 				</form>
 			</div>
