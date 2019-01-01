@@ -8,8 +8,8 @@ class App extends Component {
   render() {
     return (
        <div className="container">
-         <div className="columns">
-           <div className="col-md-9 centered"> 
+         <div className="row">
+           <div className="col-md-9 mx-auto formStyle"> 
             <FormContainer />
            </div>
          </div>

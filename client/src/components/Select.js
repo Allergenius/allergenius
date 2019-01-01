@@ -10,7 +10,7 @@ const Select = ({ name, selectedOption, controlFunc, placeholder, options}) => (
 			onChange={controlFunc}
 			className="form-select">
 			<option value="">{placeholder}</option>
-			{options.map(opt => {
+			{options.map((opt) => {
 				return (
 					<option
 						key={opt}

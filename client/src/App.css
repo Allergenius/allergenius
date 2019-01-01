@@ -1,3 +1,8 @@
+.formStyle {
+  width: 200px;
+  margin: 15px;
+}
+
 .App {
   text-align: center;
 }
