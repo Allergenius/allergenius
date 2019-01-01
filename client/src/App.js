@@ -9,7 +9,7 @@ class App extends Component {
     return (
        <div className="container">
          <div className="row">
-           <div className="col-md-9 formStyle"> 
+           <div className="col-md-9"> 
             <ReactionForm />
            </div>
          </div>

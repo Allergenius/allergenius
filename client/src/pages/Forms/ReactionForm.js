@@ -139,10 +139,10 @@ class ReactionForm extends Component {
 		} = this.state;
 		
 		return (
-			<div>
-				<h3 className='lead p-3 border bg-light'>This app is not intended to replace medical care. If you are having an emergency, dial 911</h3>
-				<form className="container-fluid m-4 form-group" onSubmit={this.handleFormSubmit}>
-					<h4 className="text-center p-4">Reaction Entry Form</h4>
+			<div className='container container-fluid'>
+				<div className='lead p-3 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
+				<form className="container form-group m-4" onSubmit={this.handleFormSubmit}>
+					<h3 className="text-center p-4">Reaction Entry Form</h3>
 					
 					<h6>Type current date and time:</h6>
 					<Input
@@ -167,6 +167,7 @@ class ReactionForm extends Component {
 						controlFunc={this.handleSeveritySelect}
 						options={severity}
 						selectedOptions={currentSeverity} />
+
 					<h6>Are you currently sick with a cold or the flu?</h6>
 					<Checkbox
 						setName={'sick'}
