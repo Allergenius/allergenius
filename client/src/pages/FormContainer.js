@@ -104,7 +104,7 @@ class FormContainer extends Component {
 		console.log('Send this in a POST request:', formPayload);
 	}
 	render() {
-		const componentOptions = { SingleInput, Checkbox, Select, TextArea };
+		//const componentOptions = { Input, Checkbox, Select, TextArea };
 		const { dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 

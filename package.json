@@ -27,8 +27,10 @@
   },
   "homepage": "https://github.com/Allergenius/allergenius#readme",
   "dependencies": {
+    "auth0-js": "^9.8.2",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "react-router-dom": "^4.3.1"
   }
 }
