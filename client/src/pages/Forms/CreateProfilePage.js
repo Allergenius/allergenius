@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import Checkbox from '../components/Checkbox';
-// import Input from '../components/Input';
-import SingleInput from '../components/Input';
+import Input from '../components/Input';
 import TextArea from '../components/TextArea';
 import Select from '../components/Select';
 
-class FormContainer extends Component {
+class CreateProfileForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -119,7 +118,7 @@ class FormContainer extends Component {
         });
 	}
 	render() {
-		//const componentOptions = { Input, Checkbox, Select, TextArea };
+		const componentOptions = { Input, Checkbox, Select, TextArea };
 		const { dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
@@ -134,11 +133,11 @@ class FormContainer extends Component {
 		} = this.state;
 		
 		return (
-			<div>
+			<div className='container container-fluid'>
 				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
-				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
+				<form className="form-group" onSubmit={this.handleFormSubmit}>
 					<h4 className="text-center p-4">Reaction Entry Form</h4>
-					<SingleInput
+					<Input
 						inputType={'text'}
 						title={'Current date and time:  '}
 						name={'dateAndTime'}
@@ -183,7 +182,6 @@ class FormContainer extends Component {
 						placeholder={'Example: 2 hours'} />
 					<TextArea
 						title={'Additional Notes:'}
-						className={'mt-5'}
 						rows={5}
 						resize={false}
 						content={reactionNotes}
@@ -192,7 +190,7 @@ class FormContainer extends Component {
 						placeholder={'Please be thorough in your notes'} />
 					<input
 						type="submit"
-						className="btn btn-primary float-right"
+						className="btn btn-primary float-right mt-4"
 						value="Submit"/>
 				</form>
 			</div>
@@ -200,4 +198,4 @@ class FormContainer extends Component {
 	}
 }
 
-export default FormContainer;
+export default CreateProfileForm;
