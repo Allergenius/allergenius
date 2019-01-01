@@ -140,8 +140,8 @@ class ReactionForm extends Component {
 		
 		return (
 			<div>
-				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
-				<form className="container-fluid m-4" onSubmit={this.handleFormSubmit}>
+				<h3 className='lead p-3 border bg-light'>This app is not intended to replace medical care. If you are having an emergency, dial 911</h3>
+				<form className="container-fluid m-4 form-group" onSubmit={this.handleFormSubmit}>
 					<h4 className="text-center p-4">Reaction Entry Form</h4>
 					
 					<h6>Type current date and time:</h6>
@@ -174,7 +174,7 @@ class ReactionForm extends Component {
 						controlFunc={this.handleSickSelect}
 						options={sick}
 						selectedOptions={currentSickStatus} />	
-					
+
 					<h6>Have you ingested any of these foods today?</h6>
 					<Checkbox
 						setName={'foods'}
@@ -182,7 +182,6 @@ class ReactionForm extends Component {
 						controlFunc={this.handleFoodSelect}
 						options={foodOptions}
 						selectedOptions={currentFoodsEaten} />
-					
 					
 					<h6>How long have your current symptoms been going on?</h6>
 					<TextArea
