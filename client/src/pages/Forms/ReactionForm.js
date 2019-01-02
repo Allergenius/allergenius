@@ -124,7 +124,7 @@ class ReactionForm extends Component {
 
 		console.log('Send this in a POST request:', formPayload);
 
-		var username = ""; //placeholder.  Need to figure out how to see who is logged in.
+		var username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
 
 		fetch("/api/reactions/" + username, {
             method: 'POST',
@@ -140,7 +140,7 @@ class ReactionForm extends Component {
         });
 	}
 	render() {
-		const componentOptions = { Input, Checkbox, TextArea };
+		//const componentOptions = { Input, Checkbox, TextArea };
 		const { dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
@@ -157,7 +157,7 @@ class ReactionForm extends Component {
 		return (
 			<div className='container container-fluid'>
 				<div className='lead p-3 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
-				<form className="container form-group m-4" onSubmit={this.handleFormSubmit}>
+				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 					<h3 className="text-center p-4">Reaction Entry Form</h3>
 					
 					<h6>Type current date and time:</h6>
