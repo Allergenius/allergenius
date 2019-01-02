@@ -1,4 +1,5 @@
 ### Schema
+DROP DATABASE IF EXISTS  allergenius_db ;
 
 CREATE DATABASE allergenius_db;
 USE allergenius_db;
@@ -26,8 +27,7 @@ CREATE TABLE reactions
 	symp_Rash  boolean NOT NULL DEFAULT False,
 	symp_ItchyMouth  boolean NOT NULL DEFAULT False,
 	symp_FaceSwelling  boolean NOT NULL DEFAULT False,
-	symp_Vomiting  boolean NOT NULL DEFAULT False,
-	symp_Diarrhea  boolean NOT NULL DEFAULT False,
+	symp_VomitingDiarrhea  boolean NOT NULL DEFAULT False,
 	symp_AbdominalCramps  boolean NOT NULL DEFAULT False,
 	symp_Coughing  boolean NOT NULL DEFAULT False,
 	symp_Wheezing  boolean NOT NULL DEFAULT False,
