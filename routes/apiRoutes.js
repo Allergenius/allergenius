@@ -33,6 +33,8 @@ router.get('/api/users/:user', function(req, res, next) {
 
 /* POST reactions. */
 router.post("/api/reactions/:user", function(req, res) {
+    console.log("Inside POST api/reactions")
+
     const query = `INSERT INTO reactions
         (reactionTime, username, symp_ItchySkin, symp_Hives, symp_ItchyEyes
         , symp_ItchyThroat, symp_RunnyNose, symp_StomachAche, symp_Rash, symp_ItchyMouth
@@ -41,7 +43,7 @@ router.post("/api/reactions/:user", function(req, res) {
         , symp_LossOfConsciousness, severity, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame, LengthOfTimeDays, LengthOfTimeHours, LengthOfTimeMin, Notes) 
-        VALUES (${req.body.dateAndTime}, ${req.params.user}, ${req.body.symp_ItchySkin}, 
+        VALUES (${req.body.dateAndTime}, '${req.params.user}', ${req.body.symp_ItchySkin}, 
             ${req.body.symp_Hives}, ${req.body.symp_ItchyEyes}, ${req.body.symp_ItchyThroat}, 
             ${req.body.symp_RunnyNose}, ${req.body.symp_StomachAche}, ${req.body.symp_Rash}, 
             ${req.body.symp_ItchyMouth}, ${req.body.symp_FaceSwelling}, ${req.body.symp_Vomiting}, 
@@ -51,7 +53,7 @@ router.post("/api/reactions/:user", function(req, res) {
             ${req.body.sick}, ${req.body.food_Dairy}, ${req.body.food_Eggs}, ${req.body.food_Fish}, ${req.body.food_TreeNuts},
             ${req.body.food_Peanuts}, ${req.body.food_Gluten}, ${req.body.food_Soybeans}, ${req.body.food_Corn},
             ${req.body.food_Berries}, ${req.body.food_Celery}, ${req.body.food_Onions}, ${req.body.food_Sesame},
-            ${req.body.LengthOfTimeDays}, ${req.body.LengthOfTimeHours}, ${req.body.LengthOfTimeMin}, ${req.body.Notes}
+            ${req.body.LengthOfTimeDays}, ${req.body.LengthOfTimeHours}, ${req.body.LengthOfTimeMin}, '${req.body.Notes}'
         )`
   
       console.log(query);
