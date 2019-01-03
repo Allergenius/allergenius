@@ -7,6 +7,8 @@ import history from './history';
 import App from '../App';
 import HomePage from '../pages/HomePage/HomePage';
 import ReactionForm from '../pages/Forms/ReactionForm';
+import EditProfile from '../pages/Forms/EditProfile';
+
 
 const auth = new Auth();
 
@@ -21,6 +23,7 @@ const Routes = () => (
     <div>
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route path="/App" render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/EditProfile" render={(props) => <EditProfile auth={auth} {...props} />} />
       <Route path="/ReactionForm" render={(props) => <ReactionForm auth={auth} {...props} />} />
       <Route path="/home" render={(props) => <HomePage auth={auth} {...props} />} />
       <Route path="/callback" render={(props) => {

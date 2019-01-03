@@ -9,12 +9,12 @@ const Checkbox = (props) => (
 					<label key={option} className="form-label capitalize">
 						<input
 							className="form-checkbox"
-							name={props.setName}
+							setName={props.setName}
 							onChange={props.controlFunc}
-							value={option}
+							value={option} 
 							checked={props.selectedOptions.indexOf(option) > -1}
 							type={props.type} /> {option}
-					</label>
+					</label> 
 				);
 			})}
 		</div>

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import Checkbox from '../../components/Checkbox';
-import Input from '../../components/Input';
-import TextArea from '../../components/TextArea';
+import Checkbox from '../../components/FormElements/Checkbox';
+import Input from '../../components/FormElements/Input';
+import TextArea from '../../components/FormElements/TextArea';
+import Range from '../../components/FormElements/Range';
 
 class ReactionForm extends Component {
 	constructor(props) {
@@ -46,7 +47,7 @@ class ReactionForm extends Component {
 				});
 			});
 	}
-	handleSymptomSelect(event) {
+	handleSymptomSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentSymptoms.indexOf(newSelection) > -1) {
@@ -56,7 +57,7 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSymptoms: newSelectionArray }, () => console.log('symptom selection', this.state.currentSymptoms));
 	}
-	handleSeveritySelect(event) {
+	handleSeveritySelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentSeverity.indexOf(newSelection) > -1) {
@@ -66,7 +67,7 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSeverity: newSelectionArray }, () => console.log('severity selection', this.state.currentSeverity));
 	}
-	handleSickSelect(event) {
+	handleSickSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentSickStatus.indexOf(newSelection) > -1) {
@@ -76,7 +77,7 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSickStatus: newSelectionArray }, () => console.log('sick selection', this.state.currentSickStatus));
 	}
-	handleFoodSelect(event) {
+	handleFoodSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentFoodsEaten.indexOf(newSelection) > -1) {
@@ -90,11 +91,9 @@ class ReactionForm extends Component {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
-		// console.log(name)
-		// console.log(value)
 		this.setState({ [name]: value });
 	}
-	handleSymptomTimeChange(event) {
+	handleSymptomTimeChange = event => {
 		// const textArray = event.target.value.split('').filter(x => x !== 'event');
 		// console.log('string split into array of letters',textArray);
 		// const filteredText = textArray.join('');
@@ -124,8 +123,9 @@ class ReactionForm extends Component {
 		console.log('Send this in a POST request:', formPayload);
 	}
 	render() {
-		const componentOptions = { Input, Checkbox, TextArea };
-		const { dateAndTime, 
+		// const componentOptions = { Input, Checkbox, TextArea };
+		const { 
+			dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
 			severity, 
@@ -139,10 +139,10 @@ class ReactionForm extends Component {
 		} = this.state;
 		
 		return (
-			<div>
-				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
-				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
-					<h4 className="text-center p-4">Reaction Entry Form</h4>
+			<div className='container container-fluid'>
+				<div className='lead p-3 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
+				<form className="container form-group m-4" onSubmit={this.handleFormSubmit}>
+					<h3 className="text-center p-4">Reaction Entry Form</h3>
 					
 					<h6>Type current date and time:</h6>
 					<Input
@@ -159,14 +159,15 @@ class ReactionForm extends Component {
 						controlFunc={this.handleSymptomSelect}
 						options={symptomOptions}
 						selectedOptions={currentSymptoms} />
-					
-					<h6>Reaction Severity on a scale of 1 to 5, where 1 is minor and 5 is extreme:</h6>
-					<Checkbox
+											
+					<h6>Reaction Severity on a scale of 1 to 5 *TEST RANGE SLIDER*:</h6>
+					<Range
 						setName={'severity'}
-						type={'radio'}
+						type={'range'}
 						controlFunc={this.handleSeveritySelect}
 						options={severity}
 						selectedOptions={currentSeverity} />
+
 					<h6>Are you currently sick with a cold or the flu?</h6>
 					<Checkbox
 						setName={'sick'}
@@ -174,15 +175,14 @@ class ReactionForm extends Component {
 						controlFunc={this.handleSickSelect}
 						options={sick}
 						selectedOptions={currentSickStatus} />	
-					
+
 					<h6>Have you ingested any of these foods today?</h6>
 					<Checkbox
-						setName={'foods'}
+						setName={'foodOptions'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
 						options={foodOptions}
 						selectedOptions={currentFoodsEaten} />
-					
 					
 					<h6>How long have your current symptoms been going on?</h6>
 					<TextArea
@@ -205,7 +205,7 @@ class ReactionForm extends Component {
 					
 					<input
 						type="submit"
-						className="btn btn-primary float-right"
+						className="btn btn-primary"
 						value="Submit"/>
 				</form>
 			</div>
