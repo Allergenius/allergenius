@@ -8,13 +8,8 @@ const Checkbox = (props) => (
 				return (
 					<label key={option} className="form-label capitalize">
 						<input
-<<<<<<< HEAD:client/src/components/FormElements/Checkbox.js
 							className="form-checkbox"
 							setName={props.setName}
-=======
-							className="form-checkbox capitalize"
-							name={props.setName}
->>>>>>> 8f64eb509ed4dc84fdd6bf07dcd35f770d4fdff3:client/src/components/Checkbox.js
 							onChange={props.controlFunc}
 							value={option} 
 							checked={props.selectedOptions.indexOf(option) > -1}
