@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
+<<<<<<< HEAD
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Range from '../../components/FormElements/Range';
+=======
+import Checkbox from '../../components/Checkbox';
+import Input from '../../components/Input';
+import TextArea from '../../components/TextArea';
+import Range from '../../components/Range';
+>>>>>>> 8f64eb509ed4dc84fdd6bf07dcd35f770d4fdff3
 
 class ReactionForm extends Component {
 	constructor(props) {
@@ -121,11 +128,31 @@ class ReactionForm extends Component {
 		};
 
 		console.log('Send this in a POST request:', formPayload);
+
+		var username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
+
+		fetch("/api/reactions/" + username, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(formPayload)
+        }).then(function(response) {
+            if (response.status >= 400) {
+              throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).catch(function(err) {
+            console.log(err)
+        });
 	}
 	render() {
+<<<<<<< HEAD
 		// const componentOptions = { Input, Checkbox, TextArea };
 		const { 
 			dateAndTime, 
+=======
+		//const componentOptions = { Input, Checkbox, TextArea };
+		const { dateAndTime, 
+>>>>>>> 8f64eb509ed4dc84fdd6bf07dcd35f770d4fdff3
 			symptomOptions, 
 			currentSymptoms, 
 			severity, 
@@ -141,7 +168,11 @@ class ReactionForm extends Component {
 		return (
 			<div className='container container-fluid'>
 				<div className='lead p-3 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
+<<<<<<< HEAD
 				<form className="container form-group m-4" onSubmit={this.handleFormSubmit}>
+=======
+				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+>>>>>>> 8f64eb509ed4dc84fdd6bf07dcd35f770d4fdff3
 					<h3 className="text-center p-4">Reaction Entry Form</h3>
 					
 					<h6>Type current date and time:</h6>
