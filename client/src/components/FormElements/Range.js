@@ -18,4 +18,3 @@ const Range = (props) => (
 );
 
 export default Range;
-
