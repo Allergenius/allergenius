@@ -1,5 +1,6 @@
 import auth0 from 'auth0-js';
-
+import axios from "axios";
+// import K from "kyanite";
 import history from './history';
 
 export default class Auth {
@@ -14,6 +15,32 @@ export default class Auth {
     scope: 'openid profile'
     // NOTE: how scope was written in cuiscene; profile: will request the claims representing basic profile information. These are name, family_name, given_name, middle_name, nickname, picture and updated_at.
   });
+
+  create = user => {
+    axios({
+      method: 'post',
+      url: '/api/users/create',
+      data: {
+        username_pk: user
+      }
+    }).then(response => {
+      console.log('Creating new user')
+    });
+  }
+
+  // exists = user => {
+  //   axios({
+  //     method: 'get',
+  //     url: '/api/users'
+  //   }).then(response => {
+  //     if(K.some(x => x.username_pk === user, response)) {
+  //       return user
+  //     } else {
+  //       create(user)
+  //     }
+  //   })
+  //   .catch(new Error("Error in exists function"))
+  // }
 
   login = () => {
     this.auth0.authorize();
