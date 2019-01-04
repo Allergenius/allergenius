@@ -113,7 +113,7 @@ class ReactionForm extends Component {
 		event.preventDefault();
 
 		const formPayload = {
-			currentDateTime: this.state.currentDateTime,
+			currentDateTime: this.state.currentDateTime, 
 			currentSymptoms: this.state.currentSymptoms,
 			currentSeverity: this.state.currentSeverity,
 			currentSickStatus: this.state.currentSickStatus,
