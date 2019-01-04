@@ -35,9 +35,6 @@ router.get('/api/users/:user', function(req, res, next) {
 router.post("/api/reactions/:user", function(req, res) {
     console.log("Inside POST api/reactions")
 
-
-
-
     const query = `INSERT INTO reactions
         (reactionTime, username, symp_ItchySkin, symp_Hives, symp_ItchyEyes
         , symp_ItchyThroat, symp_RunnyNose, symp_StomachAche, symp_Rash, symp_ItchyMouth
@@ -88,18 +85,45 @@ router.post("/api/reactions/:user", function(req, res) {
   });
 
 /* POST profile. */
-router.post("/api/profile", function(req, res) {
+router.post("/api/profile/:user", function(req, res) {
     const query = `INSERT INTO userProfile
         (username, firstName, lastName, 
         , food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame) 
-        VALUES (${req.body.username}, ${req.body.firstName}, ${req.body.lastName},
+        VALUES ('${req.params.user}', ${req.body.firstName}, ${req.body.lastName},
             ${req.body.food_Dairy}, ${req.body.food_Eggs}, ${req.body.food_Fish}, ${req.body.food_TreeNuts},
             ${req.body.food_Peanuts}, ${req.body.food_Gluten}, ${req.body.food_Soybeans}, ${req.body.food_Corn},
             ${req.body.food_Berries}, ${req.body.food_Celery}, ${req.body.food_Onions}, ${req.body.food_Sesame}
         )`
   
+      console.log(query);
+  
+      connection.query(query, function (error, results, fields) {
+		if(error) throw error;
+		res.send(JSON.stringify(results));
+	});
+  });
+
+/* PUT profile. */
+router.put("/api/profile/:user", function(req, res) {
+    const query = `UPDATE userProfile SET 
+        firstName = '${req.body.firstName}', 
+        lastName = '${req.body.lastName}', 
+        food_Dairy = ${req.body.food_Dairy}, 
+        food_Eggs = ${req.body.food_Eggs}, 
+        food_Fish = ${req.body.food_Fish}, 
+        food_TreeNuts = ${req.body.food_TreeNuts},
+        food_Peanuts = ${req.body.food_Peanuts}, 
+        food_Gluten = ${req.body.food_Gluten}, 
+        food_Soybeans = ${req.body.food_Soybeans}, 
+        food_Corn = ${req.body.food_Corn}, 
+        food_Berries = ${req.body.food_Berries}, 
+        food_Celery = ${req.body.food_Celery},
+        food_Onions = ${req.body.food_Onions}, 
+        food_Sesame = ${req.body.food_Sesame}
+        WHERE username = '${req.params.user}`
+
       console.log(query);
   
       connection.query(query, function (error, results, fields) {
