@@ -13,6 +13,7 @@ class EditProfile extends Component {
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
 	}
 	componentDidMount() {
 		fetch('./reaction-entry.json')
@@ -26,7 +27,7 @@ class EditProfile extends Component {
 				});
 			});
 	}
-	handleFoodSelect(event) {
+	handleFoodSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.foodsAllergicTo.indexOf(newSelection) > -1) {
@@ -35,6 +36,12 @@ class EditProfile extends Component {
 			newSelectionArray = [...this.state.foodsAllergicTo, newSelection];
 		}
 		this.setState({ foodsAllergicTo: newSelectionArray }, () => console.log('food allergens', this.state.foodsAllergicTo));
+	}
+	handleSelect = event => {
+		const target = event.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+		this.setState({ [name]: value });
 	}
 	handleSelect = event => {
 		const target = event.target;
