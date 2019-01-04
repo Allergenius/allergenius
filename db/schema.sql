@@ -18,6 +18,7 @@ CREATE TABLE reactions
 	id int NOT NULL AUTO_INCREMENT,
 	reactionTime datetime NOT NULL, 
 	username varchar(45) NOT NULL,
+	title varchar(100) NOT NULL,
 	symp_ItchySkin  boolean NOT NULL DEFAULT False,
 	symp_Hives  boolean NOT NULL DEFAULT False,
 	symp_ItchyEyes  boolean NOT NULL DEFAULT False,
@@ -29,8 +30,7 @@ CREATE TABLE reactions
 	symp_FaceSwelling  boolean NOT NULL DEFAULT False,
 	symp_VomitingDiarrhea  boolean NOT NULL DEFAULT False,
 	symp_AbdominalCramps  boolean NOT NULL DEFAULT False,
-	symp_Coughing  boolean NOT NULL DEFAULT False,
-	symp_Wheezing  boolean NOT NULL DEFAULT False,
+	symp_Cough  boolean NOT NULL DEFAULT False,
 	symp_Dizzy  boolean NOT NULL DEFAULT False,
 	symp_ThroatSwelling  boolean NOT NULL DEFAULT False,
 	symp_DifficultBreathing  boolean NOT NULL DEFAULT False,
@@ -68,7 +68,8 @@ CREATE TABLE reactions
 	LengthOfTimeHours integer,
 	LengthOfTimeMin integer,
 	Notes text,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	CONSTRAINT userdaytitle UNIQUE(username,reactionTime,title)
 );
 
 
