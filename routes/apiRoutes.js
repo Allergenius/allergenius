@@ -13,6 +13,17 @@ router.get('/api/reactions/:user', function(req, res, next) {
 	});
 });
 
+/* DELETE a reaction by ID. */
+router.delete('/api/reactions/:id', function(req, res, next) {
+    console.log(req.params.id)
+    const query = `DELETE FROM reactions WHERE id = ${req.params.id}`
+    console.log(query)
+ 	connection.query(query, function (error, results, fields) {
+		if(error) throw error;
+		res.send(JSON.stringify(results));
+	});
+});
+
 /* GET profile information for the user logged in. */
 router.get('/api/profile/:user', function(req, res, next) {
     const query = `SELECT * FROM userProfile WHERE username = '${req.params.user}'`
@@ -35,14 +46,16 @@ router.get('/api/users/:user', function(req, res, next) {
 router.post("/api/reactions/:user", function(req, res) {
     console.log("Inside POST api/reactions")
 
+    //TODO: replace hard coded date, title and lengths of time when those front end fields are done.
+
     const query = `INSERT INTO reactions
-        (reactionTime, username, symp_ItchySkin, symp_Hives, symp_ItchyEyes
+        (reactionTime, username, title, symp_ItchySkin, symp_Hives, symp_ItchyEyes
         , symp_ItchyThroat, symp_RunnyNose, symp_StomachAche, symp_Rash, symp_ItchyMouth
         , symp_FaceSwelling, symp_VomitingDiarrhea, symp_AbdominalCramps, symp_Cough, symp_Dizzy, symp_ThroatSwelling, symp_DifficultBreathing
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame, LengthOfTimeDays, LengthOfTimeHours, LengthOfTimeMin, Notes) 
-        VALUES ('01/01/2019', '${req.params.user}', 
+        VALUES ('01/01/2019', '${req.params.user}', 'test tile',
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Itchy eyes") ? 1: 0}, 
