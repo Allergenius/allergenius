@@ -8,6 +8,7 @@ class ReactionForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			title: '',
 			currentDateTime: '',
 			symptomOptions: [],
 			currentSymptoms: [],
@@ -21,6 +22,7 @@ class ReactionForm extends Component {
 			reactionNotes: ''
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
 		this.handleSymptomSelect = this.handleSymptomSelect.bind(this);
 		this.handleSeveritySelect = this.handleSeveritySelect.bind(this);
 		this.handleSickSelect = this.handleSickSelect.bind(this);
@@ -138,8 +140,8 @@ class ReactionForm extends Component {
         });
 	}
 	render() {
-		// const componentOptions = { Input, Checkbox, TextArea };
 		const { 
+			title,
 			dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
@@ -159,6 +161,14 @@ class ReactionForm extends Component {
 				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 					<h3 className="text-center p-4">Reaction Entry Form</h3>
 					
+					<h6>Title (for your own reference):</h6>
+					<Input
+						inputType={'text'}
+						name={'title'}
+						controlFunc={this.handleSelect}
+						content={title}
+						placeholder={'Example: Tues AM - hives and itching'} />
+
 					<h6>Type current date and time:</h6>
 					<Input
 						inputType={'text'}
