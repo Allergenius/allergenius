@@ -25,7 +25,30 @@ class EditProfile extends Component {
 					foodsAllergicTo: data.foodsAllergicTo,
 				});
 			});
+
+		this.getData();
 	}
+
+	
+  getData() {
+	fetch("/api/profile/" + username, {
+		method: 'GET'
+	  })
+      .then(res => {
+		const tableData = res.data.value;
+		//TODO: set the state of the fields here
+        this.setState({ tableData });
+      })
+      .catch(error => {
+        if (error.response) {
+          alert('Code: ' + error.response.data.error.code + 
+                '\r\nMessage: ' + error.response.data.error.message);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+  }
+
 	handleFoodSelect(event) {
 		const newSelection = event.target.value;
 		let newSelectionArray;
