@@ -13,6 +13,17 @@ router.get('/api/reactions/:user', function(req, res, next) {
 	});
 });
 
+/* DELETE a reaction by ID. */
+router.delete('/api/reactions/:id', function(req, res, next) {
+    console.log(req.params.id)
+    const query = `DELETE FROM reactions WHERE id = ${req.params.id}`
+    console.log(query)
+ 	connection.query(query, function (error, results, fields) {
+		if(error) throw error;
+		res.send(JSON.stringify(results));
+	});
+});
+
 /* GET profile information for the user logged in. */
 router.get('/api/profile/:user', function(req, res, next) {
     const query = `SELECT * FROM userProfile WHERE username = '${req.params.user}'`
