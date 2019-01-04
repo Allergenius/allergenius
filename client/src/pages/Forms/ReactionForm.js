@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Checkbox from '../../components/Checkbox';
-import Input from '../../components/Input';
-import TextArea from '../../components/TextArea';
-import Range from '../../components/Range';
+import Checkbox from '../../components/FormElements/Checkbox';
+import Input from '../../components/FormElements/Input';
+import TextArea from '../../components/FormElements/TextArea';
+import Range from '../../components/FormElements/Range';
 
 class ReactionForm extends Component {
 	constructor(props) {
@@ -47,7 +47,7 @@ class ReactionForm extends Component {
 				});
 			});
 	}
-	handleSymptomSelect(event) {
+	handleSymptomSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentSymptoms.indexOf(newSelection) > -1) {
@@ -57,7 +57,7 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSymptoms: newSelectionArray }, () => console.log('symptom selection', this.state.currentSymptoms));
 	}
-	handleSeveritySelect(event) {
+	handleSeveritySelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentSeverity.indexOf(newSelection) > -1) {
@@ -67,7 +67,7 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSeverity: newSelectionArray }, () => console.log('severity selection', this.state.currentSeverity));
 	}
-	handleSickSelect(event) {
+	handleSickSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentSickStatus.indexOf(newSelection) > -1) {
@@ -77,7 +77,7 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSickStatus: newSelectionArray }, () => console.log('sick selection', this.state.currentSickStatus));
 	}
-	handleFoodSelect(event) {
+	handleFoodSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
 		if(this.state.currentFoodsEaten.indexOf(newSelection) > -1) {
@@ -91,11 +91,9 @@ class ReactionForm extends Component {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
-		// console.log(name)
-		// console.log(value)
 		this.setState({ [name]: value });
 	}
-	handleSymptomTimeChange(event) {
+	handleSymptomTimeChange = event => {
 		// const textArray = event.target.value.split('').filter(x => x !== 'event');
 		// console.log('string split into array of letters',textArray);
 		// const filteredText = textArray.join('');
@@ -140,7 +138,6 @@ class ReactionForm extends Component {
         });
 	}
 	render() {
-		//const componentOptions = { Input, Checkbox, TextArea };
 		const { dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
@@ -156,10 +153,10 @@ class ReactionForm extends Component {
 		
 		return (
 			<div className='container container-fluid'>
-				<div className='lead p-3 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
+
+				<div className='lead p-3 mb-2 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
 				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 					<h3 className="text-center p-4">Reaction Entry Form</h3>
-					
 					<h6>Type current date and time:</h6>
 					<Input
 						inputType={'text'}
@@ -194,7 +191,7 @@ class ReactionForm extends Component {
 
 					<h6>Have you ingested any of these foods today?</h6>
 					<Checkbox
-						setName={'foods'}
+						setName={'foodOptions'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
 						options={foodOptions}
