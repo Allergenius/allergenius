@@ -138,7 +138,8 @@ class ReactionForm extends Component {
         });
 	}
 	render() {
-		const { dateAndTime, 
+		const { 
+			dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
 			severity, 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Checkbox from '../../components/FormElements/Checkbox';
-import Input from '../components/FormElements/Input';
+import Input from '../../components/FormElements/Input'; 
 
 class EditProfile extends Component {
 	constructor(props) {
