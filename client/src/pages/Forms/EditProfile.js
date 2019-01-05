@@ -29,9 +29,10 @@ class EditProfile extends Component {
 				});
 			});
 
-		this.getData();
+		//this.getData();
 	}
   getData() {
+	var username = "testUser"
 	fetch("/api/profile/" + username, {
 		method: 'GET'
 	  })
