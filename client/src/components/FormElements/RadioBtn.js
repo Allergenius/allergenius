@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Checkbox = (props) => (
+const Radio = (props) => (
 	<div>
 		<label className="form-label">{props.title}</label>
-		<div className="checkbox-group">
+		<div className="radio-group">
 			{props.options.map(option => {
 				return (
 					<label key={option} className="form-label capitalize">
 						<input
-							className="form-checkbox"
+							className="form-radio"
 							setname={props.setname}
 							onChange={props.controlFunc}
 							value={option} 
@@ -21,4 +21,4 @@ const Checkbox = (props) => (
 	</div>
 );
 
-export default Checkbox;
+export default Radio;

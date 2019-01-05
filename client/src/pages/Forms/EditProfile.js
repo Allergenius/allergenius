@@ -108,7 +108,7 @@ class EditProfile extends Component {
 
 					<h6>Are you allergic to any of these foods?</h6>	
 					<Checkbox
-						setName={'foodAllergens'}
+						setname={'foodAllergens'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
 						options={foodsAllergens}
