@@ -16,7 +16,8 @@ CREATE TABLE users
 CREATE TABLE reactions
 (
 	id int NOT NULL AUTO_INCREMENT,
-	reactionTime datetime NOT NULL, 
+	startDate datetime NOT NULL, 
+	endDate datetime NOT NULL, 
 	username varchar(45) NOT NULL,
 	title varchar(100) NOT NULL,
 	symp_ItchySkin  boolean NOT NULL DEFAULT False,
@@ -64,12 +65,9 @@ CREATE TABLE reactions
 	-- diffLotion boolean NOT NULL DEFAULT false,
 	-- diffDetergent boolean NOT NULL DEFAULT false,
 	-- diffPerfume boolean NOT NULL DEFAULT false,
-	LengthOfTimeDays integer,
-	LengthOfTimeHours integer,
-	LengthOfTimeMin integer,
 	Notes text,
 	PRIMARY KEY (id),
-	CONSTRAINT userdaytitle UNIQUE(username,reactionTime,title)
+	CONSTRAINT userdaytitle UNIQUE(username,startDate,endDate,title)
 );
 
 

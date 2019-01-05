@@ -135,7 +135,9 @@ class ReactionForm extends Component {
             if (response.status >= 400) {
               throw new Error("Bad response from server");
             }
-            return response.json();
+			return response.json();
+			//TODO: figure out how to call home page after successful add.
+			//this.props.history.push("/home") //route back to home page after the add
         }).catch(function(err) {
             console.log(err)
         });

@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET all reactions for the user logged in. */
 router.get('/api/reactions/:user', function(req, res, next) {
     console.log(req.params.user)
-    const query = `SELECT * FROM reactions WHERE username = '${req.params.user}'`
+    const query = `SELECT *, startDate as start, endDate as end FROM reactions WHERE username = '${req.params.user}'`
     console.log(query)
  	connection.query(query, function (error, results, fields) {
 		if(error) throw error;
@@ -49,13 +49,13 @@ router.post("/api/reactions/:user", function(req, res) {
     //TODO: replace hard coded date, title and lengths of time when those front end fields are done.
 
     const query = `INSERT INTO reactions
-        (reactionTime, username, title, symp_ItchySkin, symp_Hives, symp_ItchyEyes
+        (startDate, endDate, username, title, symp_ItchySkin, symp_Hives, symp_ItchyEyes
         , symp_ItchyThroat, symp_RunnyNose, symp_StomachAche, symp_Rash, symp_ItchyMouth
         , symp_FaceSwelling, symp_VomitingDiarrhea, symp_AbdominalCramps, symp_Cough, symp_Dizzy, symp_ThroatSwelling, symp_DifficultBreathing
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
-        , food_Onions, food_Sesame, LengthOfTimeDays, LengthOfTimeHours, LengthOfTimeMin, Notes) 
-        VALUES ('01/01/2019', '${req.params.user}', 'test title',
+        , food_Onions, food_Sesame, Notes) 
+        VALUES ('${req.body.startDate}', '${req.body.endDate}', '${req.params.user}', '${req.body.title}',
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Itchy eyes") ? 1: 0}, 
@@ -84,8 +84,7 @@ router.post("/api/reactions/:user", function(req, res) {
             ${req.body.currentFoodsEaten.includes("Berries") ? 1: 0}, 
             ${req.body.currentFoodsEaten.includes("Celery") ? 1: 0}, 
             ${req.body.currentFoodsEaten.includes("Onions/Garlic") ? 1: 0}, 
-            ${req.body.currentFoodsEaten.includes("Sesame") ? 1: 0}, 
-            0, 0, 0, 
+            ${req.body.currentFoodsEaten.includes("Sesame") ? 1: 0},
             '${req.body.reactionNotes}'
         )`
   
