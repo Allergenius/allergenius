@@ -13,6 +13,7 @@ class EditProfile extends Component {
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
 	}
 	componentDidMount() {
 		fetch('./reaction-entry.json')
@@ -28,8 +29,6 @@ class EditProfile extends Component {
 
 		this.getData();
 	}
-
-	
   getData() {
 	fetch("/api/profile/" + username, {
 		method: 'GET'
@@ -58,6 +57,12 @@ class EditProfile extends Component {
 			newSelectionArray = [...this.state.foodsAllergicTo, newSelection];
 		}
 		this.setState({ foodsAllergicTo: newSelectionArray }, () => console.log('food allergens', this.state.foodsAllergicTo));
+	}
+	handleSelect = event => {
+		const target = event.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+		this.setState({ [name]: value });
 	}
 	handleSelect = event => {
 		const target = event.target;
@@ -124,7 +129,7 @@ class EditProfile extends Component {
 
 					<h6>Are you allergic to any of these foods?</h6>	
 					<Checkbox
-						setName={'foodAllergens'}
+						setname={'foodAllergens'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
 						options={foodsAllergens}

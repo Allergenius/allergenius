@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
@@ -8,7 +10,9 @@ class ReactionForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentDateTime: '',
+			title: '',
+			startDate: new Date(),
+			// currentDateTime: '',
 			symptomOptions: [],
 			currentSymptoms: [],
 			severity: [],
@@ -21,6 +25,8 @@ class ReactionForm extends Component {
 			reactionNotes: ''
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
 		this.handleSymptomSelect = this.handleSymptomSelect.bind(this);
 		this.handleSeveritySelect = this.handleSeveritySelect.bind(this);
 		this.handleSickSelect = this.handleSickSelect.bind(this);
@@ -33,7 +39,7 @@ class ReactionForm extends Component {
 			.then(res => res.json())
 			.then(data => {
 				this.setState({
-					currentDateTime: data.currentDateTime,
+					// currentDateTime: data.currentDateTime,
 					symptomOptions: data.symptomOptions,
 					currentSymptoms: data.currentSymptoms,
 					severity: data.severity,
@@ -107,11 +113,17 @@ class ReactionForm extends Component {
 		// this.setState({ reactionNotes: filteredText }, () => console.log('reactionNotes', this.state.reactionNotes));
 		this.setState({ reactionNotes: event.target.value }, () => console.log('reactionNotes', this.state.reactionNotes));
 	}
+	handleChange(date) {
+		this.setState({
+		  startDate: date
+		});
+	}
 	handleFormSubmit(event) {
 		event.preventDefault();
 
 		const formPayload = {
-			currentDateTime: this.state.currentDateTime,
+			// currentDateTime: this.state.currentDateTime, 
+			startDate: this.state.startDate,
 			currentSymptoms: this.state.currentSymptoms,
 			currentSeverity: this.state.currentSeverity,
 			currentSickStatus: this.state.currentSickStatus,
@@ -139,6 +151,7 @@ class ReactionForm extends Component {
 	}
 	render() {
 		const { 
+			title,
 			dateAndTime, 
 			symptomOptions, 
 			currentSymptoms, 
@@ -158,47 +171,60 @@ class ReactionForm extends Component {
 				<div className='lead p-3 mb-2 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
 				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 					<h3 className="text-center p-4">Reaction Entry Form</h3>
-					<h6>Type current date and time:</h6>
+					
+					<h6 className="p-1">Title (for your own reference):</h6>
 					<Input
 						inputType={'text'}
-						name={'dateAndTime'}
+						name={'title'}
 						controlFunc={this.handleSelect}
-						content={dateAndTime}
-						placeholder={'Example: 12/25/18 5pm'} />
+						content={title}
+						placeholder={'Example: Tues AM - hives and itching'} />
+
+					<h6 className="p-1 mb-4">Current date and time:</h6>
+					<DatePicker
+						selected={this.state.startDate}
+						onChange={this.handleChange}
+						showTimeSelect
+						type={'calendar'}
+						timeFormat="HH:mm"
+						timeIntervals={15}
+						dateFormat="MMMM d, yyyy h:mm aa"
+						timeCaption="time"
+						 />    
 					
-					<h6>Are you currently experiencing any of these symptoms?</h6>
+					<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
 					<Checkbox
-						setName={'symptoms'}
+						setname={'symptoms'}
 						type={'checkbox'}
 						controlFunc={this.handleSymptomSelect}
 						options={symptomOptions}
 						selectedOptions={currentSymptoms} />
-											
-					<h6>Reaction Severity on a scale of 1 to 5 *TEST RANGE SLIDER*:</h6>
+
+					<h6 className="p-1">Reaction Severity (on a scale of 1 to 5):</h6>
 					<Range
-						setName={'severity'}
+						setname={'severity'}
 						type={'range'}
 						controlFunc={this.handleSeveritySelect}
 						options={severity}
 						selectedOptions={currentSeverity} />
 
-					<h6>Are you currently sick with a cold or the flu?</h6>
+					<h6 className="p-1">Are you currently sick with a cold or the flu?</h6>
 					<Checkbox
-						setName={'sick'}
+						setname={'sick'}
 						type={'radio'}
 						controlFunc={this.handleSickSelect}
 						options={sick}
 						selectedOptions={currentSickStatus} />	
 
-					<h6>Have you ingested any of these foods today?</h6>
+					<h6 className="p-1">Have you ingested any of these foods today?</h6>
 					<Checkbox
-						setName={'foodOptions'}
+						setname={'foodOptions'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
 						options={foodOptions}
 						selectedOptions={currentFoodsEaten} />
 					
-					<h6>How long have your current symptoms been going on?</h6>
+					<h6 className="p-1">How long have your current symptoms been going on?</h6>
 					<TextArea
 						rows={1}
 						resize={false}
@@ -207,7 +233,7 @@ class ReactionForm extends Component {
 						controlFunc={this.handleSymptomTimeChange}
 						placeholder={'Example: 2 hours'} />
 					
-					<h6>Additional notes:</h6>
+					<h6 className="p-1">Additional notes:</h6>
 					<TextArea
 						className={'mt-5'}
 						rows={5}

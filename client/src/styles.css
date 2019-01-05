@@ -5,6 +5,10 @@ body {
     margin: 0 auto;
 }
 
+h6 {
+    margin: 55px 0px 0px;
+}
+
 form {
     border: 3px solid #ccc;
     padding: 10px 20px 25px 20px;
@@ -15,26 +19,25 @@ input[type=checkbox] {
     margin-right: 8px;
 }
 
+input[type=submit]
+.btn-link {
+    margin-top: 20px;
+    width: 15%;
+}
+
 .form-label.capitalize {
     text-transform: capitalize;
 }
 
-.checkbox-group {
+.checkbox-group
+.radio-group {
     display: inline-flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* margin-bottom: 20px;
-    margin-left: 30px; */
-    margin: 10px auto;
-}
-.checkbox-group .form-label {
-    width: 50%;
-    float: left;
-    margin-top: 5px;
 }
 
-input[type=submit],
-.btn-link {
-    margin-top: 20px;
-    width: 10%;
+.checkbox-group 
+.form-label {
+    width: 50%;
+    float: left;
 }

@@ -35,7 +35,9 @@
     "if-env": "^1.0.4",
     "kyanite": "^0.10.3",
     "mysql": "^2.16.0",
+    "proptypes": "^1.1.0",
     "react": "^16.7.0",
+    "react-datepicker": "^2.0.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.2"
