@@ -7,7 +7,7 @@ const Range = (props) => (
 		<div className="custom-range" min="0" max="5" step="0.5">
 			<input
 				className="custom-range"
-                // name={props.setName}
+                // name={props.setname}
                 min="0"
                 max="5"
                 step="1"
