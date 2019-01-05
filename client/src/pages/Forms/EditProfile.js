@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Checkbox from '../../components/FormElements/Checkbox';
+
 import Input from '../../components/FormElements/Input';
+
 
 class EditProfile extends Component {
 	constructor(props) {
@@ -13,6 +15,7 @@ class EditProfile extends Component {
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
 	}
 	componentDidMount() {
 		fetch('./reaction-entry.json')
@@ -25,7 +28,28 @@ class EditProfile extends Component {
 					foodsAllergicTo: data.foodsAllergicTo,
 				});
 			});
+
+		this.getData();
 	}
+  getData() {
+	fetch("/api/profile/" + username, {
+		method: 'GET'
+	  })
+      .then(res => {
+		const tableData = res.data.value;
+		//TODO: set the state of the fields here
+        this.setState({ tableData });
+      })
+      .catch(error => {
+        if (error.response) {
+          alert('Code: ' + error.response.data.error.code + 
+                '\r\nMessage: ' + error.response.data.error.message);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
+  }
+
 	handleFoodSelect(event) {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -35,6 +59,12 @@ class EditProfile extends Component {
 			newSelectionArray = [...this.state.foodsAllergicTo, newSelection];
 		}
 		this.setState({ foodsAllergicTo: newSelectionArray }, () => console.log('food allergens', this.state.foodsAllergicTo));
+	}
+	handleSelect = event => {
+		const target = event.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+		this.setState({ [name]: value });
 	}
 	handleSelect = event => {
 		const target = event.target;
@@ -52,6 +82,22 @@ class EditProfile extends Component {
 		};
 
 		console.log('Send this in a POST request:', formPayload);
+
+		var username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
+
+		//TODO: find out if we are adding a new profile or editing an existing one
+		fetch("/api/profile/" + username, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(formPayload)
+        }).then(function(response) {
+            if (response.status >= 400) {
+              throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).catch(function(err) {
+            console.log(err)
+        });
 	}
 	render() {
 		// const componentOptions = { Input, Checkbox };
@@ -85,7 +131,7 @@ class EditProfile extends Component {
 
 					<h6>Are you allergic to any of these foods?</h6>	
 					<Checkbox
-						setName={'foodAllergens'}
+						setname={'foodAllergens'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
 						options={foodsAllergens}

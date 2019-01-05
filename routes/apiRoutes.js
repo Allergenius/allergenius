@@ -13,6 +13,17 @@ router.get('/api/reactions/:user', function(req, res, next) {
 	});
 });
 
+/* DELETE a reaction by ID. */
+router.delete('/api/reactions/:id', function(req, res, next) {
+    console.log(req.params.id)
+    const query = `DELETE FROM reactions WHERE id = ${req.params.id}`
+    console.log(query)
+ 	connection.query(query, function (error, results, fields) {
+		if(error) throw error;
+		res.send(JSON.stringify(results));
+	});
+});
+
 /* GET profile information for the user logged in. */
 router.get('/api/profile/:user', function(req, res, next) {
     const query = `SELECT * FROM userProfile WHERE username = '${req.params.user}'`
@@ -35,17 +46,16 @@ router.get('/api/users/:user', function(req, res, next) {
 router.post("/api/reactions/:user", function(req, res) {
     console.log("Inside POST api/reactions")
 
-
-
+    //TODO: replace hard coded date, title and lengths of time when those front end fields are done.
 
     const query = `INSERT INTO reactions
-        (reactionTime, username, symp_ItchySkin, symp_Hives, symp_ItchyEyes
+        (reactionTime, username, title, symp_ItchySkin, symp_Hives, symp_ItchyEyes
         , symp_ItchyThroat, symp_RunnyNose, symp_StomachAche, symp_Rash, symp_ItchyMouth
         , symp_FaceSwelling, symp_VomitingDiarrhea, symp_AbdominalCramps, symp_Cough, symp_Dizzy, symp_ThroatSwelling, symp_DifficultBreathing
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame, LengthOfTimeDays, LengthOfTimeHours, LengthOfTimeMin, Notes) 
-        VALUES ('01/01/2019', '${req.params.user}', 
+        VALUES ('01/01/2019', '${req.params.user}', 'test title',
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Itchy eyes") ? 1: 0}, 
@@ -88,18 +98,54 @@ router.post("/api/reactions/:user", function(req, res) {
   });
 
 /* POST profile. */
-router.post("/api/profile", function(req, res) {
+router.post("/api/profile/:user", function(req, res) {
     const query = `INSERT INTO userProfile
         (username, firstName, lastName, 
         , food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame) 
-        VALUES (${req.body.username}, ${req.body.firstName}, ${req.body.lastName},
-            ${req.body.food_Dairy}, ${req.body.food_Eggs}, ${req.body.food_Fish}, ${req.body.food_TreeNuts},
-            ${req.body.food_Peanuts}, ${req.body.food_Gluten}, ${req.body.food_Soybeans}, ${req.body.food_Corn},
-            ${req.body.food_Berries}, ${req.body.food_Celery}, ${req.body.food_Onions}, ${req.body.food_Sesame}
+        VALUES ('${req.params.user}', ${req.body.firstName}, ${req.body.lastName}, 
+            ${req.body.foodsAllergicTo.includes("Dairy") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Eggs") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Fish/Shellfish") ? 1: 0},
+            ${req.body.foodsAllergicTo.includes("Tree nuts") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Peanuts") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Gluten") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Soybeans") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Corn") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Berries") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Celery") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Onions/Garlic") ? 1: 0}, 
+            ${req.body.foodsAllergicTo.includes("Sesame") ? 1: 0}
         )`
   
+      console.log(query);
+  
+      connection.query(query, function (error, results, fields) {
+		if(error) throw error;
+		res.send(JSON.stringify(results));
+	});
+  });
+
+/* PUT profile. */
+router.put("/api/profile/:user", function(req, res) {
+    const query = `UPDATE userProfile SET 
+        firstName = '${req.body.firstName}', 
+        lastName = '${req.body.lastName}', 
+        food_Dairy = ${req.body.foodsAllergicTo.includes("Dairy") ? 1: 0}, 
+        food_Eggs = ${req.body.foodsAllergicTo.includes("Eggs") ? 1: 0}, 
+        food_Fish = ${req.body.foodsAllergicTo.includes("Fish/Shellfish") ? 1: 0}, 
+        food_TreeNuts = ${req.body.foodsAllergicTo.includes("Tree nuts") ? 1: 0},
+        food_Peanuts = ${req.body.foodsAllergicTo.includes("Peanuts") ? 1: 0}, 
+        food_Gluten = ${req.body.foodsAllergicTo.includes("Gluten") ? 1: 0}, 
+        food_Soybeans = ${req.body.foodsAllergicTo.includes("Soybeans") ? 1: 0}, 
+        food_Corn = ${req.body.foodsAllergicTo.includes("Corn") ? 1: 0}, 
+        food_Berries = ${req.body.foodsAllergicTo.includes("Berries") ? 1: 0}, 
+        food_Celery = ${req.body.foodsAllergicTo.includes("Celery") ? 1: 0},
+        food_Onions = ${req.body.foodsAllergicTo.includes("Onions/Garlic") ? 1: 0}, 
+        food_Sesame = ${req.body.foodsAllergicTo.includes("Sesame") ? 1: 0}
+        WHERE username = '${req.params.user}`
+
       console.log(query);
   
       connection.query(query, function (error, results, fields) {
