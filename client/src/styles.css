@@ -27,6 +27,7 @@ form {
     width: 50%;
 }
 
+
 /* Buttons */
 input[type=submit]
 .btn-link {
@@ -36,14 +37,15 @@ input[type=submit]
 
 
 /* Radio Buttons */
-/* input[type=radio] {
+input[type=radio] {
     margin-right: 5px;
-} */
+}
 
 .radio-group {
     display: inline-flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    width: 100%;
+    float: left;
 }
 
 

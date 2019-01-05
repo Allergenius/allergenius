@@ -27,11 +27,11 @@
    "currentSymptoms": [],
 
    "severity": [
-      "1 - minor",
-      "2",
-      "3",
-      "4",
-      "5 - extreme"
+      1,
+      2,
+      3,
+      4,
+      5
    ],
    
    "currentSeverity": "",

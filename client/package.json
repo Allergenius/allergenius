@@ -5,6 +5,7 @@
   "proxy": "http://localhost:8080/",
   "dependencies": {
     "auth0-js": "^9.8.2",
+    "axios": "^0.18.0",
     "history": "^4.7.2",
     "kyanite": "^0.10.3",
     "moment": "^2.23.0",

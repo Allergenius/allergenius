@@ -16,7 +16,7 @@ class ReactionForm extends Component {
 			symptomOptions: [],
 			currentSymptoms: [],
 			severity: [],
-			currentSeverity: '',
+			currentSeverity: 0,
 			sick: [],
 			currentSickStatus: [],
 			foodOptions: [],
@@ -204,7 +204,7 @@ class ReactionForm extends Component {
 						options={symptomOptions}
 						selectedOptions={currentSymptoms} />
 
-					<h6 className="p-1">Reaction Severity (on a scale of 1 to 5):</h6>
+					<h6 className="p-1">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
 					<Radio
 						setName={'severity'}
 						type={'radio'}
