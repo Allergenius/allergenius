@@ -16,6 +16,9 @@ CREATE TABLE users
 CREATE TABLE reactions
 (
 	id int NOT NULL AUTO_INCREMENT,
+	title varchar(45) NOT NULL,
+	start datetime NOT NULL,
+	end datetime NOT NULL,
 	reactionTime datetime NOT NULL, 
 	username varchar(45) NOT NULL,
 	title varchar(100) NOT NULL,

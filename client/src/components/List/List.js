@@ -1,7 +1,7 @@
 import React from "react";
 
 const List = props => (
-    <ol>{props.children}</ol>
+    <ul>{props.children}</ul>
 )
 
 export default List;
