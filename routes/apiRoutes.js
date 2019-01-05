@@ -54,8 +54,8 @@ router.post("/api/reactions/:user", function(req, res) {
         , symp_FaceSwelling, symp_VomitingDiarrhea, symp_AbdominalCramps, symp_Cough, symp_Dizzy, symp_ThroatSwelling, symp_DifficultBreathing
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
-        , food_Onions, food_Sesame, LengthOfTimeDays, LengthOfTimeHours, LengthOfTimeMin, Notes) 
-        VALUES ('2019-01-01', '2019-01-01', '${req.params.user}', ${req.body.title},
+        , food_Onions, food_Sesame, Notes) 
+        VALUES ('${req.body.startDate}', '${req.body.endDate}', '${req.params.user}', '${req.body.title}',
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Itchy eyes") ? 1: 0}, 
@@ -72,7 +72,7 @@ router.post("/api/reactions/:user", function(req, res) {
             ${req.body.currentSymptoms.includes("Swelling of the throat and vocal cords") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Difficulty breathing") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Loss of consciousness") ? 1: 0}, 
-            ${req.body.currentSeverity.charAt(0)}, ${req.body.currentSickStatus.includes("Yes") ? 1: 0}, 
+            ${req.body.currentSeverity}, ${req.body.currentSickStatus.includes("Yes") ? 1: 0}, 
             ${req.body.currentFoodsEaten.includes("Dairy") ? 1: 0}, 
             ${req.body.currentFoodsEaten.includes("Eggs") ? 1: 0}, 
             ${req.body.currentFoodsEaten.includes("Fish/Shellfish") ? 1: 0},
