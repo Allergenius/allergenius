@@ -13,16 +13,14 @@ class ReactionForm extends Component {
 			title: '',
 			startDate: new Date(),
 			endDate: new Date(),
-			// currentDateTime: '',
 			symptomOptions: [],
 			currentSymptoms: [],
 			severity: [],
-			currentSeverity: [],
+			currentSeverity: '',
 			sick: [],
 			currentSickStatus: [],
 			foodOptions: [],
 			currentFoodsEaten: [],
-			symptomTime: '',
 			reactionNotes: ''
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -33,7 +31,6 @@ class ReactionForm extends Component {
 		this.handleSeveritySelect = this.handleSeveritySelect.bind(this);
 		this.handleSickSelect = this.handleSickSelect.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
-		this.handleSymptomTimeChange = this.handleSymptomTimeChange.bind(this);
 		this.handleNoteChange = this.handleNoteChange.bind(this);
 	}
 	componentDidMount() {
@@ -41,8 +38,6 @@ class ReactionForm extends Component {
 			.then(res => res.json())
 			.then(data => {
 				this.setState({
-					startDate: data.startDate,
-					endDate: data.endDate,
 					symptomOptions: data.symptomOptions,
 					currentSymptoms: data.currentSymptoms,
 					severity: data.severity,
@@ -51,7 +46,6 @@ class ReactionForm extends Component {
 					currentSickStatus: data.currentSickStatus,
 					foodOptions: data.foodOptions,
 					currentFoodsEaten: data.currentFoodsEaten,
-					symptomTime: data.symptomTime,
 					reactionNotes: data.reactionNotes
 				});
 			});
@@ -102,18 +96,7 @@ class ReactionForm extends Component {
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
-	handleSymptomTimeChange = event => {
-		// const textArray = event.target.value.split('').filter(x => x !== 'event');
-		// console.log('string split into array of letters',textArray);
-		// const filteredText = textArray.join('');
-		// this.setState({ symptomTime: filteredText }, () => console.log('symptomTime', this.state.symptomTime));
-		this.setState({ symptomTime: event.target.value }, () => console.log('symptomTime', this.state.symptomTime));
-	}
 	handleNoteChange(event) {
-		// const textArray = event.target.value.split('').filter(x => x !== 'event');
-		// console.log('string split into array of letters',textArray);
-		// const filteredText = textArray.join('');
-		// this.setState({ reactionNotes: filteredText }, () => console.log('reactionNotes', this.state.reactionNotes));
 		this.setState({ reactionNotes: event.target.value }, () => console.log('reactionNotes', this.state.reactionNotes));
 	}
 	handleChangeStart(date) {
@@ -130,20 +113,19 @@ class ReactionForm extends Component {
 		event.preventDefault();
 
 		const formPayload = {
-			// currentDateTime: this.state.currentDateTime, 
+			title: this.state.title,
 			startDate: this.state.startDate,
 			endDate: this.state.endDate,
 			currentSymptoms: this.state.currentSymptoms,
 			currentSeverity: this.state.currentSeverity,
 			currentSickStatus: this.state.currentSickStatus,
 			currentFoodsEaten: this.state.currentFoodsEaten,
-			symptomTime: this.state.symptomTime,
 			reactionNotes: this.state.reactionNotes
 		};
 
 		console.log('Send this in a POST request:', formPayload);
 
-		var username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
+		let username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
 
 		fetch("/api/reactions/" + username, {
             method: 'POST',
@@ -161,8 +143,6 @@ class ReactionForm extends Component {
 	render() {
 		const { 
 			title,
-			startDate,
-			endDate, 
 			symptomOptions, 
 			currentSymptoms, 
 			severity, 
@@ -171,7 +151,6 @@ class ReactionForm extends Component {
 			currentSickStatus, 
 			foodOptions, 
 			currentFoodsEaten,
-			symptomTime,
 			reactionNotes
 		} = this.state;
 		
@@ -197,12 +176,11 @@ class ReactionForm extends Component {
 						startDate={this.state.startDate}
 						endDate={this.state.endDate}
 						onChange={this.handleChangeStart}
-						// showTimeSelect
-						// type={'calendar'}
-						// timeFormat="HH:mm"
-						// timeIntervals={15}
-						// timeCaption="time"
-						// dateFormat="MMMM d, yyyy h:mm aa" 
+						showTimeSelect
+						timeFormat="HH:mm"
+						timeIntervals={15}
+						timeCaption="time"
+						dateFormat="MMMM d, yyyy h:mm aa" 
 						/>    
 					
 					<h6 className="p-1 mb-4">End date:</h6>
@@ -211,7 +189,12 @@ class ReactionForm extends Component {
 						selectsEnd
 						startDate={this.state.startDate}
 						endDate={this.state.endDate}
-						onChange={this.handleChangeEnd} />
+						onChange={this.handleChangeEnd}
+						showTimeSelect
+						timeFormat="HH:mm"
+						timeIntervals={15}
+						timeCaption="time"
+						dateFormat="MMMM d, yyyy h:mm aa" />
 
 					<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
 					<Checkbox
@@ -245,18 +228,8 @@ class ReactionForm extends Component {
 						options={foodOptions}
 						selectedOptions={currentFoodsEaten} />
 					
-					<h6 className="p-1">How long have your current symptoms been going on?</h6>
-					<TextArea
-						rows={1}
-						resize={false}
-						content={symptomTime}
-						name={'symptomTime'}
-						controlFunc={this.handleSymptomTimeChange}
-						placeholder={'Example: 2 hours'} />
-					
 					<h6 className="p-1">Additional notes:</h6>
 					<TextArea
-						className={'mt-5'}
 						rows={5}
 						resize={false}
 						content={reactionNotes}

@@ -37,6 +37,7 @@
     "mysql": "^2.16.0",
     "proptypes": "^1.1.0",
     "react": "^16.7.0",
+    "react-big-calendar": "^0.20.2",
     "react-datepicker": "^2.0.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
