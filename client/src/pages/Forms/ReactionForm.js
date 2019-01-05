@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Checkbox from '../../components/FormElements/Checkbox';
+import Radio from '../../components/FormElements/RadioBtn';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
-import Range from '../../components/FormElements/Range';
 
 class ReactionForm extends Component {
 	constructor(props) {
@@ -12,6 +12,7 @@ class ReactionForm extends Component {
 		this.state = {
 			title: '',
 			startDate: new Date(),
+			endDate: new Date(),
 			// currentDateTime: '',
 			symptomOptions: [],
 			currentSymptoms: [],
@@ -25,7 +26,8 @@ class ReactionForm extends Component {
 			reactionNotes: ''
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+		this.handleChangeStart = this.handleChangeStart.bind(this);
+		this.handleChangeEnd = this.handleChangeEnd.bind(this);
 		this.handleSelect = this.handleSelect.bind(this);
 		this.handleSymptomSelect = this.handleSymptomSelect.bind(this);
 		this.handleSeveritySelect = this.handleSeveritySelect.bind(this);
@@ -39,7 +41,8 @@ class ReactionForm extends Component {
 			.then(res => res.json())
 			.then(data => {
 				this.setState({
-					// currentDateTime: data.currentDateTime,
+					startDate: data.startDate,
+					endDate: data.endDate,
 					symptomOptions: data.symptomOptions,
 					currentSymptoms: data.currentSymptoms,
 					severity: data.severity,
@@ -113,9 +116,14 @@ class ReactionForm extends Component {
 		// this.setState({ reactionNotes: filteredText }, () => console.log('reactionNotes', this.state.reactionNotes));
 		this.setState({ reactionNotes: event.target.value }, () => console.log('reactionNotes', this.state.reactionNotes));
 	}
-	handleChange(date) {
+	handleChangeStart(date) {
 		this.setState({
-		  startDate: date
+		  startDate: date,
+		});
+	}
+	handleChangeEnd(date) {
+		this.setState({
+		  endDate: date,
 		});
 	}
 	handleFormSubmit(event) {
@@ -124,6 +132,7 @@ class ReactionForm extends Component {
 		const formPayload = {
 			// currentDateTime: this.state.currentDateTime, 
 			startDate: this.state.startDate,
+			endDate: this.state.endDate,
 			currentSymptoms: this.state.currentSymptoms,
 			currentSeverity: this.state.currentSeverity,
 			currentSickStatus: this.state.currentSickStatus,
@@ -152,7 +161,8 @@ class ReactionForm extends Component {
 	render() {
 		const { 
 			title,
-			dateAndTime, 
+			startDate,
+			endDate, 
 			symptomOptions, 
 			currentSymptoms, 
 			severity, 
@@ -180,18 +190,29 @@ class ReactionForm extends Component {
 						content={title}
 						placeholder={'Example: Tues AM - hives and itching'} />
 
-					<h6 className="p-1 mb-4">Current date and time:</h6>
+					<h6 className="p-1 mb-4">Start date:</h6>
 					<DatePicker
 						selected={this.state.startDate}
-						onChange={this.handleChange}
-						showTimeSelect
-						type={'calendar'}
-						timeFormat="HH:mm"
-						timeIntervals={15}
-						dateFormat="MMMM d, yyyy h:mm aa"
-						timeCaption="time"
-						 />    
+						selectsStart
+						startDate={this.state.startDate}
+						endDate={this.state.endDate}
+						onChange={this.handleChangeStart}
+						// showTimeSelect
+						// type={'calendar'}
+						// timeFormat="HH:mm"
+						// timeIntervals={15}
+						// timeCaption="time"
+						// dateFormat="MMMM d, yyyy h:mm aa" 
+						/>    
 					
+					<h6 className="p-1 mb-4">End date:</h6>
+					<DatePicker
+						selected={this.state.endDate}
+						selectsEnd
+						startDate={this.state.startDate}
+						endDate={this.state.endDate}
+						onChange={this.handleChangeEnd} />
+
 					<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
 					<Checkbox
 						setname={'symptoms'}
@@ -201,9 +222,9 @@ class ReactionForm extends Component {
 						selectedOptions={currentSymptoms} />
 
 					<h6 className="p-1">Reaction Severity (on a scale of 1 to 5):</h6>
-					<Range
-						setname={'severity'}
-						type={'range'}
+					<Radio
+						setName={'severity'}
+						type={'radio'}
 						controlFunc={this.handleSeveritySelect}
 						options={severity}
 						selectedOptions={currentSeverity} />
