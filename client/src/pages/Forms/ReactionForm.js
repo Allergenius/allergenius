@@ -16,7 +16,7 @@ class ReactionForm extends Component {
 			symptomOptions: [],
 			currentSymptoms: [],
 			severity: [],
-			currentSeverity: '',
+			currentSeverity: 0,
 			sick: [],
 			currentSickStatus: [],
 			foodOptions: [],
@@ -135,7 +135,9 @@ class ReactionForm extends Component {
             if (response.status >= 400) {
               throw new Error("Bad response from server");
             }
-            return response.json();
+			return response.json();
+			//TODO: figure out how to call home page after successful add.
+			//this.props.history.push("/home") //route back to home page after the add
         }).catch(function(err) {
             console.log(err)
         });
@@ -204,7 +206,7 @@ class ReactionForm extends Component {
 						options={symptomOptions}
 						selectedOptions={currentSymptoms} />
 
-					<h6 className="p-1">Reaction Severity (on a scale of 1 to 5):</h6>
+					<h6 className="p-1">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
 					<Radio
 						setName={'severity'}
 						type={'radio'}
@@ -230,7 +232,6 @@ class ReactionForm extends Component {
 					
 					<h6 className="p-1">Additional notes:</h6>
 					<TextArea
-						className={'mt-5'}
 						rows={5}
 						resize={false}
 						content={reactionNotes}
