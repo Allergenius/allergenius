@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Checkbox from '../../components/FormElements/Checkbox';
-
 import Input from '../../components/FormElements/Input';
 
 
@@ -10,7 +9,7 @@ class EditProfile extends Component {
 		this.state = {
 			firstName: '',
 			lastName: '',
-			foodsAllergens: [],
+			foodAllergens: [],
 			foodsAllergicTo: [],
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -18,13 +17,13 @@ class EditProfile extends Component {
 		this.handleSelect = this.handleSelect.bind(this);
 	}
 	componentDidMount() {
-		fetch('./reaction-entry.json')
+		fetch('./profile-setup.json')
 			.then(res => res.json())
 			.then(data => {
 				this.setState({
 					firstName: data.firstName,
 					lastName: data.lastName,
-					foodsAllergens: data.foodsAllergens,
+					foodAllergens: data.foodAllergens,
 					foodsAllergicTo: data.foodsAllergicTo,
 				});
 			});
@@ -67,12 +66,6 @@ class EditProfile extends Component {
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
-	handleSelect = event => {
-		const target = event.target;
-		const value = target.type === 'checkbox' ? target.checked : target.value;
-		const name = target.name;
-		this.setState({ [name]: value });
-	}
 	handleFormSubmit(event) {
 		event.preventDefault();
 
@@ -101,20 +94,20 @@ class EditProfile extends Component {
         });
 	}
 	render() {
-		// const componentOptions = { Input, Checkbox };
 		const { 
 			firstName, 
 			lastName,
-			foodsAllergens, 
+			foodAllergens, 
 			foodsAllergicTo,
 		} = this.state;
 		
 		return (
-			<div>
-				<h3>This app is not intended to replace medical care. If you are having an emergency, dial 911!</h3>
-				<form className="container-fluid" onSubmit={this.handleFormSubmit}>
-					<h4 className="text-center p-4">Reaction Entry Form</h4>
-					<h6>First Name:</h6>
+			<div  className="p-1">
+				<div className='lead p-3 mb-2 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
+				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+					<h3 className="text-center p-4">Edit Profile</h3>
+					
+					<h6 className="p-1">First Name:</h6>
 					<Input
 						inputType={'text'}
 						name={'firstName'}
@@ -122,7 +115,7 @@ class EditProfile extends Component {
 						content={firstName}
 						placeholder={'Example: Annie'} />
 					
-					<h6>Last Name:</h6>
+					<h6 className="p-1">Last Name:</h6>
 					<Input
 						inputType={'text'}
 						name={'lastName'}
@@ -130,12 +123,12 @@ class EditProfile extends Component {
 						content={lastName}
 						placeholder={'Example: Body'} />
 
-					<h6>Are you allergic to any of these foods?</h6>	
+					<h6 className="p-1">Are you allergic to any of these foods?</h6>	
 					<Checkbox
 						setname={'foodAllergens'}
 						type={'checkbox'}
 						controlFunc={this.handleFoodSelect}
-						options={foodsAllergens}
+						options={foodAllergens}
 						selectedOptions={foodsAllergicTo} />
 					
 					<input
