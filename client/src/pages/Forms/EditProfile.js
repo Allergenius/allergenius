@@ -7,7 +7,7 @@ class EditProfile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			firstName: '',
+			firstName: '', 
 			lastName: '',
 			foodAllergens: [],
 			foodsAllergicTo: [],
@@ -21,10 +21,7 @@ class EditProfile extends Component {
 			.then(res => res.json())
 			.then(data => {
 				this.setState({
-					firstName: data.firstName,
-					lastName: data.lastName,
 					foodAllergens: data.foodAllergens,
-					foodsAllergicTo: data.foodsAllergicTo,
 				});
 			});
 	}
