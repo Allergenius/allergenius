@@ -108,7 +108,7 @@ class EditProfile extends Component {
 					
 					<input
 						type="submit"
-						className="btn btn-primary float-right mt-4"
+						className="btn btn-primary"
 						value="Submit"/>
 				</form>
 			</div>
