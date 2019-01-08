@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment from 'moment'
+import moment from 'moment';
 import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
 import List from "../../components/List/List";

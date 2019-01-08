@@ -11,6 +11,7 @@
     "moment": "^2.23.0",
     "react": "^16.6.3",
     "react-big-calendar": "^0.20.2",
+    "react-datepicker": "^2.0.0",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1"
