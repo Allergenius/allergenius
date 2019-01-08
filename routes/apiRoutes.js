@@ -99,11 +99,11 @@ router.post("/api/reactions/:user", function(req, res) {
 /* POST profile. */
 router.post("/api/profile/:user", function(req, res) {
     const query = `INSERT INTO userProfile
-        (username, firstName, lastName, 
+        (username, firstName, lastName 
         , food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame) 
-        VALUES ('${req.params.user}', ${req.body.firstName}, ${req.body.lastName}, 
+        VALUES ('${req.params.user}', '${req.body.firstName}', '${req.body.lastName}', 
             ${req.body.foodsAllergicTo.includes("Dairy") ? 1: 0}, 
             ${req.body.foodsAllergicTo.includes("Eggs") ? 1: 0}, 
             ${req.body.foodsAllergicTo.includes("Fish/Shellfish") ? 1: 0},
