@@ -85,7 +85,7 @@ class EditProfile extends Component {
             if (response.status >= 400) {
               throw new Error("Bad response from server");
             }
-            return response.json();
+            window.location.href = "/home";
         }).catch(function(err) {
             console.log(err)
         });
