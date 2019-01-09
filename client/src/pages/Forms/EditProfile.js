@@ -10,7 +10,7 @@ class EditProfile extends Component {
 			firstName: '', 
 			lastName: '',
 			foodAllergens: [],
-			foodsAllergicTo: [],
+			foodsAllergicTo: []
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
@@ -33,7 +33,7 @@ class EditProfile extends Component {
 
 	axios.get("/api/profile/" + username)
 	.then(res => {
-		const profile = res.data;
+		const profile = res.data[0];
 		console.log(profile);
 
 		var allergies = [];
@@ -55,7 +55,7 @@ class EditProfile extends Component {
 		this.setState({
 			firstName: profile.firstName, 
 	 		lastName: profile.lastName,
-	 		// foodsAllergicTo: allergies
+	 		foodsAllergicTo: allergies
 		});
 	});
   }
