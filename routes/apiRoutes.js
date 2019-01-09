@@ -26,8 +26,10 @@ router.delete('/api/reactions/:id', function(req, res, next) {
 
 /* GET profile information for the user logged in. */
 router.get('/api/profile/:user', function(req, res, next) {
+    console.log(req.params.user)
     const query = `SELECT * FROM userProfile WHERE username = '${req.params.user}'`
- 	connection.query(query, function (error, results, fields) {
+    console.log(query) 
+    connection.query(query, function (error, results, fields) {
 		if(error) throw error;
 		res.send(JSON.stringify(results));
 	});
