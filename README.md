@@ -20,9 +20,11 @@ At the begining of our design process, we decided which features would be part o
 - CSS
 - Javascript
 - Express
+- Node
 - React
 - MySQL
 - Axios
+- Auth0
 - Github Projects
 
 ## Adding a Reaction
