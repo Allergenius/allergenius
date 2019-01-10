@@ -20,6 +20,26 @@ const Card = props => (
                 { props.foodSoybeans === 1 && <li>Soybeans</li> }
                 { props.foodTreeNuts === 1 && <li>Tree Nuts</li> }
             </ul>
+
+            <p className="card-text">Symptoms:</p>
+            <ul>
+                { props.sympCramps === 1 && <li>Abdominal Cramps</li> }
+                { props.sympCough === 1 && <li>Coughing or Weezing</li> }
+                { props.sympDiffBreathing === 1 && <li>Difficulty Breathing</li> }
+                { props.sympDizzy === 1 && <li>Dizziness And/Or Lightheadedness</li> }
+                { props.sympFaceSwelling === 1 && <li>Face, Tongue, Or Lip Swelling</li> }
+                { props.sympHives === 1 && <li>Hives</li> }
+                { props.sympItchyEyes === 1 && <li>Itchy Eyes</li> }
+                { props.sympItchyMouth === 1 && <li>Tingling Or Itchy Sensation In The Mouth</li> }
+                { props.sympItchySkin === 1 && <li>Itchy Skin</li> }
+                { props.sympItchyThroat === 1 && <li>Itchy Throat</li> }
+                { props.sympLossOfConsciousness === 1 && <li>Loss of Consciousness</li> }
+                { props.sympRash === 1 && <li>Flushed Skin Or Rash</li> }
+                { props.sympRunnyNose === 1 && <li>Runny Nose</li> }
+                { props.sympStomachAche === 1 && <li>Stomach Ache</li> }
+                { props.sympThroatSwelling === 1 && <li>Swelling Of The Throat And Vocal Cords</li> }
+                { props.sympVomiting === 1 && <li>Vomiting And/Or Diarrhea</li> }
+            </ul>
         </div>
     </div>
 )

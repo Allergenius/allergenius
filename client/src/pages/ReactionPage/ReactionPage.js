@@ -47,6 +47,24 @@ class ReactionPage extends Component {
                     foodSesame={reaction.food_Sesame}
                     foodSoybeans={reaction.food_Soybeans}
                     foodTreeNuts={reaction.food_TreeNuts}
+                    sympCramps={reaction.symp_AbdominalCramps}
+                    sympCough={reaction.symp_Cough}
+                    sympDiffBreathing={reaction.symp_DifficultBreathing}
+                    sympDizzy={reaction.symp_Dizzy}
+                    sympFaceSwelling={reaction.symp_FaceSwelling}
+                    sympHives={reaction.symp_Hives}
+                    sympItchyEyes={reaction.symp_ItchyEyes}
+                    sympItchyMouth={reaction.symp_ItchyMouth}
+                    sympItchySkin={reaction.symp_ItchySkin}
+                    sympItchyThroat={reaction.symp_ItchyThroat}
+                    sympLossOfConsciousness={reaction.symp_LossOfConsciousness}
+                    sympRash={reaction.symp_Rash}
+                    sympRunnyNose={reaction.symp_RunnyNose}
+                    sympStomachAche={reaction.symp_StomachAche}
+                    sympThroatSwelling={reaction.symp_ThroatSwelling}
+                    sympVomiting={reaction.symp_VomitingDiarrhea}
+                    severity={reaction.severity}
+                    sickBool={reaction.sick}
                     />
                 ))}
             </Container>
