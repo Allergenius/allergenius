@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment from 'moment';
+import moment from 'moment'
 import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
 import List from "../../components/List/List";
@@ -17,7 +17,8 @@ class HomePage extends Component {
     state = {
         username: "",
         reactions: [],
-        selectedDate: new Date()
+        selectedDate: new Date(),
+        selectedEvent: "",
     }
 
     componentDidMount = () => {
@@ -37,6 +38,12 @@ class HomePage extends Component {
         this.props.history.push("/reactionform");
     }
 
+    handleEventSelect = (event) => {
+        this.props.history.push("/reactions/" + event.id)
+        console.log(event)
+        console.log(event.id)
+    }
+
     render() {
         return (
             <Container>
@@ -52,6 +59,7 @@ class HomePage extends Component {
                         />
                     ))}
                 </List> */}
+                <AddButton clickAdd={this.clickAdd}/>
                 <BigCalendar
                     localizer={localizer}
                     events={this.state.reactions}
@@ -65,8 +73,8 @@ class HomePage extends Component {
                     onView={() => {}}
                     date={this.state.selectedDate}
                     onNavigate={date => this.setState({ selectedDate: date })}
+                    onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                <AddButton clickAdd={this.clickAdd}/>
             </Container>
         )
     }
