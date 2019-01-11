@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const SingleInput = (props) => (
+const Input = (props) => (
 	<div className="form-group">
 		<label className="form-label">{props.title}</label>
 		<input
 			type={props.inputType}
-			className="form-input text-center"
+			className="form-input form-control"
 			name={props.name}
 			onChange={props.controlFunc}
 			value={props.content}
@@ -14,4 +13,4 @@ const SingleInput = (props) => (
 	</div>
 );
 
-export default SingleInput;
+export default Input;

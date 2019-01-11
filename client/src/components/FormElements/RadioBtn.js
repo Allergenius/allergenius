@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Checkbox = (props) => (
+const Radio = (props) => (
 	<div>
 		<label className="form-label">{props.title}</label>
-		<div className="checkbox-group">
+		<div className="radio-group">
 			{props.options.map(option => {
 				return (
 					<label key={option} className="form-label capitalize">
 						<input
-							className="form-checkbox"
-							name={props.setName}
+							className="form-radio"
+							setname={props.setname}
 							onChange={props.controlFunc}
-							value={option}
+							value={option} 
 							checked={props.selectedOptions.indexOf(option) > -1}
 							type={props.type} /> {option}
 					</label>
@@ -22,4 +21,4 @@ const Checkbox = (props) => (
 	</div>
 );
 
-export default Checkbox;
+export default Radio;

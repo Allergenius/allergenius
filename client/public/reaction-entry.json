@@ -1,5 +1,9 @@
 {
-   "currentDateTime": [],
+   "title": [],
+   
+   "startDate": [],
+
+   "endDate": [],
    
    "symptomOptions": [
       "Itchy skin",
@@ -30,7 +34,7 @@
       5
    ],
    
-   "currentSeverity": [],
+   "currentSeverity": "",
 
    "sick": [
       "No",
@@ -55,9 +59,6 @@
    ],
    
    "currentFoodsEaten": [],
-
-   "symptomTime": [],
    
    "reactionNotes": []
 }
-
