@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
-import axios from "axios";
 
-class EditProfile extends Component {
+
+class AddProfile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			firstName: '', 
 			lastName: '',
 			foodAllergens: [],
-			foodsAllergicTo: []
+			foodsAllergicTo: [],
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
@@ -25,39 +25,26 @@ class EditProfile extends Component {
 				});
 			});
 
-		this.getData();
+		//this.getData();
 	}
   getData() {
-	console.log("getData function")
 	var username = "testUser"
-
-	axios.get("/api/profile/" + username)
-	.then(res => {
-		const profile = res.data[0];
-		console.log(profile);
-
-		var allergies = [];
-
-		//check all food allergies fields
-		// if (profile.food_Berries) {
-		// 	allergies.push("Berries")
-		// }
-		// if (profile.food_Celery) {
-		// 	allergies.push("Celery")
-		// }
-		// if (profile.food_Corn) {
-		// 	allergies.push("Corn")
-		// }
-		// if (profile.food_Dairy) {
-		// 	allergies.push("Dairy")
-		// }
-
-		this.setState({
-			firstName: profile.firstName, 
-	 		lastName: profile.lastName,
-	 		foodsAllergicTo: allergies
-		});
-	});
+	fetch("/api/profile/" + username, {
+		method: 'GET'
+	  })
+      .then(res => {
+		const tableData = res.data.value;
+		//TODO: set the state of the fields here
+        this.setState({ tableData });
+      })
+      .catch(error => {
+        if (error.response) {
+          alert('Code: ' + error.response.data.error.code + 
+                '\r\nMessage: ' + error.response.data.error.message);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
   }
 
 	handleFoodSelect(event) {
@@ -151,4 +138,4 @@ class EditProfile extends Component {
 	}
 }
 
-export default EditProfile;
+export default AddProfile;

@@ -7,7 +7,8 @@ import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
 import List from "../../components/List/List";
 import ListItem from "../../components/ListItem/ListItem";
-import AddButton from "../../components/AddButton/AddButton";
+import AddButton from "../../components/Buttons/AddButton";
+import ButtonEditProfile from "../../components/Buttons/EditProfileButton"
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -38,10 +39,18 @@ class HomePage extends Component {
         this.props.history.push("/reactionform");
     }
 
+    clickAddProfile = () => {
+        this.props.history.push("/addprofile");
+    }
+
+    clickEditProfile = () => {
+        this.props.history.push("/editprofile");
+      
     handleEventSelect = (event) => {
         this.props.history.push("/reactions/" + event.id)
         console.log(event)
         console.log(event.id)
+
     }
 
     render() {
@@ -60,6 +69,10 @@ class HomePage extends Component {
                     ))}
                 </List> */}
                 <AddButton clickAdd={this.clickAdd}/>
+
+                <ButtonEditProfile clickAdd={this.clickEditProfile}/>
+
+
                 <BigCalendar
                     localizer={localizer}
                     events={this.state.reactions}

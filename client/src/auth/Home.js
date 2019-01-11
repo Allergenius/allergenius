@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Routes from './Routes';
-import LoginCard from '../components/Login/Login';
+// import LoginCard from '../components/Login/Login';
 // import App from './App';
 
 class Home extends Component {
