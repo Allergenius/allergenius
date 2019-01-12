@@ -28,19 +28,19 @@ export default class Auth {
     });
   }
 
-  exists = user => {
-    axios({
-      method: 'get',
-      url: '/api/users'
-    }).then(response => {
-      if(K.some(x => x.username_pk === user, response)) {
-        return user
-      } else {
-        this.create(user)
-      }
-    })
-    .catch(new Error("Error in exists function"))
-  }
+  // exists = user => {
+  //   axios({
+  //     method: 'get',
+  //     url: '/api/users'
+  //   }).then(response => {
+  //     if(K.some(x => x.username_pk === user, response)) {
+  //       return user
+  //     } else {
+  //       this.create(user)
+  //     }
+  //   })
+  //   .catch(new Error("Error in exists function"))
+  // }
 
   login = () => {
     this.auth0.authorize();
