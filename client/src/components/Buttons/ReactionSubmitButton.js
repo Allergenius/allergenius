@@ -1,14 +1,16 @@
 import React from "react";
 
 const ReactionSubmitButton = (props) => (
-    <button 
-        type={props.submit}
-        onClick={props.submit}
-        value={props.content}
-        className="button"
-    >   
-        Add Entry to Calendar
-    </button>
+    <a href="/home">
+        <button 
+            type={props.submit}
+            onClick={props.submit}
+            value={props.content}
+            className="button"
+        >   
+            Add Entry to Calendar
+        </button>
+    </a>
 )
 
 export default ReactionSubmitButton;

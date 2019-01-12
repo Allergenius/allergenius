@@ -1,14 +1,16 @@
 import React from "react";
 
 const ProfileSubmit = (props) => (
-    <button 
-        type={props.submit}
-        onClick={props.submit}
-        value={props.content}
-        className="button"
-    >   
-        Submit
-    </button>
+    <a href="/home">
+        <button 
+            type={props.submit}
+            onClick={props.submit}
+            value={props.content}
+            className="button"
+        >   
+            Submit
+        </button>
+    </a>
 )
 
 export default ProfileSubmit;

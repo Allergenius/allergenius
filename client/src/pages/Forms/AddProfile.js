@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
-import Container from "../../components/Container/Container";
-import Navbar from "../../components/Nav/Nav";
 import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
 import Warning from "../../components/Warning/Warning"
 
@@ -61,12 +59,14 @@ class AddProfile extends Component {
 		}
 		this.setState({ foodsAllergicTo: newSelectionArray }, () => console.log('food allergens', this.state.foodsAllergicTo));
 	}
+
 	handleSelect = event => {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
+	
 	handleFormSubmit(event) {
 		event.preventDefault();
 
@@ -102,41 +102,38 @@ class AddProfile extends Component {
 			foodsAllergicTo,
 		} = this.state;
 		
-		return (
-			<div className="p-1">
-				<Container>
-               <Navbar />
-						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
-							<h3 className="text-center p-4">Add Profile Info</h3>
-							
-							<h6 className="p-1">First Name:</h6>
-							<Input
-								inputType={'text'}
-								name={'firstName'}
-								controlFunc={this.handleSelect}
-								content={firstName}
-								placeholder={'Example: Annie'} />
-							
-							<h6 className="p-1">Last Name:</h6>
-							<Input
-								inputType={'text'}
-								name={'lastName'}
-								controlFunc={this.handleSelect}
-								content={lastName}
-								placeholder={'Example: Body'} />
+	return (
+		<div className="p-1">
+			<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+				<h3 className="text-center p-4">Edit Profile</h3>
+				
+				<h6 className="p-1">First Name:</h6>
+				<Input
+					inputType={'text'}
+					name={'firstName'}
+					controlFunc={this.handleSelect}
+					content={firstName}
+					placeholder={'Example: Annie'} />
+				
+				<h6 className="p-1">Last Name:</h6>
+				<Input
+					inputType={'text'}
+					name={'lastName'}
+					controlFunc={this.handleSelect}
+					content={lastName}
+					placeholder={'Example: Body'} />
 
-							<h6 className="p-1">Are you allergic to any of these foods?</h6>	
-							<Checkbox
-								setname={'foodAllergens'}
-								type={'checkbox'}
-								controlFunc={this.handleFoodSelect}
-								options={foodAllergens}
-								selectedOptions={foodsAllergicTo} />
-							
-							<ProfileSubmit />
-						</form>
-					<Warning />
-            </Container>
+				<h6 className="p-1">Are you allergic to any of these foods?</h6>	
+				<Checkbox
+					setname={'foodAllergens'}
+					type={'checkbox'}
+					controlFunc={this.handleFoodSelect}
+					options={foodAllergens}
+					selectedOptions={foodsAllergicTo} />
+				
+				<ProfileSubmit />
+			</form>
+			<Warning />
 			</div>
 		)
 	}

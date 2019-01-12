@@ -3,10 +3,7 @@ import axios from "axios";
 import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from 'moment'
-import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning"
-import Navbar from "../../components/Nav/Nav";
-// import Header from "../../components/Header/Header";
 // import List from "../../components/List/List";
 // import ListItem from "../../components/ListItem/ListItem";
 // import AddButton from "../../components/Buttons/AddButton";
@@ -57,13 +54,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <Container>
-                <Navbar />
-                {/* <Header username={this.state.username} />
-                <AddButton clickAdd={this.clickAdd}/>
-
-                <EditProfileButton clickAdd={this.clickEditProfile}/> */}
-
+            <div>
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
@@ -95,7 +86,7 @@ class HomePage extends Component {
                 <footer>
                     <Warning />
                 </footer>
-            </Container>
+            </div>
         )
     }
 }

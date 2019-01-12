@@ -4,9 +4,7 @@ import Checkbox from '../../components/FormElements/Checkbox';
 import Radio from '../../components/FormElements/RadioBtn';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
-import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning"
-import Navbar from "../../components/Nav/Nav";
 import ReactionSubmitButton from "../../components/Buttons/ReactionSubmitButton";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -69,13 +67,7 @@ class ReactionForm extends Component {
 	}
 	handleSeveritySelect = event => {
 		const newSelection = event.target.value;
-		let newSelectionArray;
-		if(this.state.currentSeverity.indexOf(newSelection) > -1) {
-			newSelectionArray = this.state.currentSeverity.filter(s => s !== newSelection)
-		} else {
-			newSelectionArray = [...this.state.currentSeverity, newSelection];
-		}
-		this.setState({ currentSeverity: newSelectionArray }, () => console.log('severity selection', this.state.currentSeverity));
+		this.setState({ currentSeverity: newSelection }, () => console.log('severity selection', this.state.currentSeverity));
 	}
 	handleSickSelect = event => {
 		const newSelection = event.target.value;
@@ -163,11 +155,10 @@ class ReactionForm extends Component {
 		
 		return (
 			<div className='p-1'>
-				<Container>
-					<Navbar />
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
-						
+						<Warning />
+
 						<h6 className="p-1">Title (for your own reference):</h6>
 						<Input
 							inputType={'text'}
@@ -252,11 +243,7 @@ class ReactionForm extends Component {
 						
 						<ReactionSubmitButton />
 					</form>
-				</Container>
 				<br />
-				<footer>
-					<Warning />
-				</footer>
 			</div>
 		);
 	}

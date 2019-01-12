@@ -14,15 +14,15 @@ router.get('/api/reactions/:user', function(req, res, next) {
 });
 
 /* GET one reaction for the user logged in. */
-router.get('/api/reactions/:id/:user', function(req, res, next) {
-    console.log(req.params.id)
-    const query = `SELECT *, startDate as start, endDate as end FROM reactions WHERE id = '${req.params.id}' AND username = '${req.params.user}'`
-    console.log(query)
- 	connection.query(query, function (error, results, fields) {
-		if(error) throw error;
-		res.send(JSON.stringify(results));
-	});
-});
+// router.get('/api/reactions/:id/:user', function(req, res, next) {
+//     console.log(req.params.id)
+//     const query = `SELECT *, startDate as start, endDate as end FROM reactions WHERE id = '${req.params.id}' AND username = '${req.params.user}'`
+//     console.log(query)
+//  	connection.query(query, function (error, results, fields) {
+// 		if(error) throw error;
+// 		res.send(JSON.stringify(results));
+// 	});
+// });
 
 /* DELETE a reaction by ID. */
 router.delete('/api/reactions/:id', function(req, res, next) {
