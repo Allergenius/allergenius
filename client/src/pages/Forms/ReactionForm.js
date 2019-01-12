@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import moment from 'moment';
 import DatePicker from "react-datepicker";
 import Checkbox from '../../components/FormElements/Checkbox';
 import Radio from '../../components/FormElements/RadioBtn';
@@ -8,6 +7,7 @@ import TextArea from '../../components/FormElements/TextArea';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning"
 import Navbar from "../../components/Nav/Nav";
+import ReactionSubmitButton from "../../components/Buttons/ReactionSubmitButton";
 import "react-datepicker/dist/react-datepicker.css";
 
 
@@ -162,13 +162,9 @@ class ReactionForm extends Component {
 		} = this.state;
 		
 		return (
-			<div className='container container-fluid'>
+			<div className='p-1'>
 				<Container>
 					<Navbar />
-					<br />
-					<br />
-					<br />
-					<br />
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
 						
@@ -224,6 +220,7 @@ class ReactionForm extends Component {
 						<Radio
 							setName={'severity'}
 							type={'radio'}
+							className="radio-group"
 							controlFunc={this.handleSeveritySelect}
 							options={severity}
 							selectedOptions={currentSeverity} />
@@ -253,16 +250,13 @@ class ReactionForm extends Component {
 							controlFunc={this.handleNoteChange}
 							placeholder={'Add any additional notes that may help your doctor later.'} />
 						
-						<input
-							type="submit"
-							className="btn btn-success"
-							value="Submit"/>
+						<ReactionSubmitButton />
 					</form>
-					<br />
-					<footer>
-						<Warning />
-					</footer>
 				</Container>
+				<br />
+				<footer>
+					<Warning />
+				</footer>
 			</div>
 		);
 	}
