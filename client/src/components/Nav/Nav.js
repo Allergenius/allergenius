@@ -1,7 +1,7 @@
 import React from "react";
 import AddButton from "../Buttons/AddButton";
 import EditProfileButton from "../Buttons/EditProfileButton";
-import Logout from "../Buttons/LogoutButton"
+import LogoutButton from "../Buttons/LogoutButton";
 
 const Navbar = () => (
   <nav className="navbar fixed-top navbar-expand-lg navbar-light">
@@ -20,7 +20,7 @@ const Navbar = () => (
           <EditProfileButton classname="nav-link" href="/editprofile" />
         </li>
         <li className="nav-item active">
-          <Logout classname="nav-link" />
+          <LogoutButton classname="nav-link" />
         </li>
       </ul>
     </div>

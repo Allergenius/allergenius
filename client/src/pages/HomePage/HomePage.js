@@ -47,22 +47,18 @@ class HomePage extends Component {
 
     clickEditProfile = () => {
         this.props.history.push("/editprofile");
-      
+    } 
+    
     handleEventSelect = (event) => {
         this.props.history.push("/reactions/" + event.id)
         console.log(event)
         console.log(event.id)
-
     }
 
     render() {
         return (
             <Container>
                 <Navbar />
-                <br />
-                <br />
-                <br />
-                <br />
                 {/* <Header username={this.state.username} />
                 <AddButton clickAdd={this.clickAdd}/>
 

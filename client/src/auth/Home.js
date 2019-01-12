@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Routes from './Routes';
+import LogoutButton from './../components/Buttons/LogoutButton';
 // import LoginCard from '../components/Login/Login';
 // import App from './App';
 
@@ -12,6 +13,7 @@ class Home extends Component {
   logout = () => {
     this.props.auth.logout();
   }
+  
   render() {
     // calls the isAuthenticated method in authentication service
     const { isAuthenticated } = this.props.auth;
@@ -22,13 +24,8 @@ class Home extends Component {
           <div className="container column">
             <h5>
               You are logged in!{' '}
-              <button
-                style={{ cursor: 'pointer' }}
-                onClick={this.logout}
-              >
-                Log Out
-              </button>.
             </h5>
+            <LogoutButton /> 
             <Routes />
           </div>
         }
