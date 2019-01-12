@@ -6,8 +6,7 @@ import moment from 'moment'
 import Warning from "../../components/Warning/Warning"
 // import List from "../../components/List/List";
 // import ListItem from "../../components/ListItem/ListItem";
-// import AddButton from "../../components/Buttons/AddButton";
-// import EditProfileButton from "../../components/Buttons/EditProfileButton"
+
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -22,7 +21,8 @@ class HomePage extends Component {
 
     componentDidMount = () => {
         document.body.className="body-non-login"
-        axios.get("/api/reactions/" + "testUser")
+        var username = "testUser"
+        axios.get("/api/reactions/" + username)
             .then(res => {
                 const reactions = res.data;
                 for (let i = 0; i < reactions.length; i++) {

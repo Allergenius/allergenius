@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
-import axios from "axios";
 import Warning from "../../components/Warning/Warning"
-import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
-
 
 class EditProfile extends Component {
 	constructor(props) {
@@ -13,7 +10,7 @@ class EditProfile extends Component {
 			firstName: '', 
 			lastName: '',
 			foodAllergens: [],
-			foodsAllergicTo: []
+			foodsAllergicTo: [],
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
@@ -29,39 +26,26 @@ class EditProfile extends Component {
 				});
 			});
 
-		this.getData();
+		//this.getData();
 	}
-  	getData() {
-	console.log("getData function")
+  getData() {
 	var username = "testUser"
-
-	axios.get("/api/profile/" + username)
-	.then(res => {
-		const profile = res.data[0];
-		console.log(profile);
-
-		var allergies = [];
-
-		//check all food allergies fields
-		// if (profile.food_Berries) {
-		// 	allergies.push("Berries")
-		// }
-		// if (profile.food_Celery) {
-		// 	allergies.push("Celery")
-		// }
-		// if (profile.food_Corn) {
-		// 	allergies.push("Corn")
-		// }
-		// if (profile.food_Dairy) {
-		// 	allergies.push("Dairy")
-		// }
-
-		this.setState({
-			firstName: profile.firstName, 
-	 		lastName: profile.lastName,
-	 		foodsAllergicTo: allergies
-		});
-	});
+	fetch("/api/profile/" + username, {
+		method: 'GET'
+	  })
+      .then(res => {
+		const tableData = res.data.value;
+		//TODO: set the state of the fields here
+        this.setState({ tableData });
+      })
+      .catch(error => {
+        if (error.response) {
+          alert('Code: ' + error.response.data.error.code + 
+                '\r\nMessage: ' + error.response.data.error.message);
+        } else {
+          console.log('Error', error.message);
+        }
+      });
   }
 
 	handleFoodSelect(event) {
@@ -74,12 +58,14 @@ class EditProfile extends Component {
 		}
 		this.setState({ foodsAllergicTo: newSelectionArray }, () => console.log('food allergens', this.state.foodsAllergicTo));
 	}
+
 	handleSelect = event => {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
+
 	handleFormSubmit(event) {
 		event.preventDefault();
 
@@ -116,37 +102,62 @@ class EditProfile extends Component {
 		} = this.state;
 		
 		return (
-			<div className="p-1">
-				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
-					<h3 className="text-center p-4">Edit Profile</h3>
+			<div>
+				<form onSubmit={this.handleFormSubmit} method="POST">
+					<h3 className="text-center p-4">
+						Edit Profile
+					</h3>
 					
-					<h6 className="p-1">First Name:</h6>
-					<Input
-						inputType={'text'}
-						name={'firstName'}
-						controlFunc={this.handleSelect}
-						content={firstName}
-						placeholder={'Example: Annie'} />
-					
-					<h6 className="p-1">Last Name:</h6>
-					<Input
-						inputType={'text'}
-						name={'lastName'}
-						controlFunc={this.handleSelect}
-						content={lastName}
-						placeholder={'Example: Body'} />
-
-					<h6 className="p-1">Are you allergic to any of these foods?</h6>	
-					<Checkbox
-						setname={'foodAllergens'}
-						type={'checkbox'}
-						controlFunc={this.handleFoodSelect}
-						options={foodAllergens}
-						selectedOptions={foodsAllergicTo} />
-					
-					<ProfileSubmit />
+					<div className="form-group">
+						<label for="input-first-name">
+							First Name:
+						</label>
+						<Input
+							inputType={'text'}
+							name={'firstName'}
+							className="input-first-name"
+							controlFunc={this.handleSelect}
+							content={firstName}
+							placeholder={'Example: Annie'} 
+						/>
+					</div>
+					<div className="form-group">
+						<label for="input-last-name">
+							Last Name:
+						</label>
+						<Input
+							inputType={'text'}
+							name={'lastName'}
+							className="input-last-name"
+							controlFunc={this.handleSelect}
+							content={lastName}
+							placeholder={'Example: Body'} 
+						/>
+					</div>
+					<div className="form-group">
+						<label for="checkbox-allergens">
+							Are you allergic to any of these foods?
+						</label>	
+						<Checkbox
+							setname={'foodAllergens'}
+							type={'checkbox'}
+							className="checkbox-allergens"
+							controlFunc={this.handleFoodSelect}
+							options={foodAllergens}
+							selectedOptions={foodsAllergicTo} 
+						/>
+					</div>
+					<div className="form-group">
+						<a href="/home">
+							<input 
+								type={'submit'}
+								value={'Submit'}
+								className="btn btn-submit"	
+							/>
+						</a>
+					</div>
 				</form>
-			<Warning />
+				<Warning />
 			</div>
 		)
 	}

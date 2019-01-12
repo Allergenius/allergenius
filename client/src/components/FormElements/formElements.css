@@ -4,7 +4,11 @@ form {
    border-radius: 10px;
 }
 
-.form-label.capitalize {
+.form-group {
+   margin: 20px 0px;
+}
+
+/* .form-label.capitalize {
    text-transform: capitalize;
 }
 
@@ -19,14 +23,8 @@ form {
 
 .p-1 {
    margin-top: 100px;
-}
+} */
 
-/* Buttons */
-input[type=submit]
-.btn-link {
-   margin-top: 40px;
-   width: 15%;
-}
 
 /* Radio Buttons */
 input[type=radio] {
@@ -55,3 +53,11 @@ input[type=checkbox] {
    float: left;
    margin-bottom: 55px;
 } 
+
+
+/* Submit Buttons */
+.btn {
+   color: black;
+   background-color: #eaf6ff;
+   border: 1px solid #cccccc;
+}

@@ -59,7 +59,7 @@ class Home extends Component {
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={this.login}
-                  className='btn btn-success'
+                  className='btn btn-secondary'
                 >
                   Log In
                 </button>

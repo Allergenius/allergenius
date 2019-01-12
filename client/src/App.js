@@ -34,6 +34,7 @@ class App extends Component {
               <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
               <Route path="/editprofile" render={(props) => <EditProfile auth={auth} {...props} />} />
               <Route path="/addprofile" render={(props) => <AddProfile auth={auth} {...props} />} />
+              <Route path="/app" render={(props) => <ReactionForm auth={auth} {...props} />} />
               <Route path="/reactionform" render={(props) => <ReactionForm auth={auth} {...props} />} />
               <Route path="/reactions" render={(props) => <ReactionPage auth={auth} {...props} />} />
               <Route path="/home" render={(props) => <HomePage auth={auth} {...props} />} />

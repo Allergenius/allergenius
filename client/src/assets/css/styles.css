@@ -59,7 +59,7 @@ footer {
     color: white;
 }
 
-.btn-success {
+.btn-secondary {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -67,7 +67,7 @@ footer {
     margin-top: 5px;
     color: black;
     background-color: #eaf6ff;
-    border: #eaf6ff 1px;
+    border: 1px solid #cccccc;
 }
 
 /* Home Page (once logged in) Elements */

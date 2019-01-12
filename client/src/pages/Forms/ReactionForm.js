@@ -5,7 +5,6 @@ import Radio from '../../components/FormElements/RadioBtn';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Warning from "../../components/Warning/Warning"
-import ReactionSubmitButton from "../../components/Buttons/ReactionSubmitButton";
 import "react-datepicker/dist/react-datepicker.css";
 
 
@@ -37,6 +36,7 @@ class ReactionForm extends Component {
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
 		this.handleNoteChange = this.handleNoteChange.bind(this);
 	}
+
 	componentDidMount() {
 		document.body.className="body-non-login"
 		fetch('./reaction-entry.json')
@@ -55,6 +55,8 @@ class ReactionForm extends Component {
 				});
 			});
 	}
+
+	// Function for Checkboxes for Symptoms
 	handleSymptomSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -65,20 +67,20 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSymptoms: newSelectionArray }, () => console.log('symptom selection', this.state.currentSymptoms));
 	}
+	
+	// Function for Radio Buttons for Severity
 	handleSeveritySelect = event => {
 		const newSelection = event.target.value;
 		this.setState({ currentSeverity: newSelection }, () => console.log('severity selection', this.state.currentSeverity));
 	}
+
+	// Function for Radio Buttons for Sick Status
 	handleSickSelect = event => {
 		const newSelection = event.target.value;
-		let newSelectionArray;
-		if(this.state.currentSickStatus.indexOf(newSelection) > -1) {
-			newSelectionArray = this.state.currentSickStatus.filter(s => s !== newSelection)
-		} else {
-			newSelectionArray = [...this.state.currentSickStatus, newSelection];
-		}
-		this.setState({ currentSickStatus: newSelectionArray }, () => console.log('sick selection', this.state.currentSickStatus));
+		this.setState({ currentSickStatus: newSelection }, () => console.log('sick selection', this.state.currentSickStatus));
 	}
+
+	// Function for Checkboxes for Foods Eaten
 	handleFoodSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -89,25 +91,35 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentFoodsEaten: newSelectionArray }, () => console.log('food selection', this.state.currentFoodsEaten));
 	}
+
+	// Function for Single-line Text Inputs
 	handleSelect = event => {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
+
+	// Function for Multi-line Textarea Inputs for Notes section
 	handleNoteChange(event) {
 		this.setState({ reactionNotes: event.target.value }, () => console.log('reactionNotes', this.state.reactionNotes));
 	}
+	
+	// Function for Datepicker Start Date/Time
 	handleChangeStart(date) {
 		this.setState({
 		  startDate: date,
 		});
 	}
+
+	// Function for Datepicker End Date/Time
 	handleChangeEnd(date) {
 		this.setState({
 		  endDate: date,
 		});
 	}
+
+	// Function for Submit Button
 	handleFormSubmit(event) {
 		event.preventDefault();
 
@@ -121,7 +133,6 @@ class ReactionForm extends Component {
 			currentFoodsEaten: this.state.currentFoodsEaten,
 			reactionNotes: this.state.reactionNotes
 		};
-
 		console.log('Send this in a POST request:', formPayload);
 
 		let username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
@@ -139,6 +150,8 @@ class ReactionForm extends Component {
             console.log(err)
         });
 	}
+
+	// Render on page
 	render() {
 		const { 
 			title,
@@ -154,20 +167,30 @@ class ReactionForm extends Component {
 		} = this.state;
 		
 		return (
-			<div className='p-1'>
-					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
-						<h3 className="text-center p-4">Reaction Entry Form</h3>
-						<Warning />
+			<div>
+				<form onSubmit={this.handleFormSubmit} method="POST">
+					<Warning />
+					<h3 className="text-center p-4">
+						Reaction Entry Form
+					</h3>
 
-						<h6 className="p-1">Title (for your own reference):</h6>
+					<div className="form-group">
+						<label for="exampleFormControlInput1" className="p-1">
+							Title:
+						</label>
 						<Input
 							inputType={'text'}
+							className="form-control exampleFormControlInput1"
 							name={'title'}
 							controlFunc={this.handleSelect}
 							content={title}
-							placeholder={'Example: Tues AM - hives and itching'} />
-
-						<h6 className="p-1 mb-4">Start date:</h6>
+							placeholder={'Example: Tues AM - hives and itching'} 
+						/>
+					</div>
+					<div className="form-group">			
+						<label className="p-1 mb-4">
+							Start date:
+						</label>
 						<DatePicker
 							selected={this.state.startDate}
 							selectsStart
@@ -181,9 +204,12 @@ class ReactionForm extends Component {
 							showTime = {{ use12hours: true, format: "hh:mm" }} 
 							allowClear={false}
 							dateFormat="MMMM d, yyyy hh:mm"
-							/>    
-
-						<h6 className="p-1 mb-4">End date:</h6>
+						/>
+					{/* </div>
+					<div className="form-group">     */}
+						<label className="p-1 mb-4">
+							End date:
+						</label>
 						<DatePicker
 							selected={this.state.endDate}
 							selectsEnd
@@ -198,52 +224,77 @@ class ReactionForm extends Component {
 							allowClear={false}
 							dateFormat="MMMM d, yyyy hh:mm"
 						/>
-
-						<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
+					</div>
+					<div className="form-group">
+						<label className="p-1">
+							Are you currently experiencing any of these symptoms?
+						</label>
 						<Checkbox
 							setname={'symptoms'}
 							type={'checkbox'}
 							controlFunc={this.handleSymptomSelect}
 							options={symptomOptions}
-							selectedOptions={currentSymptoms} />
-
-						<h6 className="p-1">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
+							selectedOptions={currentSymptoms} 
+						/>
+					</div>
+					<div className="form-group">
+						<label className="p-1">
+							Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):
+						</label>
 						<Radio
 							setName={'severity'}
 							type={'radio'}
 							className="radio-group"
 							controlFunc={this.handleSeveritySelect}
 							options={severity}
-							selectedOptions={currentSeverity} />
-
-						<h6 className="p-1">Are you currently sick with a cold or the flu?</h6>
+							selectedOptions={currentSeverity} 
+						/>
+					</div>
+					<div className="form-group">
+						<label className="p-1">
+							Are you currently sick with a cold or the flu?
+						</label>
 						<Checkbox
 							setname={'sick'}
 							type={'radio'}
 							controlFunc={this.handleSickSelect}
 							options={sick}
-							selectedOptions={currentSickStatus} />	
-
-						<h6 className="p-1">Have you ingested any of these foods today?</h6>
+							selectedOptions={currentSickStatus} 
+						/>	
+					</div>
+					<div className="form-group">
+						<label className="p-1">
+							Have you ingested any of these foods today?
+						</label>
 						<Checkbox
 							setname={'foodOptions'}
 							type={'checkbox'}
 							controlFunc={this.handleFoodSelect}
 							options={foodOptions}
-							selectedOptions={currentFoodsEaten} />
-						
-						<h6 className="p-1">Additional notes:</h6>
+							selectedOptions={currentFoodsEaten} 
+						/>
+					</div>
+					<div className="form-group">
+						<label className="p-1">Additional notes:</label>
 						<TextArea
 							rows={5}
 							resize={false}
 							content={reactionNotes}
 							name={'reactionNotes'}
 							controlFunc={this.handleNoteChange}
-							placeholder={'Add any additional notes that may help your doctor later.'} />
-						
-						<ReactionSubmitButton />
-					</form>
-				<br />
+							placeholder={'Add any additional notes that may help your doctor later.'} 
+						/>
+					</div>
+					<div className="form-group">
+						<a href="/home">
+							<input 
+								type={'submit'}
+								value={'Submit Entry'}
+								className="btn btn-submit"	
+							/>
+						</a>
+					</div>
+				</form>
 			</div>
 		);
 	}
