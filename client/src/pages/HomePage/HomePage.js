@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment from 'moment';
+import moment from 'moment'
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning"
 import Navbar from "../../components/Nav/Nav";
@@ -19,7 +19,8 @@ class HomePage extends Component {
     state = {
         username: "",
         reactions: [],
-        selectedDate: new Date()
+        selectedDate: new Date(),
+        selectedEvent: "",
     }
 
     componentDidMount = () => {
@@ -46,6 +47,12 @@ class HomePage extends Component {
 
     clickEditProfile = () => {
         this.props.history.push("/editprofile");
+      
+    handleEventSelect = (event) => {
+        this.props.history.push("/reactions/" + event.id)
+        console.log(event)
+        console.log(event.id)
+
     }
 
     render() {
@@ -58,7 +65,9 @@ class HomePage extends Component {
                 <br />
                 {/* <Header username={this.state.username} />
                 <AddButton clickAdd={this.clickAdd}/>
+
                 <EditProfileButton clickAdd={this.clickEditProfile}/> */}
+
                 <BigCalendar
                     localizer={localizer}
                     events={this.state.reactions}
@@ -72,6 +81,7 @@ class HomePage extends Component {
                     onView={() => {}}
                     date={this.state.selectedDate}
                     onNavigate={date => this.setState({ selectedDate: date })}
+                    onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
                 {/* <List>
                     {this.state.reactions.map(reaction => (
