@@ -2,12 +2,13 @@
 body {
     padding-bottom: 80px;
     margin: 0 auto;
+    /* background-image: url("../images/food_bkgd_1300x900px.jpg"); */
     background-image: url("../images/foodboard_1100x734web.jpg");
     background-repeat: no-repeat;
     background-position: top;
     background-color: #eaf6ff;
-    /* background-color: #393335; */
     width: 1100px;
+    /* height: 100%; */
 }
 
 h3 {
@@ -92,6 +93,10 @@ form {
 
 .form-input {
     margin-bottom: 55px;
+}
+
+.p-1 {
+    margin-top: 100px;
 }
 
 /* Buttons */
