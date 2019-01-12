@@ -1,6 +1,6 @@
 import auth0 from 'auth0-js';
 import axios from "axios";
-import K from "kyanite";
+// import K from "kyanite";
 import history from './history';
 
 export default class Auth {
@@ -28,19 +28,19 @@ export default class Auth {
     });
   }
 
-  exists = user => {
-    axios({
-      method: 'get',
-      url: '/api/users'
-    }).then(response => {
-      if(K.some(x => x.username_pk === user, response)) {
-        return user
-      } else {
-        this.create(user)
-      }
-    })
-    .catch(new Error("Error in exists function"))
-  }
+  // exists = user => {
+  //   axios({
+  //     method: 'get',
+  //     url: '/api/users'
+  //   }).then(response => {
+  //     if(K.some(x => x.username_pk === user, response)) {
+  //       return user
+  //     } else {
+  //       this.create(user)
+  //     }
+  //   })
+  //   .catch(new Error("Error in exists function"))
+  // }
 
   login = () => {
     this.auth0.authorize();
