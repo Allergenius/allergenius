@@ -70,10 +70,10 @@ footer {
     border: #eaf6ff 1px;
 }
 
-/* .jumbotron {
-    width: 60%;
-    background-color: none;
-} */
+/* Home Page (once logged in) Elements */
+.calendar-container {
+    margin-top: 100px;
+}
 
 /* Form Elements */
 form {

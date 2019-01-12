@@ -65,6 +65,7 @@ class HomePage extends Component {
                 <EditProfileButton clickAdd={this.clickEditProfile}/> */}
 
                 <BigCalendar
+                    className="calendar-container"
                     localizer={localizer}
                     events={this.state.reactions}
                     style={{ height: 500, width: this.state.width }}
