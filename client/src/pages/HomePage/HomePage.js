@@ -59,10 +59,6 @@ class HomePage extends Component {
         return (
             <Container>
                 <Navbar />
-                <br />
-                <br />
-                <br />
-                <br />
                 {/* <Header username={this.state.username} />
                 <AddButton clickAdd={this.clickAdd}/>
 
