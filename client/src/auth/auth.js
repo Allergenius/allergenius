@@ -1,6 +1,6 @@
 import auth0 from 'auth0-js';
 import axios from "axios";
-// import K from "kyanite";
+import K from "kyanite";
 import history from './history';
 
 export default class Auth {
@@ -9,7 +9,7 @@ export default class Auth {
     domain: 'allergenius.auth0.com',
     clientID: 'bJ4dO0c_lNC8rSxcgRDJ6tq3mfV5VLUs',
     redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://appbaseio-apps.github.io/auth0/callback',
-    // audience: 'https://divyanshu.auth0.com/userinfo',
+    // audience: 'https://allergenius.auth0.com/api/v2/',
     responseType: 'token id_token',
     // scope: 'openid'
     scope: 'openid profile'
@@ -28,19 +28,19 @@ export default class Auth {
     });
   }
 
-  // exists = user => {
-  //   axios({
-  //     method: 'get',
-  //     url: '/api/users'
-  //   }).then(response => {
-  //     if(K.some(x => x.username_pk === user, response)) {
-  //       return user
-  //     } else {
-  //       create(user)
-  //     }
-  //   })
-  //   .catch(new Error("Error in exists function"))
-  // }
+  exists = user => {
+    axios({
+      method: 'get',
+      url: '/api/users'
+    }).then(response => {
+      if(K.some(x => x.username_pk === user, response)) {
+        return user
+      } else {
+        this.create(user)
+      }
+    })
+    .catch(new Error("Error in exists function"))
+  }
 
   login = () => {
     this.auth0.authorize();
