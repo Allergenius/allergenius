@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+import moment from 'moment';
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Checkbox from '../../components/FormElements/Checkbox';
 import Radio from '../../components/FormElements/RadioBtn';
 import Input from '../../components/FormElements/Input';
@@ -8,6 +8,8 @@ import TextArea from '../../components/FormElements/TextArea';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning"
 import Navbar from "../../components/Nav/Nav";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 
 class ReactionForm extends Component {
@@ -186,12 +188,14 @@ class ReactionForm extends Component {
 							endDate={this.state.endDate}
 							onChange={this.handleChangeStart}
 							showTimeSelect
-							timeFormat="HH:mm"
+							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
-							dateFormat="MMMM d, yyyy h:mm aa" 
+							showTime = {{ use12hours: true, format: "hh:mm" }} 
+							allowClear={false}
+							dateFormat="MMMM d, yyyy hh:mm"
 							/>    
-						
+
 						<h6 className="p-1 mb-4">End date:</h6>
 						<DatePicker
 							selected={this.state.endDate}
@@ -200,10 +204,13 @@ class ReactionForm extends Component {
 							endDate={this.state.endDate}
 							onChange={this.handleChangeEnd}
 							showTimeSelect
-							timeFormat="HH:mm"
+							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
-							dateFormat="MMMM d, yyyy h:mm aa" />
+							showTime = {{ use12hours: true, format: "hh:mm" }} 
+							allowClear={false}
+							dateFormat="MMMM d, yyyy hh:mm"
+						/>
 
 						<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
 						<Checkbox
