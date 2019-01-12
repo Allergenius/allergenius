@@ -4,15 +4,16 @@ import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from 'moment';
 import Container from "../../components/Container/Container";
-import Header from "../../components/Header/Header";
-import List from "../../components/List/List";
-import ListItem from "../../components/ListItem/ListItem";
-import AddButton from "../../components/Buttons/AddButton";
-import ButtonEditProfile from "../../components/Buttons/EditProfileButton"
+import Warning from "../../components/Warning/Warning"
+import Navbar from "../../components/Nav/Nav";
+// import Header from "../../components/Header/Header";
+// import List from "../../components/List/List";
+// import ListItem from "../../components/ListItem/ListItem";
+// import AddButton from "../../components/Buttons/AddButton";
+// import EditProfileButton from "../../components/Buttons/EditProfileButton"
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
-
 
 class HomePage extends Component {
     state = {
@@ -22,6 +23,7 @@ class HomePage extends Component {
     }
 
     componentDidMount = () => {
+        document.body.className="body-non-login"
         axios.get("/api/reactions/" + "testUser")
             .then(res => {
                 const reactions = res.data;
@@ -49,20 +51,14 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
-                <Header username={this.state.username} />
-                {/* <List>
-                    {this.state.reactions.map(reaction => (
-                        <ListItem
-                        id={reaction.id}
-                        key={reaction.id}
-                        date={reaction.reactionTime}
-                        severity={reaction.severity}
-                        notes={reaction.Notes}
-                        />
-                    ))}
-                </List> */}
+                <Navbar />
+                <br />
+                <br />
+                <br />
+                <br />
+                {/* <Header username={this.state.username} />
                 <AddButton clickAdd={this.clickAdd}/>
-                <ButtonEditProfile clickAdd={this.clickEditProfile}/>
+                <EditProfileButton clickAdd={this.clickEditProfile}/> */}
                 <BigCalendar
                     localizer={localizer}
                     events={this.state.reactions}
@@ -77,6 +73,21 @@ class HomePage extends Component {
                     date={this.state.selectedDate}
                     onNavigate={date => this.setState({ selectedDate: date })}
                 />
+                {/* <List>
+                    {this.state.reactions.map(reaction => (
+                        <ListItem
+                        id={reaction.id}
+                        key={reaction.id}
+                        date={reaction.reactionTime}
+                        severity={reaction.severity}
+                        notes={reaction.Notes}
+                        />
+                    ))}
+                </List> */}
+                <br />
+                <footer>
+                    <Warning />
+                </footer>
             </Container>
         )
     }

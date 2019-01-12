@@ -5,6 +5,10 @@ import Checkbox from '../../components/FormElements/Checkbox';
 import Radio from '../../components/FormElements/RadioBtn';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
+import Container from "../../components/Container/Container";
+import Warning from "../../components/Warning/Warning"
+import Navbar from "../../components/Nav/Nav";
+
 
 class ReactionForm extends Component {
 	constructor(props) {
@@ -34,6 +38,7 @@ class ReactionForm extends Component {
 		this.handleNoteChange = this.handleNoteChange.bind(this);
 	}
 	componentDidMount() {
+		document.body.className="body-non-login"
 		fetch('./reaction-entry.json')
 			.then(res => res.json())
 			.then(data => {
@@ -156,92 +161,101 @@ class ReactionForm extends Component {
 		
 		return (
 			<div className='container container-fluid'>
+				<Container>
+					<Navbar />
+					<br />
+					<br />
+					<br />
+					<br />
+					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+						<h3 className="text-center p-4">Reaction Entry Form</h3>
+						
+						<h6 className="p-1">Title (for your own reference):</h6>
+						<Input
+							inputType={'text'}
+							name={'title'}
+							controlFunc={this.handleSelect}
+							content={title}
+							placeholder={'Example: Tues AM - hives and itching'} />
 
-				<div className='lead p-3 mb-2 border bg-light text-center'>This app is not intended to replace medical care. If you are having an emergency, dial 911</div>
-				<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
-					<h3 className="text-center p-4">Reaction Entry Form</h3>
-					
-					<h6 className="p-1">Title (for your own reference):</h6>
-					<Input
-						inputType={'text'}
-						name={'title'}
-						controlFunc={this.handleSelect}
-						content={title}
-						placeholder={'Example: Tues AM - hives and itching'} />
+						<h6 className="p-1 mb-4">Start date:</h6>
+						<DatePicker
+							selected={this.state.startDate}
+							selectsStart
+							startDate={this.state.startDate}
+							endDate={this.state.endDate}
+							onChange={this.handleChangeStart}
+							showTimeSelect
+							timeFormat="HH:mm"
+							timeIntervals={15}
+							timeCaption="time"
+							dateFormat="MMMM d, yyyy h:mm aa" 
+							/>    
+						
+						<h6 className="p-1 mb-4">End date:</h6>
+						<DatePicker
+							selected={this.state.endDate}
+							selectsEnd
+							startDate={this.state.startDate}
+							endDate={this.state.endDate}
+							onChange={this.handleChangeEnd}
+							showTimeSelect
+							timeFormat="HH:mm"
+							timeIntervals={15}
+							timeCaption="time"
+							dateFormat="MMMM d, yyyy h:mm aa" />
 
-					<h6 className="p-1 mb-4">Start date:</h6>
-					<DatePicker
-						selected={this.state.startDate}
-						selectsStart
-						startDate={this.state.startDate}
-						endDate={this.state.endDate}
-						onChange={this.handleChangeStart}
-						showTimeSelect
-						timeFormat="HH:mm"
-						timeIntervals={15}
-						timeCaption="time"
-						dateFormat="MMMM d, yyyy h:mm aa" 
-						/>    
-					
-					<h6 className="p-1 mb-4">End date:</h6>
-					<DatePicker
-						selected={this.state.endDate}
-						selectsEnd
-						startDate={this.state.startDate}
-						endDate={this.state.endDate}
-						onChange={this.handleChangeEnd}
-						showTimeSelect
-						timeFormat="HH:mm"
-						timeIntervals={15}
-						timeCaption="time"
-						dateFormat="MMMM d, yyyy h:mm aa" />
+						<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
+						<Checkbox
+							setname={'symptoms'}
+							type={'checkbox'}
+							controlFunc={this.handleSymptomSelect}
+							options={symptomOptions}
+							selectedOptions={currentSymptoms} />
 
-					<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
-					<Checkbox
-						setname={'symptoms'}
-						type={'checkbox'}
-						controlFunc={this.handleSymptomSelect}
-						options={symptomOptions}
-						selectedOptions={currentSymptoms} />
+						<h6 className="p-1">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
+						<Radio
+							setName={'severity'}
+							type={'radio'}
+							controlFunc={this.handleSeveritySelect}
+							options={severity}
+							selectedOptions={currentSeverity} />
 
-					<h6 className="p-1">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
-					<Radio
-						setName={'severity'}
-						type={'radio'}
-						controlFunc={this.handleSeveritySelect}
-						options={severity}
-						selectedOptions={currentSeverity} />
+						<h6 className="p-1">Are you currently sick with a cold or the flu?</h6>
+						<Checkbox
+							setname={'sick'}
+							type={'radio'}
+							controlFunc={this.handleSickSelect}
+							options={sick}
+							selectedOptions={currentSickStatus} />	
 
-					<h6 className="p-1">Are you currently sick with a cold or the flu?</h6>
-					<Checkbox
-						setname={'sick'}
-						type={'radio'}
-						controlFunc={this.handleSickSelect}
-						options={sick}
-						selectedOptions={currentSickStatus} />	
-
-					<h6 className="p-1">Have you ingested any of these foods today?</h6>
-					<Checkbox
-						setname={'foodOptions'}
-						type={'checkbox'}
-						controlFunc={this.handleFoodSelect}
-						options={foodOptions}
-						selectedOptions={currentFoodsEaten} />
-					
-					<h6 className="p-1">Additional notes:</h6>
-					<TextArea
-						rows={5}
-						resize={false}
-						content={reactionNotes}
-						name={'reactionNotes'}
-						controlFunc={this.handleNoteChange}
-						placeholder={'Add any additional notes that may help your doctor later.'} />
-					
-					<input
-						type="submit"
-						className="btn btn-primary"
-						value="Submit"/>
-				</form>
+						<h6 className="p-1">Have you ingested any of these foods today?</h6>
+						<Checkbox
+							setname={'foodOptions'}
+							type={'checkbox'}
+							controlFunc={this.handleFoodSelect}
+							options={foodOptions}
+							selectedOptions={currentFoodsEaten} />
+						
+						<h6 className="p-1">Additional notes:</h6>
+						<TextArea
+							rows={5}
+							resize={false}
+							content={reactionNotes}
+							name={'reactionNotes'}
+							controlFunc={this.handleNoteChange}
+							placeholder={'Add any additional notes that may help your doctor later.'} />
+						
+						<input
+							type="submit"
+							className="btn btn-success"
+							value="Submit"/>
+					</form>
+					<br />
+					<footer>
+						<Warning />
+					</footer>
+				</Container>
 			</div>
 		);
 	}
