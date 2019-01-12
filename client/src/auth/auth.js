@@ -1,6 +1,6 @@
 import auth0 from 'auth0-js';
-import axios from "axios";
-// import K from "kyanite";
+import axios from 'axios';
+import K from 'kyanite';
 import history from './history';
 
 export default class Auth {
