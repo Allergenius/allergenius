@@ -33,39 +33,38 @@ class EditProfile extends Component {
 
 		this.getData();
 	}
-  getData() {
-	console.log("getData function")
-	var username = "testUser"
+	getData() {
+		console.log("getData function")
+		var username = "testUser"
 
-	axios.get("/api/profile/" + username)
-	.then(res => {
-		const profile = res.data[0];
-		console.log(profile);
+		axios.get("/api/profile/" + username)
+		.then(res => {
+			const profile = res.data[0];
+			console.log(profile);
 
-		var allergies = [];
+			var allergies = [];
 
-		//check all food allergies fields
-		// if (profile.food_Berries) {
-		// 	allergies.push("Berries")
-		// }
-		// if (profile.food_Celery) {
-		// 	allergies.push("Celery")
-		// }
-		// if (profile.food_Corn) {
-		// 	allergies.push("Corn")
-		// }
-		// if (profile.food_Dairy) {
-		// 	allergies.push("Dairy")
-		// }
+			//check all food allergies fields
+			if (profile.food_Berries) allergies.push("Berries")
+			if (profile.food_Celery) allergies.push("Celery")
+			if (profile.food_Corn) allergies.push("Corn")
+			if (profile.food_Dairy) allergies.push("Dairy")
+			if (profile.food_Eggs) allergies.push("Eggs")
+			if (profile.food_Fish) allergies.push("Fish/Shellfish")
+			if (profile.food_TreeNuts) allergies.push("Tree Nuts")
+			if (profile.food_Peanuts) allergies.push("Peanuts")
+			if (profile.food_Gluten) allergies.push("Gluten")
+			if (profile.food_Soybeans) allergies.push("Soybeans")
+			if (profile.food_Onions) allergies.push("Onions/Garlic")
+			if (profile.food_Sesame) allergies.push("Sesame")
 
-		this.setState({
-			firstName: profile.firstName, 
-	 		lastName: profile.lastName,
-	 		foodsAllergicTo: allergies
+			this.setState({
+				firstName: profile.firstName, 
+				lastName: profile.lastName,
+				foodsAllergicTo: allergies
+			});
 		});
-	});
-  }
-
+	}
 	handleFoodSelect(event) {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -97,7 +96,7 @@ class EditProfile extends Component {
 
 		//TODO: find out if we are adding a new profile or editing an existing one
 		fetch("/api/profile/" + username, {
-            method: 'POST',
+            method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formPayload)
         }).then(function(response) {
