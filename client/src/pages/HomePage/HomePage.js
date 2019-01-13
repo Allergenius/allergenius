@@ -2,25 +2,29 @@ import React, { Component } from "react";
 import axios from "axios";
 import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment from 'moment';
+import moment from 'moment'
 import Container from "../../components/Container/Container";
-import Header from "../../components/Header/Header";
-import List from "../../components/List/List";
-import ListItem from "../../components/ListItem/ListItem";
-import AddButton from "../../components/AddButton/AddButton";
+import Warning from "../../components/Warning/Warning"
+import Navbar from "../../components/Nav/Nav";
+// import Header from "../../components/Header/Header";
+// import List from "../../components/List/List";
+// import ListItem from "../../components/ListItem/ListItem";
+// import AddButton from "../../components/Buttons/AddButton";
+// import EditProfileButton from "../../components/Buttons/EditProfileButton"
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
-
 
 class HomePage extends Component {
     state = {
         username: "",
         reactions: [],
-        selectedDate: new Date()
+        selectedDate: new Date(),
+        selectedEvent: "",
     }
 
     componentDidMount = () => {
+        document.body.className="body-non-login"
         axios.get("/api/reactions/" + "testUser")
             .then(res => {
                 const reactions = res.data;
@@ -37,22 +41,31 @@ class HomePage extends Component {
         this.props.history.push("/reactionform");
     }
 
+    clickAddProfile = () => {
+        this.props.history.push("/addprofile");
+    }
+
+    clickEditProfile = () => {
+        this.props.history.push("/editprofile");
+    } 
+    
+    handleEventSelect = (event) => {
+        this.props.history.push("/reactions/" + event.id)
+        console.log(event)
+        console.log(event.id)
+    }
+
     render() {
         return (
             <Container>
-                <Header username={this.state.username} />
-                {/* <List>
-                    {this.state.reactions.map(reaction => (
-                        <ListItem
-                        id={reaction.id}
-                        key={reaction.id}
-                        date={reaction.reactionTime}
-                        severity={reaction.severity}
-                        notes={reaction.Notes}
-                        />
-                    ))}
-                </List> */}
+                <Navbar />
+                {/* <Header username={this.state.username} />
+                <AddButton clickAdd={this.clickAdd}/>
+
+                <EditProfileButton clickAdd={this.clickEditProfile}/> */}
+
                 <BigCalendar
+                    className="calendar-container"
                     localizer={localizer}
                     events={this.state.reactions}
                     style={{ height: 500, width: this.state.width }}
@@ -65,8 +78,23 @@ class HomePage extends Component {
                     onView={() => {}}
                     date={this.state.selectedDate}
                     onNavigate={date => this.setState({ selectedDate: date })}
+                    onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                <AddButton clickAdd={this.clickAdd}/>
+                {/* <List>
+                    {this.state.reactions.map(reaction => (
+                        <ListItem
+                        id={reaction.id}
+                        key={reaction.id}
+                        date={reaction.reactionTime}
+                        severity={reaction.severity}
+                        notes={reaction.Notes}
+                        />
+                    ))}
+                </List> */}
+                <br />
+                <footer>
+                    <Warning />
+                </footer>
             </Container>
         )
     }

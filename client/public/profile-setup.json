@@ -16,6 +16,8 @@
       "Celery",
       "Onions/Garlic",
       "Sesame"
-   ]
+   ],
+
+   "foodsAllergicTo": []
 }
 

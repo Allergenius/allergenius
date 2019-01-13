@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Routes from './Routes';
-import LoginCard from '../components/Login/Login';
+import LogoutButton from './../components/Buttons/LogoutButton';
+// import LoginCard from '../components/Login/Login';
 // import App from './App';
 
 class Home extends Component {
@@ -12,6 +13,7 @@ class Home extends Component {
   logout = () => {
     this.props.auth.logout();
   }
+  
   render() {
     // calls the isAuthenticated method in authentication service
     const { isAuthenticated } = this.props.auth;
@@ -22,45 +24,50 @@ class Home extends Component {
           <div className="container column">
             <h5>
               You are logged in!{' '}
-              <button
-                style={{ cursor: 'pointer' }}
-                onClick={this.logout}
-              >
-                Log Out
-              </button>.
             </h5>
+            <LogoutButton /> 
             <Routes />
           </div>
         }
         {
           !isAuthenticated() && (
             <div>
-            <div className='jumbotron jumbotron-fluid'>
-            <div className='container'>
-              <h1
-              className='display-3 text-center'
-              >Allergenius</h1>
+              {/* <div className='jumbotron jumbotron-fluid'>
+                <div className='container'>
+                  <h1 className='display-3 text-center'>
+                    Allergenius
+                  </h1>
+                </div>
+              </div> */}
+              <div className='loginpage-container'>
+                <div className='container'>
+                  <h1 className='display-3 text-center'>
+                    Allergenius
+                  </h1>
+                  <h5>
+                    Food Allergen Reaction Tracker
+                  </h5>
+                </div>
+              {/* </div>
+              <div className="card text-center">
+                <div className="card-header">
+                  Welcome
+                </div>
+              <div className="card-body">
+                <h5 className="card-title">You are not logged in!</h5>
+                <p className="card-text">Please click below to login or sign-up.</p> */}
+                <button
+                  style={{ cursor: 'pointer' }}
+                  onClick={this.login}
+                  className='btn btn-success'
+                >
+                  Log In
+                </button>
               </div>
-            </div>
-            <div className="card text-center">
-            <div className="card-header">
-              Welcome
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">You are not logged in!</h5>
-              <p className="card-text">Please click below to login or sign-up.</p>
-              <button
-                style={{ cursor: 'pointer' }}
-                onClick={this.login}
-                className='btn btn-primary'
-                 >
-                 Log In
-               </button>
-            </div>
-            <div className="card-footer text-muted">
-              2 days ago
-            </div>
-          </div>
+              {/* <div className="card-footer text-muted">
+                Last Login: 2 days ago 
+              </div>
+            </div> */}
           </div>
           )
         }

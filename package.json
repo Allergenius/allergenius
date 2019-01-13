@@ -20,7 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.18.9"
   },
   "bugs": {
     "url": "https://github.com/Allergenius/allergenius/issues"
