@@ -156,7 +156,7 @@ router.put("/api/profile/:user", function(req, res) {
         food_Celery = ${req.body.foodsAllergicTo.includes("Celery") ? 1: 0},
         food_Onions = ${req.body.foodsAllergicTo.includes("Onions/Garlic") ? 1: 0}, 
         food_Sesame = ${req.body.foodsAllergicTo.includes("Sesame") ? 1: 0}
-        WHERE username = '${req.params.user}`
+        WHERE username = '${req.params.user}'`
 
       console.log(query);
   
