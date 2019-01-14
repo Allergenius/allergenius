@@ -3,7 +3,7 @@ import AddButton from "../Buttons/AddButton";
 import EditProfileButton from "../Buttons/EditProfileButton";
 import LogoutButton from "../Buttons/LogoutButton";
 
-const Navbar = () => (
+const Navbar = (props) => (
   <nav className="navbar fixed-top navbar-expand-lg navbar-light">
     <a className="navbar-brand" href="/home">
       Allergenius
@@ -14,10 +14,10 @@ const Navbar = () => (
     <div className="collapse navbar-collapse navbarTogglerDemo02">
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         <li className="nav-item active">
-          <AddButton classname="nav-link" href="/app" />
+          <AddButton classname="nav-link" href="/app" clickAdd={props.clickAdd} />
         </li>
         <li className="nav-item active">
-          <EditProfileButton classname="nav-link" href="/editprofile" />
+          <EditProfileButton classname="nav-link" href="/editprofile" clickEdit={props.clickEdit} />
         </li>
         <li className="nav-item active">
           <LogoutButton classname="nav-link" />

@@ -58,11 +58,11 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
-                <Navbar />
+                <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
                 {/* <Header username={this.state.username} />
                 <AddButton clickAdd={this.clickAdd}/>
 
-                <EditProfileButton clickAdd={this.clickEditProfile}/> */}
+                <EditProfileButton clickEdit={this.clickEditProfile}/> */}
 
                 <BigCalendar
                     className="calendar-container"

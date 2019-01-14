@@ -3,9 +3,10 @@ import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import axios from "axios";
 import Container from "../../components/Container/Container";
-import Warning from "../../components/Warning/Warning"
+import Warning from "../../components/Warning/Warning";
 import Navbar from "../../components/Nav/Nav";
 import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
+import BackButton from "../../components/Buttons/BackButton";
 
 
 class EditProfile extends Component {
@@ -65,6 +66,19 @@ class EditProfile extends Component {
 			});
 		});
 	}
+
+    clickAdd = () => {
+        this.props.history.push("/reactionform");
+    }
+
+    clickEditProfile = () => {
+        this.props.history.push("/editprofile");
+	} 
+
+	clickBack = () => {
+        this.props.history.push("/home");
+    }
+	
 	handleFoodSelect(event) {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -75,12 +89,14 @@ class EditProfile extends Component {
 		}
 		this.setState({ foodsAllergicTo: newSelectionArray }, () => console.log('food allergens', this.state.foodsAllergicTo));
 	}
+
 	handleSelect = event => {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
+
 	handleFormSubmit(event) {
 		event.preventDefault();
 
@@ -108,6 +124,7 @@ class EditProfile extends Component {
             console.log(err)
         });
 	}
+
 	render() {
 		const { 
 			firstName, 
@@ -119,7 +136,7 @@ class EditProfile extends Component {
 		return (
 			<div className="p-1">
 				<Container>
-               <Navbar />
+                <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
 						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 							<h3 className="text-center p-4">Edit Profile</h3>
 							
@@ -149,6 +166,7 @@ class EditProfile extends Component {
 							
 							<ProfileSubmit />
 						</form>
+						<BackButton clickBack={this.clickBack}/>
 					<Warning />
             </Container>
 			</div>

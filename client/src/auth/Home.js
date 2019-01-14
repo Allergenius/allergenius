@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
+import Routes from '../Routes';
 import LogoutButton from './../components/Buttons/LogoutButton';
 // import LoginCard from '../components/Login/Login';
 // import App from './App';

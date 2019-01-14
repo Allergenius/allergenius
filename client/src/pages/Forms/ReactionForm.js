@@ -6,8 +6,9 @@ import Radio from '../../components/FormElements/RadioBtn';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Container from "../../components/Container/Container";
-import Warning from "../../components/Warning/Warning"
+import Warning from "../../components/Warning/Warning";
 import Navbar from "../../components/Nav/Nav";
+import BackButton from "../../components/Buttons/BackButton";
 
 
 class ReactionForm extends Component {
@@ -55,6 +56,19 @@ class ReactionForm extends Component {
 				});
 			});
 	}
+
+	clickAdd = () => {
+        this.props.history.push("/reactionform");
+    }
+
+    clickEditProfile = () => {
+        this.props.history.push("/editprofile");
+	} 
+	
+	clickBack = () => {
+        this.props.history.push("/home");
+	}
+	
 	handleSymptomSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -137,6 +151,7 @@ class ReactionForm extends Component {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formPayload)
         }).then(function(response) {
+			console.log(response)
             if (response.status >= 400) {
               throw new Error("Bad response from server");
             }
@@ -162,7 +177,7 @@ class ReactionForm extends Component {
 		return (
 			<div className='container container-fluid'>
 				<Container>
-					<Navbar />
+				<Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
 					<br />
 					<br />
 					<br />
@@ -251,10 +266,8 @@ class ReactionForm extends Component {
 							className="btn btn-success"
 							value="Submit"/>
 					</form>
-					<br />
-					<footer>
+					<BackButton clickBack={this.clickBack} />
 						<Warning />
-					</footer>
 				</Container>
 			</div>
 		);

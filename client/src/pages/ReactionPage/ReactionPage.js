@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import moment from 'moment'
+import moment from 'moment';
 import Container from "../../components/Container/Container";
 import Card from "../../components/Card/Card";
+import BackButton from "../../components/Buttons/BackButton";
 
 moment().format();
 
@@ -17,22 +18,39 @@ class ReactionPage extends Component {
         .then(res => {
             const reactions = res.data;
             for (let i = 0; i < reactions.length; i++) {
-                reactions[i].start = moment.utc(reactions[i].start).toString();
-                reactions[i].end = moment.utc(reactions[i].end).toDate();
+                reactions[i].start = moment(reactions[i].start).format('LT');
+                reactions[i].startDate = moment(reactions[i].startDate).format('LL');
+                reactions[i].end = moment(reactions[i].end).format('LT');
             }
             console.log(reactions)
             this.setState({ reactions: reactions })
         })
     }
 
+    clickBack = () => {
+        this.props.history.push("/home");
+    }
+
+    clickDelete = () => {
+        axios.delete('/api/reactions/' + this.state.reactions[0].id)
+        .then(res =>{
+            console.log(res);
+            alert("Reaction deleted successfully!")
+            this.props.history.push("/home")
+        })
+    }
+
     render() {
         return (
             <Container>
+                <BackButton clickBack={this.clickBack}/>
                 {this.state.reactions.map(reaction => (
                     <Card
+                    clickDelete={this.clickDelete}
                     key={reaction.id}
                     title={reaction.title}
                     startDate={reaction.start}
+                    date={reaction.startDate}
                     endDate={reaction.end}
                     notes={reaction.Notes}
                     foodBerries={reaction.food_Berries}

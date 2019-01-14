@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
 // import App from './App';
-import Routes from './auth/Routes';
+import Routes from './Routes';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

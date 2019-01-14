@@ -4,7 +4,8 @@ import Input from '../../components/FormElements/Input';
 import Container from "../../components/Container/Container";
 import Navbar from "../../components/Nav/Nav";
 import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
-import Warning from "../../components/Warning/Warning"
+import Warning from "../../components/Warning/Warning";
+import BackButton from "../../components/Buttons/BackButton";
 
 class AddProfile extends Component {
 	constructor(props) {
@@ -29,6 +30,19 @@ class AddProfile extends Component {
 				});
 			});
 	}
+
+	clickAdd = () => {
+        this.props.history.push("/reactionform");
+    }
+
+    clickEditProfile = () => {
+        this.props.history.push("/editprofile");
+	} 
+
+	clickBack = () => {
+        this.props.history.push("/home");
+	}
+	
 	handleFoodSelect(event) {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -82,7 +96,7 @@ class AddProfile extends Component {
 		return (
 			<div className="p-1">
 				<Container>
-               <Navbar />
+				<Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
 						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 							<h3 className="text-center p-4">Add Profile Info</h3>
 							
@@ -112,6 +126,7 @@ class AddProfile extends Component {
 							
 							<ProfileSubmit />
 						</form>
+						<BackButton clickBack={this.clickBack}/>
 					<Warning />
             </Container>
 			</div>
