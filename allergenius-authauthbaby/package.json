@@ -1,0 +1,24 @@
+{
+  "name": "allergenius",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^7.4.2",
+    "jwt-decode": "^2.2.0",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.6.1",
+    "react-router-dom": "^4.3.1",
+    "sequelize": "^4.38.0"
+  }
+}
