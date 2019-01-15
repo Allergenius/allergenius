@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
 import Checkbox from '../../components/FormElements/Checkbox';
-import Radio from '../../components/FormElements/RadioBtn';
+import RadioBtn2 from '../../components/FormElements/RadioBtn2options';
+import RadioBtn5 from '../../components/FormElements/RadioBtn5options';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Warning from "../../components/Warning/Warning"
@@ -68,13 +69,13 @@ class ReactionForm extends Component {
 		this.setState({ currentSymptoms: newSelectionArray }, () => console.log('symptom selection', this.state.currentSymptoms));
 	}
 	
-	// Function for Radio Buttons for Severity
+	// Function for RadioBtn5 Buttons for Severity
 	handleSeveritySelect = event => {
 		const newSelection = event.target.value;
 		this.setState({ currentSeverity: newSelection }, () => console.log('severity selection', this.state.currentSeverity));
 	}
 
-	// Function for Radio Buttons for Sick Status
+	// Function for RadioBtn2 Buttons for Sick Status
 	handleSickSelect = event => {
 		const newSelection = event.target.value;
 		this.setState({ currentSickStatus: newSelection }, () => console.log('sick selection', this.state.currentSickStatus));
@@ -167,28 +168,30 @@ class ReactionForm extends Component {
 		} = this.state;
 		
 		return (
-			<div>
+			<div className="form-container">
 				<form onSubmit={this.handleFormSubmit} method="POST">
-					<Warning />
-					<h3 className="text-center p-4">
+					<div className="alert-top">
+						<Warning />
+					</div>
+					<h3 className="text-center p-3 mt-3">
 						Reaction Entry Form
 					</h3>
 
-					<div className="form-group">
-						<label for="exampleFormControlInput1" className="p-1">
-							Title:
-						</label>
+					<div className="form-group p-1 mt-3">
 						<Input
 							inputType={'text'}
-							className="form-control exampleFormControlInput1"
+							className="reaction-title"
 							name={'title'}
 							controlFunc={this.handleSelect}
 							content={title}
-							placeholder={'Example: Tues AM - hives and itching'} 
+							placeholder={'Title (for future reference)'} 
 						/>
 					</div>
-					<div className="form-group">			
-						<label className="p-1 mb-4">
+					<div className="form-group mt-4 p-1">			
+						<label 
+							for="reaction-start-date"
+							className="calendar-label mr-2"
+						>
 							Start date:
 						</label>
 						<DatePicker
@@ -198,6 +201,7 @@ class ReactionForm extends Component {
 							endDate={this.state.endDate}
 							onChange={this.handleChangeStart}
 							showTimeSelect
+							className="reaction-start-date mr-5"
 							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
@@ -206,8 +210,11 @@ class ReactionForm extends Component {
 							dateFormat="MMMM d, yyyy hh:mm"
 						/>
 					{/* </div>
-					<div className="form-group">     */}
-						<label className="p-1 mb-4">
+					<div className="form-group mt-5 p-1">     */}
+						<label 
+							for="reaction-end-date"
+							className="calendar-label mr-2"
+						>
 							End date:
 						</label>
 						<DatePicker
@@ -217,6 +224,7 @@ class ReactionForm extends Component {
 							endDate={this.state.endDate}
 							onChange={this.handleChangeEnd}
 							showTimeSelect
+							className="reaction-end-date"
 							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
@@ -225,57 +233,68 @@ class ReactionForm extends Component {
 							dateFormat="MMMM d, yyyy hh:mm"
 						/>
 					</div>
-					<div className="form-group">
-						<label className="p-1">
+					<div className="form-group mt-4 p-1">
+						<label 
+							for="reaction-symptom-checkboxes"
+							className="checkbox-Q-label mb-2"
+						>
 							Are you currently experiencing any of these symptoms?
 						</label>
 						<Checkbox
 							setname={'symptoms'}
 							type={'checkbox'}
+							className="reaction-symptom-checkboxes"
 							controlFunc={this.handleSymptomSelect}
 							options={symptomOptions}
 							selectedOptions={currentSymptoms} 
 						/>
 					</div>
-					<div className="form-group">
-						<label className="p-1">
+					<div className="form-group mt-4 p-1">
+						<label for="reaction-severity-radios">
 							Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):
 						</label>
-						<Radio
+						<RadioBtn5
 							setName={'severity'}
 							type={'radio'}
-							className="radio-group"
 							controlFunc={this.handleSeveritySelect}
+							className="reaction-severity-radios"
 							options={severity}
 							selectedOptions={currentSeverity} 
 						/>
 					</div>
-					<div className="form-group">
-						<label className="p-1">
+					<div className="form-group mt-4 p-1">
+						<label 
+							for="reaction-sick-radios"
+							className="sick-radios"
+						>
 							Are you currently sick with a cold or the flu?
 						</label>
-						<Checkbox
+						<RadioBtn2
 							setname={'sick'}
 							type={'radio'}
 							controlFunc={this.handleSickSelect}
+							className="reaction-sick-radios"
 							options={sick}
 							selectedOptions={currentSickStatus} 
 						/>	
 					</div>
-					<div className="form-group">
-						<label className="p-1">
+					<div className="form-group mt-4 p-1">
+						<label 
+							for="reaction-food-checkboxes"
+							className="checkbox-Q-label mb-2"
+						>
 							Have you ingested any of these foods today?
 						</label>
 						<Checkbox
 							setname={'foodOptions'}
 							type={'checkbox'}
 							controlFunc={this.handleFoodSelect}
+							className="reaction-food-checkboxes"
 							options={foodOptions}
 							selectedOptions={currentFoodsEaten} 
 						/>
 					</div>
-					<div className="form-group">
-						<label className="p-1">Additional notes:</label>
+					<div className="form-group mt-4 p-1">
 						<TextArea
 							rows={5}
 							resize={false}
@@ -285,12 +304,12 @@ class ReactionForm extends Component {
 							placeholder={'Add any additional notes that may help your doctor later.'} 
 						/>
 					</div>
-					<div className="form-group">
+					<div className="form-group btn-submit mt-4">
 						<a href="/home">
 							<input 
 								type={'submit'}
 								value={'Submit Entry'}
-								className="btn btn-submit"	
+								className="btn"	
 							/>
 						</a>
 					</div>

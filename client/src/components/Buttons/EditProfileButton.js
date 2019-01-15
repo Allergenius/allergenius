@@ -6,7 +6,7 @@ const EditProfileButton = (props) => (
             type={props.inputType}
             onClick={props.clickAdd}
             value={props.content}
-            className="button"
+            className="nav-button"
         >   
             Edit Profile
         </button>

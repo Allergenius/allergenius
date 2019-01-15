@@ -13,6 +13,8 @@ import ReactionForm from './pages/Forms/ReactionForm';
 import Container from "./components/Container/Container";
 import Navbar from "./components/Nav/Nav";
 import './assets/css/styles.css';
+import './assets/css/forms.css';
+
 
 const auth = new Auth();
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import "./formElements.css";
 
 const Input = (props) => (
 	<div className="form-group">
