@@ -3,14 +3,12 @@ import axios from "axios";
 import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from 'moment'
-import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning"
-import Navbar from "../../components/Nav/Nav";
-// import Header from "../../components/Header/Header";
 // import List from "../../components/List/List";
 // import ListItem from "../../components/ListItem/ListItem";
-// import AddButton from "../../components/Buttons/AddButton";
-// import EditProfileButton from "../../components/Buttons/EditProfileButton"
+import Container from "../../components/Container/Container";
+import Navbar from "../../components/Nav/Nav";
+
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -25,7 +23,8 @@ class HomePage extends Component {
 
     componentDidMount = () => {
         document.body.className="body-non-login"
-        axios.get("/api/reactions/" + "testUser")
+        var username = "testUser"
+        axios.get("/api/reactions/" + username)
             .then(res => {
                 const reactions = res.data;
                 for (let i = 0; i < reactions.length; i++) {

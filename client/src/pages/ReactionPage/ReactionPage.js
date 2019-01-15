@@ -14,6 +14,7 @@ class ReactionPage extends Component {
     }
 
     componentDidMount = () => {
+        document.body.className="body-non-login"
         console.log(this.props.location.pathname)
         axios.get("/api" + this.props.location.pathname + "/testUser")
         .then(res => {

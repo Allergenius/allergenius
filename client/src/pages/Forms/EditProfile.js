@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
-import axios from "axios";
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning";
 import Navbar from "../../components/Nav/Nav";
@@ -16,7 +16,7 @@ class EditProfile extends Component {
 			firstName: '', 
 			lastName: '',
 			foodAllergens: [],
-			foodsAllergicTo: []
+			foodsAllergicTo: [],
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
@@ -32,7 +32,7 @@ class EditProfile extends Component {
 				});
 			});
 
-		this.getData();
+		//this.getData();
 	}
 	getData() {
 		console.log("getData function")

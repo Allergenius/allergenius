@@ -2,13 +2,13 @@ import React from 'react';
 
 const Checkbox = (props) => (
 	<div>
-		<label className="form-label">{props.title}</label>
-		<div className="checkbox-group">
+		<label className="checkbox-Q-label">{props.title}</label>
+		<div className="form-check">
 			{props.options.map(option => {
 				return (
-					<label key={option} className="form-label capitalize">
+					<label key={option} className="form-checkbox-label">
 						<input
-							className="form-checkbox"
+							className="form-check-input"
 							setname={props.setname}
 							onChange={props.controlFunc}
 							value={option} 

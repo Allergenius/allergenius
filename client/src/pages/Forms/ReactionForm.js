@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Checkbox from '../../components/FormElements/Checkbox';
-import Radio from '../../components/FormElements/RadioBtn';
+import RadioBtn2 from '../../components/FormElements/RadioBtn2options';
+import RadioBtn5 from '../../components/FormElements/RadioBtn5options';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning";
 import Navbar from "../../components/Nav/Nav";
 import BackButton from "../../components/Buttons/BackButton";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 
 class ReactionForm extends Component {
@@ -38,6 +40,7 @@ class ReactionForm extends Component {
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
 		this.handleNoteChange = this.handleNoteChange.bind(this);
 	}
+
 	componentDidMount() {
 		document.body.className="body-non-login"
 		fetch('./reaction-entry.json')
@@ -79,26 +82,20 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentSymptoms: newSelectionArray }, () => console.log('symptom selection', this.state.currentSymptoms));
 	}
+	
+	// Function for RadioBtn5 Buttons for Severity
 	handleSeveritySelect = event => {
 		const newSelection = event.target.value;
-		let newSelectionArray;
-		if(this.state.currentSeverity.indexOf(newSelection) > -1) {
-			newSelectionArray = this.state.currentSeverity.filter(s => s !== newSelection)
-		} else {
-			newSelectionArray = [...this.state.currentSeverity, newSelection];
-		}
-		this.setState({ currentSeverity: newSelectionArray }, () => console.log('severity selection', this.state.currentSeverity));
+		this.setState({ currentSeverity: newSelection }, () => console.log('severity selection', this.state.currentSeverity));
 	}
+
+	// Function for RadioBtn2 Buttons for Sick Status
 	handleSickSelect = event => {
 		const newSelection = event.target.value;
-		let newSelectionArray;
-		if(this.state.currentSickStatus.indexOf(newSelection) > -1) {
-			newSelectionArray = this.state.currentSickStatus.filter(s => s !== newSelection)
-		} else {
-			newSelectionArray = [...this.state.currentSickStatus, newSelection];
-		}
-		this.setState({ currentSickStatus: newSelectionArray }, () => console.log('sick selection', this.state.currentSickStatus));
+		this.setState({ currentSickStatus: newSelection }, () => console.log('sick selection', this.state.currentSickStatus));
 	}
+
+	// Function for Checkboxes for Foods Eaten
 	handleFoodSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -109,25 +106,35 @@ class ReactionForm extends Component {
 		}
 		this.setState({ currentFoodsEaten: newSelectionArray }, () => console.log('food selection', this.state.currentFoodsEaten));
 	}
+
+	// Function for Single-line Text Inputs
 	handleSelect = event => {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
+
+	// Function for Multi-line Textarea Inputs for Notes section
 	handleNoteChange(event) {
 		this.setState({ reactionNotes: event.target.value }, () => console.log('reactionNotes', this.state.reactionNotes));
 	}
+	
+	// Function for Datepicker Start Date/Time
 	handleChangeStart(date) {
 		this.setState({
 		  startDate: date,
 		});
 	}
+
+	// Function for Datepicker End Date/Time
 	handleChangeEnd(date) {
 		this.setState({
 		  endDate: date,
 		});
 	}
+
+	// Function for Submit Button
 	handleFormSubmit(event) {
 		event.preventDefault();
 
@@ -141,7 +148,6 @@ class ReactionForm extends Component {
 			currentFoodsEaten: this.state.currentFoodsEaten,
 			reactionNotes: this.state.reactionNotes
 		};
-
 		console.log('Send this in a POST request:', formPayload);
 
 		let username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
@@ -160,6 +166,8 @@ class ReactionForm extends Component {
             console.log(err)
         });
 	}
+
+	// Render on page
 	render() {
 		const { 
 			title,
@@ -189,12 +197,20 @@ class ReactionForm extends Component {
 						<h6 className="">Title (for your own reference):</h6>
 						<Input
 							inputType={'text'}
+							className="reaction-title"
 							name={'title'}
 							controlFunc={this.handleSelect}
 							content={title}
 							placeholder={'Example: Tues AM - hives and itching'} />
 
 						<h6 className=" mb-4">Start date:</h6>
+					<div className="form-group mt-4 p-1">			
+						<label 
+							for="reaction-start-date"
+							className="calendar-label mr-2"
+						>
+							Start date:
+						</label>
 						<DatePicker
 							selected={this.state.startDate}
 							selectsStart
@@ -202,7 +218,8 @@ class ReactionForm extends Component {
 							endDate={this.state.endDate}
 							onChange={this.handleChangeStart}
 							showTimeSelect
-							timeFormat="HH:mm"
+							className="reaction-start-date mr-5"
+							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
 							dateFormat="MMMM d, yyyy h:mm aa" 
@@ -216,7 +233,8 @@ class ReactionForm extends Component {
 							endDate={this.state.endDate}
 							onChange={this.handleChangeEnd}
 							showTimeSelect
-							timeFormat="HH:mm"
+							className="reaction-end-date"
+							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
 							dateFormat="MMMM d, yyyy h:mm aa" />
@@ -225,35 +243,58 @@ class ReactionForm extends Component {
 						<Checkbox
 							setname={'symptoms'}
 							type={'checkbox'}
+							className="reaction-symptom-checkboxes"
 							controlFunc={this.handleSymptomSelect}
 							options={symptomOptions}
-							selectedOptions={currentSymptoms} />
-
-						<h6 className="">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
-						<Radio
+							selectedOptions={currentSymptoms} 
+						/>
+					</div>
+					<div className="form-group mt-4 p-1">
+						<label for="reaction-severity-radios">
+							Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):
+						</label>
+						<RadioBtn5
 							setName={'severity'}
 							type={'radio'}
 							controlFunc={this.handleSeveritySelect}
+							className="reaction-severity-radios"
 							options={severity}
-							selectedOptions={currentSeverity} />
-
-						<h6 className="">Are you currently sick with a cold or the flu?</h6>
-						<Checkbox
+							selectedOptions={currentSeverity} 
+						/>
+					</div>
+					<div className="form-group mt-4 p-1">
+						<label 
+							for="reaction-sick-radios"
+							className="sick-radios"
+						>
+							Are you currently sick with a cold or the flu?
+						</label>
+						<RadioBtn2
 							setname={'sick'}
 							type={'radio'}
 							controlFunc={this.handleSickSelect}
+							className="reaction-sick-radios"
 							options={sick}
-							selectedOptions={currentSickStatus} />	
-
-						<h6 className="">Have you ingested any of these foods today?</h6>
+							selectedOptions={currentSickStatus} 
+						/>	
+					</div>
+					<div className="form-group mt-4 p-1">
+						<label 
+							for="reaction-food-checkboxes"
+							className="checkbox-Q-label mb-2"
+						>
+							Have you ingested any of these foods today?
+						</label>
 						<Checkbox
 							setname={'foodOptions'}
 							type={'checkbox'}
 							controlFunc={this.handleFoodSelect}
+							className="reaction-food-checkboxes"
 							options={foodOptions}
-							selectedOptions={currentFoodsEaten} />
-						
-						<h6 className="">Additional notes:</h6>
+							selectedOptions={currentFoodsEaten} 
+						/>
+					</div>
+					<div className="form-group mt-4 p-1">
 						<TextArea
 							rows={5}
 							resize={false}
@@ -261,7 +302,7 @@ class ReactionForm extends Component {
 							name={'reactionNotes'}
 							controlFunc={this.handleNoteChange}
 							placeholder={'Add any additional notes that may help your doctor later.'} />
-						
+						</div>
 						<input
 							type="submit"
 							className="btn btn-success px-4"

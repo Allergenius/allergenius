@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import Container from "../../components/Container/Container";
@@ -29,6 +30,40 @@ class AddProfile extends Component {
 					foodAllergens: data.foodAllergens,
 				});
 			});
+
+		//this.getData();
+	}
+	getData() {
+		console.log("getData function")
+		var username = "testUser"
+
+		axios.get("/api/profile/" + username)
+		.then(res => {
+			const profile = res.data[0];
+			console.log(profile);
+
+			var allergies = [];
+
+			//check all food allergies fields
+			if (profile.food_Berries) allergies.push("Berries")
+			if (profile.food_Celery) allergies.push("Celery")
+			if (profile.food_Corn) allergies.push("Corn")
+			if (profile.food_Dairy) allergies.push("Dairy")
+			if (profile.food_Eggs) allergies.push("Eggs")
+			if (profile.food_Fish) allergies.push("Fish/Shellfish")
+			if (profile.food_TreeNuts) allergies.push("Tree Nuts")
+			if (profile.food_Peanuts) allergies.push("Peanuts")
+			if (profile.food_Gluten) allergies.push("Gluten")
+			if (profile.food_Soybeans) allergies.push("Soybeans")
+			if (profile.food_Onions) allergies.push("Onions/Garlic")
+			if (profile.food_Sesame) allergies.push("Sesame")
+
+			this.setState({
+				firstName: profile.firstName, 
+				lastName: profile.lastName,
+				foodsAllergicTo: allergies
+			});
+		});
 	}
 
 	clickAdd = () => {
@@ -53,12 +88,14 @@ class AddProfile extends Component {
 		}
 		this.setState({ foodsAllergicTo: newSelectionArray }, () => console.log('food allergens', this.state.foodsAllergicTo));
 	}
+
 	handleSelect = event => {
 		const target = event.target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 		this.setState({ [name]: value });
 	}
+
 	handleFormSubmit(event) {
 		event.preventDefault();
 
@@ -72,8 +109,9 @@ class AddProfile extends Component {
 
 		var username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
 
+		//TODO: find out if we are adding a new profile or editing an existing one
 		fetch("/api/profile/" + username, {
-            method: 'POST',
+            method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formPayload)
         }).then(function(response) {
@@ -85,6 +123,7 @@ class AddProfile extends Component {
             console.log(err)
         });
 	}
+
 	render() {
 		const { 
 			firstName, 
