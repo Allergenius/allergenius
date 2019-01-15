@@ -4,6 +4,7 @@ import moment from 'moment';
 import Container from "../../components/Container/Container";
 import Card from "../../components/Card/Card";
 import BackButton from "../../components/Buttons/BackButton";
+import './ReactionPage.css';
 
 moment().format();
 

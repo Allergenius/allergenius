@@ -2,10 +2,11 @@ import React from "react";
 import DeleteButton from "../Buttons/DeleteButton";
 
 const Card = props => (
-    <div className="card">
-        <div className="card-header">{props.title}</div>
+    <div className="card mx-auto w-50">
+        <div className="card-header h3 d-flex justify-content-between">{props.title}
+        <span className="lead">{props.date}</span>
+        </div>
         <div className="card-body">
-        <h4>{props.date}</h4>
             <h5 className="card=title">{props.startDate} - {props.endDate}</h5>
             <p className="card-text">Foods Eaten:</p>
             <ul>

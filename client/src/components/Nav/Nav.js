@@ -5,7 +5,7 @@ import LogoutButton from "../Buttons/LogoutButton";
 
 const Navbar = (props) => (
   <nav className="navbar fixed-top navbar-expand-lg navbar-light">
-    <a className="navbar-brand" href="/home">
+    <a className="navbar-brand display-3" href="/home">
       Allergenius
     </a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

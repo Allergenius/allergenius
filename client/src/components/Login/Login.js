@@ -20,7 +20,7 @@ const LoginCard = (props) => (
       <button
         style={{ cursor: 'pointer' }}
         onClick={this.login}
-        className='btn btn-success'
+        className='btn success'
           >
           Log In
         </button>

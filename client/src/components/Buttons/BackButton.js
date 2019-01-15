@@ -3,9 +3,9 @@ import React from "react";
 const BackButton = props => (
     <button 
         onClick={props.clickBack}
-        className="button"
+        className="button btn btn-sm btn-danger"
     >
-        X-go back
+        Go Back
     </button>
 )
 

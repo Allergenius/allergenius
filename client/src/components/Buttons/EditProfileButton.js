@@ -5,7 +5,7 @@ const EditProfileButton = (props) => (
         type={props.inputType}
         onClick={props.clickEdit}
         value={props.content}
-        className="button"
+        className="btn btn-light border border-secondary"
     >   
         Edit Profile
     </button>

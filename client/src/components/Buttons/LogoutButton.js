@@ -5,7 +5,7 @@ const LogoutButton = (props) => (
         type={props.inputType}
         style={{ cursor: 'pointer' }}
         // onClick={this.logout}
-        className='button'
+        className='btn btn-light border border-secondary'
     >   
         Logout
     </button>

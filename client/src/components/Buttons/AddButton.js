@@ -3,7 +3,7 @@ import React from "react";
 const AddButton = props => (
     <button 
         onClick={props.clickAdd}
-        className="button"
+        className="btn btn-light border border-secondary"
     >
         Add Reaction
     </button>

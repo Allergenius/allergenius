@@ -134,13 +134,14 @@ class EditProfile extends Component {
 		} = this.state;
 		
 		return (
-			<div className="p-1">
+			<div className="">
 				<Container>
                 <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
 						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
-							<h3 className="text-center p-4">Edit Profile</h3>
+						<BackButton clickBack={this.clickBack}/>
+							<h3 className="text-center p-2">Edit Profile</h3>
 							
-							<h6 className="p-1">First Name:</h6>
+							<h6 className="pt-2">First Name:</h6>
 							<Input
 								inputType={'text'}
 								name={'firstName'}
@@ -148,7 +149,7 @@ class EditProfile extends Component {
 								content={firstName}
 								placeholder={'Example: Annie'} />
 							
-							<h6 className="p-1">Last Name:</h6>
+							<h6 className="pt-2">Last Name:</h6>
 							<Input
 								inputType={'text'}
 								name={'lastName'}
@@ -156,7 +157,7 @@ class EditProfile extends Component {
 								content={lastName}
 								placeholder={'Example: Body'} />
 
-							<h6 className="p-1">Are you allergic to any of these foods?</h6>	
+							<h6 className="pt-2">Are you allergic to any of these foods?</h6>	
 							<Checkbox
 								setname={'foodAllergens'}
 								type={'checkbox'}
@@ -166,7 +167,6 @@ class EditProfile extends Component {
 							
 							<ProfileSubmit />
 						</form>
-						<BackButton clickBack={this.clickBack}/>
 					<Warning />
             </Container>
 			</div>

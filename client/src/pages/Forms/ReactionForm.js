@@ -183,9 +183,10 @@ class ReactionForm extends Component {
 					<br />
 					<br />
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+						<BackButton clickBack={this.clickBack} />
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
 						
-						<h6 className="p-1">Title (for your own reference):</h6>
+						<h6 className="">Title (for your own reference):</h6>
 						<Input
 							inputType={'text'}
 							name={'title'}
@@ -193,7 +194,7 @@ class ReactionForm extends Component {
 							content={title}
 							placeholder={'Example: Tues AM - hives and itching'} />
 
-						<h6 className="p-1 mb-4">Start date:</h6>
+						<h6 className=" mb-4">Start date:</h6>
 						<DatePicker
 							selected={this.state.startDate}
 							selectsStart
@@ -207,7 +208,7 @@ class ReactionForm extends Component {
 							dateFormat="MMMM d, yyyy h:mm aa" 
 							/>    
 						
-						<h6 className="p-1 mb-4">End date:</h6>
+						<h6 className=" mb-4">End date:</h6>
 						<DatePicker
 							selected={this.state.endDate}
 							selectsEnd
@@ -220,7 +221,7 @@ class ReactionForm extends Component {
 							timeCaption="time"
 							dateFormat="MMMM d, yyyy h:mm aa" />
 
-						<h6 className="p-1">Are you currently experiencing any of these symptoms?</h6>
+						<h6 className="">Are you currently experiencing any of these symptoms?</h6>
 						<Checkbox
 							setname={'symptoms'}
 							type={'checkbox'}
@@ -228,7 +229,7 @@ class ReactionForm extends Component {
 							options={symptomOptions}
 							selectedOptions={currentSymptoms} />
 
-						<h6 className="p-1">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
+						<h6 className="">Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):</h6>
 						<Radio
 							setName={'severity'}
 							type={'radio'}
@@ -236,7 +237,7 @@ class ReactionForm extends Component {
 							options={severity}
 							selectedOptions={currentSeverity} />
 
-						<h6 className="p-1">Are you currently sick with a cold or the flu?</h6>
+						<h6 className="">Are you currently sick with a cold or the flu?</h6>
 						<Checkbox
 							setname={'sick'}
 							type={'radio'}
@@ -244,7 +245,7 @@ class ReactionForm extends Component {
 							options={sick}
 							selectedOptions={currentSickStatus} />	
 
-						<h6 className="p-1">Have you ingested any of these foods today?</h6>
+						<h6 className="">Have you ingested any of these foods today?</h6>
 						<Checkbox
 							setname={'foodOptions'}
 							type={'checkbox'}
@@ -252,7 +253,7 @@ class ReactionForm extends Component {
 							options={foodOptions}
 							selectedOptions={currentFoodsEaten} />
 						
-						<h6 className="p-1">Additional notes:</h6>
+						<h6 className="">Additional notes:</h6>
 						<TextArea
 							rows={5}
 							resize={false}
@@ -263,10 +264,9 @@ class ReactionForm extends Component {
 						
 						<input
 							type="submit"
-							className="btn btn-success"
+							className="btn btn-success px-4"
 							value="Submit"/>
 					</form>
-					<BackButton clickBack={this.clickBack} />
 						<Warning />
 				</Container>
 			</div>
