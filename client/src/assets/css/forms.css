@@ -1,0 +1,82 @@
+form {
+   padding: 20px 20px 25px 20px;
+   border: 3px solid #ccc;
+   border-radius: 5px;
+}
+
+.form-container {
+   margin: 120px 100px;
+   position: relative;
+}
+
+.form-group {
+   width: 100%;
+   flex-wrap: wrap;
+   text-align: left;
+}
+
+/* TextAreas and Inputs */
+.form-label {
+   float: left;
+   width: 50%;
+}
+
+/* Radio Buttons */
+.radio-Q-label {
+   margin: 0 auto;
+   width: 100%;
+   float: left;
+}
+
+.form-check-5 {
+   width: 100%;
+   display: inline-flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-left: 20px;
+   padding-left: 5px;
+}
+
+.form-check-2 {
+   width: 50%;
+   display: inline-flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-left: 20px;
+}
+
+/* Checkboxes */
+.form-checkbox-label {
+   width: 50%;
+}
+
+.checkbox-Q-label {
+   margin: 0 auto;
+   width: 100%;
+   float: left;
+}
+
+.checkbox-container {
+   display: inline-flex;
+   justify-content: space-between;
+   width: 100%;
+   float: left;
+   flex-wrap: wrap;
+   margin: 0 auto;
+}
+
+/* Submit Buttons */
+.btn-submit {
+   position: relative;
+   text-align: center;
+   /* top: 90%; 
+   left: 50%;
+   transform: translate(-5%, 0%); */
+   margin-top: 20px;
+}
+
+.btn {
+   color: black;
+   background-color: #eaf6ff;
+   border: 1px solid #cccccc;
+}
