@@ -1,12 +1,14 @@
 import React from "react";
 
 const AddButton = props => (
-    <button 
-        onClick={props.clickAdd}
-        className="button"
-    >
-        Add Reaction
-    </button>
+    <a href="/app">
+        <button 
+            onClick={props.clickAdd}
+            className="nav-button"
+        >
+            Add Reaction
+        </button>
+    </a>
 )
 
 export default AddButton;
