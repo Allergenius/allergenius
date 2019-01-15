@@ -1,14 +1,14 @@
 import React from "react";
 
-const ButtonEditProfile = (props) => (
+const EditProfileButton = (props) => (
     <button 
         type={props.inputType}
-        onClick={props.clickAdd}
+        onClick={props.clickEdit}
         value={props.content}
-        className="button"
+        className="btn btn-light border border-secondary"
     >   
-        Add Reaction
+        Edit Profile
     </button>
 )
 
-export default ButtonEditProfile;
+export default EditProfileButton;
