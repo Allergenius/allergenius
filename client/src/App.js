@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import '../node_modules/spectre.css/dist/spectre.min.css';
 import { Route, Router } from 'react-router-dom';
 import Home from './auth/Home';
 import Callback from './auth/Callback';
@@ -12,6 +11,7 @@ import ReactionPage from "./pages/ReactionPage/ReactionPage";
 import ReactionForm from './pages/Forms/ReactionForm';
 import Container from "./components/Container/Container";
 import Navbar from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer"
 import './assets/css/styles.css';
 import './assets/css/forms.css';
 
@@ -28,7 +28,7 @@ const handleAuthentication = (nextState, replace) => {
 class App extends Component {
   render() {
     return (
-       <div className="container">
+      <div className="container">
         <Container>
           <Navbar />
           <Router history={history} component={Home}>
@@ -46,8 +46,10 @@ class App extends Component {
               }}/>
             </div>
           </Router>
-         </Container>
-       </div> 
+          <Footer />
+        </Container>
+      </div> 
+
     );
   };
 };

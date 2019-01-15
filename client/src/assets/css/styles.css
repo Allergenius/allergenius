@@ -23,10 +23,13 @@ body {
     background-color: white;
 }
 
-/* footer {
-    background-color: #717a82;
-
-} */
+.footer-container {
+    background-color: #eaf6ff;
+    height: 140px;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
 
 
 /* Navbar & Nav Buttons */
@@ -109,4 +112,31 @@ p {
 /* Home Page (once logged in) Elements */
 .calendar-container {
     margin-top: 100px;
+}
+
+
+/* Media Queries */
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
 }

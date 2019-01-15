@@ -83,9 +83,9 @@ class HomePage extends Component {
                     ))}
                 </List> */}
                 <br />
-                <footer>
+                <div>
                     <Warning />
-                </footer>
+                </div>
             </div>
         )
     }
