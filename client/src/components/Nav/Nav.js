@@ -1,7 +1,7 @@
 import React from "react";
-import AddButton from "../Buttons/AddButton";
-import EditProfileButton from "../Buttons/EditProfileButton";
-import LogoutButton from "../Buttons/LogoutButton";
+// import AddButton from "../Buttons/AddButton";
+// import EditProfileButton from "../Buttons/EditProfileButton";
+// import LogoutButton from "../Buttons/LogoutButton";
 
 const Navbar = () => (
   <nav className="navbar fixed-top navbar-expand-lg navbar-light">
@@ -15,15 +15,24 @@ const Navbar = () => (
     
     <div className="collapse navbar-collapse navbarTogglerDemo02">
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li className="nav-item">
-          <AddButton classname="nav-link" href="/app" />
-        </li>
-        <li className="nav-item">
-          <EditProfileButton classname="nav-link" href="/editprofile" />
-        </li>
-        <li className="nav-item">
-          <LogoutButton classname="nav-link" />
-        </li>
+        <a href="/app">  
+          <li className="nav-item">
+            Add Reaction
+            {/* <AddButton classname="nav-link" href="/app" /> */}
+          </li>
+        </a>
+        <a href="/editprofile">
+          <li className="nav-item">
+            Edit Profile
+            {/* <EditProfileButton classname="nav-link" href="/editprofile" /> */}
+          </li>
+        </a>
+        <a href="/">
+          <li className="nav-item">
+            Logout
+            {/* <LogoutButton classname="nav-link" /> */}
+          </li>
+        </a>
       </ul>
     </div>
   </nav>

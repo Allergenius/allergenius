@@ -41,18 +41,29 @@ body {
     padding: 0px 40px;
 }
 
-.nav-item {
+.nav-item,
+a:visited,
+a:link {
     float: left;
     margin: 5px 10px;
+    color: black;
 }
 
-.nav-button {
-    padding: 5px 10px;
-    color: black;
-    background-color: #eaf6ff;
+a:hover {
+    font-size: 20px;
+}
+
+a:active {
+    background-color: #cccccc;
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
+/* .nav-button {
+    padding: 5px 10px;
+    background-color: #eaf6ff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+} */
 
 
 /* Medical Alert  */
@@ -61,7 +72,7 @@ body {
 }
 
 .alert-bottom {
-    margin: 30px 0px 0px;
+    margin: 80px 0px 0px;
 }
 
 .alert-top {
