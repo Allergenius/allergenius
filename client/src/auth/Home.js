@@ -59,15 +59,11 @@ class Home extends Component {
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={this.login}
-                  className='btn success'
+                  className='btn light'
                 >
                   Log In
                 </button>
               </div>
-              {/* <div className="card-footer text-muted">
-                Last Login: 2 days ago 
-              </div>
-            </div> */}
           </div>
           )
         }

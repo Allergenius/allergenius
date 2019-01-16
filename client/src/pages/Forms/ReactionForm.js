@@ -309,7 +309,7 @@ class ReactionForm extends Component {
 						</div>
 						<input
 							type="submit"
-							className="btn btn-success px-4"
+							className="btn btn-light px-4"
 							value="Submit"/>
 					</form>
 					<Warning />

@@ -1,45 +1,30 @@
 /* HTML elements for all pages */
 body {
     /* padding-bottom: 80px; */
-    /* margin: 0 auto; */
+    margin: 0 auto;
     height: 100%; 
     background-image: url("../images/foodboard_1100x734.jpg");
-    /* background-position: top; */
-    /* width: 100%; */
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #717a82;
 
 }
 
-/* .login-bkgd {
-    background-image: url("../images/foodboard_1100x734.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+h5 {
+    text-align: center;
+}
 
 .body-non-login {
     background-image: none;
     background-color: white;
 }
 
-.footer-container {
-    background-color: #eaf6ff;
-    height: 140px;
-    text-align: center;
-    width: 100%;
-    margin-top: 50px;
-    position: sticky;
-    bottom: 0;
-}
-
 
 /* Navbar & Nav Buttons */
 .navbar {
     background-color: #eaf6ff;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .navbar-brand {
@@ -96,7 +81,7 @@ p {
     color: white;
 }
 
-.success {
+.light {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -107,9 +92,26 @@ p {
     border: 1px solid #cccccc;
 }
 
+.btn-light {
+    color: black;
+    background-color: #eaf6ff;
+    border: 1px solid #cccccc;
+    margin: 40px 0px;
+}
+
+.button-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn-reactions {
+    margin-top: 40px;
+    text-align: center;
+}
+
 /* Home Page (once logged in) Elements */
 .calendar-container {
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
 
