@@ -103,6 +103,7 @@ class HomePage extends Component {
         return (
             <Container>
                 <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
+            <div>
                 <button onClick={exportCsv}>Export to CSV</button>
                 <BigCalendar
                     className="calendar-container"
