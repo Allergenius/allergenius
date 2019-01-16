@@ -1,16 +1,14 @@
 import React from "react";
 
 const EditProfileButton = (props) => (
-    <a href="/editprofile">
-        <button 
-            type={props.inputType}
-            onClick={props.clickAdd}
-            value={props.content}
-            className="nav-button"
-        >   
-            Edit Profile
-        </button>
-    </a>
+    <button 
+        type={props.inputType}
+        onClick={props.clickEdit}
+        value={props.content}
+        className="btn btn-light border border-secondary"
+    >   
+        Edit Profile
+    </button>
 )
 
 export default EditProfileButton;

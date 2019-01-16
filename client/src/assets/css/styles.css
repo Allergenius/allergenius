@@ -2,12 +2,14 @@
 body {
     /* padding-bottom: 80px; */
     /* margin: 0 auto; */
-    /* background-color: #717a82; */
-    background-image: url("../images/foodboard_1100x734.jpg");
     height: 100%; 
-    background-position: top;
+    background-image: url("../images/foodboard_1100x734.jpg");
+    /* background-position: top; */
+    /* width: 100%; */
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #717a82;
+
 }
 
 /* .login-bkgd {
@@ -29,6 +31,8 @@ body {
     text-align: center;
     width: 100%;
     margin-top: 50px;
+    position: sticky;
+    bottom: 0;
 }
 
 
@@ -61,12 +65,6 @@ a:active {
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
-/* .nav-button {
-    padding: 5px 10px;
-    background-color: #eaf6ff;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-} */
 
 
 /* Medical Alert  */
@@ -98,7 +96,7 @@ p {
     color: white;
 }
 
-.btn-light {
+.success {
     position: absolute;
     top: 100%;
     left: 50%;

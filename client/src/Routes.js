@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route, Router } from 'react-router-dom';
-import Home from './Home';
-import Callback from './Callback';
-import Auth from './auth';
-import history from './history';
-import App from '../App';
-import HomePage from '../pages/HomePage/HomePage';
-import ReactionForm from '../pages/Forms/ReactionForm';
-import EditProfile from '../pages/Forms/EditProfile';
-import AddProfile from '../pages/Forms/AddProfile';
-import ReactionPage from "../pages/ReactionPage/ReactionPage";
+import Home from './auth/Home';
+import Callback from './auth/Callback';
+import Auth from './auth/auth';
+import history from './auth/history';
+import App from './App';
+import HomePage from './pages/HomePage/HomePage';
+import ReactionForm from './pages/Forms/ReactionForm';
+import EditProfile from './pages/Forms/EditProfile';
+import AddProfile from './pages/Forms/AddProfile';
+import ReactionPage from "./pages/ReactionPage/ReactionPage";
 
 
 const auth = new Auth();

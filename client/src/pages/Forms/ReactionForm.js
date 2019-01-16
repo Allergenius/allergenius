@@ -5,9 +5,11 @@ import RadioBtn2 from '../../components/FormElements/RadioBtn2options';
 import RadioBtn5 from '../../components/FormElements/RadioBtn5options';
 import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
-import Warning from "../../components/Warning/Warning"
+import Container from "../../components/Container/Container";
+import Warning from "../../components/Warning/Warning";
+import Navbar from "../../components/Nav/Nav";
+import BackButton from "../../components/Buttons/BackButton";
 import "react-datepicker/dist/react-datepicker.css";
-
 
 
 class ReactionForm extends Component {
@@ -57,7 +59,18 @@ class ReactionForm extends Component {
 			});
 	}
 
-	// Function for Checkboxes for Symptoms
+	clickAdd = () => {
+        this.props.history.push("/reactionform");
+    }
+
+    clickEditProfile = () => {
+        this.props.history.push("/editprofile");
+	} 
+	
+	clickBack = () => {
+        this.props.history.push("/home");
+	}
+	
 	handleSymptomSelect = event => {
 		const newSelection = event.target.value;
 		let newSelectionArray;
@@ -143,6 +156,7 @@ class ReactionForm extends Component {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formPayload)
         }).then(function(response) {
+			console.log(response)
             if (response.status >= 400) {
               throw new Error("Bad response from server");
             }
@@ -168,25 +182,25 @@ class ReactionForm extends Component {
 		} = this.state;
 		
 		return (
-			<div className="form-container">
-				<form onSubmit={this.handleFormSubmit} method="POST">
-					<div className="alert-top">
-						<Warning />
-					</div>
-					<h3 className="text-center p-3 mt-3">
-						Reaction Entry Form
-					</h3>
-
-					<div className="form-group p-1 mt-3">
+			<div className='container container-fluid'>
+				<Container>
+				<Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
+					<br />
+					<br />
+					<br />
+					<br />
+					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+						<BackButton clickBack={this.clickBack} />
+						<h3 className="text-center p-4">Reaction Entry Form</h3>
+						
 						<Input
 							inputType={'text'}
 							className="reaction-title"
 							name={'title'}
 							controlFunc={this.handleSelect}
 							content={title}
-							placeholder={'Title (for future reference)'} 
-						/>
-					</div>
+							placeholder={'Title (for your own reference)'} />
+
 					<div className="form-group mt-4 p-1">			
 						<label 
 							for="reaction-start-date"
@@ -205,12 +219,10 @@ class ReactionForm extends Component {
 							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
-							showTime = {{ use12hours: true, format: "hh:mm" }} 
-							allowClear={false}
-							dateFormat="MMMM d, yyyy hh:mm"
-						/>
-					{/* </div>
-					<div className="form-group mt-5 p-1">     */}
+							dateFormat="MMMM d, yyyy h:mm aa" 
+							/>    
+					</div>
+					<div>
 						<label 
 							for="reaction-end-date"
 							className="calendar-label mr-2"
@@ -228,18 +240,10 @@ class ReactionForm extends Component {
 							timeFormat="hh:mm"
 							timeIntervals={15}
 							timeCaption="time"
-							showTime = {{ use12hours: true, format: "hh:mm" }} 
-							allowClear={false}
-							dateFormat="MMMM d, yyyy hh:mm"
-						/>
+							dateFormat="MMMM d, yyyy h:mm aa" />
 					</div>
-					<div className="form-group mt-4 p-1">
-						<label 
-							for="reaction-symptom-checkboxes"
-							className="checkbox-Q-label mb-2"
-						>
-							Are you currently experiencing any of these symptoms?
-						</label>
+					<div>
+						<label className="">Are you currently experiencing any of these symptoms?</label>
 						<Checkbox
 							setname={'symptoms'}
 							type={'checkbox'}
@@ -301,19 +305,15 @@ class ReactionForm extends Component {
 							content={reactionNotes}
 							name={'reactionNotes'}
 							controlFunc={this.handleNoteChange}
-							placeholder={'Add any additional notes that may help your doctor later.'} 
-						/>
-					</div>
-					<div className="form-group btn-submit mt-4">
-						<a href="/home">
-							<input 
-								type={'submit'}
-								value={'Submit Entry'}
-								className="btn"	
-							/>
-						</a>
-					</div>
-				</form>
+							placeholder={'Add any additional notes that may help your doctor later.'} />
+						</div>
+						<input
+							type="submit"
+							className="btn btn-success px-4"
+							value="Submit"/>
+					</form>
+					<Warning />
+				</Container>
 			</div>
 		);
 	}
