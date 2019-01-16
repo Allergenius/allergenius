@@ -17,31 +17,28 @@ var objectToCsv = function(data) {
     const csvRows = [];
 
     //get the headers
-    console.log(data[0])
     const headers = Object.keys(data[0]);
     csvRows.push(headers.join(","));
 
-    console.log(csvRows)
     //loop over the rows
     for (const row of data) {
         const values = headers.map(header => {
             const escaped = (''+row[header]).replace (/"/g, '\\"');
             return `"${escaped}"` 
         })
-
         csvRows.push(values.join(","));
-
     }
 
     return csvRows.join("\n")
 }
 var download = function(data){
+    //Create the actual csv file as a blob object
     const blob = new Blob([data], {type: "text/csv"});
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a")
     a.setAttribute("hidden", "");
     a.setAttribute("href", url)
-    a.setAttribute("download", "download.csv")
+    a.setAttribute("download", "reactions.csv")
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -52,7 +49,7 @@ var exportCsv = function(e){
     var username = "testUser"
     axios.get("/api/reactions/" + username)
         .then(res => {
-            console.log(res)
+            //Special thanks to https://www.youtube.com/watch?v=eicLNabvZN8 
             const csvData = objectToCsv(res.data);
             download(csvData)
         })
@@ -122,9 +119,9 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                <br />
-                <div>
-                    <Warning />
+                    <div>
+                        <Warning />
+                    </div>
                 </div>
             </Container>
         )
