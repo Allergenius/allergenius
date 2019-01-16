@@ -2,12 +2,14 @@
 body {
     /* padding-bottom: 80px; */
     /* margin: 0 auto; */
-    /* background-color: #717a82; */
-    background-image: url("../images/foodboard_1100x734.jpg");
     height: 100%; 
-    background-position: top;
+    background-image: url("../images/foodboard_1100x734.jpg");
+    /* background-position: top; */
+    /* width: 100%; */
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #717a82;
+
 }
 
 /* .login-bkgd {
@@ -23,10 +25,15 @@ body {
     background-color: white;
 }
 
-/* footer {
-    background-color: #717a82;
-
-} */
+.footer-container {
+    background-color: #eaf6ff;
+    height: 140px;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    position: sticky;
+    bottom: 0;
+}
 
 
 /* Navbar & Nav Buttons */
@@ -58,12 +65,6 @@ a:active {
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
-/* .nav-button {
-    padding: 5px 10px;
-    background-color: #eaf6ff;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-} */
 
 
 /* Medical Alert  */
@@ -95,7 +96,7 @@ p {
     color: white;
 }
 
-.btn-light {
+.success {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -109,4 +110,31 @@ p {
 /* Home Page (once logged in) Elements */
 .calendar-container {
     margin-top: 100px;
+}
+
+
+/* Media Queries */
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
 }

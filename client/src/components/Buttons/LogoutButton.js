@@ -1,16 +1,14 @@
 import React from "react";
 
 const LogoutButton = (props) => (
-    <a href="/">
-        <button 
-            type={props.inputType}
-            style={{ cursor: 'pointer' }}
-            // onClick={this.logout}
-            className="nav-button"
-        >   
-            Logout
-        </button>
-    </a>
+    <button 
+        type={props.inputType}
+        style={{ cursor: 'pointer' }}
+        // onClick={this.logout}
+        className='btn btn-light border border-secondary'
+    >   
+        Logout
+    </button>
 )
 
 export default LogoutButton;

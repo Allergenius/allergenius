@@ -6,6 +6,8 @@ import moment from 'moment'
 import Warning from "../../components/Warning/Warning"
 // import List from "../../components/List/List";
 // import ListItem from "../../components/ListItem/ListItem";
+import Container from "../../components/Container/Container";
+import Navbar from "../../components/Nav/Nav";
 
 
 moment.locale("en");
@@ -83,9 +85,9 @@ class HomePage extends Component {
         this.props.history.push("/reactionform");
     }
 
-    clickAddProfile = () => {
-        this.props.history.push("/addprofile");
-    }
+    // clickAddProfile = () => {
+    //     this.props.history.push("/addprofile");
+    // }
 
     clickEditProfile = () => {
         this.props.history.push("/editprofile");
@@ -99,10 +101,8 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
-                <br />
-                <br />
-                <br />
+            <Container>
+                <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
                 <button onClick={exportCsv}>Export to CSV</button>
                 <BigCalendar
                     className="calendar-container"
@@ -132,10 +132,10 @@ class HomePage extends Component {
                     ))}
                 </List> */}
                 <br />
-                <footer>
+                <div>
                     <Warning />
-                </footer>
-            </div>
+                </div>
+            </Container>
         )
     }
 }

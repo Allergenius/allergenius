@@ -15,6 +15,10 @@ form {
    text-align: left;
 }
 
+.form-label.capitalize {
+   text-transform: capitalize;
+}
+
 /* TextAreas and Inputs */
 .form-label {
    float: left;

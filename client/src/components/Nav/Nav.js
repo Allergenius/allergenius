@@ -3,9 +3,9 @@ import React from "react";
 // import EditProfileButton from "../Buttons/EditProfileButton";
 // import LogoutButton from "../Buttons/LogoutButton";
 
-const Navbar = () => (
+const Navbar = (props) => (
   <nav className="navbar fixed-top navbar-expand-lg navbar-light">
-    <a className="navbar-brand" href="/home">
+    <a className="navbar-brand display-3" href="/home">
       Allergenius
     </a>
 

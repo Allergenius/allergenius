@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Routes from './Routes';
+import Routes from '../Routes';
 import LogoutButton from './../components/Buttons/LogoutButton';
 // import LoginCard from '../components/Login/Login';
 // import App from './App';
@@ -39,9 +39,9 @@ class Home extends Component {
                   </h1>
                 </div>
               </div> */}
-              <div className='loginpage-container'>
-                <div className='container'>
-                  <h1 className='display-3 text-center'>
+              <div className='container loginpage-container'>
+                <div className='container text-center'>
+                  <h1 className='display-3'>
                     Allergenius
                   </h1>
                   <h5>
@@ -59,7 +59,7 @@ class Home extends Component {
                 <button
                   style={{ cursor: 'pointer' }}
                   onClick={this.login}
-                  className='btn btn-light'
+                  className='btn success'
                 >
                   Log In
                 </button>
