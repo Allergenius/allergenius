@@ -4,10 +4,9 @@ import BigCalendar from 'react-big-calendar'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from 'moment'
 import Warning from "../../components/Warning/Warning"
-// import List from "../../components/List/List";
-// import ListItem from "../../components/ListItem/ListItem";
 import Container from "../../components/Container/Container";
 import Navbar from "../../components/Nav/Nav";
+import ExportButton from "../../components/Buttons/ExportButton";
 
 
 moment.locale("en");
@@ -31,6 +30,7 @@ var objectToCsv = function(data) {
 
     return csvRows.join("\n")
 }
+
 var download = function(data){
     //Create the actual csv file as a blob object
     const blob = new Blob([data], {type: "text/csv"});
@@ -43,6 +43,7 @@ var download = function(data){
     a.click();
     document.body.removeChild(a);
 }
+
 var exportCsv = function(e){
     e.preventDefault();
 
@@ -100,9 +101,6 @@ class HomePage extends Component {
         return (
             <Container>
                 <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
-                <button onClick={exportCsv}>
-                    Export Reactions to CSV
-                </button>
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
@@ -119,6 +117,9 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
+                <div className="button-div">
+                    <ExportButton />
+                </div>
                 <div>
                     <Warning />
                 </div>
