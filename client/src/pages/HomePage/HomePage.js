@@ -119,9 +119,8 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                    <div>
-                        <Warning />
-                    </div>
+                <div>
+                    <Warning />
                 </div>
             </Container>
         )
