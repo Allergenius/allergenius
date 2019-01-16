@@ -90,9 +90,6 @@ class ReactionPage extends Component {
                         />
                     ))}
                 </Container>
-                <div className="button-div btn-reactions">
-                    <ExportButton />
-                </div>
             </div>
         )
     }

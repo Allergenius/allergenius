@@ -9,7 +9,7 @@ CREATE TABLE users
 	username_pk  varchar(45) NOT NULL,
 	date_created datetime NOT NULL,
 	last_login   datetime,
-	success KEY (username_pk)
+	primary KEY (username_pk)
 ) ENGINE=INNODB;
 
 
@@ -66,7 +66,7 @@ CREATE TABLE reactions
 	-- diffDetergent boolean NOT NULL DEFAULT false,
 	-- diffPerfume boolean NOT NULL DEFAULT false,
 	Notes text,
-	success KEY (id),
+	primary KEY (id),
 	CONSTRAINT userdaytitle UNIQUE(username,startDate,endDate,title)
 );
 
@@ -91,5 +91,5 @@ CREATE TABLE userProfile
 	food_Celery boolean NOT NULL DEFAULT False,
 	food_Onions boolean NOT NULL DEFAULT False,
 	food_Sesame boolean NOT NULL DEFAULT False,
-	success KEY (id)
+	primary KEY (id)
 );

@@ -62,11 +62,6 @@ const Navbar = (props) => (
             Add Reaction
           </li>
         </a>
-        <a href="#" onClick={exportCsv}>
-          <li className="nav-item">
-            Export Reactions to .CSV
-          </li>
-        </a>
         <a href="/editprofile">
           <li className="nav-item">
             Edit Profile

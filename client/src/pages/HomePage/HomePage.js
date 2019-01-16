@@ -6,7 +6,7 @@ import moment from 'moment'
 import Warning from "../../components/Warning/Warning"
 import Container from "../../components/Container/Container";
 import Navbar from "../../components/Nav/Nav";
-import ExportButton from "../../components/Buttons/ExportButton";
+// import ExportButton from "../../components/Buttons/ExportButton";
 
 
 moment.locale("en");
@@ -118,7 +118,13 @@ class HomePage extends Component {
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
                 <div className="button-div">
-                    <ExportButton />
+                    <button 
+                        onClick={exportCsv}
+                        className="btn btn-light border border-secondary"
+                    >
+                        Export Reactions to .CSV
+                    </button>
+                    {/* <ExportButton /> */}
                 </div>
                 <div>
                     <Warning />
