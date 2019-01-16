@@ -100,36 +100,25 @@ class HomePage extends Component {
         return (
             <Container>
                 <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
-                <div>
-                    <button onClick={exportCsv}>Export to CSV</button>
-                    <BigCalendar
-                        className="calendar-container"
-                        localizer={localizer}
-                        events={this.state.reactions}
-                        style={{ height: 500, width: this.state.width }}
-                        selectable={true}
-                        toolbar={true}
-                        startAccessor="start"
-                        endAccessor="end"
-                        views={["month", "week", "day"]}
-                        defaultView="month"
-                        onView={() => {}}
-                        date={this.state.selectedDate}
-                        onNavigate={date => this.setState({ selectedDate: date })}
-                        onSelectEvent={(event) => this.handleEventSelect(event)}
-                    />
-                    {/* <List>
-                        {this.state.reactions.map(reaction => (
-                            <ListItem
-                            id={reaction.id}
-                            key={reaction.id}
-                            date={reaction.reactionTime}
-                            severity={reaction.severity}
-                            notes={reaction.Notes}
-                            />
-                        ))}
-                    </List> */}
-                    <br />
+                <button onClick={exportCsv}>
+                    Export Reactions to CSV
+                </button>
+                <BigCalendar
+                    className="calendar-container"
+                    localizer={localizer}
+                    events={this.state.reactions}
+                    style={{ height: 500, width: this.state.width }}
+                    selectable={true}
+                    toolbar={true}
+                    startAccessor="start"
+                    endAccessor="end"
+                    views={["month", "week", "day"]}
+                    defaultView="month"
+                    onView={() => {}}
+                    date={this.state.selectedDate}
+                    onNavigate={date => this.setState({ selectedDate: date })}
+                    onSelectEvent={(event) => this.handleEventSelect(event)}
+                />
                     <div>
                         <Warning />
                     </div>
