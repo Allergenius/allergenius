@@ -134,7 +134,7 @@ class EditProfile extends Component {
 		} = this.state;
 		
 		return (
-			<div className="">
+			<div className="form-container">
 				<Container>
                 <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
 						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">

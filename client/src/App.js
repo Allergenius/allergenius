@@ -11,7 +11,6 @@ import ReactionPage from "./pages/ReactionPage/ReactionPage";
 import ReactionForm from './pages/Forms/ReactionForm';
 import Container from "./components/Container/Container";
 import Navbar from "./components/Nav/Nav";
-import Footer from "./components/Footer/Footer"
 import './assets/css/styles.css';
 import './assets/css/forms.css';
 
@@ -46,7 +45,6 @@ class App extends Component {
               }}/>
             </div>
           </Router>
-          <Footer />
         </Container>
       </div> 
 
