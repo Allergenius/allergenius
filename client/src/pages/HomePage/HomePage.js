@@ -117,9 +117,12 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                <div className="button-div">
-                    <ExportButton />
-                </div>
+                <button 
+                    onClick={exportCsv}
+                    className="btn btn-light border border-secondary"
+                    >
+                        Export Reactions to .CSV
+                </button>
                 <div>
                     <Warning />
                 </div>
