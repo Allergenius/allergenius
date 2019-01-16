@@ -1,15 +1,18 @@
 /* HTML elements for all pages */
 body {
     /* padding-bottom: 80px; */
-    /* margin: 0 auto; */
+    margin: 0 auto;
     height: 100%; 
     background-image: url("../images/foodboard_1100x734.jpg");
-    /* background-position: top; */
-    /* width: 100%; */
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #717a82;
 
+}
+
+h5 {
+    text-align: center;
 }
 
 /* .login-bkgd {
@@ -27,11 +30,11 @@ body {
 
 .footer-container {
     background-color: #eaf6ff;
-    height: 140px;
-    text-align: center;
+    height: 120px;
+    /* line-height: 120px; */
     width: 100%;
-    margin-top: 50px;
-    position: sticky;
+    /* margin-top: 50px; */
+    position: fixed;
     bottom: 0;
 }
 

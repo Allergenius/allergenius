@@ -103,8 +103,9 @@ class HomePage extends Component {
         return (
             <Container>
                 <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
-            <div>
-                <button onClick={exportCsv}>Export to CSV</button>
+                <button onClick={exportCsv}>
+                    Export Reactions to CSV
+                </button>
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
@@ -121,17 +122,6 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                {/* <List>
-                    {this.state.reactions.map(reaction => (
-                        <ListItem
-                        id={reaction.id}
-                        key={reaction.id}
-                        date={reaction.reactionTime}
-                        severity={reaction.severity}
-                        notes={reaction.Notes}
-                        />
-                    ))}
-                </List> */}
                 <br />
                 <div>
                     <Warning />
