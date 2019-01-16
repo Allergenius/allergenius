@@ -101,17 +101,10 @@ class HomePage extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
             <Container>
                 <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
-
-=======
             <div>
-                <br />
-                <br />
-                <br />
                 <button onClick={exportCsv}>Export to CSV</button>
->>>>>>> 4afa6a6210cab3af2a13d1708575b5ea6b3ecb88
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
