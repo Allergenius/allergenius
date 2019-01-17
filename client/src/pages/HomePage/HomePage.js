@@ -118,7 +118,7 @@ class HomePage extends Component {
             })
     }
 
-    clickadd = () => {
+    clickAdd = () => {
         this.props.history.push("/reactionform");
     }
 
@@ -126,7 +126,7 @@ class HomePage extends Component {
     //     this.props.history.push("/addprofile");
     // }
 
-    clickeditProfile = () => {
+    clickEditProfile = () => {
         this.props.history.push("/editprofile");
     } 
     
