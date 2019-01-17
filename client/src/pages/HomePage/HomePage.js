@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
-import BigCalendar from 'react-big-calendar'
+import BigCalendar from 'react-big-calendar';
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from 'moment'
-import Warning from "../../components/Warning/Warning"
 import Container from "../../components/Container/Container";
+import Warning from "../../components/Warning/Warning"
 // import Navbar from "../../components/Nav/Nav";
-
+import jwt_decode from 'jwt-decode';
+import Header from "../../components/Header/Header";
+// import List from "../../components/List/List";
+// import ListItem from "../../components/ListItem/ListItem";
+import AddButton from "../../components/Buttons/AddButton";
+import EditProfileButton from "../../components/Buttons/EditProfileButton"
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -56,17 +61,52 @@ var exportCsv = function(e){
 }
 
 class HomePage extends Component {
-    state = {
-        username: "",
+    constructor() {
+        super()
+        this.state = {
+        first_name: "",
+        last_name: "",
+        id: "",
+        email: "",
         reactions: [],
         selectedDate: new Date(),
-        selectedEvent: "",
+        selectedEvent: ""
+        }
     }
-
+    // state = {
+    //     first_name: "",
+    //     last_name: "",
+    //     id: "",
+    //     email: "",
+    //     reactions: [],
+    //     selectedDate: new Date(),
+    //     selectedEvent: ""
+    // }
+    componentWillMount = () => {
+        // new
+        const token = localStorage.usertoken
+        const decoded = jwt_decode(token)
+        console.log(decoded)
+        this.setState({
+            first_name: decoded.first_name,
+            last_name: decoded.last_name,
+            email: decoded.email,
+            id: decoded.id
+        })
+    }
     componentDidMount = () => {
+        axios.get('/api/profile/' + this.state.id)
+        .then(res => {
+            if (res.data.length === 0) {
+                window.location.href = "/addprofile"
+            }})
+        .catch(err => {
+            console.log(err)
+        })
+
         document.body.className="body-non-login"
-        var username = "testUser"
-        axios.get("/api/reactions/" + username)
+        console.log(this.state.id)
+        axios.get("/api/reactions/" + this.state.id)
             .then(res => {
                 const reactions = res.data;
                 for (let i = 0; i < reactions.length; i++) {
@@ -99,10 +139,12 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
-                {/* <Navbar 
-                    clickadd={this.clickadd} 
-                    clickedit={this.clickeditProfile} 
-                /> */}
+                {/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
+                <Header username={this.state.username} />
+                <AddButton clickAdd={this.clickAdd}/>
+
+                <EditProfileButton clickEdit={this.clickEditProfile}/>
+
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import Checkbox from '../../components/FormElements/Checkbox';
 import RadioBtn2 from '../../components/FormElements/RadioBtn2options';
 import RadioBtn5 from '../../components/FormElements/RadioBtn5options';
@@ -10,12 +10,26 @@ import Warning from "../../components/Warning/Warning";
 // import Navbar from "../../components/Nav/Nav";
 import BackButton from "../../components/Buttons/BackButton";
 import "react-datepicker/dist/react-datepicker.css";
+import jwt_decode from 'jwt-decode';
+// import DateTimePicker from 'react-datetime-picker';
+import { format } from 'util';
+// import { DateTimePicker } from 'react-widgets';
+import "react-widgets/dist/css/react-widgets.css";
+import moment from 'moment';
+import momentLocalizer from 'react-widgets-moment';
+import DateTimePicker from 'react-widgets/lib/DateTimePicker';
+
+moment.locale('en')
+momentLocalizer()
+
+// let formatter = moment.format()
 
 
 class ReactionForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			id: '',
 			title: '',
 			startDate: new Date(),
 			endDate: new Date(),
@@ -40,6 +54,19 @@ class ReactionForm extends Component {
 		this.handleNoteChange = this.handleNoteChange.bind(this);
 	}
 
+	// componentWillMount = () => {
+    //     // new
+    //     const token = localStorage.usertoken
+    //     const decoded = jwt_decode(token)
+    //     console.log(decoded)
+    //     this.setState({
+    //         first_name: decoded.first_name,
+    //         last_name: decoded.last_name,
+    //         email: decoded.email,
+    //         id: decoded.id
+    //     })
+	// }
+	
 	componentDidMount() {
 		document.body.className="body-non-login"
 		fetch('./reaction-entry.json')
@@ -56,14 +83,22 @@ class ReactionForm extends Component {
 					currentFoodsEaten: data.currentFoodsEaten,
 					reactionNotes: data.reactionNotes
 				});
+				const token = localStorage.usertoken
+				const decoded = jwt_decode(token)
+				this.setState({
+					// first_name: decoded.first_name,
+					// last_name: decoded.last_name,
+					email: decoded.email,
+					id: decoded.id
+				})
 			});
 	}
 
-	clickadd = () => {
+	clickAdd = () => {
         this.props.history.push("/reactionform");
     }
 
-    clickeditProfile = () => {
+    clickEditProfile = () => {
         this.props.history.push("/editprofile");
 	} 
 	
@@ -145,11 +180,12 @@ class ReactionForm extends Component {
 			currentSeverity: this.state.currentSeverity,
 			currentSickStatus: this.state.currentSickStatus,
 			currentFoodsEaten: this.state.currentFoodsEaten,
-			reactionNotes: this.state.reactionNotes
+			reactionNotes: this.state.reactionNotes,
+			id: this.state.id
 		};
 		console.log('Send this in a POST request:', formPayload);
 
-		let username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
+		let username = this.state.id; //placeholder.  Need to figure out how to see who is logged in.
 
 		fetch("/api/reactions/" + username, {
             method: 'POST',
@@ -184,59 +220,85 @@ class ReactionForm extends Component {
 		return (
 			<div className='container container-fluid'>
 				<Container>
-				{/* <Navbar clickadd={this.clickadd} clickedit={this.clickeditProfile}/> */}
+				{/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
+					<br />
+					<br />
+					<br />
+					<br />
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
 						
+						<h6 className="">Title (for your own reference):</h6>
 						<Input
 							inputType={'text'}
 							className="reaction-title"
 							name={'title'}
 							controlFunc={this.handleSelect}
 							content={title}
-							placeholder={'Title (for your own reference)'} />
+							placeholder={'Example: Tues AM - hives and itching'} />
 
-					<div className="form-group mt-4 p-1">			
+						<div className="form-group mt-4 p-1">			
 						<label 
-							for="reaction-start-date"
+							htmlFor="reaction-start-date"
 							className="calendar-label mr-2"
 						>
 							Reaction Start Time:
 						</label>
-						<DatePicker
-							selected={this.state.startDate}
-							selectsStart
-							startDate={this.state.startDate}
-							endDate={this.state.endDate}
-							onChange={this.handleChangeStart}
-							showTimeSelect
-							className="reaction-start-date mr-5"
-							timeFormat="hh:mm"
-							timeIntervals={15}
-							timeCaption="time"
-							dateFormat="MMMM d, yyyy h:mm aa" 
+						<DateTimePicker
+							// selected={this.state.startDate}
+							// selectsStart
+							// startDate={this.state.startDate}
+							// endDate={this.state.endDate}
+							currentDate={this.state.startDate}
+							onChange={startDate => this.setState({ startDate })}
+							date={true}
+							// editFormat='LLL'
+							format='LLL'
+							defaultValue={new Date()}
+							time={true}
+							value={this.state.startDate}
+							onCurrentDateChange={startDate => this.setState({ startDate })}
+							parse='LLL'
+							// dateIcon={calendar}
+							// showTimeSelect
+							// className="reaction-start-date mr-5"
+							// timeFormat="hh:mm"
+							// timeIntervals={15}
+							// timeCaption="time"
+							// dateFormat="MMMM d, yyyy h:mm aa" 
 							/>    
 					</div>
 					<div>
 						<label 
-							for="reaction-end-date"
+							htmlFor="reaction-end-date"
 							className="calendar-label mr-2"
 						>
 							Reaction End Time:
 						</label>
-						<DatePicker
-							selected={this.state.endDate}
-							selectsEnd
-							startDate={this.state.startDate}
-							endDate={this.state.endDate}
+						<DateTimePicker
+							// selected={this.state.endDate}
+							// selectsEnd
+							// startDate={this.state.startDate}
+							// endDate={this.state.endDate}
+							currentDate={this.state.endDate}
+							// defaultCurrentDate={this.state.endDate}
 							onChange={this.handleChangeEnd}
-							showTimeSelect
-							className="reaction-end-date"
-							timeFormat="hh:mm"
-							timeIntervals={15}
-							timeCaption="time"
-							dateFormat="MMMM d, yyyy h:mm aa" />
+							date={true}
+							// editFormat='LL'
+							format='LLL'
+							// defaultValue={new Date()}
+							time={true}
+							value={this.state.endDate}
+							onCurrentDateChange={this.handleChangeEnd}
+							// parse='MM DD YYYY HH:mm'
+							// showTimeSelect
+							// className="reaction-end-date"
+							// timeFormat="hh:mm"
+							// timeIntervals={15}
+							// timeCaption="time"
+							// dateFormat="MMMM d, yyyy h:mm aa" 
+							/>
 					</div>
 					<div>
 						<label className="">Are you currently experiencing any of these symptoms?</label>
@@ -250,7 +312,7 @@ class ReactionForm extends Component {
 						/>
 					</div>
 					<div className="form-group mt-4 p-1">
-						<label for="reaction-severity-radios">
+						<label htmlFor="reaction-severity-radios">
 							Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):
 						</label>
 						<RadioBtn5
@@ -264,7 +326,7 @@ class ReactionForm extends Component {
 					</div>
 					<div className="form-group mt-4 p-1">
 						<label 
-							for="reaction-sick-radios"
+							htmlFor="reaction-sick-radios"
 							className="sick-radios"
 						>
 							Are you currently sick with a cold or the flu?
@@ -280,7 +342,7 @@ class ReactionForm extends Component {
 					</div>
 					<div className="form-group mt-4 p-1">
 						<label 
-							for="reaction-food-checkboxes"
+							htmlFor="reaction-food-checkboxes"
 							className="checkbox-Q-label mb-2"
 						>
 							Have you ingested any of these foods today?
@@ -305,10 +367,10 @@ class ReactionForm extends Component {
 						</div>
 						<input
 							type="submit"
-							className="btn btn-light px-4"
+							className="btn btn-success px-4"
 							value="Submit"/>
 					</form>
-					<Warning />
+						<Warning />
 				</Container>
 			</div>
 		);

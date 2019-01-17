@@ -3,17 +3,20 @@ import axios from 'axios';
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import Container from "../../components/Container/Container";
+import Warning from "../../components/Warning/Warning";
 // import Navbar from "../../components/Nav/Nav";
 import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
-import Warning from "../../components/Warning/Warning";
-// import BackButton from "../../components/Buttons/BackButton";
+import BackButton from "../../components/Buttons/BackButton";
+import jwt_decode from 'jwt-decode';
 
-class AddProfile extends Component {
+
+class EditProfile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			firstName: '', 
 			lastName: '',
+			id: '',
 			foodAllergens: [],
 			foodsAllergicTo: [],
 		};
@@ -29,13 +32,21 @@ class AddProfile extends Component {
 				this.setState({
 					foodAllergens: data.foodAllergens,
 				});
+				const token = localStorage.usertoken
+				const decoded = jwt_decode(token)
+				this.setState({
+					// first_name: decoded.first_name,
+					// last_name: decoded.last_name,
+					email: decoded.email,
+					id: decoded.id
+				})
 			});
 
 		//this.getData();
 	}
 	getData() {
 		console.log("getData function")
-		var username = "testUser"
+		var username = this.state.id
 
 		axios.get("/api/profile/" + username)
 		.then(res => {
@@ -66,17 +77,17 @@ class AddProfile extends Component {
 		});
 	}
 
-	clickadd = () => {
+    clickAdd = () => {
         this.props.history.push("/reactionform");
     }
 
-    clickeditProfile = () => {
+    clickEditProfile = () => {
         this.props.history.push("/editprofile");
 	} 
 
 	clickBack = () => {
         this.props.history.push("/home");
-	}
+    }
 	
 	handleFoodSelect(event) {
 		const newSelection = event.target.value;
@@ -107,7 +118,7 @@ class AddProfile extends Component {
 
 		console.log('Send this in a POST request:', formPayload);
 
-		var username = "testUser"; //placeholder.  Need to figure out how to see who is logged in.
+		var username = this.state.id; //placeholder.  Need to figure out how to see who is logged in.
 
 		//TODO: find out if we are adding a new profile or editing an existing one
 		fetch("/api/profile/" + username, {
@@ -135,27 +146,28 @@ class AddProfile extends Component {
 		return (
 			<div className="">
 				<Container>
-				{/* <Navbar clickadd={this.clickadd} clickedit={this.clickeditProfile}/> */}
+                {/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
 						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
-							<h3 className="text-center p-4">Add Profile Info</h3>
+						<BackButton clickBack={this.clickBack}/>
+							<h3 className="text-center p-2">Edit Profile</h3>
 							
-							{/* <label className="pt-2">First Name:</label> */}
+							<h6 className="pt-2">First Name:</h6>
 							<Input
 								inputType={'text'}
 								name={'firstName'}
 								controlFunc={this.handleSelect}
 								content={firstName}
-								placeholder={'First Name'} />
+								placeholder={'Example: Annie'} />
 							
-							{/* <label className="pt-2">Last Name:</label> */}
+							<h6 className="pt-2">Last Name:</h6>
 							<Input
 								inputType={'text'}
 								name={'lastName'}
 								controlFunc={this.handleSelect}
 								content={lastName}
-								placeholder={'Last Name'} />
+								placeholder={'Example: Body'} />
 
-							<label className="pt-2">Are you allergic to any of these foods?</label>	
+							<h6 className="pt-2">Are you allergic to any of these foods?</h6>	
 							<Checkbox
 								setname={'foodAllergens'}
 								type={'checkbox'}
@@ -172,4 +184,4 @@ class AddProfile extends Component {
 	}
 }
 
-export default AddProfile;
+export default EditProfile;
