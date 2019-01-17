@@ -1,0 +1,64 @@
+{
+   "title": [],
+   
+   "startDate": [],
+
+   "endDate": [],
+   
+   "symptomOptions": [
+      "Itchy skin",
+      "Hives",
+      "Itchy eyes",
+      "Itchy throat",
+      "Runny nose",
+      "Stomach ache",
+      "Flushed skin or rash",
+      "Tingling or itchy sensation in the mouth",
+      "Face, tongue, or lip swelling",
+      "Vomiting and/or diarrhea",
+      "Abdominal cramps",
+      "Coughing or wheezing",
+      "Dizziness and/or lightheadedness",
+      "Swelling of the throat and vocal cords",
+      "Difficulty breathing",
+      "Loss of consciousness"
+   ],
+   
+   "currentSymptoms": [],
+
+   "severity": [
+      1,
+      2,
+      3,
+      4,
+      5
+   ],
+   
+   "currentSeverity": "",
+
+   "sick": [
+      "No",
+      "Yes"
+   ],
+   
+   "currentSickStatus": [],
+
+   "foodOptions": [
+      "Dairy",
+      "Eggs",
+      "Fish/Shellfish",
+      "Tree nuts",
+      "Peanuts",
+      "Gluten",
+      "Soybeans",
+      "Corn",
+      "Berries",
+      "Celery",
+      "Onions/Garlic",
+      "Sesame"
+   ],
+   
+   "currentFoodsEaten": [],
+   
+   "reactionNotes": []
+}

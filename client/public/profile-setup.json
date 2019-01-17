@@ -1,0 +1,23 @@
+{
+   "firstName": "",
+   
+   "lastName": "",
+   
+   "foodAllergens": [
+      "Dairy",
+      "Eggs",
+      "Fish/Shellfish",
+      "Tree nuts",
+      "Peanuts",
+      "Gluten",
+      "Soybeans",
+      "Corn",
+      "Berries",
+      "Celery",
+      "Onions/Garlic",
+      "Sesame"
+   ],
+
+   "foodsAllergicTo": []
+}
+
