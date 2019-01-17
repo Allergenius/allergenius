@@ -16,6 +16,50 @@ import EditProfileButton from "../../components/Buttons/EditProfileButton"
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
 
+var objectToCsv = function(data) {
+    const csvRows = [];
+
+    //get the headers
+    const headers = Object.keys(data[0]);
+    csvRows.push(headers.join(","));
+
+    //loop over the rows
+    for (const row of data) {
+        const values = headers.map(header => {
+            const escaped = (''+row[header]).replace (/"/g, '\\"');
+            return `"${escaped}"` 
+        })
+        csvRows.push(values.join(","));
+    }
+
+    return csvRows.join("\n")
+}
+
+var download = function(data){
+    //Create the actual csv file as a blob object
+    const blob = new Blob([data], {type: "text/csv"});
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a")
+    a.setAttribute("hidden", "");
+    a.setAttribute("href", url)
+    a.setAttribute("download", "reactions.csv")
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+var exportCsv = function(e){
+    e.preventDefault();
+
+    var username = "testUser"
+    axios.get("/api/reactions/" + username)
+        .then(res => {
+            //Special thanks to https://www.youtube.com/watch?v=eicLNabvZN8 
+            const csvData = objectToCsv(res.data);
+            download(csvData)
+        })
+}
+
 class HomePage extends Component {
     constructor() {
         super()
@@ -74,15 +118,15 @@ class HomePage extends Component {
             })
     }
 
-    clickAdd = () => {
+    clickadd = () => {
         this.props.history.push("/reactionform");
     }
 
-    clickAddProfile = () => {
-        this.props.history.push("/addprofile");
-    }
+    // clickaddProfile = () => {
+    //     this.props.history.push("/addprofile");
+    // }
 
-    clickEditProfile = () => {
+    clickeditProfile = () => {
         this.props.history.push("/editprofile");
     } 
     
@@ -117,21 +161,15 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                {/* <List>
-                    {this.state.reactions.map(reaction => (
-                        <ListItem
-                        id={reaction.id}
-                        key={reaction.id}
-                        date={reaction.reactionTime}
-                        severity={reaction.severity}
-                        notes={reaction.Notes}
-                        />
-                    ))}
-                </List> */}
-                <br />
-                <footer>
+                <button 
+                    onClick={exportCsv}
+                    className="btn btn-light border border-secondary"
+                    >
+                        Export Reactions to .CSV
+                </button>
+                <div>
                     <Warning />
-                </footer>
+                </div>
             </Container>
         )
     }

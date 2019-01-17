@@ -5,6 +5,7 @@
   "proxy": "http://localhost:5000/",
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt": "^3.0.3",
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "kyanite": "^0.10.3",
