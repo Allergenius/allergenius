@@ -7,7 +7,7 @@ import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning";
-import Navbar from "../../components/Nav/Nav";
+// import Navbar from "../../components/Nav/Nav";
 import BackButton from "../../components/Buttons/BackButton";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -59,11 +59,11 @@ class ReactionForm extends Component {
 			});
 	}
 
-	clickAdd = () => {
+	clickadd = () => {
         this.props.history.push("/reactionform");
     }
 
-    clickEditProfile = () => {
+    clickeditProfile = () => {
         this.props.history.push("/editprofile");
 	} 
 	
@@ -184,11 +184,7 @@ class ReactionForm extends Component {
 		return (
 			<div className='container container-fluid'>
 				<Container>
-				<Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
-					<br />
-					<br />
-					<br />
-					<br />
+				{/* <Navbar clickadd={this.clickadd} clickedit={this.clickeditProfile}/> */}
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
@@ -206,7 +202,7 @@ class ReactionForm extends Component {
 							for="reaction-start-date"
 							className="calendar-label mr-2"
 						>
-							Start date:
+							Reaction Start Time:
 						</label>
 						<DatePicker
 							selected={this.state.startDate}
@@ -227,7 +223,7 @@ class ReactionForm extends Component {
 							for="reaction-end-date"
 							className="calendar-label mr-2"
 						>
-							End date:
+							Reaction End Time:
 						</label>
 						<DatePicker
 							selected={this.state.endDate}

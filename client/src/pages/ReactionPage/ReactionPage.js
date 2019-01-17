@@ -4,7 +4,6 @@ import moment from 'moment';
 import Container from "../../components/Container/Container";
 import Card from "../../components/Card/Card";
 import BackButton from "../../components/Buttons/BackButton";
-import ExportButton from "../../components/Buttons/ExportButton";
 import './ReactionPage.css';
 
 moment().format();
@@ -90,9 +89,6 @@ class ReactionPage extends Component {
                         />
                     ))}
                 </Container>
-                <div className="button-div btn-reactions">
-                    <ExportButton />
-                </div>
             </div>
         )
     }

@@ -4,7 +4,7 @@ import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning";
-import Navbar from "../../components/Nav/Nav";
+// import Navbar from "../../components/Nav/Nav";
 import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
 import BackButton from "../../components/Buttons/BackButton";
 
@@ -67,11 +67,11 @@ class EditProfile extends Component {
 		});
 	}
 
-    clickAdd = () => {
+    clickadd = () => {
         this.props.history.push("/reactionform");
     }
 
-    clickEditProfile = () => {
+    clickeditProfile = () => {
         this.props.history.push("/editprofile");
 	} 
 
@@ -136,28 +136,28 @@ class EditProfile extends Component {
 		return (
 			<div className="form-container">
 				<Container>
-                <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
+                {/* <Navbar clickadd={this.clickadd} clickedit={this.clickeditProfile}/> */}
 						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack}/>
 							<h3 className="text-center p-2">Edit Profile</h3>
 							
-							<h6 className="pt-2">First Name:</h6>
+							{/* <label className="pt-2">First Name:</label> */}
 							<Input
 								inputType={'text'}
 								name={'firstName'}
 								controlFunc={this.handleSelect}
 								content={firstName}
-								placeholder={'Example: Annie'} />
+								placeholder={'First Name'} />
 							
-							<h6 className="pt-2">Last Name:</h6>
+							{/* <label className="pt-2">Last Name:</label> */}
 							<Input
 								inputType={'text'}
 								name={'lastName'}
 								controlFunc={this.handleSelect}
 								content={lastName}
-								placeholder={'Example: Body'} />
+								placeholder={'Last Name'} />
 
-							<h6 className="pt-2">Are you allergic to any of these foods?</h6>	
+							<label className="pt-2">Are you allergic to any of these foods?</label>	
 							<Checkbox
 								setname={'foodAllergens'}
 								type={'checkbox'}

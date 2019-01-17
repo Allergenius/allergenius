@@ -5,8 +5,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from 'moment'
 import Warning from "../../components/Warning/Warning"
 import Container from "../../components/Container/Container";
-import Navbar from "../../components/Nav/Nav";
-import ExportButton from "../../components/Buttons/ExportButton";
+// import Navbar from "../../components/Nav/Nav";
 
 
 moment.locale("en");
@@ -79,15 +78,15 @@ class HomePage extends Component {
             })
     }
 
-    clickAdd = () => {
+    clickadd = () => {
         this.props.history.push("/reactionform");
     }
 
-    // clickAddProfile = () => {
+    // clickaddProfile = () => {
     //     this.props.history.push("/addprofile");
     // }
 
-    clickEditProfile = () => {
+    clickeditProfile = () => {
         this.props.history.push("/editprofile");
     } 
     
@@ -100,7 +99,10 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
-                <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
+                {/* <Navbar 
+                    clickadd={this.clickadd} 
+                    clickedit={this.clickeditProfile} 
+                /> */}
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
