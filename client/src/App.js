@@ -64,10 +64,14 @@ class App extends Component {
               >
               <ul className='nav navbar-nav navbar-right'>
                 <li className="nav-item">
-                  <a href="/app">Add Reaction</a>
+                  <a href="/app" clickadd={this.clickadd}>
+                    Add Reaction
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/editprofile">Update Profile</a>
+                  <a href="/editprofile" clickedit={this.clickeditProfile}>
+                    Update Profile
+                  </a>
                 </li>
                 <li className="nav-item">
                   <a href="/">Logout</a>
