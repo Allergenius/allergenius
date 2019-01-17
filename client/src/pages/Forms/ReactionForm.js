@@ -7,7 +7,7 @@ import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning";
-import Navbar from "../../components/Nav/Nav";
+// import Navbar from "../../components/Nav/Nav";
 import BackButton from "../../components/Buttons/BackButton";
 import "react-datepicker/dist/react-datepicker.css";
 
