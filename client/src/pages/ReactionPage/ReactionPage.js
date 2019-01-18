@@ -33,7 +33,8 @@ class ReactionPage extends Component {
             this.setState({
                 // first_name: decoded.first_name,
                 // last_name: decoded.last_name,
-                email: decoded.email
+                email: decoded.email,
+                id: decoded.id
             })
         })
     }

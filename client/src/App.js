@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path="/addprofile" component={AddProfile} />
             <Route exact path="/editprofile" component={EditProfile} />
             <Route exact path="/reactionform" component={ReactionForm} />
-            <Route exact path="/reactions" component={ReactionPage} />
+            <Route path="/reactions" component={ReactionPage} />
           </div>
         </div>
       </Router>

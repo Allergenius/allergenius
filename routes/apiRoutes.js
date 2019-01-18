@@ -1,13 +1,14 @@
 var connection = require("../config/connection.js");
 var express = require('express');
 var router = express.Router();
-
+const moment = require('moment');
 const cors = require('cors')
 const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt')
 
 const User = require("../models/User")
 router.use(cors())
+moment().format();
 
 process.env.SECRET_KEY = 'secret'
 
@@ -160,7 +161,7 @@ router.post("/api/reactions/:user", function(req, res) {
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame, Notes) 
-        VALUES ('${req.body.startDate}', '${req.body.endDate}', '${req.params.user}', '${req.body.title}',
+        VALUES ('${moment().format('YYYY-MM-DD HH:mm', req.body.startDate)}', '${moment().format('YYYY-MM-DD HH:mm', req.body.endDate)}', '${req.params.user}', '${req.body.title}',
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Itchy eyes") ? 1: 0}, 
