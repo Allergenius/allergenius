@@ -259,6 +259,7 @@ class ReactionForm extends Component {
 							time={true}
 							value={this.state.startDate}
 							onCurrentDateChange={startDate => this.setState({ startDate })}
+							max={new Date()}
 							parse='LLL'
 							// dateIcon={calendar}
 							// showTimeSelect
@@ -282,6 +283,7 @@ class ReactionForm extends Component {
 							// startDate={this.state.startDate}
 							// endDate={this.state.endDate}
 							currentDate={this.state.endDate}
+							max={new Date()}
 							// defaultCurrentDate={this.state.endDate}
 							onChange={this.handleChangeEnd}
 							date={true}
