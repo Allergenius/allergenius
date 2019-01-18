@@ -12,7 +12,7 @@ const RadioBtn5 = (props) => (
 							setname={props.setname}
 							onChange={props.controlFunc}
 							value={option} 
-							autocomplete="off"
+							autoComplete="off"
 							checked={props.selectedOptions.indexOf(option) > -1}
 							type={props.type} /> {option}
 					</label>
