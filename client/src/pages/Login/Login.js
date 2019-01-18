@@ -29,6 +29,8 @@ class Login extends Component {
 
             if (res) {
                 this.props.history.push(`/home`)
+            } else {
+                alert("User does not exist! Please register to login")
             }
         })
     }
