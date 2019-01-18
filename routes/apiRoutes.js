@@ -4,7 +4,7 @@ var router = express.Router();
 const moment = require('moment');
 const cors = require('cors')
 const jwt = require("jsonwebtoken")
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 const User = require("../models/User")
 router.use(cors())
