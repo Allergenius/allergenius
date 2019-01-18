@@ -113,7 +113,6 @@ class HomePage extends Component {
                     reactions[i].start = moment.utc(reactions[i].start).toDate();
                     reactions[i].end = moment.utc(reactions[i].end).toDate();
                 }
-                console.log(reactions)
                 this.setState({reactions: reactions })
             })
     }
