@@ -1,6 +1,5 @@
 /* HTML elements for all pages */
-body {
-    /* padding-bottom: 80px; */
+.login-container {
     margin: 0 auto;
     height: 100%; 
     background-image: url("../images/foodboard_1100x734.jpg");
@@ -8,7 +7,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #717a82;
-
 }
 
 h5 {

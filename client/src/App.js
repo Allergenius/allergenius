@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navbar />
+          <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
           <Route exact path="/" component={Landing} />
           <div className="container">
           <Route exact path="/home" component={HomePage} />
