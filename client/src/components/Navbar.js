@@ -40,8 +40,8 @@ class Navbar extends Component {
 
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-                <a className="navbar-brand" href="#">
-                <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt="" />Allergenius</a>
+                <a className="navbar-brand" href="/">
+                <img src="../public/favicon.png" width="30" height="30" className="d-inline-block align-top" alt="" />Allergenius</a>
                 <button className="navbar-toggler"
                     type="button"
                     data-toggle="collapse"

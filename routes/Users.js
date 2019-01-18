@@ -2,7 +2,7 @@ const express = require("express")
 const users = express.Router()
 const cors = require('cors')
 const jwt = require("jsonwebtoken")
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcrypt')
 
 
 
