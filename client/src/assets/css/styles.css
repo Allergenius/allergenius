@@ -1,0 +1,144 @@
+/* HTML elements for all pages */
+.login-container {
+    margin: 0 auto;
+    height: 100%; 
+    background-image: url("../images/foodboard_1100x734.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #717a82;
+}
+
+h5 {
+    text-align: center;
+}
+
+.body-non-login {
+    background-image: none;
+    background-color: white;
+}
+
+
+/* Navbar & Nav Buttons */
+.navbar {
+    background-color: #eaf6ff;
+    margin-bottom: 80px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 0px 40px;
+}
+
+.nav-item,
+a:visited,
+a:link {
+    float: left;
+    margin: 5px 10px;
+    color: black;
+}
+
+a:hover {
+    font-size: 20px;
+}
+
+a:active {
+    background-color: #cccccc;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    float: right;
+}
+
+
+/* Medical Alert  */
+.alert {
+    margin: 0 auto;
+}
+
+.alert-bottom {
+    margin: 80px 0px 0px;
+}
+
+.alert-top {
+    margin: 0px 0px 30px;
+}
+
+p {
+    font-size: 18px;
+    margin: 5px;
+    text-align: center;
+}
+
+
+/* Login Page Elements */
+.loginpage-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.light {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    margin-top: 5px;
+    color: black;
+    background-color: #eaf6ff;
+    border: 1px solid #cccccc;
+}
+
+.btn-light {
+    color: black;
+    background-color: #eaf6ff;
+    border: 1px solid #cccccc;
+    margin: 40px 0px;
+}
+
+.button-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn-reactions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Home Page (once logged in) Elements */
+.calendar-container {
+    margin-top: 120px;
+}
+
+
+/* Media Queries */
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}

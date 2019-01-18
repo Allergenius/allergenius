@@ -1,16 +1,20 @@
 ### Schema
-DROP DATABASE IF EXISTS  allergenius_db ;
+DROP DATABASE IF EXISTS  allergenius_db;
 
 CREATE DATABASE allergenius_db;
 USE allergenius_db;
+SELECT * FROM users;
 
 CREATE TABLE users
 (
-	username_pk  varchar(45) NOT NULL,
-	date_created datetime NOT NULL,
-	last_login   datetime,
-	PRIMARY KEY (username_pk)
-) ENGINE=INNODB;
+	id INT(11) NOT NULL AUTO_INCREMENT,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL,
+    created TEXT NOT NULL,
+    PRIMARY KEY (id)
+); 
 
 
 CREATE TABLE reactions
@@ -18,7 +22,7 @@ CREATE TABLE reactions
 	id int NOT NULL AUTO_INCREMENT,
 	startDate datetime NOT NULL, 
 	endDate datetime NOT NULL, 
-	username varchar(45) NOT NULL,
+	user_id INT NOT NULL,
 	title varchar(100) NOT NULL,
 	symp_ItchySkin  boolean NOT NULL DEFAULT False,
 	symp_Hives  boolean NOT NULL DEFAULT False,
@@ -67,16 +71,17 @@ CREATE TABLE reactions
 	-- diffPerfume boolean NOT NULL DEFAULT false,
 	Notes text,
 	PRIMARY KEY (id),
-	CONSTRAINT userdaytitle UNIQUE(username,startDate,endDate,title)
+	FOREIGN KEY (user_id) REFERENCES users (id),
+	CONSTRAINT userdaytitle UNIQUE(startDate,endDate,title)
 );
 
 
 CREATE TABLE userProfile
 (
 	id int NOT NULL AUTO_INCREMENT,
-	username varchar(45) NOT NULL,
-	firstName varchar(50) NOT NULL,
-	lastName varchar(50) NOT NULL,
+    user_id INT NOT NULL,
+	first_name TEXT NOT NULL,
+	last_name TEXT NOT NULL,
 	-- homeZipCode integer,
 	-- workZipCode integer,
 	food_Dairy boolean NOT NULL DEFAULT False,
@@ -91,5 +96,6 @@ CREATE TABLE userProfile
 	food_Celery boolean NOT NULL DEFAULT False,
 	food_Onions boolean NOT NULL DEFAULT False,
 	food_Sesame boolean NOT NULL DEFAULT False,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users (id)
 );
