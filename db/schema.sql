@@ -3,7 +3,6 @@ DROP DATABASE IF EXISTS  allergenius_db;
 
 CREATE DATABASE allergenius_db;
 USE allergenius_db;
-SELECT * FROM users;
 
 CREATE TABLE users
 (
