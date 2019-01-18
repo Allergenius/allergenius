@@ -98,7 +98,7 @@ router.get('/profile', (req, res) => {
 /* GET all reactions for the user logged in. */
 router.get('/api/reactions/:user', function(req, res, next) {
     console.log(req.params.user)
-    const query = `SELECT *, startDate as start, endDate as end FROM reactions WHERE user_id = '${req.params.user}'`
+    const query = `SELECT *, startDate as start, endDate as end FROM reactions WHERE user_id = ${req.params.user}`
     console.log(query)
  	connection.query(query, function (error, results, fields) {
 		if(error) throw error;
@@ -109,7 +109,7 @@ router.get('/api/reactions/:user', function(req, res, next) {
 /* GET one reaction for the user logged in. */
 router.get('/api/reactions/:id/:user', function(req, res, next) {
     console.log(req.params.id)
-    const query = `SELECT *, startDate as start, endDate as end FROM reactions WHERE id = '${req.params.id}' AND user_id = '${req.params.user}'`
+    const query = `SELECT *, startDate as start, endDate as end FROM reactions WHERE id = ${req.params.id} AND user_id = ${req.params.user}`
     console.log(query)
  	connection.query(query, function (error, results, fields) {
 		if(error) throw error;
@@ -130,18 +130,21 @@ router.delete('/api/reactions/:id', function(req, res, next) {
 
 /* GET profile information for the user logged in. */
 router.get('/api/profile/:user', function(req, res, next) {
-    console.log(req.params.user)
-    const query = `SELECT * FROM userProfile WHERE user_id = '${req.params.user}'`
+    console.log("req user " + req.params.user)
+    const query = `SELECT * FROM userProfile WHERE user_id = ${req.params.user}`
     console.log(query) 
     connection.query(query, function (error, results, fields) {
-		if(error) throw error;
+        if(error) throw error;
+
+        console.log("results are " + results[0])
+
 		res.send(JSON.stringify(results));
 	});
 });
 
 /* GET user login information for the user logged in. */
 router.get('/api/users/:user', function(req, res, next) {
-    const query = `SELECT * FROM users WHERE id = '${req.params.user}'`
+    const query = `SELECT * FROM users WHERE id = ${req.params.user}`
  	connection.query(query, function (error, results, fields) {
 		if(error) throw error;
 		res.send(JSON.stringify(results));
@@ -161,7 +164,7 @@ router.post("/api/reactions/:user", function(req, res) {
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame, Notes) 
-        VALUES ('${moment().format('YYYY-MM-DD HH:mm', req.body.startDate)}', '${moment().format('YYYY-MM-DD HH:mm', req.body.endDate)}', '${req.params.user}', '${req.body.title}',
+        VALUES ('${moment().format('YYYY-MM-DD HH:mm', req.body.startDate)}', '${moment().format('YYYY-MM-DD HH:mm', req.body.endDate)}', ${req.params.user}, ${req.body.title},
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Itchy eyes") ? 1: 0}, 
@@ -209,7 +212,7 @@ router.post("/api/profile/:user", function(req, res) {
         , food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame) 
-        VALUES ('${req.params.user}', '${req.body.firstName}', '${req.body.lastName}', 
+        VALUES (${req.params.user}, '${req.body.firstName}', '${req.body.lastName}', 
             ${req.body.foodsAllergicTo.includes("Dairy") ? 1: 0}, 
             ${req.body.foodsAllergicTo.includes("Eggs") ? 1: 0}, 
             ${req.body.foodsAllergicTo.includes("Fish/Shellfish") ? 1: 0},
@@ -249,7 +252,7 @@ router.put("/api/profile/:user", function(req, res) {
         food_Celery = ${req.body.foodsAllergicTo.includes("Celery") ? 1: 0},
         food_Onions = ${req.body.foodsAllergicTo.includes("Onions/Garlic") ? 1: 0}, 
         food_Sesame = ${req.body.foodsAllergicTo.includes("Sesame") ? 1: 0}
-        WHERE user_id = '${req.params.user}'`
+        WHERE user_id = ${req.params.user}`
 
       console.log(query);
   
