@@ -32,27 +32,32 @@ class EditProfile extends Component {
 				this.setState({
 					foodAllergens: data.foodAllergens,
 				});
-				const token = localStorage.usertoken
-				const decoded = jwt_decode(token)
-				this.setState({
-					// first_name: decoded.first_name,
-					// last_name: decoded.last_name,
-					email: decoded.email,
-					id: decoded.id
-				})
+				
 			});
 
-		//this.getData();
+		this.getData();
 	}
+
+	componentWillMount = () => {
+		const token = localStorage.usertoken
+		const decoded = jwt_decode(token)
+		this.setState({
+			// first_name: decoded.first_name,
+			// last_name: decoded.last_name,
+			email: decoded.email,
+			id: decoded.id
+		})
+	}
+
 	getData() {
-		console.log("getData function")
-		var username = this.state.id
+		var username = 1
 
 		axios.get("/api/profile/" + username)
 		.then(res => {
-			const profile = res.data[0];
-			console.log(profile);
+			console.log(res)
 
+			const profile = res.data[0];
+			console.log("profile " + profile.first_name)
 			var allergies = [];
 
 			//check all food allergies fields
@@ -70,8 +75,8 @@ class EditProfile extends Component {
 			if (profile.food_Sesame) allergies.push("Sesame")
 
 			this.setState({
-				firstName: profile.firstName, 
-				lastName: profile.lastName,
+				firstName: profile.first_name, 
+				lastName: profile.last_name,
 				foodsAllergicTo: allergies
 			});
 		});

@@ -28,13 +28,17 @@ class ReactionPage extends Component {
             }
             console.log(reactions)
             this.setState({ reactions: reactions })
-            const token = localStorage.usertoken
-            const decoded = jwt_decode(token)
-            this.setState({
-                // first_name: decoded.first_name,
-                // last_name: decoded.last_name,
-                email: decoded.email
-            })
+        })
+    }
+
+    componentWillMount = () => {
+        const token = localStorage.usertoken
+        const decoded = jwt_decode(token)
+        this.setState({
+            // first_name: decoded.first_name,
+            // last_name: decoded.last_name,
+            email: decoded.email,
+            id: decoded.id
         })
     }
 

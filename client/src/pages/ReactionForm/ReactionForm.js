@@ -7,13 +7,10 @@ import Input from '../../components/FormElements/Input';
 import TextArea from '../../components/FormElements/TextArea';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning";
-// import Navbar from "../../components/Nav/Nav";
 import BackButton from "../../components/Buttons/BackButton";
 import "react-datepicker/dist/react-datepicker.css";
 import jwt_decode from 'jwt-decode';
-// import DateTimePicker from 'react-datetime-picker';
-import { format } from 'util';
-// import { DateTimePicker } from 'react-widgets';
+// import { format } from 'util';
 import "react-widgets/dist/css/react-widgets.css";
 import moment from 'moment';
 import momentLocalizer from 'react-widgets-moment';
@@ -220,19 +217,16 @@ class ReactionForm extends Component {
 		return (
 			<div className='container container-fluid'>
 				<Container>
-				{/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
-					<br />
-					<br />
-					<br />
-					<br />
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
 						
-						<h6 className="">Title (for your own reference):</h6>
+						<label className="form-group mt-4 p-1">
+							Title (for your own reference):
+						</label>
 						<Input
 							inputType={'text'}
-							className="reaction-title"
+							className="form-control reaction-title"
 							name={'title'}
 							controlFunc={this.handleSelect}
 							content={title}
@@ -259,6 +253,7 @@ class ReactionForm extends Component {
 							time={true}
 							value={this.state.startDate}
 							onCurrentDateChange={startDate => this.setState({ startDate })}
+							max={new Date()}
 							parse='LLL'
 							// dateIcon={calendar}
 							// showTimeSelect
@@ -282,6 +277,7 @@ class ReactionForm extends Component {
 							// startDate={this.state.startDate}
 							// endDate={this.state.endDate}
 							currentDate={this.state.endDate}
+							max={new Date()}
 							// defaultCurrentDate={this.state.endDate}
 							onChange={this.handleChangeEnd}
 							date={true}
@@ -360,17 +356,20 @@ class ReactionForm extends Component {
 						<TextArea
 							rows={5}
 							resize={false}
+							className="form-control notes-textarea"
 							content={reactionNotes}
 							name={'reactionNotes'}
 							controlFunc={this.handleNoteChange}
-							placeholder={'Add any additional notes that may help your doctor later.'} />
-						</div>
-						<input
-							type="submit"
-							className="btn btn-success px-4"
-							value="Submit"/>
+							placeholder={'Add any additional notes that may help your doctor later.'} 
+						/>
+					</div>
+					<input
+						type="submit"
+						className="btn btn-success px-4"
+						value="Submit"
+					/>
 					</form>
-						<Warning />
+					<Warning />
 				</Container>
 			</div>
 		);

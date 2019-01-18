@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navbar />
+          <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/>
           <Route exact path="/" component={Landing} />
           <div className="container">
           <Route exact path="/home" component={HomePage} />
@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path="/addprofile" component={AddProfile} />
             <Route exact path="/editprofile" component={EditProfile} />
             <Route exact path="/reactionform" component={ReactionForm} />
-            <Route exact path="/reactions" component={ReactionPage} />
+            <Route path="/reactions" component={ReactionPage} />
           </div>
         </div>
       </Router>
