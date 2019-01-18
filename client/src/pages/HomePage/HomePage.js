@@ -8,8 +8,6 @@ import Warning from "../../components/Warning/Warning"
 // import Navbar from "../../components/Nav/Nav";
 import jwt_decode from 'jwt-decode';
 import Header from "../../components/Header/Header";
-// import List from "../../components/List/List";
-// import ListItem from "../../components/ListItem/ListItem";
 import AddButton from "../../components/Buttons/AddButton";
 import EditProfileButton from "../../components/Buttons/EditProfileButton"
 
