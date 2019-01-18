@@ -48,5 +48,8 @@
   },
   "bugs": {
     "url": "https://github.com/Allergenius/allergenius/issues"
+  },
+  "engines": {
+    "node": "10.3.0"
   }
 }
