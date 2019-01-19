@@ -37,11 +37,10 @@ class Login extends Component {
 
     render () {
         return (
-            <div className="container login-container">
-                <div className="row">
-                    <div className="col-md-6 mt-5 mx-auto">
-                        <form noValidate onSubmit={this.onSubmit}>
-                            {/* <h1 className="h2 mb-3 font-weight-bold">Please sign in</h1> */}
+            <div className="container">
+                <div className="row login-container">
+                    <div className="mx-auto">
+                        <form noValidate onSubmit={this.onSubmit} className="login-form">
                             <div className="form-group">
                                 <label className="sr-only" htmlFor="email">Email Address</label>
                                 <input type="email"
@@ -62,12 +61,12 @@ class Login extends Component {
                                     onChange={this.onChange}
                                 />
                             </div>
-                            <button type="submit"
-                                className="btn btn-lg btn-primary btn-block">
-                                Sign in
-                            </button>
-                            <br />
-                            <br />
+                            <div className="button-div">
+                                <button type="submit"
+                                    className="btn btn-secondary">
+                                    Sign in
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
