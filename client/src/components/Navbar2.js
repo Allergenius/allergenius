@@ -44,16 +44,9 @@ class Headers extends Component {
     return <header className="bg-dark">
   <div className="container">
     <nav className="navbar navbar-expand-md no-gutters">
-        {/* <a className="navbar-brand navbar-brand-logo" href="#">
-            <div className="logo">
-            <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png">
-            </div>
-            <div class="brand"> Creative Tim </div>
-              </a> */}
       <div className="col-2 text-left">
         <a href="/">
           <img src="../../public/favicon.png" height="40" alt="allergenius_logo" />
-          Allergenius
         </a>
       </div>
 
