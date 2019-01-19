@@ -46,13 +46,11 @@ class Headers extends Component {
         <header className="bg-dark">
             <div className="container">
                 <nav className="navbar navbar-expand-md no-gutters">
-
-                    <div className="col-2 text-left">
+                <div className="col-2 content-justify-left">
                         <a href="/">
-                            <img src="./allergenius_logo.svg" height="40" alt="allergenius_logo" />
+                            <img src="./allergenius_logo.svg" alt="allergenius_logo" />
                         </a>
                     </div>
-
                     <button className="navbar-toggler" 
                             type="button" 
                             data-toggle="collapse" 
