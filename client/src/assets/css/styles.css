@@ -23,19 +23,20 @@ h5 {
 .navbar-brand {
     font-size: 25px;
     font-weight: 600;
-    /* padding: 0px 40px; */
+    padding: 0px 40px;
 }
 
 .nav-item,
-a:visited,
-a:link {
+a:visited
+ {
     float: left;
     margin: 5px 10px;
     color: whitesmoke;
 }
 
 a:hover {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 a:active {
