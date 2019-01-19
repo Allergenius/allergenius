@@ -163,6 +163,8 @@ class HomePage extends Component {
                 <button 
                     onClick={this.exportCsv}
                     className="btn btn-light border border-secondary"
+                    // onClick={exportCsv}
+                    // className="btn btn-light border border-secondary m-2"
                     >
                         Export Reactions to .CSV
                 </button>

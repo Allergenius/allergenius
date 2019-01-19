@@ -11,6 +11,9 @@ export const register = newUser => {
         .then(res => {
             console.log("Registered")
         })
+        .catch(err => {
+            console.log(err)
+        })
 }
 
 export const login = user => {
@@ -21,7 +24,6 @@ export const login = user => {
         })
         .then(res => {
             localStorage.setItem('usertoken', res.data)
-            console.log(res.data)
             return res.data
         })
         .catch(err => {
