@@ -9,10 +9,31 @@ body {
     background-color: #eaf6ff;
 }
 
-.body-non-landing,
-.jumbotron {
+.body-non-landing {
     background-image: none;
     background-color: #fff;
+}
+
+.login-container {
+    background-image: linear-gradient(to bottom right, gray, black);
+    background-color: #000000;
+    width: 350px;
+    padding-bottom: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-text {
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 40px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
 }
 
 h5 {
@@ -21,9 +42,8 @@ h5 {
 
 /* Navbar & Nav Buttons */
 .navbar-brand {
-    font-size: 25px;
+    font-size: 26px;
     font-weight: 600;
-    padding: 0px 40px;
 }
 
 .nav-item,
@@ -31,7 +51,7 @@ a:visited
  {
     float: left;
     margin: 5px 10px;
-    color: whitesmoke;
+    color: #fff;
 }
 
 a:hover {
@@ -47,9 +67,8 @@ a:active {
 
 .navbar-toggler {
     float: right;
-    background-color: transparent;
+    background-color: #717a82;
 }
-
 
 /* Medical Alert  */
 .alert {
@@ -68,16 +87,6 @@ p {
     font-size: 18px;
     margin: 5px;
     text-align: center;
-}
-
-
-/* Login Page Elements */
-.loginpage-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff
 }
 
 .light {
@@ -103,9 +112,27 @@ p {
     text-align: center;
 }
 
+.login-button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-70%, -50%);
+    margin-bottom: 40px;
+}
+
 .btn-reactions {
     margin-top: 40px;
     text-align: center;
+}
+
+.btn-submit {
+    position: relative;
+    text-align: center;
+    margin: 25px 0px 0px;
+ }
+ 
+.btn {
+    border: 1px solid #cccccc;
+    padding: 4px 8px;
 }
 
 /* Home Page (once logged in) Elements */

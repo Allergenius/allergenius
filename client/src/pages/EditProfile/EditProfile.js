@@ -150,7 +150,7 @@ class EditProfile extends Component {
 						<BackButton clickBack={this.clickBack}/>
 							<h3 className="text-center p-4">Edit Profile</h3>
 							
-							<div className="name-lines mb-4">
+							<div className="name-lines">
 								<Input
 									inputType={'text'}
 									name={'firstName'}
