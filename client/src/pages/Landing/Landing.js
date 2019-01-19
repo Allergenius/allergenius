@@ -9,7 +9,9 @@ class Landing extends Component {
                     <div className="col-sm-8 mx-auto">
                         <h1 className="text-center">WELCOME TO ALLERGENIUS</h1>
                     </div>
-                    <Link to="/login" className="btn btn-success">
+                </div>
+                <div className="container container-fluid">
+                    <Link to="/login" className="btn btn-success justify-content-center">
                         Login
                     </Link>
                 </div>

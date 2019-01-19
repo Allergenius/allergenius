@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Navbar from './components/Navbar'
+import Headers from './components/Navbar2'
+// import Navbar from './components/Navbar'
 import Landing from './pages/Landing/Landing'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
@@ -12,13 +13,15 @@ import EditProfile from './pages/EditProfile/EditProfile'
 import ReactionForm from './pages/ReactionForm/ReactionForm'
 import ReactionPage from './pages/ReactionPage/ReactionPage'
 
+import './assets/css/styles.css';
+
 
 class App extends Component {
   render () {
     return (
       <Router>
         <div className="App">
-          <Navbar />
+          <Headers />
           <Route exact path="/" component={Landing} />
           <div className="container">
           <Route exact path="/home" component={HomePage} />
