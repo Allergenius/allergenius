@@ -142,7 +142,7 @@ class HomePage extends Component {
                 <Header username={this.state.username} />
                 <AddButton clickAdd={this.clickAdd}/>
 
-                <EditProfileButton clickEdit={this.clickEditProfile}/>
+                {/* <EditProfileButton clickEdit={this.clickEditProfile}/> */}
 
                 <BigCalendar
                     className="calendar-container"
