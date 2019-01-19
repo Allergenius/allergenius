@@ -8,7 +8,7 @@ if (process.env.JAWSDB_URL){
 } else {
     var connection = mysql.createConnection({
     host: "localhost",
-    port: 3306, //change for Mac
+    port: 8889, //change for Mac
     user: "root",
     password: "root",
     database: "allergenius_db"
