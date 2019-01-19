@@ -5,10 +5,10 @@ if (process.env.JAWSDB_URL){
     var sequelize = new Sequelize(process.env.JAWSDB_URL)
 
 } else {
-    var sequelize = new Sequelize("allergenius_db", "root", "root", {
+    var sequelize = new Sequelize("allergenius_db", "root", "", {
         host: 'localhost',
         dialect: 'mysql',
-        port: '3306', //change for Mac
+        port: '8889', //change for Mac
         operatorsAliases: false,
     
         pool: {
