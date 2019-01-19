@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL){
     host: "localhost",
     port: 8889, //change for Mac
     user: "root",
-    password: "",
+    password: "root",
     database: "allergenius_db"
 });
 
