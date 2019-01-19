@@ -3,7 +3,7 @@ const db = {}
 const sequelize = new Sequelize("allergenius_db", "root", "root", {
     host: 'localhost',
     dialect: 'mysql',
-    port: '3306',
+    port: '8889',
     operatorsAliases: false,
 
     pool: {

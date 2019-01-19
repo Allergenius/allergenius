@@ -13,11 +13,6 @@ class Landing extends Component {
                         Login
                     </Link>
                 </div>
-                {/* <div className="container container-fluid">
-                    <Link to="/login" className="btn btn-success justify-content-center">
-                        Login
-                    </Link>
-                </div> */}
             </div>
         )
     }
