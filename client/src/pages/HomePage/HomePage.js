@@ -8,8 +8,6 @@ import Warning from "../../components/Warning/Warning"
 // import Navbar from "../../components/Nav/Nav";
 import jwt_decode from 'jwt-decode';
 import Header from "../../components/Header/Header";
-// import List from "../../components/List/List";
-// import ListItem from "../../components/ListItem/ListItem";
 import AddButton from "../../components/Buttons/AddButton";
 import EditProfileButton from "../../components/Buttons/EditProfileButton"
 
@@ -48,18 +46,6 @@ var download = function(data){
     document.body.removeChild(a);
 }
 
-var exportCsv = function(e){
-    e.preventDefault();
-
-    var username = "testUser"
-    axios.get("/api/reactions/" + username)
-        .then(res => {
-            //Special thanks to https://www.youtube.com/watch?v=eicLNabvZN8 
-            const csvData = objectToCsv(res.data);
-            download(csvData)
-        })
-}
-
 class HomePage extends Component {
     constructor() {
         super()
@@ -86,7 +72,7 @@ class HomePage extends Component {
         // new
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)
-        console.log(decoded)
+        // console.log(decoded)
         this.setState({
             first_name: decoded.first_name,
             last_name: decoded.last_name,
@@ -94,6 +80,20 @@ class HomePage extends Component {
             id: decoded.id
         })
     }
+
+    exportCsv = (e) => {
+        e.preventDefault();
+    
+        var username = this.state.id
+    
+        axios.get("/api/reactions/" + username)
+            .then(res => {
+                //Special thanks to https://www.youtube.com/watch?v=eicLNabvZN8 
+                const csvData = objectToCsv(res.data);
+                download(csvData)
+            })
+    }
+
     componentDidMount = () => {
         axios.get('/api/profile/' + this.state.id)
         .then(res => {
@@ -105,7 +105,7 @@ class HomePage extends Component {
         })
 
         document.body.className="body-non-login"
-        console.log(this.state.id)
+        // console.log(this.state.id)
         axios.get("/api/reactions/" + this.state.id)
             .then(res => {
                 const reactions = res.data;
@@ -113,7 +113,6 @@ class HomePage extends Component {
                     reactions[i].start = moment.utc(reactions[i].start).toDate();
                     reactions[i].end = moment.utc(reactions[i].end).toDate();
                 }
-                console.log(reactions)
                 this.setState({reactions: reactions })
             })
     }
@@ -162,7 +161,8 @@ class HomePage extends Component {
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
                 <button 
-                    onClick={exportCsv}
+
+                    onClick={this.exportCsv}
                     className="btn btn-light border border-secondary m-2"
                     >
                         Export Reactions to .CSV
