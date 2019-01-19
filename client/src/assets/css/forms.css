@@ -30,6 +30,10 @@ form {
    padding: 0 auto;
 }
 
+/* label, 
+.form-label {
+   font-size: 20px;
+} */
 
 /* Radio Buttons */
 .radio-Q-label {

@@ -139,7 +139,7 @@ class HomePage extends Component {
         return (
             <Container>
                 {/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
-                <Header username={this.state.username} />
+                <Header username={this.state.first_name} />
                 <AddButton clickAdd={this.clickAdd}/>
 
                 {/* <EditProfileButton clickEdit={this.clickEditProfile}/> */}
@@ -168,7 +168,7 @@ class HomePage extends Component {
                         Export Reactions to .CSV
                 </button>
                 <div>
-                    <Warning />
+                        <Warning />
                 </div>
             </Container>
         )

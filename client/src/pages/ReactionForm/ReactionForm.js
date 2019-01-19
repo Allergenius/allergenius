@@ -182,7 +182,7 @@ class ReactionForm extends Component {
 		};
 		console.log('Send this in a POST request:', formPayload);
 
-		let username = this.state.id; //placeholder.  Need to figure out how to see who is logged in.
+		let username = this.state.id; //user unique id
 
 		fetch("/api/reactions/" + username, {
             method: 'POST',

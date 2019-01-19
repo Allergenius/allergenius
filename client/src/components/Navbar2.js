@@ -46,7 +46,8 @@ class Headers extends Component {
         <header className="bg-dark">
             <div className="container">
                 <nav className="navbar navbar-expand-md no-gutters">
-                    <div className="col-2 text-left brand clearfix">
+
+                    <div className="col-2 text-left">
                         <a href="/">
                             <img src="./allergenius_logo.svg" height="40" alt="allergenius_logo" />
                         </a>
@@ -62,19 +63,22 @@ class Headers extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
-                        <ul className="navbar-nav justify-content-center">
-                            <li className="nav-item">
-                                <Link to="/home" className="nav-link">
-                                    Home
-                                </Link>  
-                                <Link to="/app" className="nav-link">
-                                    Add Reaction
-                                </Link>
-                            </li>
-                        </ul>
-                        {localStorage.usertoken ? userLink : loginRegLink}
-                    </div>
+                <div className="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
+                    <ul className="navbar-nav justify-content-center">
+                        <li className="nav-item">
+                            <Link to="/home" className="nav-link">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/reactionform" className="nav-link">
+                                Add Reaction
+                            </Link>
+                        </li>
+                    </ul>
+                    {localStorage.usertoken ? userLink : loginRegLink}
+                </div>
+
             </nav>
         </div>
     </header>
