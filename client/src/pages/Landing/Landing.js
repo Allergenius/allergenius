@@ -9,12 +9,15 @@ class Landing extends Component {
                     <div className="col-sm-8 mx-auto">
                         <h1 className="text-center">WELCOME TO ALLERGENIUS</h1>
                     </div>
-                </div>
-                <div className="container container-fluid">
-                    <Link to="/login" className="btn btn-success justify-content-center">
+                    <Link to="/login" className="btn btn-success btn-lg">
                         Login
                     </Link>
                 </div>
+                {/* <div className="container container-fluid">
+                    <Link to="/login" className="btn btn-success justify-content-center">
+                        Login
+                    </Link>
+                </div> */}
             </div>
         )
     }
