@@ -83,18 +83,3 @@ form {
    flex-wrap: wrap;
    margin: 0 auto;
 }
-
-/* Submit Buttons */
-.btn-submit {
-   position: relative;
-   text-align: center;
-   margin: 25px 0px 0px;
-}
-
-.btn {
-   /* color: #000000; */
-   /* background-color: #eaf6ff; */
-   border: 1px solid #cccccc;
-   padding: 4px 8px;
-}
-
