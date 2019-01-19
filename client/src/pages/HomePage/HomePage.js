@@ -161,8 +161,9 @@ class HomePage extends Component {
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
                 <button 
+
                     onClick={this.exportCsv}
-                    className="btn btn-light border border-secondary"
+                    className="btn btn-light border border-secondary m-2"
                     >
                         Export Reactions to .CSV
                 </button>
