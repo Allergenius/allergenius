@@ -22,6 +22,10 @@ form {
   align-items: center;
 }
 
+/* label, 
+.form-label {
+   font-size: 20px;
+} */
 
 /* Radio Buttons */
 .radio-Q-label {

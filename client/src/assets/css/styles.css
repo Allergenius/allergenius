@@ -109,8 +109,13 @@ p {
 }
 
 /* Home Page (once logged in) Elements */
-.calendar-container {
+/* .calendar-container {
     margin-top: 120px;
+} */
+
+.rbc-toolbar-label {
+    font-size: 22px;
+    font-weight: bold;
 }
 
 

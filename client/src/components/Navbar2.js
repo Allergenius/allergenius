@@ -48,7 +48,7 @@ class Headers extends Component {
                 <nav className="navbar navbar-expand-md no-gutters">
                 <div className="col-2 text-left">
                     <a href="/">
-                        <img src="../assets/images/favicon.svg" height="40" alt="allergenius_logo" />
+                        <img src="../assets/images/favicon.svg" height="30" alt="allergenius_logo" />
                     </a>
                 </div>
 
@@ -67,8 +67,10 @@ class Headers extends Component {
                         <li className="nav-item">
                             <Link to="/home" className="nav-link">
                                 Home
-                            </Link>  
-                            <Link to="/app" className="nav-link">
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/reactionform" className="nav-link">
                                 Add Reaction
                             </Link>
                         </li>
