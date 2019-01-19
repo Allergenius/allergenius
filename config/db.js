@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize")
 const db = {}
-const sequelize = new Sequelize("allergenius_db", "root", "root", {
+const sequelize = new Sequelize("allergenius_db", "root", "", {
     host: 'localhost',
     dialect: 'mysql',
     port: '8889',
