@@ -4,7 +4,6 @@ import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning";
-// import Navbar from "../../components/Nav/Nav";
 import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
 import BackButton from "../../components/Buttons/BackButton";
 import jwt_decode from 'jwt-decode';
@@ -25,7 +24,7 @@ class EditProfile extends Component {
 		this.handleSelect = this.handleSelect.bind(this);
 	}
 	componentDidMount() {
-		document.body.className="body-non-login"
+		document.body.className="body-non-landing"
 		fetch('./profile-setup.json')
 			.then(res => res.json())
 			.then(data => {
@@ -34,7 +33,6 @@ class EditProfile extends Component {
 				});
 				
 			});
-
 		this.getData();
 	}
 
@@ -50,12 +48,10 @@ class EditProfile extends Component {
 	}
 
 	getData() {
-		var username = 1
+		var username = this.state.id
 
 		axios.get("/api/profile/" + username)
 		.then(res => {
-			console.log(res)
-
 			const profile = res.data[0];
 			console.log("profile " + profile.first_name)
 			var allergies = [];
@@ -123,9 +119,8 @@ class EditProfile extends Component {
 
 		console.log('Send this in a POST request:', formPayload);
 
-		var username = this.state.id; //placeholder.  Need to figure out how to see who is logged in.
+		var username = this.state.id; 
 
-		//TODO: find out if we are adding a new profile or editing an existing one
 		fetch("/api/profile/" + username, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
@@ -149,30 +144,29 @@ class EditProfile extends Component {
 		} = this.state;
 		
 		return (
-			<div className="">
+			<div className="profile-container">
 				<Container>
-                {/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
-						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack}/>
-							<h3 className="text-center p-2">Edit Profile</h3>
+							<h3 className="text-center p-4">Edit Profile</h3>
 							
-							<h6 className="pt-2">First Name:</h6>
-							<Input
-								inputType={'text'}
-								name={'firstName'}
-								controlFunc={this.handleSelect}
-								content={firstName}
-								placeholder={'Example: Annie'} />
-							
-							<h6 className="pt-2">Last Name:</h6>
-							<Input
-								inputType={'text'}
-								name={'lastName'}
-								controlFunc={this.handleSelect}
-								content={lastName}
-								placeholder={'Example: Body'} />
+							<div className="name-lines mb-4">
+								<Input
+									inputType={'text'}
+									name={'firstName'}
+									controlFunc={this.handleSelect}
+									content={firstName}
+									placeholder={'First Name:'} />
+								
+								<Input
+									inputType={'text'}
+									name={'lastName'}
+									controlFunc={this.handleSelect}
+									content={lastName}
+									placeholder={'Last Name:'} />
+							</div>
 
-							<h6 className="pt-2">Are you allergic to any of these foods?</h6>	
+							<label>Are you allergic to any of these foods?</label>	
 							<Checkbox
 								setname={'foodAllergens'}
 								type={'checkbox'}
@@ -180,7 +174,10 @@ class EditProfile extends Component {
 								options={foodAllergens}
 								selectedOptions={foodsAllergicTo} />
 							
-							<ProfileSubmit />
+							<div className="button-div">
+								<ProfileSubmit />
+							</div>
+
 						</form>
 					<Warning />
             </Container>

@@ -14,6 +14,7 @@ import ReactionForm from './pages/ReactionForm/ReactionForm'
 import ReactionPage from './pages/ReactionPage/ReactionPage'
 
 import './assets/css/styles.css';
+import './assets/css/forms.css';
 
 
 class App extends Component {
