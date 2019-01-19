@@ -2,7 +2,7 @@ import React from 'react';
 
 const RadioBtn5 = (props) => (
 	<div>
-		<label className="radio-Q-label">{props.title}</label>
+		<h6 className="radio-Q-label">{props.title}</h6>
 		<div className="form-check-5 ml-3">
 			{props.options.map(option => {
 				return (
