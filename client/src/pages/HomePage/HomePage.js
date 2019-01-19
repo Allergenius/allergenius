@@ -104,7 +104,7 @@ class HomePage extends Component {
             console.log(err)
         })
 
-        document.body.className="body-non-login"
+        document.body.className="body-non-landing"
         // console.log(this.state.id)
         axios.get("/api/reactions/" + this.state.id)
             .then(res => {

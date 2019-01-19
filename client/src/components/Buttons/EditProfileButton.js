@@ -1,9 +1,9 @@
 import React from "react";
 
-const EditProfileButton = (props) => (
+const EditProfileButton = props => (
     <button 
         type={props.inputType}
-        onClick={props.clickEdit}
+        onClick={props.clickEditProfile}
         value={props.content}
         className="btn btn-light border border-secondary"
     >   
