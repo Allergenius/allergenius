@@ -104,7 +104,7 @@ class HomePage extends Component {
             console.log(err)
         })
 
-        document.body.className="body-non-login"
+        document.body.className="body-non-landing"
         // console.log(this.state.id)
         axios.get("/api/reactions/" + this.state.id)
             .then(res => {
@@ -142,7 +142,7 @@ class HomePage extends Component {
                 <Header username={this.state.username} />
                 <AddButton clickAdd={this.clickAdd}/>
 
-                <EditProfileButton clickEdit={this.clickEditProfile}/>
+                {/* <EditProfileButton clickEdit={this.clickEditProfile}/> */}
 
                 <BigCalendar
                     className="calendar-container"

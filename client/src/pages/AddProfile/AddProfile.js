@@ -3,11 +3,9 @@ import axios from 'axios';
 import Checkbox from '../../components/FormElements/Checkbox';
 import Input from '../../components/FormElements/Input';
 import Container from "../../components/Container/Container";
-// import Navbar from "../../components/Nav/Nav";
 import ProfileSubmit from "../../components/Buttons/ProfileSubmitButton";
 import Warning from "../../components/Warning/Warning";
 import jwt_decode from 'jwt-decode';
-// import BackButton from "../../components/Buttons/BackButton";
 
 class AddProfile extends Component {
 	constructor(props) {
@@ -24,7 +22,7 @@ class AddProfile extends Component {
 		this.handleSelect = this.handleSelect.bind(this);
 	}
 	componentDidMount() {
-		document.body.className="body-non-login"
+		document.body.className="body-non-landing"
 		fetch('./profile-setup.json')
 			.then(res => res.json())
 			.then(data => {
@@ -40,18 +38,13 @@ class AddProfile extends Component {
 					id: decoded.id
 				})
 			});
-
-		//this.getData();
 	}
 	getData() {
-		console.log("getData function")
 		var username = this.state.id
 
 		axios.get("/api/profile/" + username)
 		.then(res => {
 			const profile = res.data[0];
-			console.log(profile);
-
 			var allergies = [];
 
 			//check all food allergies fields
@@ -77,15 +70,15 @@ class AddProfile extends Component {
 	}
 
 	clickAdd = () => {
-        this.props.history.push("/reactionform");
+      this.props.history.push("/reactionform");
     }
 
-    clickEditProfile = () => {
-        this.props.history.push("/editprofile");
+   clickEditProfile = () => {
+      this.props.history.push("/editprofile");
 	} 
 
 	clickBack = () => {
-        this.props.history.push("/home");
+      this.props.history.push("/home");
 	}
 	
 	handleFoodSelect(event) {
@@ -117,9 +110,8 @@ class AddProfile extends Component {
 
 		console.log('Send this in a POST request:', formPayload);
 
-		var username = this.state.id; //placeholder.  Need to figure out how to see who is logged in.
+		var username = this.state.id; 
 
-		//TODO: find out if we are adding a new profile or editing an existing one
 		fetch("/api/profile/" + username, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -143,29 +135,28 @@ class AddProfile extends Component {
 		} = this.state;
 		
 		return (
-			<div className="">
+			<div className="profile-container">
 				<Container>
-				{/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
-						<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
-							<h3 className="text-center p-4">Add Profile Info</h3>
+						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
+							<h3 className="text-center p-4">Setup Profile</h3>
 							
-							<h6 className="">First Name:</h6>
-							<Input
-								inputType={'text'}
-								name={'firstName'}
-								controlFunc={this.handleSelect}
-								content={firstName}
-								placeholder={'Example: Annie'} />
-							
-							<h6 className="">Last Name:</h6>
-							<Input
-								inputType={'text'}
-								name={'lastName'}
-								controlFunc={this.handleSelect}
-								content={lastName}
-								placeholder={'Example: Body'} />
+							<div className="name-lines mb-4">
+								<Input
+									inputType={'text'}
+									name={'firstName'}
+									controlFunc={this.handleSelect}
+									content={firstName}
+									placeholder={'First Name:'} />
+								
+								<Input
+									inputType={'text'}
+									name={'lastName'}
+									controlFunc={this.handleSelect}
+									content={lastName}
+									placeholder={'Last Name:'} />
+							</div>				
 
-							<h6 className="">Are you allergic to any of these foods?</h6>	
+							<label>Are you allergic to any of these foods?</label>	
 							<Checkbox
 								setname={'foodAllergens'}
 								type={'checkbox'}
@@ -173,7 +164,10 @@ class AddProfile extends Component {
 								options={foodAllergens}
 								selectedOptions={foodsAllergicTo} />
 							
-							<ProfileSubmit />
+							<div className="btn-submit">
+								<ProfileSubmit />
+							</div>
+							
 						</form>
 					<Warning />
             </Container>

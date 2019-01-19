@@ -65,7 +65,7 @@ class ReactionForm extends Component {
 	// }
 	
 	componentDidMount() {
-		document.body.className="body-non-login"
+		document.body.className="body-non-landing"
 		fetch('./reaction-entry.json')
 			.then(res => res.json())
 			.then(data => {
@@ -93,9 +93,9 @@ class ReactionForm extends Component {
 
 	clickAdd = () => {
         this.props.history.push("/reactionform");
-    }
+   }
 
-    clickEditProfile = () => {
+   clickEditProfile = () => {
         this.props.history.push("/editprofile");
 	} 
 	
@@ -215,22 +215,24 @@ class ReactionForm extends Component {
 		} = this.state;
 		
 		return (
-			<div className='container container-fluid'>
+			<div className='form-container'>
 				<Container>
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
-						
-						<label className="form-group mt-4 p-1">
-							Title (for your own reference):
+						<label 
+							className="form-group mt-4 p-1"
+						>
+							Title (for your own reference)
 						</label>
+
 						<Input
 							inputType={'text'}
 							className="form-control reaction-title"
 							name={'title'}
 							controlFunc={this.handleSelect}
 							content={title}
-							placeholder={'Example: Tues AM - hives and itching'} />
+							placeholder={''} />
 
 						<div className="form-group mt-4 p-1">			
 						<label 
@@ -363,13 +365,16 @@ class ReactionForm extends Component {
 							placeholder={'Add any additional notes that may help your doctor later.'} 
 						/>
 					</div>
-					<input
-						type="submit"
-						className="btn btn-success px-4"
-						value="Submit"
-					/>
-					</form>
-					<Warning />
+					
+					<div className="button-div">
+						<input
+							type="submit"
+							className="button btn btn-light btn-submit"
+							value="Submit"
+						/>
+					</div>
+				</form>
+				<Warning />
 				</Container>
 			</div>
 		);

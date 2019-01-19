@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
+import EditProfileButton from './Buttons/EditProfileButton';
+
 
 class Profile extends Component {
     constructor() {
@@ -23,9 +25,13 @@ class Profile extends Component {
         })
     }
 
+    clickEditProfile = () => {
+        this.props.history.push("/editprofile");
+    }
+    
     render () {
         return (
-            <div className="container">
+            <div className="container profile-container">
                 <div className="jumbotron mt-5">
                     <div className="col-sm-8 mx-auto">
                         <h1 className="text-center">PROFILE</h1>
@@ -44,12 +50,15 @@ class Profile extends Component {
                                 <td>Email</td>
                                 <td>{this.state.email}</td>
                             </tr>
-                            <tr>
+                            {/* <tr>
                                 <td>Decoded ID</td>
                                 <td>{this.state.id}</td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </table>
+                    <div className="button-div">
+                        <EditProfileButton clickEditProfile={this.clickEditProfile} />
+                    </div>
                 </div>
             </div>
         )
