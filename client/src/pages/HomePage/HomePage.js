@@ -5,11 +5,9 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from 'moment'
 import Container from "../../components/Container/Container";
 import Warning from "../../components/Warning/Warning"
-// import Navbar from "../../components/Nav/Nav";
 import jwt_decode from 'jwt-decode';
 import Header from "../../components/Header/Header";
 import AddButton from "../../components/Buttons/AddButton";
-import EditProfileButton from "../../components/Buttons/EditProfileButton"
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -138,12 +136,15 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
-                {/* <Navbar clickAdd={this.clickAdd} clickEdit={this.clickEditProfile}/> */}
                 <Header username={this.state.first_name} />
                 <AddButton clickAdd={this.clickAdd}/>
-
-                {/* <EditProfileButton clickEdit={this.clickEditProfile}/> */}
-
+                <button
+                    onClick={this.exportCsv}
+                    className="btn btn-light border border-secondary m-2"
+                >
+                    Export Reactions to .CSV
+                </button>
+                
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
@@ -160,16 +161,11 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                <button 
-
-                    onClick={this.exportCsv}
-                    className="btn btn-light border border-secondary m-2"
-                    >
-                        Export Reactions to .CSV
-                </button>
+                
                 <div>
-                        <Warning />
+                    <Warning />
                 </div>
+            
             </Container>
         )
     }
