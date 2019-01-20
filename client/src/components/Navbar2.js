@@ -76,7 +76,6 @@ class Headers extends Component {
                     </ul>
                     {localStorage.usertoken ? userLink : loginRegLink}
                 </div>
-
             </nav>
         </div>
     </header>
