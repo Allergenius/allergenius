@@ -65,8 +65,6 @@ router.get('/api/users/:user', function(req, res, next) {
 router.post("/api/reactions/:user", function(req, res) {
     console.log("Inside POST api/reactions")
 
-    //TODO: replace hard coded date, title and lengths of time when those front end fields are done.
-
     const query = `INSERT INTO reactions
         (startDate, endDate, user_id, title, symp_ItchySkin, symp_Hives, symp_ItchyEyes
         , symp_ItchyThroat, symp_RunnyNose, symp_StomachAche, symp_Rash, symp_ItchyMouth
@@ -74,7 +72,8 @@ router.post("/api/reactions/:user", function(req, res) {
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame, Notes) 
-        VALUES ('${moment().format('YYYY-MM-DD HH:mm', req.body.startDate)}', '${moment().format('YYYY-MM-DD HH:mm', req.body.endDate)}', ${req.params.user}, ${req.body.title},
+        VALUES ('${moment().format('YYYY-MM-DD HH:mm', req.body.startDate)}', '${moment().format('YYYY-MM-DD HH:mm', req.body.endDate)}', 
+            ${req.params.user}, '${req.body.title}',
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Itchy eyes") ? 1: 0}, 
@@ -117,7 +116,7 @@ router.post("/api/reactions/:user", function(req, res) {
 
 /* POST profile. */
 router.post("/api/profile/:user", function(req, res) {
-    const query = `INSERT INTO userProfile
+    const query = `INSERT INTO userProfile 
         (user_id, first_name, last_name 
         , food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
@@ -173,5 +172,3 @@ router.put("/api/profile/:user", function(req, res) {
   });
 
 module.exports = router;
-
-
