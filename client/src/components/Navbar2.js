@@ -46,29 +46,30 @@ class Headers extends Component {
         <header className="bg-dark">
             <div className="container">
                 <nav className="navbar navbar-expand-md no-gutters">
-                <div className="col-2 text-left">
-                    <a href="/">
-                        <img src="../assets/images/favicon.svg" height="40" alt="allergenius_logo" />
-                    </a>
-                </div>
-
-                <button className="navbar-toggler" 
-                        type="button" 
-                        data-toggle="collapse" 
-                        data-target=".navbar-collapse-3 navbarTogglerDemo02" 
-                        aria-controls="navbarNav navbarTogglerDemo02" 
-                        aria-expanded="false" 
-                        aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                <div className="col-2 content-justify-left">
+                        <a href="/">
+                            <img src="./allergenius_logo.svg" alt="allergenius_logo" />
+                        </a>
+                    </div>
+                    <button className="navbar-toggler" 
+                            type="button" 
+                            data-toggle="collapse" 
+                            data-target=".navbar-collapse-3 navbarTogglerDemo02" 
+                            aria-controls="navbarNav navbarTogglerDemo02" 
+                            aria-expanded="false" 
+                            aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
                 <div className="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
                     <ul className="navbar-nav justify-content-center">
                         <li className="nav-item">
                             <Link to="/home" className="nav-link">
                                 Home
-                            </Link>  
-                            <Link to="/app" className="nav-link">
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/reactionform" className="nav-link">
                                 Add Reaction
                             </Link>
                         </li>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const TextArea = (props) => (
 	<div className="form-group">
-		<label className="form-label">{props.title}</label>
+		{/* <label className="form-label">{props.title}</label> */}
 		<textarea
 			className="form-input form-control"
 			style={props.resize ? null : {resize: 'none'}}
