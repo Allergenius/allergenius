@@ -3,6 +3,8 @@ var cors = require("cors")
 var bodyParser = require("body-parser")
 var Users = require('./routes/Users')
 const routes = require("./routes/apiRoutes")
+var path = require("path")
+
 var app = express()
 var port = process.env.PORT || 5000
 
