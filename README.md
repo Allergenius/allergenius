@@ -1,6 +1,6 @@
 # allergenius
 
-**Place Heroku Link Here**
+https://guarded-garden-65682.herokuapp.com/
 
 ## Contributors
 - Erin Clancy
