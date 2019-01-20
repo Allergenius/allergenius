@@ -2,8 +2,7 @@ import React from "react";
 
 const Header = props => (
     <div>
-        <h1>Allergenius</h1>
-        <h2>Welcome {props.username} </h2>
+        <h1 className="text-capitalize mt-5 text-center font-weight-bold"> Welcome {props.username}! </h1>
     </div>
 )
 

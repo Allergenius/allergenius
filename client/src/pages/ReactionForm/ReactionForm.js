@@ -182,7 +182,7 @@ class ReactionForm extends Component {
 		};
 		console.log('Send this in a POST request:', formPayload);
 
-		let username = this.state.id; //placeholder.  Need to figure out how to see who is logged in.
+		let username = this.state.id; //user unique id
 
 		fetch("/api/reactions/" + username, {
             method: 'POST',
@@ -219,162 +219,137 @@ class ReactionForm extends Component {
 				<Container>
 					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
+						
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
-						<label 
-							className="form-group mt-4 p-1"
-						>
-							Title (for your own reference)
-						</label>
-
-						<Input
-							inputType={'text'}
-							className="form-control reaction-title"
-							name={'title'}
-							controlFunc={this.handleSelect}
-							content={title}
-							placeholder={''} />
-
-						<div className="form-group mt-4 p-1">			
-						<label 
-							htmlFor="reaction-start-date"
-							className="calendar-label mr-2"
-						>
-							Reaction Start Time:
-						</label>
-						<DateTimePicker
-							// selected={this.state.startDate}
-							// selectsStart
-							// startDate={this.state.startDate}
-							// endDate={this.state.endDate}
-							currentDate={this.state.startDate}
-							onChange={startDate => this.setState({ startDate })}
-							date={true}
-							// editFormat='LLL'
-							format='LLL'
-							defaultValue={new Date()}
-							time={true}
-							value={this.state.startDate}
-							onCurrentDateChange={startDate => this.setState({ startDate })}
-							max={new Date()}
-							parse='LLL'
-							// dateIcon={calendar}
-							// showTimeSelect
-							// className="reaction-start-date mr-5"
-							// timeFormat="hh:mm"
-							// timeIntervals={15}
-							// timeCaption="time"
-							// dateFormat="MMMM d, yyyy h:mm aa" 
-							/>    
-					</div>
-					<div>
-						<label 
-							htmlFor="reaction-end-date"
-							className="calendar-label mr-2"
-						>
-							Reaction End Time:
-						</label>
-						<DateTimePicker
-							// selected={this.state.endDate}
-							// selectsEnd
-							// startDate={this.state.startDate}
-							// endDate={this.state.endDate}
-							currentDate={this.state.endDate}
-							max={new Date()}
-							// defaultCurrentDate={this.state.endDate}
-							onChange={this.handleChangeEnd}
-							date={true}
-							// editFormat='LL'
-							format='LLL'
-							// defaultValue={new Date()}
-							time={true}
-							value={this.state.endDate}
-							onCurrentDateChange={this.handleChangeEnd}
-							// parse='MM DD YYYY HH:mm'
-							// showTimeSelect
-							// className="reaction-end-date"
-							// timeFormat="hh:mm"
-							// timeIntervals={15}
-							// timeCaption="time"
-							// dateFormat="MMMM d, yyyy h:mm aa" 
+						
+						<div className="form-group mt-4 mb-6 p-1">
+							<label htmlFor="reaction-title" className="title-label mr-2 mb-3">
+								Reaction title (for your own reference):
+							</label>
+							<Input
+								inputType={'text'}
+								className="reaction-title"
+								name={'title'}
+								controlFunc={this.handleSelect}
+								content={title}
+								placeholder={'Example: Nausea after Friday work lunch'} 
 							/>
-					</div>
-					<div>
-						<label className="">Are you currently experiencing any of these symptoms?</label>
-						<Checkbox
-							setname={'symptoms'}
-							type={'checkbox'}
-							className="reaction-symptom-checkboxes"
-							controlFunc={this.handleSymptomSelect}
-							options={symptomOptions}
-							selectedOptions={currentSymptoms} 
-						/>
-					</div>
-					<div className="form-group mt-4 p-1">
-						<label htmlFor="reaction-severity-radios">
-							Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):
-						</label>
-						<RadioBtn5
-							setName={'severity'}
-							type={'radio'}
-							controlFunc={this.handleSeveritySelect}
-							className="reaction-severity-radios"
-							options={severity}
-							selectedOptions={currentSeverity} 
-						/>
-					</div>
-					<div className="form-group mt-4 p-1">
-						<label 
-							htmlFor="reaction-sick-radios"
-							className="sick-radios"
-						>
-							Are you currently sick with a cold or the flu?
-						</label>
-						<RadioBtn2
-							setname={'sick'}
-							type={'radio'}
-							controlFunc={this.handleSickSelect}
-							className="reaction-sick-radios"
-							options={sick}
-							selectedOptions={currentSickStatus} 
-						/>	
-					</div>
-					<div className="form-group mt-4 p-1">
-						<label 
-							htmlFor="reaction-food-checkboxes"
-							className="checkbox-Q-label mb-2"
-						>
-							Have you ingested any of these foods today?
-						</label>
-						<Checkbox
-							setname={'foodOptions'}
-							type={'checkbox'}
-							controlFunc={this.handleFoodSelect}
-							className="reaction-food-checkboxes"
-							options={foodOptions}
-							selectedOptions={currentFoodsEaten} 
-						/>
-					</div>
-					<div className="form-group mt-4 p-1">
-						<TextArea
-							rows={5}
-							resize={false}
-							className="form-control notes-textarea"
-							content={reactionNotes}
-							name={'reactionNotes'}
-							controlFunc={this.handleNoteChange}
-							placeholder={'Add any additional notes that may help your doctor later.'} 
-						/>
-					</div>
-					
-					<div className="button-div">
-						<input
-							type="submit"
-							className="button btn btn-light btn-submit"
-							value="Submit"
-						/>
-					</div>
-				</form>
-				<Warning />
+						</div>
+
+						<div className="form-group mt-4 mb-6 p-1">			
+							<label htmlFor="reaction-start-date" className="calendar-label mr-2 mb-3">
+								Reaction Start Time:
+							</label>
+							<DateTimePicker
+								currentDate={this.state.startDate}
+								onChange={startDate => this.setState({ startDate })}
+								date={true}
+								format='LLL'
+								defaultValue={new Date()}
+								time={true}
+								value={this.state.startDate}
+								onCurrentDateChange={startDate => this.setState({ startDate })}
+								max={new Date()}
+								parse='LLL'
+							/>    
+						</div>
+						
+						<div className="form-group mt-4 mb-6 p-1">
+							<label htmlFor="reaction-end-date" className="calendar-label mr-2 mb-3">
+								Reaction End Time:
+							</label>
+							<DateTimePicker
+								currentDate={this.state.endDate}
+								max={new Date()}
+								onChange={this.handleChangeEnd}
+								date={true}
+								format='LLL'
+								time={true}
+								value={this.state.endDate}
+								onCurrentDateChange={this.handleChangeEnd} 
+							/>
+						</div>
+						
+						<div className="form-group mt-4 mb-6 p-1">
+							<label>
+								Are you currently experiencing any of these symptoms?
+							</label>
+							<Checkbox
+								setname={'symptoms'}
+								type={'checkbox'}
+								className="reaction-symptom-checkboxes"
+								controlFunc={this.handleSymptomSelect}
+								options={symptomOptions}
+								selectedOptions={currentSymptoms} 
+							/>
+						</div>
+						
+						<div className="form-group mt-4 mb-6 p-1">
+							<label htmlFor="reaction-severity-radios">
+								Reaction Severity (on a scale of 1 to 5 where 1 = minor and 5 = extreme):
+							</label>
+							<RadioBtn5
+								setName={'severity'}
+								type={'radio'}
+								controlFunc={this.handleSeveritySelect}
+								className="reaction-severity-radios"
+								options={severity}
+								selectedOptions={currentSeverity} 
+							/>
+						</div>
+						
+						<div className="form-group mt-4 mb-6 p-1">
+							<label htmlFor="reaction-sick-radios" className="sick-radios">
+								Are you currently sick with a cold or the flu?
+							</label>
+							<RadioBtn2
+								setname={'sick'}
+								type={'radio'}
+								controlFunc={this.handleSickSelect}
+								className="reaction-sick-radios"
+								options={sick}
+								selectedOptions={currentSickStatus} 
+							/>	
+						</div>
+						
+						<div className="form-group mt-4 mb-6 p-1">
+							<label htmlFor="reaction-food-checkboxes" className="checkbox-Q-label mb-2">
+								Have you ingested any of these foods today?
+							</label>
+							<Checkbox
+								setname={'foodOptions'}
+								type={'checkbox'}
+								controlFunc={this.handleFoodSelect}
+								className="reaction-food-checkboxes"
+								options={foodOptions}
+								selectedOptions={currentFoodsEaten} 
+							/>
+						</div>
+						
+						<div className="form-group mt-4 mb-6 p-1">
+							<label htmlFor="notes-textarea" className="notes-label mr-2 mb-3">
+								Reaction Notes: 
+							</label>
+							<TextArea
+								rows={4}
+								resize={false}
+								className="form-control notes-textarea"
+								content={reactionNotes}
+								name={'reactionNotes'}
+								controlFunc={this.handleNoteChange}
+								placeholder={'Add any additional notes that may help your doctor later.'} 
+							/>
+						</div>
+						
+						<div className="button-div">
+							<input
+								type="submit"
+								className="button btn btn-light btn-submit"
+								value="Submit"
+							/>
+						</div>
+					</form>
+					<Warning />
 				</Container>
 			</div>
 		);
