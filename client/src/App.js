@@ -13,7 +13,7 @@ import EditProfile from './pages/EditProfile/EditProfile'
 import ReactionForm from './pages/ReactionForm/ReactionForm'
 import ReactionPage from './pages/ReactionPage/ReactionPage'
 
-import './assets/css/styles.css';
+import './assets/css/style.css';
 import './assets/css/forms.css';
 
 

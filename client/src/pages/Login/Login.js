@@ -30,6 +30,7 @@ class Login extends Component {
             if (res) {
                 this.props.history.push(`/home`)
             } else {
+                console.log("user error Login page" + res)
                 alert("User does not exist! Please register to login")
             }
         })
@@ -41,6 +42,7 @@ class Login extends Component {
                 <div className="row login-container">
                     <div className="mx-auto">
                         <form noValidate onSubmit={this.onSubmit} className="login-form">
+                        <div className="header-1">Sign In</div>
                             <div className="form-group">
                                 <label className="sr-only" htmlFor="email">Email Address</label>
                                 <input type="email"
@@ -63,7 +65,7 @@ class Login extends Component {
                             </div>
                             <div className="button-div">
                                 <button type="submit"
-                                    className="btn btn-secondary">
+                                    className="btn btn-login">
                                     Sign in
                                 </button>
                             </div>

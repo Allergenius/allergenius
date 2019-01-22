@@ -6,7 +6,7 @@ const RadioBtn2 = (props) => (
 		<div className="form-check-2">
 			{props.options.map(option => {
 				return (
-					<label key={option} className="form-check-label  mr-4">
+					<label key={option} className="form-check-label mr-4">
 						<input
 							className="form-check-input"
 							setname={props.setname}
