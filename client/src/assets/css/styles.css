@@ -6,7 +6,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #eaf6ff;
+    background-color: #203B39;
 }
 
 .body-non-landing {
@@ -116,12 +116,12 @@ p {
     border: 1px solid #cccccc;
 }
 
-.btn-light {
+/* .btn-light {
     color: black;
     background-color: #eaf6ff;
     border: 1px solid #cccccc;
     margin: 40px 0px;
-}
+} */
 
 .button-div {
     margin: 0 auto;
@@ -160,6 +160,8 @@ p {
     font-size: 22px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif; */
 }
 
 

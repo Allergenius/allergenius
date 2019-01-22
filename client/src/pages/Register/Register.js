@@ -84,7 +84,7 @@ class Register extends Component {
                                 />
                             </div>
                             <button type="submit"
-                                className="btn btn-lg btn-primary btn-block">
+                                className="btn btn-lg btn-custom">
                                 Register
                             </button>
                         </form>

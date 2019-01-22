@@ -1,8 +1,11 @@
 ### Schema
 DROP DATABASE IF EXISTS  allergenius_db;
 
-CREATE DATABASE allergenius_db;
-USE allergenius_db;
+-- CREATE DATABASE allergenius_db;
+-- USE allergenius_db;
+
+CREATE DATABASE uf5rsj5o84yrf2ys;
+USE uf5rsj5o84yrf2ys;
 
 CREATE TABLE users
 (
@@ -12,8 +15,7 @@ CREATE TABLE users
     email TEXT NOT NULL,
     password TEXT NOT NULL,
     created TEXT NOT NULL,
-    PRIMARY KEY (id),
-	CONSTRAINT uniqueUser UNIQUE(email)
+    PRIMARY KEY (id)
 ); 
 
 
