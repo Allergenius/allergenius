@@ -142,7 +142,7 @@ class HomePage extends Component {
                     onClick={this.exportCsv}
                     className="btn btn-light border border-secondary m-2"
                 >
-                    Export Reactions to .CSV
+                    <i className="cui-cloud-download"> </i>Export Reactions to .CSV
                 </button>
                 
                 <BigCalendar
