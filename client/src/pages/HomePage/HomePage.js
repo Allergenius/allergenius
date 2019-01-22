@@ -103,7 +103,7 @@ class HomePage extends Component {
         })
 
         document.body.className="body-non-landing"
-        console.log(this.state.id)
+        console.log("USER ID:" + this.state.id)
         axios.get("/api/reactions/" + this.state.id)
             .then(res => {
                 const reactions = res.data;
