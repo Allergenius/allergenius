@@ -36,7 +36,7 @@ class Headers extends Component {
             </li>
             <li className="nav-item">
                 <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-                    Logout
+                <i className="cui-account-logout"> </i>Logout
                 </a>
             </li>
         </ul>
@@ -54,8 +54,8 @@ class Headers extends Component {
                     <button className="navbar-toggler" 
                             type="button" 
                             data-toggle="collapse" 
-                            data-target=".navbar-collapse-3 navbarTogglerDemo02" 
-                            aria-controls="navbarNav navbarTogglerDemo02" 
+                            data-target=".navbar-collapse-3" 
+                            aria-controls="navbarNav" 
                             aria-expanded="false" 
                             aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -65,12 +65,12 @@ class Headers extends Component {
                     <ul className="navbar-nav justify-content-center">
                         <li className="nav-item">
                             <Link to="/home" className="nav-link">
-                                Home
+                            <i className="cui-calendar"> </i>Home
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/reactionform" className="nav-link">
-                                Add Reaction
+                            <i className="cui-plus"> </i>Add Reaction
                             </Link>
                         </li>
                     </ul>
