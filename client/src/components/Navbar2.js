@@ -36,7 +36,7 @@ class Headers extends Component {
             </li>
             <li className="nav-item">
                 <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-                    Logout
+                <i className="cui-account-logout"> </i>Logout
                 </a>
             </li>
         </ul>
@@ -70,7 +70,7 @@ class Headers extends Component {
                         </li>
                         <li className="nav-item">
                             <Link to="/reactionform" className="nav-link">
-                                Add Reaction
+                            <i className="cui-plus"></i>Add Reaction
                             </Link>
                         </li>
                     </ul>

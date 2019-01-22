@@ -4,6 +4,7 @@ DROP DATABASE IF EXISTS  allergenius_db;
 CREATE DATABASE allergenius_db;
 USE allergenius_db;
 
+
 CREATE TABLE users
 (
 	id INT(11) NOT NULL AUTO_INCREMENT,
@@ -12,8 +13,7 @@ CREATE TABLE users
     email TEXT NOT NULL,
     password TEXT NOT NULL,
     created TEXT NOT NULL,
-    PRIMARY KEY (id),
-	CONSTRAINT uniqueUser UNIQUE(email)
+    PRIMARY KEY (id)
 ); 
 
 
