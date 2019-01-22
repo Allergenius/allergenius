@@ -5,6 +5,7 @@ var Users = require('./routes/Users')
 const routes = require("./routes/apiRoutes")
 var path = require("path")
 
+require('dotenv').config()
 var app = express()
 var port = process.env.PORT || 5000
 
@@ -17,6 +18,7 @@ app.use('/users', Users)
 
 // allergenius
 app.use(routes)
+
 
 // HEROKU
 if (process.env.NODE_ENV === 'production') {

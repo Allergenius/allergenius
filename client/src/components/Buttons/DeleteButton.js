@@ -5,7 +5,7 @@ const DeleteButton = props => (
         onClick={props.clickDelete}
         className="button btn btn-danger"
     >
-        Delete Reaction
+        <i className="cui-trash"> </i>Delete Reaction
     </button>
 )
 

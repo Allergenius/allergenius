@@ -43,6 +43,8 @@ const Card = props => (
                 { props.sympThroatSwelling === 1 && <li>Swelling Of The Throat And Vocal Cords</li> }
                 { props.sympVomiting === 1 && <li>Vomiting And/Or Diarrhea</li> }
             </ul>
+            <p className="card-text">Notes:</p>
+            <p>{props.notes}</p>
             <DeleteButton clickDelete={props.clickDelete} />
         </div>
     </div>

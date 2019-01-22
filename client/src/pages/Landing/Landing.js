@@ -6,13 +6,15 @@ class Landing extends Component {
     return (
             <div className="landing-container mt-5">
                 <div className="landing-text">
-                    <h6>Welome to</h6>
-                    <h1>Allergenius</h1>
-                    <h6>Allergic Reaction Logging App</h6>
+                    <h6 className="landing-text">Welome to</h6>
+                    <h1 className="header-1">Allergenius</h1>
+                    <h6 className="landing-text">Allergic Reaction Logging App</h6>
                 </div>
-                <Link to="/login" className="btn btn-secondary login-button">
+                <div className="text-center">
+                <Link to="/login" className="btn btn-secondary login-button w-50">
                     Login
                 </Link>
+                </div>
             </div>
         )
     }

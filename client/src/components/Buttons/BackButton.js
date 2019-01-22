@@ -5,7 +5,7 @@ const BackButton = props => (
         onClick={props.clickBack}
         className="btn btn-secondary"
     >
-        Go Back
+        <i className="cui-chevron-left"> </i>Go Back
     </button>
 )
 

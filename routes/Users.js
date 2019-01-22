@@ -9,7 +9,9 @@ const bcrypt = require('bcrypt')
 const User = require("../models/User")
 users.use(cors())
 
-process.env.SECRET_KEY = 'secret'
+const secret = process.env.JWT_SECRET
+
+const loginOptions = { expiresIn: "100d", issuer: 'https://guarded-garden-65682.herokuapp.com' }
 
 
 //REGISTER
@@ -59,13 +61,11 @@ users.post('/login', (req, res) => {
         .then(user => {
             if (user) {
                 if (bcrypt.compareSync(req.body.password, user.password)) {
-                    let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
-                        expiresIn: 1440
-                    })
+                    let token = jwt.sign(user.dataValues, secret, loginOptions)
                     res.send(token)
                 }
             } else {
-                res.status(400).json({error: "User does not exist"})
+                res.status(400).json({error: "JAWS NEW ERROR:    User does not exist"})
             }
         })
         .catch(err => {
@@ -75,7 +75,7 @@ users.post('/login', (req, res) => {
 
 //PROFILE
 users.get('/profile', (req, res) => {
-    var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
+    var decoded = jwt.verify(req.headers['authorization'], secret)
 
     User.findOne({
         where: {

@@ -103,7 +103,7 @@ class HomePage extends Component {
         })
 
         document.body.className="body-non-landing"
-        // console.log(this.state.id)
+        console.log("USER ID:" + this.state.id)
         axios.get("/api/reactions/" + this.state.id)
             .then(res => {
                 const reactions = res.data;
@@ -142,7 +142,7 @@ class HomePage extends Component {
                     onClick={this.exportCsv}
                     className="btn btn-light border border-secondary m-2"
                 >
-                    Export Reactions to .CSV
+                    <i className="cui-cloud-download"> </i>Export Reactions to .CSV
                 </button>
                 
                 <BigCalendar

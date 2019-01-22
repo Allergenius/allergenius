@@ -1,0 +1,144 @@
+.header-1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: normal;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #203B39;
+    padding-bottom: 14px;
+}
+
+.content-1,
+.reaction-title {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 28px;
+    text-transform: none;
+    color: #F2BA18;
+}
+
+.content-2 {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-transform: none;
+    color: #34495E;
+}
+
+.btn-custom {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #203B39;
+    color: #F2F5F5;
+    margin-top: 20px;
+}
+
+.login-button {
+    /* position: relative; */
+    /* left: 50%; */
+    margin: 0 auto;
+    text-align: center;
+    background-color: #203B39;
+    color: #F2F5F5;
+}
+
+.button-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif; */
+
+
+/*  */
+
+.landing-container {
+    /* background-image: linear-gradient(to bottom right, gray, black); */
+    background-color: #F2BA18;
+    width: 450px;
+    padding-bottom: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container {
+    /* background-image: linear-gradient(to bottom right, gray, black); */
+    background-color: #F2BA18;
+    width: 500px;
+    height: 360px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form {
+    width: 400px;
+}
+
+.landing-text {
+    color: #F2F5F5;
+    font-size: 21px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 40px 20px 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* .registerLink {
+    padding:
+} */
+
+.nav-link {
+    color: #F2F5F5;
+}
+
+a:hover {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a:active {
+    background-color: #cccccc;
+    color: #F2F5F5;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+/* Media Queries */
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}

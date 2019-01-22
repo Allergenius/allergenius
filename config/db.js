@@ -1,5 +1,10 @@
 const Sequelize = require("sequelize")
 const db = {}
+const mysql = require('mysql')
+const dotenv = require('dotenv');
+
+dotenv.config()
+
 
 if (process.env.JAWSDB_URL){
     var sequelize = new Sequelize(process.env.JAWSDB_URL)
@@ -10,7 +15,7 @@ if (process.env.JAWSDB_URL){
         dialect: 'mysql',
         port: '8889', //change for Mac
         operatorsAliases: false,
-    
+
         pool: {
             max: 5,
             min: 0,
@@ -20,7 +25,8 @@ if (process.env.JAWSDB_URL){
     });
 }
 
+
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
-module.exports = db 
+module.exports = db
