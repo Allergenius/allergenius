@@ -16,12 +16,12 @@ class Headers extends Component {
         <ul className="navbar-nav">
             <li className="nav-item">
                 <Link to="/login" className="nav-link">
-                    Login
+                <i className="cui-user"> </i>Login
                 </Link>
             </li>
             <li className="nav-item">
                 <Link to="/register" className="nav-link">
-                    Register
+                <i className="cui-bookmark"> </i>Register
                 </Link>
             </li>
         </ul>
@@ -31,7 +31,7 @@ class Headers extends Component {
         <ul className="navbar-nav">
             <li className="nav-item">
                 <Link to="/EditProfile" className="nav-link">
-                    My Profile
+                <i className="cui-wrench"> </i>My Profile
                 </Link>
             </li>
             <li className="nav-item">
@@ -51,7 +51,7 @@ class Headers extends Component {
         </li>
         <li className="nav-item">
             <Link to="/reactionform" className="nav-link">
-            <i className="cui-plus"> </i>Add Reaction
+            <i className="cui-envelope-letter"> </i>Add Reaction
             </Link>
         </li>
     </ul>

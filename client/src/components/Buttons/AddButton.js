@@ -5,7 +5,7 @@ const AddButton = props => (
         onClick={props.clickAdd}
         className="btn border border-secondary"
     >
-        Add Reaction
+        <i className="cui-cog"> </i>Add Reaction
     </button>
 )
 
