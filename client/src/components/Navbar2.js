@@ -42,6 +42,21 @@ class Headers extends Component {
         </ul>
     )
 
+    const homeReactionLink = (
+        <ul className="navbar-nav justify-content-center">
+        <li className="nav-item">
+            <Link to="/home" className="nav-link">
+            <i className="cui-calendar"> </i>Home
+            </Link>
+        </li>
+        <li className="nav-item">
+            <Link to="/reactionform" className="nav-link">
+            <i className="cui-plus"> </i>Add Reaction
+            </Link>
+        </li>
+    </ul>
+    )
+
     return (
         <header className="bg-dark">
             <div className="container">
@@ -62,18 +77,7 @@ class Headers extends Component {
                     </button>
 
                 <div className="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
-                    <ul className="navbar-nav justify-content-center">
-                        <li className="nav-item">
-                            <Link to="/home" className="nav-link">
-                            <i className="cui-calendar"> </i>Home
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/reactionform" className="nav-link">
-                            <i className="cui-plus"> </i>Add Reaction
-                            </Link>
-                        </li>
-                    </ul>
+                    { localStorage.usertoken ? homeReactionLink : null }
                     {localStorage.usertoken ? userLink : loginRegLink}
                 </div>
             </nav>
