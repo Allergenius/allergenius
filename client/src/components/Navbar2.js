@@ -36,7 +36,7 @@ class Headers extends Component {
             </li>
             <li className="nav-item">
                 <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-                <i className="cui-account-logout"></i>Logout
+                <i className="cui-account-logout"> </i>Logout
                 </a>
             </li>
         </ul>
@@ -65,12 +65,12 @@ class Headers extends Component {
                     <ul className="navbar-nav justify-content-center">
                         <li className="nav-item">
                             <Link to="/home" className="nav-link">
-                            <i className="cui-calendar"></i>Home
+                            <i className="cui-calendar"> </i>Home
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/reactionform" className="nav-link">
-                            <i className="cui-plus"></i>Add Reaction
+                            <i className="cui-plus"> </i>Add Reaction
                             </Link>
                         </li>
                     </ul>
