@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { login } from '../../components/UserFunctions'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
     constructor() {
@@ -63,9 +64,10 @@ class Login extends Component {
                                     onChange={this.onChange}
                                 />
                             </div>
+                            <Link className="registerLink" to="/register">Not already a user? Click here to register</Link>
                             <div className="button-div">
                                 <button type="submit"
-                                    className="btn btn-login">
+                                    className="btn btn-login btn-custom">
                                     Sign in
                                 </button>
                             </div>
