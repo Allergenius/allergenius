@@ -51,6 +51,8 @@ body {
 
 .nav-link {
     color: #F2F5F5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
 }
 
 .nav-style {
