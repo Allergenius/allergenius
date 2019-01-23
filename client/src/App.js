@@ -22,12 +22,12 @@ class App extends Component {
   render () {
     return (
       <Router>
-        <div className="App m-0">
+        <div className="App">
       
           <Headers />
 
           <Route exact path="/" component={Landing} />
-          <div className="container main-container mx-auto">
+          <div className="container mx-auto">
           <Route exact path="/home" component={HomePage} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

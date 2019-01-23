@@ -138,13 +138,21 @@ class HomePage extends Component {
         return (
             <Container>
                 <Header username={this.state.first_name} />
-                <AddButton clickAdd={this.clickAdd}/>
-                <button
+                <div className="d-flex justify-content-between">
+                    <div className="p-2">
+                        <AddButton clickAdd={this.clickAdd} />
+                    </div>
+                    <div className="p-2">
+                    </div>
+                    <div className="p-2">
+                         <button
                     onClick={this.exportCsv}
-                    className="btn btn-light border border-secondary m-2"
-                >
-                    <i className="cui-cloud-download"> </i>Export Reactions to .CSV
-                </button>
+                    className="btn border border-secondary"
+                         >
+                            <i className="cui-cloud-download"> </i>Export Reactions to .CSV
+                        </button>
+                    </div>
+                </div>
                 
                 <div className="container rounded calendarDiv">
                 <BigCalendar

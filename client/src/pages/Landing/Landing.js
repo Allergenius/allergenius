@@ -10,10 +10,10 @@ class Landing extends Component {
                 <div className="landing-text">
                     <h6 className="landing-text">Welome to</h6>
                     <h1 className="header-1">Allergenius</h1>
-                    <h6 className="landing-text">Allergic Reaction Logging App</h6>
+                    <h6 className="landing-text mt-1">Allergic Reaction Logging App</h6>
                 </div>
                 <div className="text-center">
-                <Link to="/login" className="btn btn-secondary login-button w-50">
+                <Link to="/login" className="btn btn-secondary login-button btn-lg w-50">
                     Login
                 </Link>
                 </div>

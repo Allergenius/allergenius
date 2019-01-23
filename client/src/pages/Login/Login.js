@@ -43,10 +43,10 @@ class Login extends Component {
             <div className="row">
                 <div className="col-md-12 login-header text-center pt-4">ALLERGENIUS</div>
             </div>
-                <div className="row login-container">
+                <div className="row">
                     <div className="mx-auto">
                         <form noValidate onSubmit={this.onSubmit} className="login-form">
-                        <div className="header-1 mb-4">Log In</div>
+                        <div className="header-1 text-center mb-4">Log In</div>
                         {/* <lead className="text-sm text-seconday">Login to view your profile</lead> */}
                             <div className="form-group">
                                 <label className="sr-only" htmlFor="email">Email Address</label>
@@ -71,7 +71,7 @@ class Login extends Component {
                             <Link className="registerLink" to="/register">Not already a user? Click here to register</Link>
                             <div className="button-div">
                                 <button type="submit"
-                                    className="btn btn-login btn-custom">
+                                    className="btn btn-secondary btn-login btn-custom">
                                     Login
                                 </button>
                             </div>

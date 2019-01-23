@@ -1,9 +1,10 @@
-body {
+/* body {
     background-color: #eaf6ff !important;
-}
+} */
 
 .calendarDiv {
     border: 2px solid #272727;
     padding: 30px;
     margin-bottom: 2em;
+    background-color: #eaf6ff;
 }

@@ -7,7 +7,7 @@ body {
 /* CUSTOM FONTS */
 .header-1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 600;
     letter-spacing: .1em;
@@ -45,19 +45,19 @@ body {
     background-color: #331832;
 }
 
-.navbar-nav {
+/* .navbar-nav {
     font-family: 'Montserrat', sans-serif;
-}
+} */
 
 .nav-link {
     color: #F2F5F5;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
 }
 
-.nav-style {
+/* .nav-style {
     font-family: 'Montserrat', sans-serif;
-}
+} */
 
 /* HEADER */
 .header-styling {
@@ -76,18 +76,21 @@ body {
     color: #203B39;
 }
 
-.btn-custom {
-    margin: 0 auto;
-    width: 100%;
-    background-color: #203B39;
-    color: #F2F5F5;
-    margin-top: 20px;
-}
+
 
 /* BUTTONS */
 .button-div {
     margin: 0 auto;
     text-align: center;
+}
+
+.btn-custom {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #F2BA18;
+    color: #F2F5F5;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 .login-button {
@@ -99,7 +102,7 @@ body {
     color: #F2F5F5;
 }
 
-/* calendar month header */
+/* CALENDAR HEADER */
 .rbc-toolbar-label {
     font-size: 21px;
     font-family: 'Open Sans', sans-serif;
@@ -110,7 +113,7 @@ body {
 font-family: 'Open Sans', sans-serif; */
 
 
-/* LOGIN & LANDING */
+/* LOGIN & LANDING & REGISTER */
 .landing-container {
     /* background-image: linear-gradient(to bottom right, gray, black); */
     background-color: #F2BA18;
@@ -131,27 +134,22 @@ font-family: 'Open Sans', sans-serif; */
     padding: 20px 40px 20px 40px;
 }
 
-.login-container {
-    /* background-image: linear-gradient(to bottom right, gray, black); */
-    background-color: #F2BA18;
-    width: 500px;
-    height: 380px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .login-form {
     width: 400px;
 }
 
-/* .registerLink {
-    padding:
+/* .register-container {
+    background-color: #F2BA18;
+    padding-bottom: 2.5em;
+    margin-top: 1.25em;
 } */
 
+.register-form {
+    padding: 3em;
+}
+
 a:hover {
-    font-size: 1.11em;
+    /* font-size: 1.11em; */
     font-weight: bold;
     color: #3174ad;
 }
@@ -170,6 +168,12 @@ a:active {
     font-family: 'Open Sans', sans-serif;
     /* margin: 20px; */
     padding: 10px;
+}
+
+.main-container {
+    background-color: #eaf6ff;
+    height: 100%;
+    width: 100%;
 }
 
 /* Media Queries */
