@@ -13,7 +13,7 @@ class Headers extends Component {
     
   render() {
     const loginRegLink = (
-        <ul className="navbar-nav">
+        <ul className="navbar-nav nav-style">
             <li className="nav-item">
                 <Link to="/login" className="nav-link">
                 <i className="cui-user"> </i>Login
@@ -61,10 +61,11 @@ class Headers extends Component {
         <header className="navbar-head">
             <div className="container">
                 <nav className="navbar navbar-expand-md no-gutters">
-                <div className="col-2 content-justify-left">
+                <div className="col-2 content-justify-left nav-link">
                         <a href="/">
-                            <img src="./allergenius_logo.svg" alt="allergenius_logo" />
+                            <img src="./favicon_allerg.svg" width="30" height="30" alt="allergenius_logo" className="mr-2" />
                         </a>
+                    Allergenius
                     </div>
                     <button className="navbar-toggler" 
                             type="button" 

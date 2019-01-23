@@ -218,7 +218,7 @@ class ReactionForm extends Component {
 		return (
 			<div className='form-container'>
 				<Container>
-					<form className="container form-group m-4" onSubmit={this.handleFormSubmit} method="POST">
+					<form className="container form-group m-4 needs-validation novalidate" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						
 						<h3 className="text-center p-4">Reaction Entry Form</h3>
@@ -233,7 +233,8 @@ class ReactionForm extends Component {
 								name={'title'}
 								controlFunc={this.handleSelect}
 								content={title}
-								placeholder={'Example: Nausea after Friday work lunch'} 
+								placeholder={'Example: Nausea after Friday work lunch'}
+								
 							/>
 						</div>
 
