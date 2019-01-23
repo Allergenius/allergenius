@@ -15,6 +15,7 @@ import ReactionPage from './pages/ReactionPage/ReactionPage'
 
 import './assets/css/style.css';
 import './assets/css/forms.css';
+// import '@coreui/icons';
 
 
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
           <Headers />
 
           <Route exact path="/" component={Landing} />
-          <div className="container">
+          <div className="container main-container">
           <Route exact path="/home" component={HomePage} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

@@ -8,6 +8,7 @@ import Warning from "../../components/Warning/Warning"
 import jwt_decode from 'jwt-decode';
 import Header from "../../components/Header/Header";
 import AddButton from "../../components/Buttons/AddButton";
+import "./HomePage.css";
 
 moment.locale("en");
 const localizer = BigCalendar.momentLocalizer(moment);

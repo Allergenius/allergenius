@@ -10,6 +10,10 @@
     padding-bottom: 14px;
 }
 
+.navbar-head {
+    background-color: #203B39;
+}
+
 .content-1,
 .reaction-title {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -60,7 +64,6 @@
 font-family: 'Open Sans', sans-serif; */
 
 
-/*  */
 
 .landing-container {
     /* background-image: linear-gradient(to bottom right, gray, black); */
