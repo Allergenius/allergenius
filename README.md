@@ -1,5 +1,5 @@
 <!-- # [Allergenius](https://guarded-garden-65682.herokuapp.com/) -->
-![](client/src/assets/images/allergenius_logo_gray.png)  
+![](client/src/assets/images/allergenius_logo_gray.png)(https://guarded-garden-65682.herokuapp.com)  
 
 ## Contributors
 - [Erin Clancy](https://github.com/noplanetnoparty) 
