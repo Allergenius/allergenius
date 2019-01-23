@@ -143,8 +143,6 @@ class HomePage extends Component {
                         <AddButton clickAdd={this.clickAdd} />
                     </div>
                     <div className="p-2">
-                    </div>
-                    <div className="p-2">
                          <button
                     onClick={this.exportCsv}
                     className="btn border border-secondary"
