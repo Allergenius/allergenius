@@ -151,7 +151,7 @@ font-family: 'Open Sans', sans-serif; */
 } */
 
 a:hover {
-    font-size: 16px;
+    font-size: 1.11em;
     font-weight: bold;
     color: #3174ad;
 }
