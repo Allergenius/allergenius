@@ -35,6 +35,9 @@ Although we all helped in all areas of the website, there were main focuses that
 - Github Projects
 
 ## Using the website
+Visit https://guarded-garden-65682.herokuapp.com/ and register for an account.
+
+![](client/src/assets/gifs/login.mp4)
 
 ### Adding a Reaction
 Select "Add Reaction" from the navigation bar or click the "Add Reaction" button on the home page.  Fill out the form with the details about your reaction and click "Submit".
