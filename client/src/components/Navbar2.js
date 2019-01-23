@@ -13,7 +13,7 @@ class Headers extends Component {
     
   render() {
     const loginRegLink = (
-        <ul className="navbar-nav">
+        <ul className="navbar-nav nav-style">
             <li className="nav-item">
                 <Link to="/login" className="nav-link">
                 <i className="cui-user"> </i>Login
