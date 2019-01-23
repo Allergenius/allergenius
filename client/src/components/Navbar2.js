@@ -63,9 +63,8 @@ class Headers extends Component {
                 <nav className="navbar navbar-expand-md no-gutters">
                 <div className="col-2 content-justify-left nav-link">
                         <a href="/">
-                            <img src="./favicon_allerg.svg" width="30" height="30" alt="allergenius_logo" className="mr-2" />
+                            <img src="./allergenius_logo_2.svg" height="30" alt="allergenius_logo" className="mr-2" />
                         </a>
-                    Allergenius
                     </div>
                     <button className="navbar-toggler" 
                             type="button" 
