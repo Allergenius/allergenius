@@ -46,7 +46,7 @@ class Login extends Component {
                 <div className="row login-container">
                     <div className="mx-auto">
                         <form noValidate onSubmit={this.onSubmit} className="login-form">
-                        <div className="header-1">Sign In</div>
+                        <div className="header-1 mb-3">Sign In</div>
                             <div className="form-group">
                                 <label className="sr-only" htmlFor="email">Email Address</label>
                                 <input type="email"
