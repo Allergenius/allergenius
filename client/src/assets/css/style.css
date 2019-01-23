@@ -1,19 +1,17 @@
-body {
-    background-image: url("../images/tree_bark.png");
-    background-position: top;
-    background-size: cover;
-}
-
-/* CUSTOM FONTS */
 .header-1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: 36px;
     font-style: normal;
-    font-weight: 600;
-    letter-spacing: .1em;
+    font-weight: 300;
+    letter-spacing: normal;
     line-height: 40px;
     text-transform: uppercase;
     color: #203B39;
+    padding-bottom: 14px;
+}
+
+.navbar-head {
+    background-color: #203B39;
 }
 
 .content-1,
@@ -39,55 +37,12 @@ body {
     color: #34495E;
 }
 
-
-/* NAVBAR */
-.navbar-head {
-    background-color: #331832;
-}
-
-.navbar-nav {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.nav-link {
-    color: #F2F5F5;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
-}
-
-.nav-style {
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* HEADER */
-.header-styling {
-    color: #202020;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.login-header {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-    letter-spacing: .1em;
-    line-height: 80px;
-    text-transform: uppercase;
-    color: #203B39;
-}
-
 .btn-custom {
     margin: 0 auto;
     width: 100%;
     background-color: #203B39;
     color: #F2F5F5;
     margin-top: 20px;
-}
-
-/* BUTTONS */
-.button-div {
-    margin: 0 auto;
-    text-align: center;
 }
 
 .login-button {
@@ -99,18 +54,17 @@ body {
     color: #F2F5F5;
 }
 
-/* calendar month header */
-.rbc-toolbar-label {
-    font-size: 21px;
-    font-family: 'Open Sans', sans-serif;
+.button-div {
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* FONTS */
+
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; */
 
 
-/* LOGIN & LANDING */
+
 .landing-container {
     /* background-image: linear-gradient(to bottom right, gray, black); */
     background-color: #F2BA18;
@@ -122,20 +76,11 @@ font-family: 'Open Sans', sans-serif; */
     transform: translate(-50%, -50%);
 }
 
-.landing-text {
-    font-family: 'Open Sans', sans-serif;
-    color: #F2F5F5;
-    font-size: 21px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px 40px 20px 40px;
-}
-
 .login-container {
     /* background-image: linear-gradient(to bottom right, gray, black); */
     background-color: #F2BA18;
     width: 500px;
-    height: 380px;
+    height: 360px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -146,14 +91,26 @@ font-family: 'Open Sans', sans-serif; */
     width: 400px;
 }
 
+.landing-text {
+    color: #F2F5F5;
+    font-size: 21px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 40px 20px 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 /* .registerLink {
     padding:
 } */
 
+.nav-link {
+    color: #F2F5F5;
+}
+
 a:hover {
-    font-size: 1.11em;
+    font-size: 16px;
     font-weight: bold;
-    color: #3174ad;
 }
 
 a:active {
@@ -161,15 +118,6 @@ a:active {
     color: #F2F5F5;
     border: 1px solid #cccccc;
     border-radius: 5px;
-}
-
-/* WARNING */
-.warning-styling{
-    background-color: #F4C642;
-    color: #B18812;
-    font-family: 'Open Sans', sans-serif;
-    /* margin: 20px; */
-    padding: 10px;
 }
 
 /* Media Queries */
