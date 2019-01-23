@@ -37,7 +37,7 @@ Although we all helped in all areas of the website, there were main focuses that
 ## Using the website
 Visit https://guarded-garden-65682.herokuapp.com/ and register for an account.
 
-<iframe src="https://giphy.com/embed/lz5inYYVkW29d3z5xv" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/allergenius-lz5inYYVkW29d3z5xv">via GIPHY</a></p>
+[![Sign In after Registering](https://giphy.com/gifs/allergenius-lz5inYYVkW29d3z5xv)](https://giphy.com/embed/lz5inYYVkW29d3z5xv)
 
 ![](client/src/assets/gifs/login.mp4)
 
