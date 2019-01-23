@@ -72,7 +72,7 @@ router.post("/api/reactions/:user", function(req, res) {
         , symp_LossOfConsciousness, severity, sick, food_Dairy, food_Eggs, food_Fish, food_TreeNuts
         , food_Peanuts, food_Gluten, food_Soybeans, food_Corn, food_Berries, food_Celery
         , food_Onions, food_Sesame, Notes) 
-        VALUES ('${moment().format('YYYY-MM-DD HH:mm', req.body.startDate)}', '${moment().format('YYYY-MM-DD HH:mm', req.body.endDate)}', 
+        VALUES ('${moment(req.body.startDate).format('YYYY-MM-DD HH:mm')}', '${moment(req.body.endDate).format('YYYY-MM-DD HH:mm')}',
             ${req.params.user}, '${req.body.title}',
             ${req.body.currentSymptoms.includes("Itchy skin") ? 1: 0}, 
             ${req.body.currentSymptoms.includes("Hives") ? 1: 0}, 
