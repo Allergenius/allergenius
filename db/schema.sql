@@ -101,3 +101,8 @@ CREATE TABLE userProfile
 	PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
+
+-- Trigger to update the users table when the userProfile names are updated
+DROP TRIGGER IF EXISTS userNameTrigger;
+CREATE TRIGGER `userNameTrigger` AFTER UPDATE ON `userProfile` FOR EACH ROW
+    UPDATE users SET users.first_name=NEW.first_name, users.last_name = NEW.last_name WHERE users.id = NEW.user_id;  

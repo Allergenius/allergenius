@@ -19,6 +19,7 @@
   "author": "Erin Clancy, Kayla Himmelberger, Sarah Lopriore, Nicholette Sams",
   "license": "ISC",
   "dependencies": {
+    "@coreui/icons": "^0.3.0",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.3",
     "bcryptjs": "^2.4.3",

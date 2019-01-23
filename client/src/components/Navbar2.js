@@ -58,7 +58,7 @@ class Headers extends Component {
     )
 
     return (
-        <header className="bg-dark">
+        <header className="navbar-head">
             <div className="container">
                 <nav className="navbar navbar-expand-md no-gutters">
                 <div className="col-2 content-justify-left">
