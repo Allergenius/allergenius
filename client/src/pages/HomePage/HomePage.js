@@ -145,7 +145,7 @@ class HomePage extends Component {
                     <div className="p-2">
                          <button
                     onClick={this.exportCsv}
-                    className="btn border border-secondary"
+                    className="btn border border-secondary btn-homepage"
                          >
                             <i className="cui-cloud-download"> </i>Export Reactions to .CSV
                         </button>

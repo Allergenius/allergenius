@@ -62,16 +62,6 @@ body {
     line-height: 80px;
 }
 
-.login-header {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 800;
-    letter-spacing: .11em;
-    line-height: 100px;
-    text-transform: uppercase;
-    color: #203B39;
-}
 
 
 /* BUTTONS */
@@ -87,6 +77,11 @@ body {
     color: #F2F5F5;
     margin-top: 20px;
     font-weight: bold;
+}
+
+.btn-homepage {
+    background-color: #203B39;
+    color: #F2F5F5;
 }
 
 .login-button {
@@ -135,11 +130,17 @@ font-family: 'Open Sans', sans-serif; */
     width: 400px;
 }
 
-/* .register-container {
-    background-color: #F2BA18;
-    padding-bottom: 2.5em;
-    margin-top: 1.25em;
-} */
+.login-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: .11em;
+    line-height: 100px;
+    text-transform: uppercase;
+    color: #203B39;
+}
+
 
 .register-form {
     padding: 3em;
