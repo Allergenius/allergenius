@@ -13,8 +13,7 @@ const Checkbox = (props) => (
 							onChange={props.controlFunc}
 							value={option} 
 							checked={props.selectedOptions.indexOf(option) > -1}
-							type={props.type} 
-							/> {option}
+							type={props.type} /> {option}
 					</label> 
 				);
 			})}

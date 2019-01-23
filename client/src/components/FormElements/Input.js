@@ -9,9 +9,7 @@ const Input = (props) => (
 			name={props.name}
 			onChange={props.controlFunc}
 			value={props.content}
-			placeholder={props.placeholder} 
-			required
-			/>
+			placeholder={props.placeholder} />
 	</div>
 );
 
