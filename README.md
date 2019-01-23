@@ -31,7 +31,7 @@ Although we all helped in all areas of the website, there were main focuses that
 - React
 - MySQL
 - Axios
-- Auth0
+- bcrypt and JSON web tokens
 - Github Projects
 
 ## Using the website
