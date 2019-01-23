@@ -35,22 +35,36 @@ Although we all helped in all areas of the website, there were main focuses that
 - Github Projects
 
 ## Using the website
-Visit https://guarded-garden-65682.herokuapp.com/ and register for an account.
 
-![](client/src/assets/gifs/login.mp4)
-![](client/src/assets/gifs/register_480px.gif)
+### Register and Sign In
+Visit https://guarded-garden-65682.herokuapp.com/ and register for an account. Sign in immediately after registration is required for authentication.
+
+![](client/src/assets/gifs/register+sign_in.gif)
+
+### Setup your Profile
+Add your name and any known food allergies.
+
+![](client/src/assets/gifs/profile_setup.gif)
+
+### Edit Profile Information
+After initial setup, you can updated your profile information as needed by clicking the "My Profile" link in the navigation bar.
+
+![](client/src/assets/gifs/profile_edit.gif)
 
 ### Adding a Reaction
 Select "Add Reaction" from the navigation bar or click the "Add Reaction" button on the home page.  Fill out the form with the details about your reaction and click "Submit".
 
+![](client/src/assets/gifs/reaction_add.gif)
+
 ### Viewing your Reactions
 Your reaction will then appear on the calendar on the home page after they have been added.  You can use the calendar to see a Month, Week or Day view.  You can click on the reactions in the calendar and see a detail view of your reaction.  On this screen you can also delete a reaction.
+
+![](client/src/assets/gifs/reaction_view+delete.gif)
 
 ### Exporting your Reactions
 On the Home page, click the button "Export Reactions to .CSV" to export all reactions entered to a comma delimited file.
 
-### User Profile Information
-Upon first registering, you will be taken to the profile page to fill out for the first time.  Your profile information can also be edited by clicking the "My Profile" link in the navigation bar.
+![](client/src/assets/gifs/download.gif)
 
 ## Future Development
 - Add an option to export to (PDF).
