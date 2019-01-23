@@ -15,6 +15,7 @@ import "react-widgets/dist/css/react-widgets.css";
 import moment from 'moment';
 import momentLocalizer from 'react-widgets-moment';
 import DateTimePicker from 'react-widgets/lib/DateTimePicker';
+import './ReactionForm.css'
 
 moment.locale('en')
 momentLocalizer()

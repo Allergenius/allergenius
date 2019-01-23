@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
+    "@coreui/icons": "^0.3.0",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.3",
     "history": "^4.7.2",
