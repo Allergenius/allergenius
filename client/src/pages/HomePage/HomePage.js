@@ -146,6 +146,7 @@ class HomePage extends Component {
                     <i className="cui-cloud-download"> </i>Export Reactions to .CSV
                 </button>
                 
+                <div className="container rounded calendarDiv">
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
@@ -162,11 +163,8 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                
-                <div>
-                    <Warning />
                 </div>
-            
+                <Warning />
             </Container>
         )
     }
