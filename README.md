@@ -4,13 +4,13 @@
 - [Erin Clancy](https://github.com/noplanetnoparty) 
 - [Kayla Himmelberger](https://github.com/kaylahimmel)
 - [Sarah Lopriore](https://github.com/sarahlopriore)
-- [Nicholette Sams](https://github.com/nicholettesams)\
+- [Nicholette Sams](https://github.com/nicholettesams)  
 
 ## Intro
-Allergenius is an app designed to help people experiencing allergic reaction to track their symptoms as well as the food they have consumed.  Users can then share this information with a healthcare professional in order to facilitate a diagnosis of what food(s) they are allergic to.\
+Allergenius is an app designed to help people experiencing allergic reaction to track their symptoms as well as the food they have consumed.  Users can then share this information with a healthcare professional in order to facilitate a diagnosis of what food(s) they are allergic to.  
   
 ## Design Process
-At the begining of our design process, we decided which features would be part of our MVP (most viable product) and which features would be part of Phase 2 or Phase 3 of development. Github Projects was used in order to create the tasks that all the team members worked on.\
+At the begining of our design process, we decided which features would be part of our MVP (most viable product) and which features would be part of Phase 2 or Phase 3 of development. Github Projects was used in order to create the tasks that all the team members worked on.  
   
 ## Individual Contributions
 Although we all helped in all areas of the website, there were main focuses that each team member had:
@@ -18,7 +18,7 @@ Although we all helped in all areas of the website, there were main focuses that
 - Erin: User authentication, Heroku setup, debugging, and styling.  
 - Kayla: React components and forms, documentation, debugging, and styling.  
 - Sarah: React pages, implementing the reaction calendar, Heroku setup, and debugging. 
-- Niki: backend MySQL schema, routes, documentation, debugging, and implementing export to CSV functionality.\
+- Niki: backend MySQL schema, routes, documentation, debugging, and implementing export to CSV functionality.  
   
 ## Technologies Used
 - [HTML5](developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
@@ -38,7 +38,7 @@ Although we all helped in all areas of the website, there were main focuses that
 - [Cors](https://github.com/expressjs/cors#readme)
 - [BodyParser](https://github.com/expressjs/body-parser#readme)
 - [DotEnv](https://github.com/motdotla/dotenv#readme)
-- [Github Projects](https://help.github.com/articles/about-project-boards)\
+- [Github Projects](https://help.github.com/articles/about-project-boards)  
   
 ## Using Allergenius
 
