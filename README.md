@@ -37,9 +37,8 @@ Although we all helped in all areas of the website, there were main focuses that
 ## Using the website
 Visit https://guarded-garden-65682.herokuapp.com/ and register for an account.
 
-[![Sign In after Registering](https://giphy.com/gifs/allergenius-lz5inYYVkW29d3z5xv)](https://giphy.com/embed/lz5inYYVkW29d3z5xv)
-
 ![](client/src/assets/gifs/login.mp4)
+![](client/src/assets/gifs/register_480px.gif)
 
 ### Adding a Reaction
 Select "Add Reaction" from the navigation bar or click the "Add Reaction" button on the home page.  Fill out the form with the details about your reaction and click "Submit".
