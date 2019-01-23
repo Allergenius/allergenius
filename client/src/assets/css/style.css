@@ -45,37 +45,33 @@ body {
     background-color: #331832;
 }
 
-/* .navbar-nav {
-    font-family: 'Montserrat', sans-serif;
-} */
-
 .nav-link {
     color: #F2F5F5;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
 }
 
-/* .nav-style {
-    font-family: 'Montserrat', sans-serif;
-} */
 
 /* HEADER */
 .header-styling {
     color: #202020;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: .05em;
+    font-size: 40px;
+    line-height: 80px;
 }
 
 .login-header {
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
+    font-size: 50px;
     font-style: normal;
     font-weight: 800;
-    letter-spacing: .1em;
-    line-height: 80px;
+    letter-spacing: .11em;
+    line-height: 100px;
     text-transform: uppercase;
     color: #203B39;
 }
-
 
 
 /* BUTTONS */
@@ -102,9 +98,10 @@ body {
     color: #F2F5F5;
 }
 
+
 /* CALENDAR HEADER */
 .rbc-toolbar-label {
-    font-size: 21px;
+    font-size: 2.5em;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -163,7 +160,7 @@ a:active {
 
 /* WARNING */
 .warning-styling{
-    background-color: #F4C642;
+    background-color: #F7D679;
     color: #B18812;
     font-family: 'Open Sans', sans-serif;
     /* margin: 20px; */
