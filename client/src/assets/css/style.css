@@ -9,12 +9,11 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     font-style: normal;
-    font-weight: 300;
-    letter-spacing: normal;
+    font-weight: 600;
+    letter-spacing: .1em;
     line-height: 40px;
     text-transform: uppercase;
     color: #203B39;
-    padding-bottom: 14px;
 }
 
 .content-1,
@@ -62,6 +61,17 @@ body {
 .header-styling {
     color: #202020;
     font-family: 'Open Sans', sans-serif;
+}
+
+.login-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: .1em;
+    line-height: 80px;
+    text-transform: uppercase;
+    color: #203B39;
 }
 
 .btn-custom {

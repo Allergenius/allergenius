@@ -40,6 +40,9 @@ class Login extends Component {
     render () {
         return (
             <div className="container">
+            <div className="row">
+                <div className="col-md-12 login-header text-center pt-4">ALLERGENIUS</div>
+            </div>
                 <div className="row login-container">
                     <div className="mx-auto">
                         <form noValidate onSubmit={this.onSubmit} className="login-form">
