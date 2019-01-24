@@ -93,6 +93,11 @@ body {
     color: #F2F5F5;
 }
 
+/* CARD */
+
+.card-eaten {
+    font-family: 'Open Sans', sans-serif;
+}
 
 /* CALENDAR HEADER */
 .rbc-toolbar-label {
@@ -128,6 +133,8 @@ font-family: 'Open Sans', sans-serif; */
 
 .login-form {
     width: 400px;
+    border: 2px solid #3174AD;
+    background-color: #eaf6ff;
 }
 
 .login-header {
@@ -144,12 +151,14 @@ font-family: 'Open Sans', sans-serif; */
 
 .register-form {
     padding: 3em;
+    border: 2px solid #3174AD;
+    background-color: #eaf6ff;
 }
 
 a:hover {
     /* font-size: 1.11em; */
     font-weight: bold;
-    color: #3174ad;
+    color: #F2BA18;
 }
 
 a:active {

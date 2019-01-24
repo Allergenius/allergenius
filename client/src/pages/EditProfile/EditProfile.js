@@ -151,13 +151,14 @@ class EditProfile extends Component {
 							<h3 className="text-center p-4">Edit Profile</h3>
 							
 							<div className="name-lines">
+							<label htmlFor="firstName">First Name</label>
 								<Input
 									inputType={'text'}
 									name={'firstName'}
 									controlFunc={this.handleSelect}
 									content={firstName}
 									placeholder={'First Name:'} />
-								
+								<label htmlFor="lastName">Last Name</label>
 								<Input
 									inputType={'text'}
 									name={'lastName'}
