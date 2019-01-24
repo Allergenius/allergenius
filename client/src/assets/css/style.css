@@ -164,6 +164,9 @@ font-family: 'Open Sans', sans-serif; */
     color: #202020;
 }
 
+.border-secondary {
+    border: 2px solid #868e96;
+}
 
 .register-form {
     padding: 3em;
