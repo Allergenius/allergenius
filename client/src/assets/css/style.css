@@ -185,8 +185,8 @@ a:active {
 
 /* WARNING */
 .warning-styling{
-    background-color: #F6D36C;
-    color: #B18812;
+    background-color: #F4C642;
+    color: rgb(139, 105, 1);
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     padding: .5em .5em;
