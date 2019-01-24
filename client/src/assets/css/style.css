@@ -40,8 +40,10 @@ body {
 
 
 /* NAVBAR */
+.navbar,
 .navbar-head {
     background-color: #331832;
+    min-height: 50px;
 }
 
 .nav-link {
@@ -127,14 +129,10 @@ font-family: 'Open Sans', sans-serif; */
 
 /* LOGIN & LANDING & REGISTER */
 .landing-container {
-    /* background-image: linear-gradient(to bottom right, gray, black); */
     background-color: #F2BA18;
-    width: 450px;
+    width: 30em;
     padding-bottom: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 10em;
 }
 
 .landing-text {

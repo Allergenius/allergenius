@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 class Landing extends Component {
     render () {
     return (
-        <div className="container">
-            <div className="row landing-container">
+        <div className="container landing-container">
+            <div className="row">
             <div className="mx-auto">
                 <div className="landing-text">
                     <h6 className="landing-text">Welome to</h6>
