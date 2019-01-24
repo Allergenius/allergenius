@@ -4,10 +4,10 @@ import DeleteButton from "../Buttons/DeleteButton";
 const Card = props => (
     <div className="card mx-auto w-50">
         <div className="card-header header-1 d-flex justify-content-between">{props.title}
-        <span className="lead">{props.date}</span>
         </div>
         <div className="card-body">
-            <h5 className="card=title">{props.startDate} - {props.endDate}</h5>
+        <span className="card-date">{props.date}</span>
+            <h5 className="card-title pb-1">{props.startDate} - {props.endDate}</h5>
             <p className="card-text content-1">Foods Eaten:</p>
             <ul className="card-eaten content-2">
                 { props.foodBerries === 1 && <li>Berries</li> }

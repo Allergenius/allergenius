@@ -219,7 +219,7 @@ class ReactionForm extends Component {
 			<div className='form-container'>
 				<Container>
 				<Warning />
-					<form className="container form-group needs-validation novalidate p-5" onSubmit={this.handleFormSubmit} method="POST">
+					<form className="container form-group needs-validation novalidate p-5 border border-secondary bg-light" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						
 						<h3 className="text-center p-4 header-1">Reaction Entry Form</h3>

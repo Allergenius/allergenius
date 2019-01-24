@@ -20,7 +20,7 @@ body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: normal;
     line-height: 28px;
     text-transform: none;
@@ -113,6 +113,11 @@ body {
     background-color: #eaf6ff;
 }
 
+.card-date {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
 
 /* CALENDAR HEADER */
 .rbc-toolbar-label {
@@ -142,11 +147,9 @@ font-family: 'Open Sans', sans-serif; */
     padding: 20px 40px 20px 40px;
 }
 
-/* .login-form {
+.login-form {
     width: 400px;
-    border: 2px solid #3174AD;
-    background-color: #eaf6ff;
-} */
+}
 
 .login-header {
     font-family: 'Montserrat', sans-serif;
