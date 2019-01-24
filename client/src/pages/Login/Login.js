@@ -45,9 +45,8 @@ class Login extends Component {
             </div>
                 <div className="row">
                     <div className="mx-auto">
-                        <form noValidate onSubmit={this.onSubmit} className="login-form">
+                        <form noValidate onSubmit={this.onSubmit} className="login-form border border-secondary bg-light">
                         <div className="header-1 text-center mb-4">Log In</div>
-                        {/* <lead className="text-sm text-seconday">Login to view your profile</lead> */}
                             <div className="form-group">
                                 <label className="sr-only" htmlFor="email">Email Address</label>
                                 <input type="email"

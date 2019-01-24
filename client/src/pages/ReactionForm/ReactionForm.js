@@ -347,7 +347,7 @@ class ReactionForm extends Component {
 						<div className="button-div">
 							<input
 								type="submit"
-								className="btn btn-secondary btn-submit"
+								className="btn btn-secondary btn-lg btn-submit"
 								value="Submit"
 							/>
 						</div>

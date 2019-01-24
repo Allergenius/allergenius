@@ -13,7 +13,7 @@ body {
     letter-spacing: .1em;
     line-height: 40px;
     text-transform: uppercase;
-    color: #203B39;
+    color: #331832;
 }
 
 .content-1 {
@@ -24,7 +24,7 @@ body {
     letter-spacing: normal;
     line-height: 28px;
     text-transform: none;
-    color: #203B39;
+    color: #331832;
 }
 
 .content-2 {
@@ -35,7 +35,7 @@ body {
     letter-spacing: normal;
     line-height: 24px;
     text-transform: none;
-    color: #34495E;
+    color: #331832;
 }
 
 
@@ -78,7 +78,7 @@ body {
 }
 
 .btn-homepage {
-    background-color: #203B39;
+    background-color: #331832;
     color: #F2F5F5;
 }
 
@@ -87,19 +87,19 @@ body {
     /* left: 50%; */
     margin: 0 auto;
     text-align: center;
-    background-color: #203B39;
+    background-color: #331832;
     color: #F2F5F5;
 }
 
 .btn-submit {
-    background-color: #3174AD;
+    background-color: #331832;
     color: #F2F5F5;
 }
 
 /* CARD */
-.card {
+/* .card {
     border: 2px solid #3174AD;
-}
+} */
 .card-eaten {
     font-family: 'Open Sans', sans-serif;
 }
@@ -107,12 +107,12 @@ body {
 .card-header {
     background-color: #3174AD;
     color: #F2F5F5;
-    /* font-weight: 400; */
 }
 
 .card-body {
     background-color: #eaf6ff;
 }
+
 
 /* CALENDAR HEADER */
 .rbc-toolbar-label {
@@ -146,11 +146,11 @@ font-family: 'Open Sans', sans-serif; */
     padding: 20px 40px 20px 40px;
 }
 
-.login-form {
+/* .login-form {
     width: 400px;
     border: 2px solid #3174AD;
     background-color: #eaf6ff;
-}
+} */
 
 .login-header {
     font-family: 'Montserrat', sans-serif;
@@ -160,14 +160,14 @@ font-family: 'Open Sans', sans-serif; */
     letter-spacing: .11em;
     line-height: 100px;
     text-transform: uppercase;
-    color: #203B39;
+    color: #202020;
 }
 
 
 .register-form {
     padding: 3em;
-    border: 2px solid #3174AD;
-    background-color: #eaf6ff;
+    /* border: 2px solid #3174AD;
+    background-color: #eaf6ff; */
 }
 
 a:hover {
