@@ -205,12 +205,22 @@ a:active {
 /* Media Queries */
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    
+    .landing-container {
+        background-color: #F2BA18;
+        width: 25em;
+        padding-bottom: 50px;
+        margin-top: 10em;
+    }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
-
+    .landing-container {
+        background-color: #F2BA18;
+        width: 25em;
+        padding-bottom: 50px;
+        margin-top: 10em;
+    }
 }
 
 /* // Medium devices (tablets, 768px and up) */
