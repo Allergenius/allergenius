@@ -137,17 +137,20 @@ class AddProfile extends Component {
 		return (
 			<div className="profile-container">
 				<Container>
+					<Warning />
 						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
-							<h3 className="text-center p-4">Setup Profile</h3>
+							<h3 className="text-center p-4 header-1">Setup Profile</h3>
 							
 							<div className="name-lines">
+							<label htmlFor="firstName">First Name</label>
 								<Input
 									inputType={'text'}
 									name={'firstName'}
 									controlFunc={this.handleSelect}
 									content={firstName}
 									placeholder={'First Name:'} />
-								
+
+								<label htmlFor="lastName">Last Name</label>
 								<Input
 									inputType={'text'}
 									name={'lastName'}
@@ -164,12 +167,11 @@ class AddProfile extends Component {
 								options={foodAllergens}
 								selectedOptions={foodsAllergicTo} />
 							
-							<div className="btn-submit">
+							<div className="d-flex justify-content-center">
 								<ProfileSubmit />
 							</div>
 							
 						</form>
-					<Warning />
             </Container>
 			</div>
 		)

@@ -73,7 +73,7 @@ class HomePage extends Component {
         const decoded = jwt_decode(token)
         // console.log(decoded)
         this.setState({
-            first_name: decoded.first_name,
+            // first_name: decoded.first_name,
             last_name: decoded.last_name,
             email: decoded.email,
             id: decoded.id
@@ -98,6 +98,9 @@ class HomePage extends Component {
         .then(res => {
             if (res.data.length === 0) {
                 window.location.href = "/addprofile"
+            } else {
+                console.log(res.data)
+                this.setState({first_name: res.data[0].first_name})
             }})
         .catch(err => {
             console.log(err)
@@ -137,15 +140,23 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
+                <Warning />
                 <Header username={this.state.first_name} />
-                <AddButton clickAdd={this.clickAdd}/>
-                <button
+                <div className="d-flex justify-content-between">
+                    <div className="p-2">
+                        <AddButton clickAdd={this.clickAdd} />
+                    </div>
+                    <div className="p-2">
+                         <button
                     onClick={this.exportCsv}
-                    className="btn btn-light border border-secondary m-2"
-                >
-                    <i className="cui-cloud-download"> </i>Export Reactions to .CSV
-                </button>
+                    className="btn border border-secondary btn-homepage"
+                         >
+                            <i className="cui-cloud-download"> </i>Export Reactions to .CSV
+                        </button>
+                    </div>
+                </div>
                 
+                <div className="container rounded calendarDiv">
                 <BigCalendar
                     className="calendar-container"
                     localizer={localizer}
@@ -162,11 +173,7 @@ class HomePage extends Component {
                     onNavigate={date => this.setState({ selectedDate: date })}
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
-                
-                <div>
-                    <Warning />
                 </div>
-            
             </Container>
         )
     }

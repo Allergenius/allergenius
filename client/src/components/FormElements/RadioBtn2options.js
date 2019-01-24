@@ -3,7 +3,7 @@ import React from 'react';
 const RadioBtn2 = (props) => (
 	<div>
 		<h6 className="radio-Q-label">{props.title}</h6>
-		<div className="form-check-2">
+		<div className="form-check-2 needs-validation novalidate">
 			{props.options.map(option => {
 				return (
 					<label key={option} className="form-check-label mr-4">
@@ -14,7 +14,9 @@ const RadioBtn2 = (props) => (
 							value={option} 
 							autoComplete="off"
 							checked={props.selectedOptions.indexOf(option) > -1}
-							type={props.type} /> {option}
+							type={props.type} 
+							required
+							/> {option}
 					</label>
 				);
 			})}

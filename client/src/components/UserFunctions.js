@@ -28,6 +28,6 @@ export const login = user => {
             return res.data
         })
         .catch(err => {
-            console.log("User Login Error:" + err)
+            alert("Incorrect Email and Password Combination")
         })
 }

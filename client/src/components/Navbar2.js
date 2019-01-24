@@ -13,28 +13,30 @@ class Headers extends Component {
     
   render() {
     const loginRegLink = (
-        <ul className="navbar-nav">
-            <li className="nav-item">
+        <ul className="navbar-nav d-flex">
+            <li className="nav-item p-2">
                 <Link to="/login" className="nav-link">
-                <i className="cui-user"> </i>Login
+                <i className="cui-user"> </i>
+                Login
                 </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item p-2">
                 <Link to="/register" className="nav-link">
-                <i className="cui-bookmark"> </i>Register
+                <i className="cui-bookmark"> </i>
+                Register
                 </Link>
             </li>
         </ul>
     )
 
     const userLink = (
-        <ul className="navbar-nav">
-            <li className="nav-item">
+        <ul className="navbar-nav d-flex">
+            <li className="nav-item p-2">
                 <Link to="/EditProfile" className="nav-link">
                 <i className="cui-wrench"> </i>My Profile
                 </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item p-2">
                 <a href="" onClick={this.logOut.bind(this)} className="nav-link">
                 <i className="cui-account-logout"> </i>Logout
                 </a>
@@ -43,13 +45,13 @@ class Headers extends Component {
     )
 
     const homeReactionLink = (
-        <ul className="navbar-nav justify-content-center">
-        <li className="nav-item">
+        <ul className="navbar-nav d-flex">
+        <li className="nav-item p-2">
             <Link to="/home" className="nav-link">
             <i className="cui-calendar"> </i>Home
             </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item p-2">
             <Link to="/reactionform" className="nav-link">
             <i className="cui-envelope-letter"> </i>Add Reaction
             </Link>
@@ -60,10 +62,10 @@ class Headers extends Component {
     return (
         <header className="navbar-head">
             <div className="container">
-                <nav className="navbar navbar-expand-md no-gutters">
-                <div className="col-2 content-justify-left">
+                <nav className="navbar navbar-expand-md d-flex justify-content-between">
+                <div className="p-2 nav-link">
                         <a href="/">
-                            <img src="./allergenius_logo.svg" alt="allergenius_logo" />
+                            <img src="./allergenius_logo_2.svg" height="30" alt="allergenius_logo" className="mr-2" />
                         </a>
                     </div>
                     <button className="navbar-toggler" 
@@ -76,7 +78,7 @@ class Headers extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                <div className="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3">
+                <div className="collapse navbar-collapse justify-content-between col-md-8 navbar-collapse-3 p-2">
                     { localStorage.usertoken ? homeReactionLink : null }
                     {localStorage.usertoken ? userLink : loginRegLink}
                 </div>
