@@ -185,12 +185,11 @@ a:active {
 
 /* WARNING */
 .warning-styling{
-    background-color: #F7D679;
+    background-color: #F6D36C;
     color: #B18812;
     font-family: 'Open Sans', sans-serif;
-    /* margin: 20px; */
-    /* padding: 10px; */
     font-size: 1em;
+    padding: .5em .5em;
 }
 
 .main-container {
