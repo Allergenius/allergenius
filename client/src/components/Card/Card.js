@@ -9,7 +9,7 @@ const Card = props => (
         <div className="card-body">
             <h5 className="card=title">{props.startDate} - {props.endDate}</h5>
             <p className="card-text">Foods Eaten:</p>
-            <ul>
+            <ul className="card-eaten">
                 { props.foodBerries === 1 && <li>Berries</li> }
                 { props.foodCelery === 1 && <li>Celery</li> }
                 { props.foodCorn === 1 && <li>Corn</li> }

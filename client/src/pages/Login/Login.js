@@ -40,10 +40,14 @@ class Login extends Component {
     render () {
         return (
             <div className="container">
-                <div className="row login-container">
+            <div className="row">
+                <div className="col-md-12 login-header text-center pt-4">ALLERGENIUS</div>
+            </div>
+                <div className="row">
                     <div className="mx-auto">
                         <form noValidate onSubmit={this.onSubmit} className="login-form">
-                        <div className="header-1">Sign In</div>
+                        <div className="header-1 text-center mb-4">Log In</div>
+                        {/* <lead className="text-sm text-seconday">Login to view your profile</lead> */}
                             <div className="form-group">
                                 <label className="sr-only" htmlFor="email">Email Address</label>
                                 <input type="email"
@@ -67,8 +71,8 @@ class Login extends Component {
                             <Link className="registerLink" to="/register">Not already a user? Click here to register</Link>
                             <div className="button-div">
                                 <button type="submit"
-                                    className="btn btn-login btn-custom">
-                                    Sign in
+                                    className="btn btn-secondary btn-login btn-custom">
+                                    Login
                                 </button>
                             </div>
                         </form>

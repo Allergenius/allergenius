@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Headers from './components/Navbar2'
-// import Navbar from './components/Navbar'
 import Landing from './pages/Landing/Landing'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
-import Profile from './components/Profile'
 import HomePage from './pages/HomePage/HomePage'
 import AddProfile from './pages/AddProfile/AddProfile'
 import EditProfile from './pages/EditProfile/EditProfile'
@@ -27,11 +25,10 @@ class App extends Component {
           <Headers />
 
           <Route exact path="/" component={Landing} />
-          <div className="container main-container">
+          <div className="container mx-auto">
           <Route exact path="/home" component={HomePage} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/profile" component={Profile} />
             <Route exact path="/addprofile" component={AddProfile} />
             <Route exact path="/editprofile" component={EditProfile} />
             <Route exact path="/reactionform" component={ReactionForm} />

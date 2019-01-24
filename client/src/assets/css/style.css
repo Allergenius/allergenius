@@ -1,21 +1,22 @@
+body {
+    background-image: url("../images/tree_bark.png");
+    background-position: top;
+    background-size: cover;
+}
+
+/* CUSTOM FONTS */
 .header-1 {
-    font-family: Montserrat, sans-serif;
-    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
     font-style: normal;
-    font-weight: 300;
-    letter-spacing: normal;
+    font-weight: 600;
+    letter-spacing: .1em;
     line-height: 40px;
     text-transform: uppercase;
     color: #203B39;
-    padding-bottom: 14px;
 }
 
-.navbar-head {
-    background-color: #203B39;
-}
-
-.content-1,
-.reaction-title {
+.content-1 {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
@@ -23,7 +24,7 @@
     letter-spacing: normal;
     line-height: 28px;
     text-transform: none;
-    color: #F2BA18;
+    color: #203B39;
 }
 
 .content-2 {
@@ -37,12 +38,48 @@
     color: #34495E;
 }
 
+
+/* NAVBAR */
+.navbar-head {
+    background-color: #331832;
+}
+
+.nav-link {
+    color: #F2F5F5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+}
+
+
+/* HEADER */
+.header-styling {
+    color: #202020;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: .05em;
+    font-size: 40px;
+    line-height: 80px;
+}
+
+
+/* BUTTONS */
+.button-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .btn-custom {
     margin: 0 auto;
     width: 100%;
-    background-color: #203B39;
+    background-color: #F2BA18;
     color: #F2F5F5;
     margin-top: 20px;
+    font-weight: bold;
+}
+
+.btn-homepage {
+    background-color: #203B39;
+    color: #F2F5F5;
 }
 
 .login-button {
@@ -54,17 +91,41 @@
     color: #F2F5F5;
 }
 
-.button-div {
-    margin: 0 auto;
-    text-align: center;
+.btn-submit {
+    background-color: #3174AD;
+    color: #F2F5F5;
 }
 
+/* CARD */
+.card {
+    border: 2px solid #3174AD;
+}
+.card-eaten {
+    font-family: 'Open Sans', sans-serif;
+}
 
+.card-header {
+    background-color: #3174AD;
+    color: #F2F5F5;
+    /* font-weight: 400; */
+}
+
+.card-body {
+    background-color: #eaf6ff;
+}
+
+/* CALENDAR HEADER */
+.rbc-toolbar-label {
+    font-size: 2.5em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* FONTS */
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; */
 
 
-
+/* LOGIN & LANDING & REGISTER */
 .landing-container {
     /* background-image: linear-gradient(to bottom right, gray, black); */
     background-color: #F2BA18;
@@ -76,41 +137,43 @@ font-family: 'Open Sans', sans-serif; */
     transform: translate(-50%, -50%);
 }
 
-.login-container {
-    /* background-image: linear-gradient(to bottom right, gray, black); */
-    background-color: #F2BA18;
-    width: 500px;
-    height: 360px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.login-form {
-    width: 400px;
-}
-
 .landing-text {
+    font-family: 'Open Sans', sans-serif;
     color: #F2F5F5;
     font-size: 21px;
     text-align: center;
     margin: 0 auto;
     padding: 20px 40px 20px 40px;
-    font-family: 'Open Sans', sans-serif;
 }
 
-/* .registerLink {
-    padding:
-} */
+.login-form {
+    width: 400px;
+    border: 2px solid #3174AD;
+    background-color: #eaf6ff;
+}
 
-.nav-link {
-    color: #F2F5F5;
+.login-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: .11em;
+    line-height: 100px;
+    text-transform: uppercase;
+    color: #203B39;
+}
+
+
+.register-form {
+    padding: 3em;
+    border: 2px solid #3174AD;
+    background-color: #eaf6ff;
 }
 
 a:hover {
-    font-size: 16px;
+    /* font-size: 1.11em; */
     font-weight: bold;
+    color: #F2BA18;
 }
 
 a:active {
@@ -118,6 +181,22 @@ a:active {
     color: #F2F5F5;
     border: 1px solid #cccccc;
     border-radius: 5px;
+}
+
+/* WARNING */
+.warning-styling{
+    background-color: #F7D679;
+    color: #B18812;
+    font-family: 'Open Sans', sans-serif;
+    /* margin: 20px; */
+    /* padding: 10px; */
+    font-size: 1em;
+}
+
+.main-container {
+    background-color: #eaf6ff;
+    height: 100%;
+    width: 100%;
 }
 
 /* Media Queries */
