@@ -207,9 +207,20 @@ a:active {
 @media (max-width: 575.98px) {
     .landing-container {
         background-color: #F2BA18;
-        width: 25em;
+        width: 22em;
         padding-bottom: 50px;
         margin-top: 10em;
+    }
+
+    .header-1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: .1em;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #331832;
     }
 }
 
@@ -220,6 +231,17 @@ a:active {
         width: 25em;
         padding-bottom: 50px;
         margin-top: 10em;
+    }
+
+    .header-1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: .1em;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #331832;
     }
 }
 
@@ -241,6 +263,17 @@ a:active {
         padding-bottom: 50px;
         margin-top: 10em;
     }
+    
+    .header-1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: .1em;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #331832;
+    }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
@@ -250,5 +283,16 @@ a:active {
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
+    }
+
+    .header-1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: .1em;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #331832;
     }
 }
