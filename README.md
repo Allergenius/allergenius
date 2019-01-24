@@ -1,4 +1,4 @@
-![Allergenius: Allergic Reaction Logging App](client/src/assets/images/allergenius_logo_gray.png) 
+![Allergenius: Allergic Reaction Logging App](client/src/assets/images/allergenius_logo_gold.png) 
 
 ## Contributors
 - [Erin Clancy](https://github.com/noplanetnoparty) 
