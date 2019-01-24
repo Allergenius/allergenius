@@ -97,9 +97,11 @@ body {
 }
 
 /* CARD */
-/* .card {
+.card {
     border: 2px solid #3174AD;
-} */
+    margin: 1em;
+}
+
 .card-eaten {
     font-family: 'Open Sans', sans-serif;
 }
