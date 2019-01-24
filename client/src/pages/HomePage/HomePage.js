@@ -140,6 +140,7 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
+                <Warning />
                 <Header username={this.state.first_name} />
                 <div className="d-flex justify-content-between">
                     <div className="p-2">
@@ -173,7 +174,6 @@ class HomePage extends Component {
                     onSelectEvent={(event) => this.handleEventSelect(event)}
                 />
                 </div>
-                <Warning />
             </Container>
         )
     }

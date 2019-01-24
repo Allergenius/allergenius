@@ -137,6 +137,7 @@ class AddProfile extends Component {
 		return (
 			<div className="profile-container">
 				<Container>
+					<Warning />
 						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
 							<h3 className="text-center p-4">Setup Profile</h3>
 							
@@ -171,7 +172,6 @@ class AddProfile extends Component {
 							</div>
 							
 						</form>
-					<Warning />
             </Container>
 			</div>
 		)

@@ -146,6 +146,7 @@ class EditProfile extends Component {
 		return (
 			<div className="profile-container">
 				<Container>
+				<Warning />
 						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack}/>
 							<h3 className="text-center p-4">Edit Profile</h3>
@@ -178,9 +179,7 @@ class EditProfile extends Component {
 							<div className="button-div">
 								<ProfileSubmit />
 							</div>
-
 						</form>
-					<Warning />
             </Container>
 			</div>
 		)

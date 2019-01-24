@@ -16,8 +16,7 @@ body {
     color: #203B39;
 }
 
-.content-1,
-.reaction-title {
+.content-1 {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
@@ -25,7 +24,7 @@ body {
     letter-spacing: normal;
     line-height: 28px;
     text-transform: none;
-    color: #F2BA18;
+    color: #203B39;
 }
 
 .content-2 {
@@ -61,7 +60,6 @@ body {
     font-size: 40px;
     line-height: 80px;
 }
-
 
 
 /* BUTTONS */
@@ -174,7 +172,8 @@ a:active {
     color: #B18812;
     font-family: 'Open Sans', sans-serif;
     /* margin: 20px; */
-    padding: 10px;
+    /* padding: 10px; */
+    font-size: 1em;
 }
 
 .main-container {

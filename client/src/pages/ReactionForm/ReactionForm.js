@@ -218,6 +218,7 @@ class ReactionForm extends Component {
 		return (
 			<div className='form-container'>
 				<Container>
+				<Warning />
 					<form className="container form-group needs-validation novalidate" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						
@@ -351,7 +352,6 @@ class ReactionForm extends Component {
 							/>
 						</div>
 					</form>
-					<Warning />
 				</Container>
 			</div>
 		);
