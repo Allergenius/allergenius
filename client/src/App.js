@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Headers from './components/Navbar2'
-// import Navbar from './components/Navbar'
 import Landing from './pages/Landing/Landing'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'

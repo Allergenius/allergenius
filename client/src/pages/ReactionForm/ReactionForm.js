@@ -222,7 +222,7 @@ class ReactionForm extends Component {
 					<form className="container form-group needs-validation novalidate" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack} />
 						
-						<h3 className="text-center p-4">Reaction Entry Form</h3>
+						<h3 className="text-center p-4 header-1">Reaction Entry Form</h3>
 						
 						<div className="form-group mt-4 mb-6 p-1">
 							<label htmlFor="reaction-title" className="title-label mr-2 mb-3">
@@ -347,7 +347,7 @@ class ReactionForm extends Component {
 						<div className="button-div">
 							<input
 								type="submit"
-								className="button btn btn-light btn-submit"
+								className="btn btn-secondary btn-submit"
 								value="Submit"
 							/>
 						</div>

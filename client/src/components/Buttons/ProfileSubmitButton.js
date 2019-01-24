@@ -5,7 +5,7 @@ const ProfileSubmit = (props) => (
         type={props.submit}
         onClick={props.submit}
         value={props.content}
-        className="button btn btn-light btn-submit"
+        className="btn btn-secondary btn-submit p-2 mt-3"
     >   
         Submit
     </button>

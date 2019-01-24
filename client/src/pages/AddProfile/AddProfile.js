@@ -139,7 +139,7 @@ class AddProfile extends Component {
 				<Container>
 					<Warning />
 						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
-							<h3 className="text-center p-4">Setup Profile</h3>
+							<h3 className="text-center p-4 header-1">Setup Profile</h3>
 							
 							<div className="name-lines">
 							<label htmlFor="firstName">First Name</label>
@@ -167,7 +167,7 @@ class AddProfile extends Component {
 								options={foodAllergens}
 								selectedOptions={foodsAllergicTo} />
 							
-							<div className="btn-submit">
+							<div className="d-flex justify-content-center">
 								<ProfileSubmit />
 							</div>
 							

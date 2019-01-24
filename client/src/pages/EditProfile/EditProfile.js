@@ -149,7 +149,7 @@ class EditProfile extends Component {
 				<Warning />
 						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack}/>
-							<h3 className="text-center p-4">Edit Profile</h3>
+							<h3 className="text-center p-4 header-1">Edit Profile</h3>
 							
 							<div className="name-lines">
 							<label htmlFor="firstName">First Name</label>
@@ -158,14 +158,14 @@ class EditProfile extends Component {
 									name={'firstName'}
 									controlFunc={this.handleSelect}
 									content={firstName}
-									placeholder={'First Name:'} />
+									placeholder={'First Name'} />
 								<label htmlFor="lastName">Last Name</label>
 								<Input
 									inputType={'text'}
 									name={'lastName'}
 									controlFunc={this.handleSelect}
 									content={lastName}
-									placeholder={'Last Name:'} />
+									placeholder={'Last Name'} />
 							</div>
 
 							<label>Are you allergic to any of these foods?</label>	

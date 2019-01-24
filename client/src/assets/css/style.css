@@ -91,10 +91,27 @@ body {
     color: #F2F5F5;
 }
 
-/* CARD */
+.btn-submit {
+    background-color: #3174AD;
+    color: #F2F5F5;
+}
 
+/* CARD */
+.card {
+    border: 2px solid #3174AD;
+}
 .card-eaten {
     font-family: 'Open Sans', sans-serif;
+}
+
+.card-header {
+    background-color: #3174AD;
+    color: #F2F5F5;
+    /* font-weight: 400; */
+}
+
+.card-body {
+    background-color: #eaf6ff;
 }
 
 /* CALENDAR HEADER */
