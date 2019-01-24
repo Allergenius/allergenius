@@ -1,4 +1,3 @@
-<!-- # [Allergenius](https://guarded-garden-65682.herokuapp.com/) -->
 ![Allergenius: Allergic Reaction Logging App](client/src/assets/images/allergenius_logo_gray.png) 
 
 ## Contributors
@@ -8,7 +7,7 @@
 - [Nicholette Sams](https://github.com/nicholettesams)  
 
 ## Intro
-Allergenius is an app designed to help people experiencing allergic reaction to track their symptoms as well as the food they have consumed.  Users can then share this information with a healthcare professional in order to facilitate a diagnosis of what food(s) they are allergic to.  
+[Allergenius](https://allergenius.herokuapp.com) is an app designed to help people experiencing allergic reaction to track their symptoms as well as the food they have consumed.  Users can then share this information with a healthcare professional in order to facilitate a diagnosis of what food(s) they are allergic to.  
   
 ## Design Process
 At the begining of our design process, we decided which features would be part of our MVP (most viable product) and which features would be part of Phase 2 or Phase 3 of development. Github Projects was used in order to create the tasks that all the team members worked on.  
@@ -44,7 +43,7 @@ Although we all helped in all areas of the website, there were main focuses that
 ## Using Allergenius
 
 ### Register and Sign In
-Visit [Allergenius](https://guarded-garden-65682.herokuapp.com) and register for an account. For authentication purposes, sign in immediately after registration is required.
+Visit [Allergenius](https://allergenius.herokuapp.com) and register for an account. For authentication purposes, sign in immediately after registration is required.
 
 ![](client/src/assets/gifs/register+sign_in.gif)  
 

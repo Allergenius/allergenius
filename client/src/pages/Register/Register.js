@@ -38,11 +38,11 @@ class Register extends Component {
 
     render () {
         return (
-            <div className="container register-container">
-                <div className="row">
-                    <div className="col-md-6 mt-5 mx-auto">
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <h3 className="h3 mb-3 font-weight-normal text-center">Create an Account</h3>
+            <div className="container">
+                <div className="row register-container">
+                    <div className="col-md-8 mx-auto">
+                        <form noValidate onSubmit={this.onSubmit} className="register-form">
+                            <h3 className="header-1 text-center">Create an Account</h3>
                             <br/>
                             <div className="form-group">
                                 <label htmlFor="first_name">First Name</label>
@@ -85,13 +85,13 @@ class Register extends Component {
                                 />
                             </div>
                             <button type="submit"
-                                className="btn btn-lg btn-custom">
+                                className="btn btn-lg btn-secondary btn-custom">
                                 Register
                             </button>
                         </form>
                     </div>
                 </div>
-            </div>
+         </div>
         )
     }
 }
