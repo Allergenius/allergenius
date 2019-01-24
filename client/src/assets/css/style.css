@@ -225,15 +225,30 @@ a:active {
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    
+    .landing-container {
+        background-color: #F2BA18;
+        width: 30em;
+        padding-bottom: 50px;
+        margin-top: 10em;
+    }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    
+    .landing-container {
+        background-color: #F2BA18;
+        width: 30em;
+        padding-bottom: 50px;
+        margin-top: 10em;
+    }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    
+    .landing-container {
+        background-color: #F2BA18;
+        width: 30em;
+        padding-bottom: 50px;
+        margin-top: 10em;
+    }
 }
