@@ -3,13 +3,13 @@ import DeleteButton from "../Buttons/DeleteButton";
 
 const Card = props => (
     <div className="card mx-auto w-50">
-        <div className="card-header h3 d-flex justify-content-between">{props.title}
-        <span className="lead">{props.date}</span>
+        <div className="card-header header-1 d-flex justify-content-between">{props.title}
         </div>
         <div className="card-body">
-            <h5 className="card=title">{props.startDate} - {props.endDate}</h5>
-            <p className="card-text">Foods Eaten:</p>
-            <ul className="card-eaten">
+        <span className="card-date">{props.date}</span>
+            <h5 className="card-title pb-1">{props.startDate} - {props.endDate}</h5>
+            <p className="card-text content-1">Foods Eaten:</p>
+            <ul className="card-eaten content-2">
                 { props.foodBerries === 1 && <li>Berries</li> }
                 { props.foodCelery === 1 && <li>Celery</li> }
                 { props.foodCorn === 1 && <li>Corn</li> }
@@ -24,8 +24,8 @@ const Card = props => (
                 { props.foodTreeNuts === 1 && <li>Tree Nuts</li> }
             </ul>
 
-            <p className="card-text">Symptoms:</p>
-            <ul>
+            <p className="card-text content-1">Symptoms:</p>
+            <ul className="content-2">
                 { props.sympCramps === 1 && <li>Abdominal Cramps</li> }
                 { props.sympCough === 1 && <li>Coughing or Weezing</li> }
                 { props.sympDiffBreathing === 1 && <li>Difficulty Breathing</li> }
@@ -43,8 +43,8 @@ const Card = props => (
                 { props.sympThroatSwelling === 1 && <li>Swelling Of The Throat And Vocal Cords</li> }
                 { props.sympVomiting === 1 && <li>Vomiting And/Or Diarrhea</li> }
             </ul>
-            <p className="card-text">Notes:</p>
-            <p>{props.notes}</p>
+            <p className="card-text content-1">Notes:</p>
+            <p className="content-2">{props.notes}</p>
             <DeleteButton clickDelete={props.clickDelete} />
         </div>
     </div>

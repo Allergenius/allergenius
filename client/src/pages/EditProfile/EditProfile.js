@@ -147,7 +147,7 @@ class EditProfile extends Component {
 			<div className="profile-container">
 				<Container>
 				<Warning />
-						<form className="form-group" onSubmit={this.handleFormSubmit} method="POST">
+						<form className="form-group border border-secondary bg-light" onSubmit={this.handleFormSubmit} method="POST">
 						<BackButton clickBack={this.clickBack}/>
 							<h3 className="text-center p-4 header-1">Edit Profile</h3>
 							

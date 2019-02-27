@@ -13,10 +13,10 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// auth
+// USER AUTHENTICATION
 app.use('/users', Users)
 
-// allergenius
+// ROUTING
 app.use(routes)
 
 

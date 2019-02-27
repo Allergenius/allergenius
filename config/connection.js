@@ -1,4 +1,4 @@
-// Set up MySQL connection.
+// MySQL connection.
 var mysql = require("mysql");
 const dotenv = require('dotenv');
 
@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
 } else {
   var connection = mysql.createConnection({
     host: "localhost",
-    port: 8889, //change for Mac
+    port: 8889, 
     user: "root",
     password: "root",
     database: "allergenius_db"
@@ -18,7 +18,7 @@ if (process.env.JAWSDB_URL) {
 
 }
 
-// Make connection.
+// Make connection
 connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);

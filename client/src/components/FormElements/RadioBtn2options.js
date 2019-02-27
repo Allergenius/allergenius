@@ -15,7 +15,6 @@ const RadioBtn2 = (props) => (
 							autoComplete="off"
 							checked={props.selectedOptions.indexOf(option) > -1}
 							type={props.type} 
-							required
 							/> {option}
 					</label>
 				);
