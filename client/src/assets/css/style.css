@@ -40,8 +40,10 @@ body {
 
 
 /* NAVBAR */
+.navbar,
 .navbar-head {
     background-color: #331832;
+    min-height: 50px;
 }
 
 .nav-link {
