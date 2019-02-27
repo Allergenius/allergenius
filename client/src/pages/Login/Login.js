@@ -9,23 +9,18 @@ class Login extends Component {
             email: '',
             password: ''
         }
-
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
-
     onChange (e) {
         this.setState({ [e.target.name]: e.target.value })
     }
-
     onSubmit (e) {
         e.preventDefault()
-
         const user = {
             email: this.state.email,
             password: this.state.password
         }
-
         login(user).then(res => {
 
             if (res) {
@@ -36,13 +31,12 @@ class Login extends Component {
             }
         })
     }
-
     render () {
         return (
             <div className="container">
-            <div className="row">
-                <div className="col-md-12 login-header text-center pt-4">ALLERGENIUS</div>
-            </div>
+                <div className="row">
+                    <div className="col-md-12 login-header text-center pt-4">Allergenius</div>
+                </div>
                 <div className="row">
                     <div className="mx-auto">
                         <form noValidate onSubmit={this.onSubmit} className="login-form border border-secondary bg-light">
