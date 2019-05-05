@@ -1,8 +1,7 @@
+/* Forms */
 form {
    margin-top: 40px;
    padding: 20px 30px 30px 20px;
-   /* border: 2px solid #3174AD;
-   background-color: #eaf6ff; */
    border-radius: 5px;
 }
 
@@ -31,7 +30,6 @@ form {
    padding: 0 auto;
 }
 
-
 .form-label {
    font-size: 19px;
    color: #34495E;
@@ -44,13 +42,6 @@ form {
    float: left;
    color: #203B39;
 }
-
-/* .radio-Q-label {
-   margin: 0 auto;
-   width: 100%;
-   float: left;
-   color: #203B39;
-} */
 
 .form-check-5 {
    width: 90%;

@@ -13,8 +13,6 @@ import ReactionPage from './pages/ReactionPage/ReactionPage'
 
 import './assets/css/style.css';
 import './assets/css/forms.css';
-// import '@coreui/icons';
-
 
 class App extends Component {
   render () {

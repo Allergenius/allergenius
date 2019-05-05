@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/tree_bark.png");
+    /* background-image: url("../images/tree_bark.png"); */
     background-position: top;
     background-size: cover;
 }
@@ -85,8 +85,6 @@ body {
 }
 
 .login-button {
-    /* position: relative; */
-    /* left: 50%; */
     margin: 0 auto;
     text-align: center;
     background-color: #331832;
@@ -129,10 +127,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* FONTS */
-/* font-family: 'Montserrat', sans-serif;
-font-family: 'Open Sans', sans-serif; */
-
 
 /* LOGIN & LANDING & REGISTER */
 .landing-container {
@@ -172,8 +166,6 @@ font-family: 'Open Sans', sans-serif; */
 
 .register-form {
     padding: 3em;
-    /* border: 2px solid #3174AD;
-    background-color: #eaf6ff; */
 }
 
 a:hover {
