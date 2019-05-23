@@ -12,7 +12,7 @@ body {
     letter-spacing: .1em;
     line-height: 40px;
     text-transform: uppercase;
-    color: #331832;
+    color: #246EB9;
 }
 
 .content-1 {
@@ -23,7 +23,7 @@ body {
     letter-spacing: normal;
     line-height: 28px;
     text-transform: none;
-    color: #331832;
+    color: #246EB9;
 }
 
 .content-2 {
@@ -34,19 +34,19 @@ body {
     letter-spacing: normal;
     line-height: 24px;
     text-transform: none;
-    color: #331832;
+    color: #246EB9;
 }
 
 
 /* NAVBAR */
 .navbar,
 .navbar-head {
-    background-color: #331832;
+    background-color: #246EB9;
     min-height: 50px;
 }
 
 .nav-link {
-    color: #F2F5F5;
+    color: #FDFFFC;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
 }
@@ -54,7 +54,7 @@ body {
 
 /* HEADER */
 .header-styling {
-    color: #202020;
+    color: #000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: .05em;
@@ -72,27 +72,27 @@ body {
 .btn-custom {
     margin: 0 auto;
     width: 100%;
-    background-color: #F2BA18;
-    color: #F2F5F5;
+    background-color: #4CB944;
+    color: #FDFFFC;
     margin-top: 20px;
     font-weight: bold;
 }
 
 .btn-homepage {
-    background-color: #331832;
-    color: #F2F5F5;
+    background-color: #246EB9;
+    color: #FDFFFC;
 }
 
 .login-button {
     margin: 0 auto;
     text-align: center;
-    background-color: #331832;
-    color: #F2F5F5;
+    background-color: #246EB9;
+    color: #FDFFFC;
 }
 
 .btn-submit {
-    background-color: #331832;
-    color: #F2F5F5;
+    background-color: #246EB9;
+    color: #FDFFFC;
 }
 
 /* CARD */
@@ -107,11 +107,11 @@ body {
 
 .card-header {
     background-color: #3174AD;
-    color: #F2F5F5;
+    color: #FDFFFC;
 }
 
 .card-body {
-    background-color: #eaf6ff;
+    background-color: #F5EE9E;
 }
 
 .card-date {
@@ -129,7 +129,7 @@ body {
 
 /* LOGIN & LANDING & REGISTER */
 .landing-container {
-    background-color: #F2BA18;
+    background-color: #4CB944;
     width: 30em;
     padding-bottom: 50px;
     margin-top: 10em;
@@ -137,7 +137,7 @@ body {
 
 .landing-text {
     font-family: 'Open Sans', sans-serif;
-    color: #F2F5F5;
+    color: #FDFFFC;
     font-size: 21px;
     text-align: center;
     margin: 0 auto;
@@ -156,11 +156,11 @@ body {
     letter-spacing: .11em;
     line-height: 100px;
     text-transform: uppercase;
-    color: #202020;
+    color: #000;
 }
 
 .border-secondary {
-    border: 2px solid #868e96;
+    border: 2px solid #000;
 }
 
 .register-form {
@@ -170,27 +170,26 @@ body {
 a:hover {
     /* font-size: 1.11em; */
     font-weight: bold;
-    color: #F2BA18;
+    color: #4CB944;
 }
 
 a:active {
-    background-color: #cccccc;
-    color: #F2F5F5;
-    border: 1px solid #cccccc;
+    background-color: #F5EE9E;
+    color: #FDFFFC;
+    border: 1px solid #F5EE9E;
     border-radius: 5px;
 }
 
 /* WARNING */
 .warning-styling{
-    background-color: #F4C642;
-    color: rgb(139, 105, 1);
+    background-color: #F06543;
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     padding: .5em .5em;
 }
 
 .main-container {
-    background-color: #eaf6ff;
+    background-color: #F5EE9E;
     height: 100%;
     width: 100%;
 }
@@ -199,7 +198,7 @@ a:active {
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .landing-container {
-        background-color: #F2BA18;
+        background-color: #4CB944;
         width: 22em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -213,14 +212,14 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #331832;
+        color: #246EB9;
     }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     .landing-container {
-        background-color: #F2BA18;
+        background-color: #4CB944;
         width: 25em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -234,14 +233,14 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #331832;
+        color: #246EB9;
     }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .landing-container {
-        background-color: #F2BA18;
+        background-color: #4CB944;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -251,7 +250,7 @@ a:active {
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .landing-container {
-        background-color: #F2BA18;
+        background-color: #4CB944;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -265,14 +264,14 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #331832;
+        color: #246EB9;
     }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .landing-container {
-        background-color: #F2BA18;
+        background-color: #4CB944;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -286,6 +285,6 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #331832;
+        color: #246EB9;
     }
 }
