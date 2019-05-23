@@ -8,7 +8,7 @@ users.use(cors())
 
 const secret = process.env.JWT_SECRET
 
-const loginOptions = { expiresIn: "100d", issuer: 'https://allergenius-demo.herokuapp.com' }
+const loginOptions = { expiresIn: "300d", issuer: 'https://allergenius-demo.herokuapp.com' }
 
 // REGISTER
 users.post('/register', (req, res) => {
@@ -65,7 +65,7 @@ users.post('/login', (req, res) => {
         }
     })
     .catch(err => {
-        res.status(400).json("error: " + err)
+        res.status(400).json("Error: " + err)
     })
 })
 
