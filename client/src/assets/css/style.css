@@ -11,8 +11,7 @@ body {
     font-weight: 600;
     letter-spacing: .1em;
     line-height: 40px;
-    text-transform: uppercase;
-    color: #246EB9;
+    color: #fdfffc;
 }
 
 .content-1 {
@@ -41,7 +40,7 @@ body {
 /* NAVBAR */
 .navbar,
 .navbar-head {
-    background-color: #246EB9;
+    background-color: #16466d;
     min-height: 50px;
 }
 
@@ -54,7 +53,7 @@ body {
 
 /* HEADER */
 .header-styling {
-    color: #000;
+    color: #16466d;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: .05em;
@@ -72,7 +71,7 @@ body {
 .btn-custom {
     margin: 0 auto;
     width: 100%;
-    background-color: #4CB944;
+    background-color: #246EB9;
     color: #FDFFFC;
     margin-top: 20px;
     font-weight: bold;
@@ -86,7 +85,7 @@ body {
 .login-button {
     margin: 0 auto;
     text-align: center;
-    background-color: #246EB9;
+    background-color: #16466d;
     color: #FDFFFC;
 }
 
@@ -106,7 +105,7 @@ body {
 }
 
 .card-header {
-    background-color: #3174AD;
+    background-color: #16466d;
     color: #FDFFFC;
 }
 
@@ -129,7 +128,7 @@ body {
 
 /* LOGIN & LANDING & REGISTER */
 .landing-container {
-    background-color: #4CB944;
+    background-color: #F5EE9E;
     width: 30em;
     padding-bottom: 50px;
     margin-top: 10em;
@@ -156,11 +155,11 @@ body {
     letter-spacing: .11em;
     line-height: 100px;
     text-transform: uppercase;
-    color: #000;
+    color: #16466d;
 }
 
 .border-secondary {
-    border: 2px solid #000;
+    border: 2px solid #3174AD;
 }
 
 .register-form {
@@ -168,9 +167,8 @@ body {
 }
 
 a:hover {
-    /* font-size: 1.11em; */
     font-weight: bold;
-    color: #4CB944;
+    color: #246EB9;
 }
 
 a:active {
@@ -198,7 +196,7 @@ a:active {
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .landing-container {
-        background-color: #4CB944;
+        background-color: #246EB9;
         width: 22em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -219,7 +217,7 @@ a:active {
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     .landing-container {
-        background-color: #4CB944;
+        background-color: #246EB9;
         width: 25em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -240,7 +238,7 @@ a:active {
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .landing-container {
-        background-color: #4CB944;
+        background-color: #246EB9;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -250,7 +248,7 @@ a:active {
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .landing-container {
-        background-color: #4CB944;
+        background-color: #246EB9;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -271,7 +269,7 @@ a:active {
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .landing-container {
-        background-color: #4CB944;
+        background-color: #246EB9;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;

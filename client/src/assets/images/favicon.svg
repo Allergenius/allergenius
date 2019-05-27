@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#F3D766;}
-	.st1{fill:#FFFFFF;}
+	.st0{fill:#16466D;}
+	.st1{fill:#FDFFFC;}
 </style>
 <title>favicon</title>
-<path class="st0" d="M6.1,0.6H26c2.9,0,5.2,2.4,5.2,5.2v19.8c0,2.9-2.4,5.2-5.2,5.2H6.1c-2.9,0-5.2-2.4-5.2-5.2V5.8
-	C0.9,3,3.2,0.6,6.1,0.6z"/>
-<path class="st1" d="M18.9,3.9l8.4,23.4h-6.1l-1.5-4.8h-6.9l-1.4,4.8H5.3l8.3-23.4H18.9z M16.1,10.7l-2.1,7.4h4.4L16.1,10.7z"/>
+<path class="st0" d="M5.6,0h21c3,0,5.6,2.5,5.6,5.6v21c0,3-2.5,5.6-5.6,5.6h-21c-3,0-5.6-2.5-5.6-5.6v-21C0,2.5,2.5,0,5.6,0z"/>
+<path class="st1" d="M20.7,22.8h-9.5l-1.5,4.5h-5l8.5-23.8h5.6l8.5,23.8h-5L20.7,22.8z M16,9.1L12.6,19h6.9L16,9.1z"/>
 </svg>
