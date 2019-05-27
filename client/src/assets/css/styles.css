@@ -1,0 +1,192 @@
+/* HTML elements for all pages */
+body {
+    margin: 0 auto;
+    height: 100%; 
+    background-image: url("../images/foodboard_1100x734.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #203B39;
+}
+
+.body-non-landing {
+    background-image: none;
+    background-color: #fff;
+}
+
+.landing-container {
+    background-image: linear-gradient(to bottom right, gray, black);
+    background-color: #000000;
+    width: 350px;
+    padding-bottom: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container {
+    background-image: linear-gradient(to bottom right, gray, black);
+    background-color: #000000;
+    width: 350px;
+    height: 275px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form {
+    width: 300px;
+}
+
+.landing-text {
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 40px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h5 {
+    text-align: center;
+}
+
+/* Navbar & Nav Buttons */
+.navbar-brand {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.nav-item,
+a:visited
+ {
+    float: left;
+    margin: 5px 10px;
+    color: #fff;
+}
+
+a:hover {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a:active {
+    background-color: #cccccc;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+/* .navbar-toggler,
+.navbar-toggler-item {
+    float: right;
+    background-color: #717a82;
+}
+
+/* Medical Alert  */
+.alert {
+    margin: 0 auto;
+}
+
+.alert-bottom {
+    margin: 80px 0px 0px;
+}
+
+.alert-top {
+    margin: 0px 0px 30px;
+}
+
+p {
+    font-size: 18px;
+    margin: 5px;
+    text-align: center;
+}
+
+.light {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    margin-top: 5px;
+    color: black;
+    background-color: #eaf6ff;
+    border: 1px solid #cccccc;
+}
+
+/* .btn-light {
+    color: black;
+    background-color: #eaf6ff;
+    border: 1px solid #cccccc;
+    margin: 40px 0px;
+} */
+
+.button-div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-70%, -50%);
+    margin-bottom: 40px;
+}
+
+.btn-reactions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-submit {
+    position: relative;
+    text-align: center;
+    margin: 25px 0px 0px;
+ }
+ 
+.btn {
+    border: 1px solid #cccccc;
+    padding: 4px 8px;
+}
+
+/* Home Page (once logged in) Elements */
+/* .calendar-container {
+    margin-top: 120px;
+} */
+
+.rbc-toolbar-label {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif; */
+}
+
+
+/* Media Queries */
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}

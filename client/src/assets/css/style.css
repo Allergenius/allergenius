@@ -1,60 +1,60 @@
 body {
+    background-image: url("../images/tree_bark.png");
     background-position: top;
     background-size: cover;
 }
 
 /* CUSTOM FONTS */
 .header-1 {
-    font-family: 'Cardo', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
     letter-spacing: .1em;
     line-height: 40px;
-    color: #FDFFFC;
+    text-transform: uppercase;
+    color: #331832;
 }
 
 .content-1 {
-    font-family: 'Cardo', serif;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: normal;
     line-height: 28px;
     text-transform: none;
-    color: #16466d;
+    color: #331832;
 }
 
 .content-2 {
-    font-family: 'Cardo', serif;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: normal;
     line-height: 24px;
     text-transform: none;
-    color: #16466d;
+    color: #331832;
 }
 
 
 /* NAVBAR */
-.navbar,
 .navbar-head {
-    background-color: #16466d;
-    min-height: 50px;
+    background-color: #331832;
 }
 
 .nav-link {
-    color: #FDFFFC;
-    font-family: 'Pathway Gothic One', sans-serif;
+    color: #F2F5F5;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
 }
 
 
 /* HEADER */
 .header-styling {
-    color: #16466d;
-    font-family: 'Pathway Gothic One', sans-serif;
+    color: #202020;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: .05em;
     font-size: 40px;
@@ -71,46 +71,48 @@ body {
 .btn-custom {
     margin: 0 auto;
     width: 100%;
-    background-color: #246EB9;
-    color: #FDFFFC;
+    background-color: #F2BA18;
+    color: #F2F5F5;
     margin-top: 20px;
     font-weight: bold;
 }
 
 .btn-homepage {
-    background-color: #246EB9;
-    color: #FDFFFC;
+    background-color: #331832;
+    color: #F2F5F5;
 }
 
 .login-button {
+    /* position: relative; */
+    /* left: 50%; */
     margin: 0 auto;
     text-align: center;
-    background-color: #16466d;
-    color: #FDFFFC;
+    background-color: #331832;
+    color: #F2F5F5;
 }
 
 .btn-submit {
-    background-color: #246EB9;
-    color: #FDFFFC;
+    background-color: #331832;
+    color: #F2F5F5;
 }
 
 /* CARD */
 .card {
-    border: 2px solid #246EB9;
+    border: 2px solid #3174AD;
     margin: 1em;
 }
 
 .card-eaten {
-    font-family: 'Cardo', serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .card-header {
-    background-color: #246EB9;
-    color: #FDFFFC;
+    background-color: #3174AD;
+    color: #F2F5F5;
 }
 
 .card-body {
-    background-color: #F5EE9E;
+    background-color: #eaf6ff;
 }
 
 .card-date {
@@ -122,21 +124,25 @@ body {
 /* CALENDAR HEADER */
 .rbc-toolbar-label {
     font-size: 2.5em;
-    font-family: 'Cardo', serif;
+    font-family: 'Open Sans', sans-serif;
 }
+
+/* FONTS */
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif; */
 
 
 /* LOGIN & LANDING & REGISTER */
 .landing-container {
-    background-color: #F5EE9E;
+    background-color: #F2BA18;
     width: 30em;
     padding-bottom: 50px;
     margin-top: 10em;
 }
 
 .landing-text {
-    font-family: 'Pathway Gothic One', sans-serif;
-    color: #FDFFFC;
+    font-family: 'Open Sans', sans-serif;
+    color: #F2F5F5;
     font-size: 21px;
     text-align: center;
     margin: 0 auto;
@@ -148,46 +154,50 @@ body {
 }
 
 .login-header {
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     font-style: normal;
     font-weight: 800;
     letter-spacing: .11em;
     line-height: 100px;
     text-transform: uppercase;
-    color: #16466d;
+    color: #202020;
 }
 
 .border-secondary {
-    border: 2px solid #246EB9;
+    border: 2px solid #868e96;
 }
 
 .register-form {
     padding: 3em;
+    /* border: 2px solid #3174AD;
+    background-color: #eaf6ff; */
 }
 
 a:hover {
+    /* font-size: 1.11em; */
     font-weight: bold;
-    color: #246EB9;
+    color: #F2BA18;
 }
 
 a:active {
-    background-color: #F5EE9E;
-    color: #FDFFFC;
-    border: 1px solid #F5EE9E;
+    background-color: #cccccc;
+    color: #F2F5F5;
+    border: 1px solid #cccccc;
     border-radius: 5px;
 }
 
 /* WARNING */
 .warning-styling{
-    background-color: #F06543;
-    font-family: 'Cardo', serif;
+    background-color: #F4C642;
+    color: rgb(139, 105, 1);
+    font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     padding: .5em .5em;
 }
 
 .main-container {
-    background-color: #F5EE9E;
+    background-color: #eaf6ff;
     height: 100%;
     width: 100%;
 }
@@ -196,49 +206,49 @@ a:active {
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .landing-container {
-        background-color: #246EB9;
+        background-color: #F2BA18;
         width: 22em;
         padding-bottom: 50px;
         margin-top: 10em;
     }
 
     .header-1 {
-        font-family: 'Pathway Gothic One', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 30px;
         font-style: normal;
         font-weight: 600;
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #FDFFFC;
+        color: #331832;
     }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     .landing-container {
-        background-color: #246EB9;
+        background-color: #F2BA18;
         width: 25em;
         padding-bottom: 50px;
         margin-top: 10em;
     }
 
     .header-1 {
-        font-family: 'Pathway Gothic One', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 30px;
         font-style: normal;
         font-weight: 600;
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #FDFFFC;
+        color: #331832;
     }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .landing-container {
-        background-color: #246EB9;
+        background-color: #F2BA18;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
@@ -248,41 +258,41 @@ a:active {
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .landing-container {
-        background-color: #246EB9;
+        background-color: #F2BA18;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
     }
     
     .header-1 {
-        font-family: 'Pathway Gothic One', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 40px;
         font-style: normal;
         font-weight: 600;
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #FDFFFC;
+        color: #331832;
     }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .landing-container {
-        background-color: #246EB9;
+        background-color: #F2BA18;
         width: 30em;
         padding-bottom: 50px;
         margin-top: 10em;
     }
 
     .header-1 {
-        font-family: 'Pathway Gothic One', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 40px;
         font-style: normal;
         font-weight: 600;
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #FDFFFC;
+        color: #331832;
     }
 }

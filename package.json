@@ -1,5 +1,5 @@
 {
-  "name": "Allergenius",
+  "name": "allergenius",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaylahimmel/allergenius-demo.git"
+    "url": "git+https://github.com/Allergenius/allergenius.git"
   },
   "author": "Erin Clancy, Kayla Himmelberger, Sarah Lopriore, Nicholette Sams",
   "license": "ISC",
@@ -50,7 +50,7 @@
     "nodemon": "^1.18.9"
   },
   "bugs": {
-    "url": "https://github.com/kaylahimmel/allergenius-demo/issues"
+    "url": "https://github.com/Allergenius/allergenius/issues"
   },
   "engines": {
     "node": "10.3.0"
