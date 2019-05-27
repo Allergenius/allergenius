@@ -58,15 +58,7 @@ class HomePage extends Component {
         selectedEvent: ""
         }
     }
-    // state = {
-    //     first_name: "",
-    //     last_name: "",
-    //     id: "",
-    //     email: "",
-    //     reactions: [],
-    //     selectedDate: new Date(),
-    //     selectedEvent: ""
-    // }
+
     componentWillMount = () => {
         // new
         const token = localStorage.usertoken
@@ -122,10 +114,6 @@ class HomePage extends Component {
     clickAdd = () => {
         this.props.history.push("/reactionform");
     }
-
-    // clickaddProfile = () => {
-    //     this.props.history.push("/addprofile");
-    // }
 
     clickEditProfile = () => {
         this.props.history.push("/editprofile");

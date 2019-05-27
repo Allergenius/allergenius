@@ -34,8 +34,6 @@ class Register extends Component {
         })
     }
         
-    // TODO: add check/alert for when a user already exists
-
     render () {
         return (
             <div className="container">

@@ -1,10 +1,10 @@
 {
   "short_name": "Allergenius",
-  "name": "Allergenius: Food Allergy Reaction Logger",
-  "description": "App for users to log their symptoms and the foods they've eaten when they're experiencing allergic reaction symptoms.",
+  "name": "Allergenius: Allergic Reaction Logging App",
+  "description": "Allergenius is an allergic reaction logging app designed to allow users to track symptoms as well as foods they have consumed. Users can then share this information with a healthcare professional in order to facilitate a diagnosis of what food(s) they are allergic to.",
   "icons": [
     {
-      "src": "./favicon_allerg.jpg",
+      "src": "./favicon_blue.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

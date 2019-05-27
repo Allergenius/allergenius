@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Headers from './components/Navbar2'
+import Headers from './components/Navbar'
 import Landing from './pages/Landing/Landing'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
@@ -13,8 +13,6 @@ import ReactionPage from './pages/ReactionPage/ReactionPage'
 
 import './assets/css/style.css';
 import './assets/css/forms.css';
-// import '@coreui/icons';
-
 
 class App extends Component {
   render () {
@@ -26,13 +24,13 @@ class App extends Component {
 
           <Route exact path="/" component={Landing} />
           <div className="container mx-auto">
-          <Route exact path="/home" component={HomePage} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/addprofile" component={AddProfile} />
-            <Route exact path="/editprofile" component={EditProfile} />
-            <Route exact path="/reactionform" component={ReactionForm} />
-            <Route path="/reactions" component={ReactionPage} />
+            <Route exact path="/home" component={HomePage} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/addprofile" component={AddProfile} />
+              <Route exact path="/editprofile" component={EditProfile} />
+              <Route exact path="/reactionform" component={ReactionForm} />
+              <Route path="/reactions" component={ReactionPage} />
           </div>
         </div>
       </Router>

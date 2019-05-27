@@ -5,15 +5,13 @@ const dotenv = require('dotenv');
 
 dotenv.config()
 
-
 if (process.env.JAWSDB_URL){
     var sequelize = new Sequelize(process.env.JAWSDB_URL)
-
 } else {
     var sequelize = new Sequelize("allergenius_db", "root", "root", {
         host: 'localhost',
         dialect: 'mysql',
-        port: '8889', //change for Mac
+        port: '8889', 
         operatorsAliases: false,
 
         pool: {
@@ -24,7 +22,6 @@ if (process.env.JAWSDB_URL){
         }
     });
 }
-
 
 db.sequelize = sequelize
 db.Sequelize = Sequelize
