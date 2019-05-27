@@ -5,7 +5,7 @@ body {
 
 /* CUSTOM FONTS */
 .header-1 {
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: 'Cardo', serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
@@ -18,22 +18,22 @@ body {
     font-family: 'Cardo', serif;
     font-size: 20px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: normal;
     line-height: 28px;
     text-transform: none;
-    color: #246EB9;
+    color: #16466d;
 }
 
 .content-2 {
     font-family: 'Cardo', serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: normal;
     line-height: 24px;
     text-transform: none;
-    color: #246EB9;
+    color: #16466d;
 }
 
 
@@ -46,7 +46,7 @@ body {
 
 .nav-link {
     color: #FDFFFC;
-    font-family: 'Cardo', serif;
+    font-family: 'Pathway Gothic One', sans-serif;
     font-size: 1.1em;
 }
 
@@ -96,7 +96,7 @@ body {
 
 /* CARD */
 .card {
-    border: 2px solid #3174AD;
+    border: 2px solid #246EB9;
     margin: 1em;
 }
 
@@ -105,7 +105,7 @@ body {
 }
 
 .card-header {
-    background-color: #16466d;
+    background-color: #246EB9;
     color: #FDFFFC;
 }
 
@@ -135,7 +135,7 @@ body {
 }
 
 .landing-text {
-    font-family: 'Cardo', serif;
+    font-family: 'Pathway Gothic One', sans-serif;
     color: #FDFFFC;
     font-size: 21px;
     text-align: center;
@@ -159,7 +159,7 @@ body {
 }
 
 .border-secondary {
-    border: 2px solid #3174AD;
+    border: 2px solid #246EB9;
 }
 
 .register-form {

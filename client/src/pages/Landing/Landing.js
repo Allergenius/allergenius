@@ -14,7 +14,7 @@ class Landing extends Component {
                 </div>
                 <div className="text-center">
                     <Link to="/login" className="btn btn-secondary login-button btn-lg w-50">
-                        Login
+                        Login as Guest
                     </Link>
                 </div>
             </div>

@@ -24,13 +24,13 @@ class App extends Component {
 
           <Route exact path="/" component={Landing} />
           <div className="container mx-auto">
-          <Route exact path="/home" component={HomePage} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/addprofile" component={AddProfile} />
-            <Route exact path="/editprofile" component={EditProfile} />
-            <Route exact path="/reactionform" component={ReactionForm} />
-            <Route path="/reactions" component={ReactionPage} />
+            <Route exact path="/home" component={HomePage} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/addprofile" component={AddProfile} />
+              <Route exact path="/editprofile" component={EditProfile} />
+              <Route exact path="/reactionform" component={ReactionForm} />
+              <Route path="/reactions" component={ReactionPage} />
           </div>
         </div>
       </Router>

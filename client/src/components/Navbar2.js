@@ -12,14 +12,12 @@ class Headers extends Component {
             <ul className="navbar-nav d-flex">
                 <li className="nav-item p-2">
                     <Link to="/login" className="nav-link">
-                    <i className="cui-user"> </i>
-                    Login
+                        Login
                     </Link>
                 </li>
                 <li className="nav-item p-2">
                     <Link to="/register" className="nav-link">
-                    <i className="cui-bookmark"> </i>
-                    Register
+                        Register
                     </Link>
                 </li>
             </ul>
@@ -28,12 +26,12 @@ class Headers extends Component {
             <ul className="navbar-nav d-flex">
                 <li className="nav-item p-2">
                     <Link to="/EditProfile" className="nav-link">
-                    <i className="cui-wrench"> </i>My Profile
+                        My Profile
                     </Link>
                 </li>
                 <li className="nav-item p-2">
                     <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-                    <i className="cui-account-logout"> </i>Logout
+                    Logout
                     </a>
                 </li>
             </ul>
@@ -42,12 +40,12 @@ class Headers extends Component {
             <ul className="navbar-nav d-flex">
                 <li className="nav-item p-2">
                     <Link to="/home" className="nav-link">
-                    <i className="cui-calendar"> </i>Home
+                        Home
                     </Link>
                 </li>
                 <li className="nav-item p-2">
                     <Link to="/reactionform" className="nav-link">
-                    <i className="cui-envelope-letter"> </i>Add Reaction
+                        Add Reaction
                     </Link>
                 </li>
             </ul>
