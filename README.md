@@ -1,4 +1,4 @@
-![Allergenius: Allergic Reaction Logging App](client/src/assets/images/allergenius_logo_gold.png) 
+![Allergenius: Allergic Reaction Logging App](client/src/assets/images/allergenius_logo_readme.png) 
 
 ## Intro
 [Allergenius](https://allergenius-demo.herokuapp.com) is an allergic reaction logging app designed to allow users to track symptoms as well as foods they have consumed. Users can then share this information with a healthcare professional in order to facilitate a diagnosis of what food(s) they are allergic to.  
