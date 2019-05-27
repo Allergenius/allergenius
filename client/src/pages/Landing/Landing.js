@@ -13,9 +13,9 @@ class Landing extends Component {
                     <h6 className="landing-text mt-1">Allergic Reaction Logging App</h6>
                 </div>
                 <div className="text-center">
-                    <Link to="/login" className="btn btn-secondary login-button btn-lg w-50">
-                        Login as Guest
-                    </Link>
+                <Link to="/login" className="btn btn-secondary login-button btn-lg w-50">
+                    Login
+                </Link>
                 </div>
             </div>
         </div>

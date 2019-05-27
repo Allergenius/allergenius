@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// import DatePicker from "react-datepicker";
 import Checkbox from '../../components/FormElements/Checkbox';
 import RadioBtn2 from '../../components/FormElements/RadioBtn2options';
 import RadioBtn5 from '../../components/FormElements/RadioBtn5options';
@@ -9,6 +10,7 @@ import Warning from "../../components/Warning/Warning";
 import BackButton from "../../components/Buttons/BackButton";
 import "react-datepicker/dist/react-datepicker.css";
 import jwt_decode from 'jwt-decode';
+// import { format } from 'util';
 import "react-widgets/dist/css/react-widgets.css";
 import moment from 'moment';
 import momentLocalizer from 'react-widgets-moment';
@@ -17,6 +19,9 @@ import './ReactionForm.css'
 
 moment.locale('en')
 momentLocalizer()
+
+// let formatter = moment.format()
+
 
 class ReactionForm extends Component {
 	constructor(props) {
@@ -46,6 +51,19 @@ class ReactionForm extends Component {
 		this.handleFoodSelect = this.handleFoodSelect.bind(this);
 		this.handleNoteChange = this.handleNoteChange.bind(this);
 	}
+
+	// componentWillMount = () => {
+    //     // new
+    //     const token = localStorage.usertoken
+    //     const decoded = jwt_decode(token)
+    //     console.log(decoded)
+    //     this.setState({
+    //         first_name: decoded.first_name,
+    //         last_name: decoded.last_name,
+    //         email: decoded.email,
+    //         id: decoded.id
+    //     })
+	// }
 	
 	componentDidMount() {
 		document.body.className="body-non-landing"
@@ -66,6 +84,8 @@ class ReactionForm extends Component {
 				const token = localStorage.usertoken
 				const decoded = jwt_decode(token)
 				this.setState({
+					// first_name: decoded.first_name,
+					// last_name: decoded.last_name,
 					email: decoded.email,
 					id: decoded.id
 				})
@@ -163,22 +183,21 @@ class ReactionForm extends Component {
 		};
 		console.log('Send this in a POST request:', formPayload);
 
-		//user unique id
-		let username = this.state.id; 
+		let username = this.state.id; //user unique id
 
 		fetch("/api/reactions/" + username, {
-				method: 'POST',
-				headers: {'Content-Type': 'application/json'},
-				body: JSON.stringify(formPayload)
-		}).then(function(response) {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(formPayload)
+        }).then(function(response) {
 			console.log(response)
-				if (response.status >= 400) {
-					throw new Error("Bad response from server");
-				}
-				window.location.href = "/home";
-		}).catch(function(err) {
-			console.log(err)
-		});
+            if (response.status >= 400) {
+              throw new Error("Bad response from server");
+            }
+			window.location.href = "/home";
+        }).catch(function(err) {
+            console.log(err)
+        });
 	}
 
 	// Render on page
@@ -216,6 +235,7 @@ class ReactionForm extends Component {
 								controlFunc={this.handleSelect}
 								content={title}
 								placeholder={'Example: Nausea after Friday work lunch'}
+								
 							/>
 						</div>
 
