@@ -11,7 +11,7 @@ body {
     font-weight: 600;
     letter-spacing: .1em;
     line-height: 40px;
-    color: #fdfffc;
+    color: #FDFFFC;
 }
 
 .content-1 {
@@ -210,7 +210,7 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #246EB9;
+        color: #FDFFFC;
     }
 }
 
@@ -231,7 +231,7 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #246EB9;
+        color: #FDFFFC;
     }
 }
 
@@ -262,7 +262,7 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #246EB9;
+        color: #FDFFFC;
     }
 }
 
@@ -283,6 +283,6 @@ a:active {
         letter-spacing: .1em;
         line-height: 40px;
         text-transform: uppercase;
-        color: #246EB9;
+        color: #FDFFFC;
     }
 }
