@@ -6,7 +6,7 @@
   "dependencies": {
     "@coreui/icons": "^0.3.0",
     "axios": "^0.18.0",
-    "bcrypt": "^3.0.3",
+    "bcrypt": "^5.0.0",
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "kyanite": "^0.10.3",
