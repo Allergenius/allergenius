@@ -10,7 +10,7 @@
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "kyanite": "^0.10.3",
-    "moment": "^2.23.0",
+    "moment": "^2.29.2",
     "react": "^16.5.2",
     "react-big-calendar": "^0.20.2",
     "react-datepicker": "^2.0.0",
