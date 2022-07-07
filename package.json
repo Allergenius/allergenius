@@ -33,7 +33,7 @@
     "jsonwebtoken": "^7.4.2",
     "jwt-decode": "^2.2.0",
     "kyanite": "^0.10.3",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "mysql": "^2.14.1",
     "mysql2": "^1.6.1",
     "proptypes": "^1.1.0",
