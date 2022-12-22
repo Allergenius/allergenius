@@ -30,7 +30,7 @@
     "express": "^4.16.3",
     "history": "^4.7.2",
     "if-env": "^1.0.4",
-    "jsonwebtoken": "^7.4.2",
+    "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^2.2.0",
     "kyanite": "^0.10.3",
     "moment": "^2.23.0",
